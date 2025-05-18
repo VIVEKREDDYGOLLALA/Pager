@@ -11,7 +11,7 @@ The pipeline processes documents in a sequential manner, where each script build
 ### Clone the Repository
 
 ```bash
-git clone https://github.com/yourusername/Pager.git
+git clone https://github.com/VIVEKREDDYGOLLALA/Pager
 cd Pager
 ```
 
@@ -47,11 +47,11 @@ python main.py --doc_type [DOCUMENT_TYPE] --num_docs [NUMBER_OF_DOCUMENTS] --lan
 
 #### Parameters:
 
-- `--doc_type`: Type of document to extract from Shoonya (e.g., "form", "certificate")
+- `--doc_type`: Type of document to extract from Shoonya (e.g. "novels", "magazines")
 - `--num_docs`: Number of documents to process
-- `--languages`: Space-separated list of languages to generate text in (e.g., "urdu kashmiri bengali")
+- `--languages`: Space-separated list of languages to generate text in (e.g. "hindi telugu bengali")
 - `--output_folder`: Folder to save the generated PNG images
-- `--cpus`: Number of CPU cores to use for parallel processing
+- `--cpus`: Number of CPU cores to use for converting tex code to pngs
 - `--dpi`: DPI resolution for output images
 - `--timeout`: Timeout in seconds for TeX compilation
 - `--log_file`: Path to the log file
@@ -59,7 +59,7 @@ python main.py --doc_type [DOCUMENT_TYPE] --num_docs [NUMBER_OF_DOCUMENTS] --lan
 ### Example:
 
 ```bash
-python main.py --doc_type form --num_docs 100 --languages "urdu kashmiri bengali" --output_folder ./output_images --cpus 4 --dpi 300 --timeout 60 --log_file ./logs/process.log
+python main.py --doc_type magazines --num_docs 100 --languages "hindi telugu bengali" --output_folder output_images --cpus 32 --dpi 300 --timeout 60 --log_file ./logs/process.log
 ```
 
 ## Pipeline Workflow
@@ -69,7 +69,7 @@ python main.py --doc_type form --num_docs 100 --languages "urdu kashmiri bengali
 The pipeline begins by extracting document templates from Shoonya using `shoonya_extract.py`. This script fetches documents of the specified type and quantity, saving them with unique image IDs.
 
 ```bash
-python shoonya_extract.py --doc_type form --num_docs 50
+python shoonya_extract.py --doc_type magazines --num_docs 50
 ```
 
 ### 2. Text Removal via Inpainting
@@ -132,12 +132,3 @@ The pipeline generates the following outputs:
 
 If the pipeline execution stops due to an error in any script, check the error message and the corresponding script. The `main.py` script will not proceed to the next script if the current one fails.
 
-To resolve common issues:
-- Ensure all dependencies are installed correctly
-- Verify that the input parameters are valid
-- Check if the Shoonya API credentials are properly configured (if applicable)
-- Ensure sufficient disk space for storing generated files
-
-## Contributing
-
-Contributions to improve the pipeline are welcome. Please feel free to submit pull requests or open issues for bugs, feature requests, or improvements.
