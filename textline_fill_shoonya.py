@@ -68,29 +68,25 @@ font_size_mapping = {
 #     'urdu',
 # ]
 
-# basic font mappings for each language
+# Font mapping for each language
 FONT_MAPPING = {
     'assamese': 'NotoSerif', 'bengali': 'NotoSerifBengali', 'bodo': 'NotoSerif', 'dogri': 'NotoSerif',
     'gujarati': 'NotoSerifGujarati', 'hindi': 'NotoSerifDevanagari', 'kannada': 'NotoSerifKannada',
     'kashmiri': 'NotoSerif', 'konkani': 'NotoSerif', 'maithili': 'NotoSerifDevanagari',
-    'malayalam': 'NotoSerifMalayalam', 'manipuri': 'NotoSansMeeteiMayek', 'marathi': 'NotoSerifDevanagari',
+    'malayalam': 'NotoSerifMalayalam', 'manipuri': 'NotoSansMeeteiMayek', 'marathi': '',
     'nepali': 'NotoSerifDevanagari', 'odia': 'NotoSerifOriya', 'punjabi': 'NotoSerifGurmukhi',
-    'sanskrit': 'NotoSerifDevanagari', 'santali': 'NotoSerif', 'sindhi': 'NotoSerif', 'tamil': 'NotoSerifTamil',
+    'sanskrit': 'NotoSerifDevanagari', 'santali': 'NotoSerif', 'sindhi': 'NotoSerifDevanagari', 'tamil': 'NotoSerifTamil',
     'telugu': 'NotoSerifTelugu', 'urdu': 'Amiri'
 }
-
-#function to estimate how much text can fit in a given bounding box
-import os
-import json
-import random
-from PIL import Image, ImageDraw, ImageFont
 
 def estimate_text_to_fit(text, bbox_width_inches, bbox_height_inches, box_id, language, x1, y1, font_size, bboxes, dpi, font_path):
     output_folder_path = os.path.join(BASE_PATH, 'output_jsons')
     os.makedirs(output_folder_path, exist_ok=True)
 
+    # Define language-specific JSON file path
     json_file_path = os.path.join(output_folder_path, f"{language}.json")
 
+    # Load the font for the given language
     point_size = font_size_mapping.get(font_size, 12)
     try:
         font = ImageFont.truetype(font_path, int(point_size))
@@ -102,6 +98,7 @@ def estimate_text_to_fit(text, bbox_width_inches, bbox_height_inches, box_id, la
     draw = ImageDraw.Draw(img)
     words = text.split()
 
+    # Randomly rotate words
     random_start = random.randint(0, max(0, len(words) - 1))
     words = words[random_start:] + words[:random_start]
 
@@ -111,7 +108,11 @@ def estimate_text_to_fit(text, bbox_width_inches, bbox_height_inches, box_id, la
     current_line_width = 0
 
     line_height = point_size * 1.5
-    max_lines = 1  # One line per textline box
+    adjusted_line_height = point_size * 1.5
+    max_lines = int(bbox_height_inches * dpi / line_height)
+    if max_lines > 3:
+        max_lines = int(bbox_height_inches * dpi / adjusted_line_height)
+    max_lines = 1
 
     for word in words:
         word_bbox = draw.textbbox((0, 0), word, font=font)
@@ -129,35 +130,90 @@ def estimate_text_to_fit(text, bbox_width_inches, bbox_height_inches, box_id, la
             current_line = (current_line + ' ' + word) if current_line else word
             current_line_width = new_line_width
         else:
-            break  # We only want one line
+            truncated_text_lines.append(current_line)
+            truncated_text_with_linebreaks.append(current_line + r'\linebreak')
+            current_line = word
+            current_line_width = word_width
+            if len(truncated_text_lines) >= max_lines:
+                break
 
-    if current_line:
+    if current_line and len(truncated_text_lines) < max_lines:
         truncated_text_lines.append(current_line)
         truncated_text_with_linebreaks.append(current_line + r'\linebreak')
-    else:
-        # Fallback to single-character text
+
+    # Fallback to single-character text if no text fits
+    if not truncated_text_lines:
         single_text_path = os.path.join(BASE_PATH, f"Characters/{language}.txt")
         try:
             with open(single_text_path, "r", encoding="utf-8") as f:
-                chars = f.read().split()
+                words = f.read().split()
         except FileNotFoundError:
             print(f"Error: {single_text_path} not found for {language}. Using placeholder text.")
-            chars = ["..."]
+            words = ["..."]
 
-        for ch in chars:
-            word_bbox = draw.textbbox((0, 0), ch, font=font)
+        current_line = ''
+        current_line_width = 0
+        for word in words:
+            word_bbox = draw.textbbox((0, 0), word, font=font)
             word_width = word_bbox[2] - word_bbox[0]
-            if word_width <= bbox_width_inches * dpi:
-                truncated_text_lines.append(ch)
-                truncated_text_with_linebreaks.append(ch + r'\linebreak')
+            space_bbox = draw.textbbox((0, 0), ' ', font=font)
+            space_width = space_bbox[2] - space_bbox[0]
+            new_line_width = current_line_width + space_width + word_width if current_line else word_width
+
+            if word_width > bbox_width_inches * dpi:
+                truncated_text_lines.clear()
+                truncated_text_with_linebreaks.clear()
                 break
 
+            if new_line_width <= bbox_width_inches * dpi:
+                current_line = (current_line + ' ' + word) if current_line else word
+                current_line_width = new_line_width
+            else:
+                truncated_text_lines.append(current_line)
+                truncated_text_with_linebreaks.append(current_line + r'\linebreak')
+                current_line = word
+                current_line_width = word_width
+                if len(truncated_text_lines) >= max_lines:
+                    break
+
+        if current_line and len(truncated_text_lines) < max_lines:
+            truncated_text_lines.append(current_line)
+            truncated_text_with_linebreaks.append(current_line + r'\linebreak')
+
     current_box = next((bbox for bbox in bboxes if bbox[5] == box_id), None)
-    if current_box and truncated_text_lines:
+    if current_box and max_lines > 0 and '\n'.join(truncated_text_with_linebreaks[:max_lines]):
         image_id = current_box[6]
         label = current_box[4]
+        box_id = current_box[5]
 
-        # Load existing data
+        if box_id not in processed_box_ids and label.startswith("paragraph"):
+            truncated_text_with_linebreaks[0] = r'\hspace{2em}' + truncated_text_with_linebreaks[0]
+            words = truncated_text_with_linebreaks[0].split()
+            if len(words) > 2:
+                truncated_text_with_linebreaks[0] = " ".join(words[:-2] + words[-1:])
+            processed_box_ids.add(box_id)
+        combined_text = "\n".join(truncated_text_lines)
+
+        annotation = {
+            "id": box_id,
+            "image_id": image_id,
+            "label": label,
+            "textlines": []
+        }
+
+        for idx, line in enumerate(truncated_text_lines):
+            if box_id not in box_id_line_idx_map:
+                box_id_line_idx_map[box_id] = 1
+            line_idx = box_id_line_idx_map[box_id]
+            box_id_line_idx_map[box_id] += 1
+
+            annotation['textlines'].append({
+                "line_idx": line_idx,
+                "bbox": [x1, y1 + idx * line_height, bbox_width_inches * dpi, line_height],
+                "text": line
+            })
+
+        # Load or initialize the language-specific JSON file
         if os.path.exists(json_file_path):
             with open(json_file_path, 'r', encoding='utf-8') as json_file:
                 try:
@@ -167,28 +223,13 @@ def estimate_text_to_fit(text, bbox_width_inches, bbox_height_inches, box_id, la
         else:
             existing_data = {"annotations": []}
 
-        # Find or create annotation for this bounding box
-        annotation = next((a for a in existing_data["annotations"] if a["id"] == box_id), None)
-        if not annotation:
-            annotation = {
-                "id": box_id,
-                "image_id": image_id,
-                "label": label,
-                "text": "",
-                "textlines": []
-            }
+        existing_annotation = next((a for a in existing_data["annotations"] if a["id"] == box_id), None)
+        if existing_annotation:
+            existing_annotation["text"] += f" {combined_text}"
+            existing_annotation["textlines"].extend(annotation["textlines"])
+        else:
+            annotation["text"] = combined_text
             existing_data["annotations"].append(annotation)
-
-        # Determine correct line index based on number of textlines already present
-        line_idx = len(annotation["textlines"]) + 1
-
-        line_text = truncated_text_lines[0]
-        annotation["text"] += f" {line_text}"
-        annotation["textlines"].append({
-            "line_idx": line_idx,
-            "bbox": [x1, y1, bbox_width_inches * dpi, line_height],
-            "text": line_text
-        })
 
         try:
             with open(json_file_path, 'w', encoding='utf-8') as json_file:
@@ -196,7 +237,7 @@ def estimate_text_to_fit(text, bbox_width_inches, bbox_height_inches, box_id, la
         except Exception as e:
             print(f"Error creating JSON file for {language}: {e}")
 
-    return '\n'.join(truncated_text_with_linebreaks[:1])
+    return '\n'.join(truncated_text_with_linebreaks[:max_lines])
 
 def get_patch_color_with_gradient(image, bbox):
     x1, y1, width, height = bbox[:4]
@@ -408,7 +449,10 @@ def generate_latex(image_path, image_dimensions, bboxes, texts, label_mapping, d
     # Initialize LaTeX document
     doc = Document(documentclass='article', document_options=['11pt'])
 
-    #  added all packages
+    # Check if the language uses Arabic script
+    is_arabic_script = language.lower() in ['urdu', 'kashmiri', 'sindhi']
+
+    # First add common packages
     doc.packages.append(Package('fontenc', options='T1'))
     doc.packages.append(Package('inputenc', options='utf8'))
     doc.packages.append(Package('lmodern'))
@@ -420,9 +464,14 @@ def generate_latex(image_path, image_dimensions, bboxes, texts, label_mapping, d
     doc.packages.append(Package('fontspec'))
     doc.packages.append(Package('polyglossia'))
     
+    # For Arabic script languages, add the bidi package
+
+    
     # Set geometry
     doc.packages.append(Package('geometry', options=f'paperwidth={image_dimensions[1]}pt,paperheight={image_dimensions[0]}pt,margin=0pt'))
-
+    
+    if is_arabic_script:
+        doc.packages.append(Package('bidi'))
     # Special mapping for polyglossia language names
     # Some languages have different names in polyglossia than commonly used
     language_mapping_polyglossia = {
@@ -450,7 +499,7 @@ def generate_latex(image_path, image_dimensions, bboxes, texts, label_mapping, d
         'bengali': 'bengali'
     }
     
-    # map language to script
+    # Map language to script
     script_mapping = {
         'assamese': 'Bengali', 'bengali': 'Bengali', 'bodo': 'Devanagari', 'dogri': 'Devanagari',
         'gujarati': 'Gujarati', 'hindi': 'Devanagari', 'kannada': 'Kannada', 'kashmiri': 'Arabic',
@@ -460,22 +509,39 @@ def generate_latex(image_path, image_dimensions, bboxes, texts, label_mapping, d
         'telugu': 'Telugu', 'urdu': 'Arabic'
     }
     
-    # get the script for current language
+    # Get the script for current language
     script = script_mapping.get(language, 'Devanagari')
     
-    # get the polyglossia language name
+    # Get the polyglossia language name
     polyglossia_language = language_mapping_polyglossia.get(language, language)
     
     # Set the main and other language in the preamble
-    doc.preamble.append(NoEscape(f'\\setmainlanguage{{{polyglossia_language}}}'))
+    if is_arabic_script:
+        # For Arabic script languages, use appropriate language setting
+        if language.lower() == 'urdu':
+            doc.preamble.append(NoEscape(f'\\setmainlanguage{{urdu}}'))
+        elif language.lower() == 'kashmiri':
+            doc.preamble.append(NoEscape(f'\\setmainlanguage{{urdu}}')) # Use urdu for Kashmiri as it's similar
+        elif language.lower() == 'sindhi':
+            doc.preamble.append(NoEscape(f'\\setmainlanguage{{sindhi}}'))
+        else:
+            doc.preamble.append(NoEscape(f'\\setmainlanguage{{arabic}}'))
+            
+        # Use bidi for RTL text direction
+        doc.preamble.append(NoEscape(r'\setRTL'))
+    elif language.lower() =='odia':
+        doc.preamble.append(NoEscape())
+    else:
+        doc.preamble.append(NoEscape(f'\\setmainlanguage{{{polyglossia_language}}}'))
+    
+    # Always set English as other language
     doc.preamble.append(NoEscape(f'\\setotherlanguage{{english}}'))
     
-    # defined the script-specific font required by polyglossia
-    # get the lowercase script name to match polyglossia's naming convention
-    # remove spaces and ensure lowercase for consistency
+    # Define the script-specific font required by polyglossia
+    # Get the lowercase script name to match polyglossia's naming convention
     script_lowercase = script.lower().replace(' ', '')
     
-    # fixed specific script names for polyglossia
+    # Fix specific script names for polyglossia
     script_name_fixes = {
         'oriya': 'oriya',
         'arabic': 'arabic',
@@ -491,12 +557,25 @@ def generate_latex(image_path, image_dimensions, bboxes, texts, label_mapping, d
     
     script_polyglossia = script_name_fixes.get(script_lowercase, script_lowercase)
     
-    # Define the script font with the same font as paragraphfont
-    doc.preamble.append(NoEscape(f'\\newfontfamily\\{script_polyglossia}font[Script={script},Path={os.path.dirname(paragraph_font_path)}/]{{{os.path.basename(paragraph_font_path).replace(".ttf", "")}}}'))
-    
-    # Now define your custom fonts
-    doc.preamble.append(NoEscape(f'\\newfontfamily\\headerfont[Script={script},Path={os.path.dirname(header_font_path)}/]{{{os.path.basename(header_font_path).replace(".ttf", "")}}}'))
-    doc.preamble.append(NoEscape(f'\\newfontfamily\\paragraphfont[Script={script},Path={os.path.dirname(paragraph_font_path)}/]{{{os.path.basename(paragraph_font_path).replace(".ttf", "")}}}'))
+    # For Arabic script languages, use bidi's Arabic font settings
+    if is_arabic_script:
+        # Set the main font for Arabic script
+        doc.preamble.append(NoEscape(f'\\newfontfamily\\arabicfont[Script=Arabic,Path={os.path.dirname(paragraph_font_path)}/]{{{os.path.basename(paragraph_font_path).replace(".ttf", "")}}}'))
+        
+        # For Urdu, use specific language tag
+        if language.lower() == 'urdu':
+            doc.preamble.append(NoEscape(f'\\newfontfamily\\urdufont[Script=Arabic,Language=Urdu,Path={os.path.dirname(paragraph_font_path)}/]{{{os.path.basename(paragraph_font_path).replace(".ttf", "")}}}'))
+        
+        # Define header and paragraph fonts with Arabic script support
+        doc.preamble.append(NoEscape(f'\\newfontfamily\\headerfont[Script=Arabic,Path={os.path.dirname(header_font_path)}/]{{{os.path.basename(header_font_path).replace(".ttf", "")}}}'))
+        doc.preamble.append(NoEscape(f'\\newfontfamily\\paragraphfont[Script=Arabic,Path={os.path.dirname(paragraph_font_path)}/]{{{os.path.basename(paragraph_font_path).replace(".ttf", "")}}}'))
+    else:
+        # Define the script font with the same font as paragraphfont for non-Arabic languages
+        doc.preamble.append(NoEscape(f'\\newfontfamily\\{script_polyglossia}font[Script={script},Path={os.path.dirname(paragraph_font_path)}/]{{{os.path.basename(paragraph_font_path).replace(".ttf", "")}}}'))
+        
+        # Now define your custom fonts for non-Arabic languages
+        doc.preamble.append(NoEscape(f'\\newfontfamily\\headerfont[Script={script},Path={os.path.dirname(header_font_path)}/]{{{os.path.basename(header_font_path).replace(".ttf", "")}}}'))
+        doc.preamble.append(NoEscape(f'\\newfontfamily\\paragraphfont[Script={script},Path={os.path.dirname(paragraph_font_path)}/]{{{os.path.basename(paragraph_font_path).replace(".ttf", "")}}}'))
 
     # Define custom font sizes in the preamble
     doc.preamble.append(NoEscape(r'''
@@ -543,9 +622,6 @@ def generate_latex(image_path, image_dimensions, bboxes, texts, label_mapping, d
     doc.append(NoEscape(r'\begin{center}'))
     doc.append(NoEscape(r'\begin{tikzpicture}[x=1pt, y=1pt]'))
     
-    # Rest of the function remains the same...
-    
-    # Rest of your code remains the same...
     image_height, image_width = image_dimensions
     # Use absolute path for image
     doc.append(NoEscape(f'\\node[anchor=south west, inner sep=0pt] at (0,0) {{\\includegraphics[width={image_width}pt,height={image_height}pt]{{{image_path}}}}};'))
@@ -638,11 +714,23 @@ def generate_latex(image_path, image_dimensions, bboxes, texts, label_mapping, d
                     if hindi_text_to_fit:
                         font_size_pts = font_size_mapping.get(font_size_command, 10)
                         baseline_skip = font_size_pts * 1.1
-                        doc.append(NoEscape(
-                            f'\\node[{tikz_text_style}, anchor=north west, text width={width-5}pt]'
-                            f'at ({xmin}, {ymax + 0}) '
-                            f'{{\\setlength{{\\baselineskip}}{{{baseline_skip}pt}} {font_size_command} {style_command} {hindi_text_to_fit}}};'
-                        ))
+                        
+                        # Set text alignment based on script
+                        alignment = 'right' if is_arabic_script else 'left'
+                        
+                        # For Arabic script languages with bidi, use RTL environment
+                        if is_arabic_script:
+                            doc.append(NoEscape(
+                                f'\\node[{tikz_text_style}, anchor=north west, text width={width-5}pt, align={alignment}]'
+                                f'at ({xmin}, {ymax + 0}) '
+                                f'{{\\beginR\\setlength{{\\baselineskip}}{{{baseline_skip}pt}} {font_size_command} {style_command} {hindi_text_to_fit}\\endR}};'
+                            ))
+                        else:
+                            doc.append(NoEscape(
+                                f'\\node[{tikz_text_style}, anchor=north west, text width={width-5}pt, align={alignment}]'
+                                f'at ({xmin}, {ymax + 0}) '
+                                f'{{\\setlength{{\\baselineskip}}{{{baseline_skip}pt}} {font_size_command} {style_command} {hindi_text_to_fit}}};'
+                            ))
                     else:
                         print(f"Dateline text does not fit for {language}.")
                 else:
@@ -680,9 +768,21 @@ def generate_latex(image_path, image_dimensions, bboxes, texts, label_mapping, d
 
                 enumerated_lines = [f"{prefix_format(idx)}{line.strip()}" for idx, line in enumerate(estimated_lines) if line.strip()]
                 formatted_text = '\\linebreak'.join(enumerated_lines)
-                doc.append(NoEscape(
-                    f'\\node[paragraphtext, anchor=north west, text width={width-5}pt] at ({xmin},{ymax+3.5}) {{{font_size_command}{{{formatted_text}}}}};'
-                ))
+                
+                # Get text alignment based on script direction
+                alignment = 'right' if is_arabic_script else 'left'
+                
+                # For Arabic script languages with bidi, use RTL environment
+                if is_arabic_script:
+                    doc.append(NoEscape(
+                        f'\\node[paragraphtext, anchor=north west, text width={width-5}pt, align={alignment}] at ({xmin},{ymax+3.5}) '
+                        f'{{\\beginR {font_size_command}{{{formatted_text}}}\\endR}};'
+                    ))
+                else:
+                    doc.append(NoEscape(
+                        f'\\node[paragraphtext, anchor=north west, text width={width-5}pt, align={alignment}] at ({xmin},{ymax+3.5}) '
+                        f'{{{font_size_command}{{{formatted_text}}}}};'
+                    ))
             elif (label.lower() not in ["index", "formula", "figure_1", "formula_1", "header", "headline", "sub-headline", "options", "figure", "credit", "dateline", "table_row1_col1", "table_row1_col2", "table_row1_col3"]
                   and not re.match(r'table_row[1-9][0-9]*_col[1-9][0-9]*', label.lower())
                   or re.match(r'.*(?<!_1)_1$', label.lower())):
@@ -692,6 +792,10 @@ def generate_latex(image_path, image_dimensions, bboxes, texts, label_mapping, d
                     alignment = 'justify'
                 else:
                     alignment = 'left'
+                    
+                # For RTL languages, set alignment to right
+                if is_arabic_script:
+                    alignment = 'right'
 
                 label_config = label_mapping.get(label.lower(), {"font_size": "\\Large", "style": ""})
                 if isinstance(label_config, str):
@@ -720,12 +824,21 @@ def generate_latex(image_path, image_dimensions, bboxes, texts, label_mapping, d
                 font_size_pts = font_size_mapping.get(font_size_command, 10)
                 baseline_skip = font_size_pts * 1.1
 
-                doc.append(NoEscape(
-                    f'\\node[{tikz_text_style}, anchor=north west, text width={width-5}pt, align={alignment}] '
-                    f'at ({xmin},{ymax+3.5})'
-                    f'{{\\setlength{{\\baselineskip}}{{{baseline_skip}pt}} \\par\n'
-                    f'{font_size_command} {style_command}{{{hindi_text_to_fit}}}}};'
-                ))
+                # For Arabic script languages with bidi, use RTL environment
+                if is_arabic_script:
+                    doc.append(NoEscape(
+                        f'\\node[{tikz_text_style}, anchor=north west, text width={width-5}pt, align={alignment}] '
+                        f'at ({xmin},{ymax+3.5})'
+                        f'{{\\beginR\\setlength{{\\baselineskip}}{{{baseline_skip}pt}} \\par\n'
+                        f'{font_size_command} {style_command}{{{hindi_text_to_fit}}}\\endR}};'
+                    ))
+                else:
+                    doc.append(NoEscape(
+                        f'\\node[{tikz_text_style}, anchor=north west, text width={width-5}pt, align={alignment}] '
+                        f'at ({xmin},{ymax+3.5})'
+                        f'{{\\setlength{{\\baselineskip}}{{{baseline_skip}pt}} \\par\n'
+                        f'{font_size_command} {style_command}{{{hindi_text_to_fit}}}}};'
+                    ))
             elif label in ["headline", "sub-headline", "credit"] and height < width:
                 label_config = label_mapping.get(label.lower(), {"font_size": "", "style": ""})
                 if isinstance(label_config, str):
@@ -763,13 +876,25 @@ def generate_latex(image_path, image_dimensions, bboxes, texts, label_mapping, d
                 font_size_pts = font_size_mapping.get(font_size_command, 10)
                 baseline_skip = font_size_pts * 1.1
                 color_str = 'text=black'
+                
+                # Set text alignment for RTL languages
+                alignment = 'right' if is_arabic_script else 'left'
 
-                doc.append(NoEscape(
-                    f'\\node[{tikz_text_style}, anchor=north west, text width={width-5}pt, align=left, {color_str}] '
-                    f'at ({xmin},{ymax+3.5})'
-                    f'{{\\setlength{{\\baselineskip}}{{{baseline_skip}pt}} \\par\n'
-                    f'{font_size_command} {style_command}{{{hindi_text_to_fit}}}}};'
-                ))
+                # For Arabic script languages with bidi, use RTL environment
+                if is_arabic_script:
+                    doc.append(NoEscape(
+                        f'\\node[{tikz_text_style}, anchor=north west, text width={width-5}pt, align={alignment}, {color_str}] '
+                        f'at ({xmin},{ymax+3.5})'
+                        f'{{\\beginR\\setlength{{\\baselineskip}}{{{baseline_skip}pt}} \\par\n'
+                        f'{font_size_command} {style_command}{{{hindi_text_to_fit}}}\\endR}};'
+                    ))
+                else:
+                    doc.append(NoEscape(
+                        f'\\node[{tikz_text_style}, anchor=north west, text width={width-5}pt, align={alignment}, {color_str}] '
+                        f'at ({xmin},{ymax+3.5})'
+                        f'{{\\setlength{{\\baselineskip}}{{{baseline_skip}pt}} \\par\n'
+                        f'{font_size_command} {style_command}{{{hindi_text_to_fit}}}}};'
+                    ))
 
     doc.append(NoEscape(r'\end{tikzpicture}'))
     doc.append(NoEscape(r'\end{center}'))

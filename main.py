@@ -8,11 +8,12 @@ base_dir = "/projects/data/ocrteam/ocr-tests/Pager"
 scripts = [
     "shoonya_extract.py",
     "inpaint.py",
+    "overlaap_manage_shoonya.py",
     "normal__fill_shoonya.py",
     "extract_text_bbox.py",
     "clear_textlines.py",
     "textline_fill_shoonya.py",
-    "tex_to_png.py",
+    "tex_to_png.py"
 ]
 
 def run_script(script_name, doc_type=None, num_docs=None, languages=None, output_folder=None, cpus=None, dpi=None, timeout=None, log_file=None):
