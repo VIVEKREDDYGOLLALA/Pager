@@ -3,10 +3,11 @@ import os
 import argparse
 
 # Base directory where your Python scripts are located
-base_dir = "/home/vivek/Pager"
+base_dir = "/projects/data/ocrteam/ocr-tests/Pager"
 
 scripts = [
     "shoonya_extract.py",
+    "inpaint.py",
     "normal__fill_shoonya.py",
     "extract_text_bbox.py",
     "clear_textlines.py",

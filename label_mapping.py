@@ -1,3 +1,5 @@
+# font_size mappings in the approximate ratio with image dimensions
+
 label_mapping_1 = {
     "title": {"font_size": "\\zettaHuge", "style": ""},
     "first-level title": {"font_size": "\\exaHuge", "style": ""},

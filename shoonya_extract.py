@@ -6,8 +6,8 @@ import argparse
 
 # Base directories
 json_base_folder = r'input_jsons'  # Root folder containing subfolders with JSON files
-output_base_folder = r'BBOX'  # Base folder for BBOX outputs (e.g., BBOX_magazines)
-images_base_folder = r'images_val'  # Base folder for downloaded images
+output_base_folder = r'BBOX'  # Base folder for BBOX outputs 
+images_base_folder = r'images_original'  # Base folder for downloaded images
 
 # Function to download an image from a URL
 def download_image(image_url, output_path):

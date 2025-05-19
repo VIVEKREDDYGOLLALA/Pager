@@ -191,9 +191,9 @@ def refine_inpainting(output_dir, refinement_method="telea", radius=5):
     print(f"Refined images saved to {refined_dir}")
 
 if __name__ == "__main__":
-    IMAGES_FOLDER = "images_val"
+    IMAGES_FOLDER = "images_original"
     BBOXES_FOLDER = "BBOX"
-    OUTPUT_DIR = "inpainted_results"
+    OUTPUT_DIR = "images_val"
     print("Starting text removal inpainting process...")
     process_all_images(IMAGES_FOLDER, BBOXES_FOLDER, OUTPUT_DIR, shrink_pixels=2)
     refine_inpainting(OUTPUT_DIR, refinement_method="telea", radius=5)

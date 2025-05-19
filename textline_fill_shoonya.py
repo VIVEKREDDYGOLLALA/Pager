@@ -68,7 +68,7 @@ font_size_mapping = {
 #     'urdu',
 # ]
 
-# Font mapping for each language
+# basic font mappings for each language
 FONT_MAPPING = {
     'assamese': 'NotoSerif', 'bengali': 'NotoSerifBengali', 'bodo': 'NotoSerif', 'dogri': 'NotoSerif',
     'gujarati': 'NotoSerifGujarati', 'hindi': 'NotoSerifDevanagari', 'kannada': 'NotoSerifKannada',
@@ -79,14 +79,18 @@ FONT_MAPPING = {
     'telugu': 'NotoSerifTelugu', 'urdu': 'Amiri'
 }
 
+#function to estimate how much text can fit in a given bounding box
+import os
+import json
+import random
+from PIL import Image, ImageDraw, ImageFont
+
 def estimate_text_to_fit(text, bbox_width_inches, bbox_height_inches, box_id, language, x1, y1, font_size, bboxes, dpi, font_path):
     output_folder_path = os.path.join(BASE_PATH, 'output_jsons')
     os.makedirs(output_folder_path, exist_ok=True)
 
-    # Define language-specific JSON file path
     json_file_path = os.path.join(output_folder_path, f"{language}.json")
 
-    # Load the font for the given language
     point_size = font_size_mapping.get(font_size, 12)
     try:
         font = ImageFont.truetype(font_path, int(point_size))
@@ -98,7 +102,6 @@ def estimate_text_to_fit(text, bbox_width_inches, bbox_height_inches, box_id, la
     draw = ImageDraw.Draw(img)
     words = text.split()
 
-    # Randomly rotate words
     random_start = random.randint(0, max(0, len(words) - 1))
     words = words[random_start:] + words[:random_start]
 
@@ -108,11 +111,7 @@ def estimate_text_to_fit(text, bbox_width_inches, bbox_height_inches, box_id, la
     current_line_width = 0
 
     line_height = point_size * 1.5
-    adjusted_line_height = point_size * 1.5
-    max_lines = int(bbox_height_inches * dpi / line_height)
-    if max_lines > 3:
-        max_lines = int(bbox_height_inches * dpi / adjusted_line_height)
-    max_lines = 1
+    max_lines = 1  # One line per textline box
 
     for word in words:
         word_bbox = draw.textbbox((0, 0), word, font=font)
@@ -130,90 +129,35 @@ def estimate_text_to_fit(text, bbox_width_inches, bbox_height_inches, box_id, la
             current_line = (current_line + ' ' + word) if current_line else word
             current_line_width = new_line_width
         else:
-            truncated_text_lines.append(current_line)
-            truncated_text_with_linebreaks.append(current_line + r'\linebreak')
-            current_line = word
-            current_line_width = word_width
-            if len(truncated_text_lines) >= max_lines:
-                break
+            break  # We only want one line
 
-    if current_line and len(truncated_text_lines) < max_lines:
+    if current_line:
         truncated_text_lines.append(current_line)
         truncated_text_with_linebreaks.append(current_line + r'\linebreak')
-
-    # Fallback to single-character text if no text fits
-    if not truncated_text_lines:
+    else:
+        # Fallback to single-character text
         single_text_path = os.path.join(BASE_PATH, f"Characters/{language}.txt")
         try:
             with open(single_text_path, "r", encoding="utf-8") as f:
-                words = f.read().split()
+                chars = f.read().split()
         except FileNotFoundError:
             print(f"Error: {single_text_path} not found for {language}. Using placeholder text.")
-            words = ["..."]
+            chars = ["..."]
 
-        current_line = ''
-        current_line_width = 0
-        for word in words:
-            word_bbox = draw.textbbox((0, 0), word, font=font)
+        for ch in chars:
+            word_bbox = draw.textbbox((0, 0), ch, font=font)
             word_width = word_bbox[2] - word_bbox[0]
-            space_bbox = draw.textbbox((0, 0), ' ', font=font)
-            space_width = space_bbox[2] - space_bbox[0]
-            new_line_width = current_line_width + space_width + word_width if current_line else word_width
-
-            if word_width > bbox_width_inches * dpi:
-                truncated_text_lines.clear()
-                truncated_text_with_linebreaks.clear()
+            if word_width <= bbox_width_inches * dpi:
+                truncated_text_lines.append(ch)
+                truncated_text_with_linebreaks.append(ch + r'\linebreak')
                 break
 
-            if new_line_width <= bbox_width_inches * dpi:
-                current_line = (current_line + ' ' + word) if current_line else word
-                current_line_width = new_line_width
-            else:
-                truncated_text_lines.append(current_line)
-                truncated_text_with_linebreaks.append(current_line + r'\linebreak')
-                current_line = word
-                current_line_width = word_width
-                if len(truncated_text_lines) >= max_lines:
-                    break
-
-        if current_line and len(truncated_text_lines) < max_lines:
-            truncated_text_lines.append(current_line)
-            truncated_text_with_linebreaks.append(current_line + r'\linebreak')
-
     current_box = next((bbox for bbox in bboxes if bbox[5] == box_id), None)
-    if current_box and max_lines > 0 and '\n'.join(truncated_text_with_linebreaks[:max_lines]):
+    if current_box and truncated_text_lines:
         image_id = current_box[6]
         label = current_box[4]
-        box_id = current_box[5]
 
-        if box_id not in processed_box_ids and label.startswith("paragraph"):
-            truncated_text_with_linebreaks[0] = r'\hspace{2em}' + truncated_text_with_linebreaks[0]
-            words = truncated_text_with_linebreaks[0].split()
-            if len(words) > 2:
-                truncated_text_with_linebreaks[0] = " ".join(words[:-2] + words[-1:])
-            processed_box_ids.add(box_id)
-        combined_text = "\n".join(truncated_text_lines)
-
-        annotation = {
-            "id": box_id,
-            "image_id": image_id,
-            "label": label,
-            "textlines": []
-        }
-
-        for idx, line in enumerate(truncated_text_lines):
-            if box_id not in box_id_line_idx_map:
-                box_id_line_idx_map[box_id] = 1
-            line_idx = box_id_line_idx_map[box_id]
-            box_id_line_idx_map[box_id] += 1
-
-            annotation['textlines'].append({
-                "line_idx": line_idx,
-                "bbox": [x1, y1 + idx * line_height, bbox_width_inches * dpi, line_height],
-                "text": line
-            })
-
-        # Load or initialize the language-specific JSON file
+        # Load existing data
         if os.path.exists(json_file_path):
             with open(json_file_path, 'r', encoding='utf-8') as json_file:
                 try:
@@ -223,13 +167,28 @@ def estimate_text_to_fit(text, bbox_width_inches, bbox_height_inches, box_id, la
         else:
             existing_data = {"annotations": []}
 
-        existing_annotation = next((a for a in existing_data["annotations"] if a["id"] == box_id), None)
-        if existing_annotation:
-            existing_annotation["text"] += f" {combined_text}"
-            existing_annotation["textlines"].extend(annotation["textlines"])
-        else:
-            annotation["text"] = combined_text
+        # Find or create annotation for this bounding box
+        annotation = next((a for a in existing_data["annotations"] if a["id"] == box_id), None)
+        if not annotation:
+            annotation = {
+                "id": box_id,
+                "image_id": image_id,
+                "label": label,
+                "text": "",
+                "textlines": []
+            }
             existing_data["annotations"].append(annotation)
+
+        # Determine correct line index based on number of textlines already present
+        line_idx = len(annotation["textlines"]) + 1
+
+        line_text = truncated_text_lines[0]
+        annotation["text"] += f" {line_text}"
+        annotation["textlines"].append({
+            "line_idx": line_idx,
+            "bbox": [x1, y1, bbox_width_inches * dpi, line_height],
+            "text": line_text
+        })
 
         try:
             with open(json_file_path, 'w', encoding='utf-8') as json_file:
@@ -237,7 +196,7 @@ def estimate_text_to_fit(text, bbox_width_inches, bbox_height_inches, box_id, la
         except Exception as e:
             print(f"Error creating JSON file for {language}: {e}")
 
-    return '\n'.join(truncated_text_with_linebreaks[:max_lines])
+    return '\n'.join(truncated_text_with_linebreaks[:1])
 
 def get_patch_color_with_gradient(image, bbox):
     x1, y1, width, height = bbox[:4]
@@ -426,7 +385,6 @@ def get_random_font(fonts_dir):
         raise FileNotFoundError(f"No .ttf files found in directory: {fonts_dir}")
     return os.path.join(fonts_dir, random.choice(fonts))
 
-
 def generate_latex(image_path, image_dimensions, bboxes, texts, label_mapping, dpi, language):
     # Convert image path to absolute
     image_path = os.path.abspath(image_path)
@@ -450,7 +408,7 @@ def generate_latex(image_path, image_dimensions, bboxes, texts, label_mapping, d
     # Initialize LaTeX document
     doc = Document(documentclass='article', document_options=['11pt'])
 
-    # First add all packages
+    #  added all packages
     doc.packages.append(Package('fontenc', options='T1'))
     doc.packages.append(Package('inputenc', options='utf8'))
     doc.packages.append(Package('lmodern'))
@@ -492,7 +450,7 @@ def generate_latex(image_path, image_dimensions, bboxes, texts, label_mapping, d
         'bengali': 'bengali'
     }
     
-    # Map language to script
+    # map language to script
     script_mapping = {
         'assamese': 'Bengali', 'bengali': 'Bengali', 'bodo': 'Devanagari', 'dogri': 'Devanagari',
         'gujarati': 'Gujarati', 'hindi': 'Devanagari', 'kannada': 'Kannada', 'kashmiri': 'Arabic',
@@ -502,22 +460,22 @@ def generate_latex(image_path, image_dimensions, bboxes, texts, label_mapping, d
         'telugu': 'Telugu', 'urdu': 'Arabic'
     }
     
-    # Get the script for current language
+    # get the script for current language
     script = script_mapping.get(language, 'Devanagari')
     
-    # Get the polyglossia language name
+    # get the polyglossia language name
     polyglossia_language = language_mapping_polyglossia.get(language, language)
     
     # Set the main and other language in the preamble
     doc.preamble.append(NoEscape(f'\\setmainlanguage{{{polyglossia_language}}}'))
     doc.preamble.append(NoEscape(f'\\setotherlanguage{{english}}'))
     
-    # Define the script-specific font required by polyglossia
-    # Get the lowercase script name to match polyglossia's naming convention
-    # Remove spaces and ensure lowercase for consistency
+    # defined the script-specific font required by polyglossia
+    # get the lowercase script name to match polyglossia's naming convention
+    # remove spaces and ensure lowercase for consistency
     script_lowercase = script.lower().replace(' ', '')
     
-    # Fix specific script names for polyglossia
+    # fixed specific script names for polyglossia
     script_name_fixes = {
         'oriya': 'oriya',
         'arabic': 'arabic',
