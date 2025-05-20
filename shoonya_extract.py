@@ -6,8 +6,11 @@ import argparse
 
 # Base directories
 json_base_folder = r'input_jsons'  # Root folder containing subfolders with JSON files
-output_base_folder = r'BBOX'  # Base folder for BBOX outputs 
+output_base_folder = r'BBOX'  # Base folder for BBOX outputs (e.g., BBOX_magazines)
 images_base_folder = r'images_original'  # Base folder for downloaded images
+
+# List of labels to skip (case-insensitive)
+SKIP_LABELS = ["formula", "table"]
 
 # Function to download an image from a URL
 def download_image(image_url, output_path):
@@ -62,6 +65,20 @@ def validate_record(record, json_file, image_id=None):
         return None
     return record
 
+def check_for_skip_labels(annotations):
+    """Check if annotations contain any labels that should be skipped."""
+    for annotation in annotations:
+        try:
+            bbox_value = annotation.get("value", annotation)
+            if "labels" in bbox_value and bbox_value["labels"]:
+                for label in bbox_value["labels"]:
+                    # Case-insensitive comparison
+                    if any(skip_label.lower() in label.lower() for skip_label in SKIP_LABELS):
+                        return True
+        except Exception:
+            continue
+    return False
+
 def process_record(record, output_folder, images_folder, json_file, doc_count, total_limit):
     """Process a single record and return whether it was successfully processed."""
     os.makedirs(output_folder, exist_ok=True)
@@ -87,6 +104,12 @@ def process_record(record, output_folder, images_folder, json_file, doc_count, t
             # print(f"Skipping image ID {image_id}: No image URL.")
             with open("skipped_records.log", "a") as log:
                 log.write(f"[{json_file}] Image ID {image_id}: No image URL\n")
+            return False
+
+        # Check if annotations contain any labels to skip
+        if check_for_skip_labels(annotations):
+            with open("skipped_records.log", "a") as log:
+                log.write(f"[{json_file}] Image ID {image_id}: Skipped due to containing table/formula\n")
             return False
 
         original_width = annotations[0].get("original_width", None) if annotations else None
@@ -141,6 +164,9 @@ def process_record(record, output_folder, images_folder, json_file, doc_count, t
         if valid_bboxes == 0:
             # print(f"No valid bounding boxes with IDs found for image ID {image_id}. Deleting BBOX file.")
             os.remove(bbox_file_path)
+            # Also delete the downloaded image if it exists
+            if os.path.exists(image_output_path):
+                os.remove(image_output_path)
             with open("skipped_records.log", "a") as log:
                 log.write(f"[{json_file}] Image ID {image_id}: No valid bounding boxes with IDs\n")
             return False
@@ -151,6 +177,11 @@ def process_record(record, output_folder, images_folder, json_file, doc_count, t
         # print(f"Error processing record for image ID {image_id}: {e}")
         with open("skipped_records.log", "a") as log:
             log.write(f"[{json_file}] Image ID {image_id}: Error - {e}\n")
+        # Clean up any partially created files
+        if 'bbox_file_path' in locals() and os.path.exists(bbox_file_path):
+            os.remove(bbox_file_path)
+        if 'image_output_path' in locals() and os.path.exists(image_output_path):
+            os.remove(image_output_path)
         return False
 
 def collect_records(json_base_folder, doc_type):
@@ -189,6 +220,10 @@ def process_json_folder(json_base_folder, doc_type, num_docs):
     if num_docs < 1:
         # print(f"Invalid number of documents: {num_docs}. Must be at least 1.")
         return
+
+    # Ensure skipped_records.log exists
+    with open("skipped_records.log", "a") as log:
+        log.write(f"Starting processing for doc_type: {doc_type}, num_docs: {num_docs}\n")
 
     # Collect all records from the specified subfolder
     all_records = collect_records(json_base_folder, doc_type)
