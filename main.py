@@ -6,9 +6,10 @@ import argparse
 base_dir = "/home/vivek/Desktop/Pager"
 
 scripts = [
-    "shoonya_extract.py",
+    # "shoonya_extract.py",
+    "coco_extract.py",
     "inpaint.py",
-    "overlaap_manage_shoonya.py",
+    # "overlaap_manage_shoonya.py",
     "normal__fill_shoonya.py",
     "extract_text_bbox.py",
     "clear_textlines.py",
@@ -24,7 +25,7 @@ def run_script(script_name, doc_type=None, num_docs=None, languages=None, text_f
     
     try:
         # Prepare the command based on the script
-        if script_name == "shoonya_extract.py" and doc_type and num_docs is not None:
+        if script_name == "coco_extract.py" and doc_type and num_docs is not None:
             # Run shoonya_extract.py with doc_type and num_docs
             command = ["python3", script_path, "--doc_type", doc_type, "--num_docs", str(num_docs)]
         elif script_name == "textline_fill_shoonya.py" and languages:

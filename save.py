@@ -50,13 +50,11 @@ FONT_MAPPING = {
     'sanskrit': 'NotoSerifDevanagari', 'santali': 'NotoSerif', 'sindhi': 'NotoSerifDevanagari', 'tamil': 'NotoSerifTamil',
     'telugu': 'NotoSerifTelugu', 'urdu': 'Amiri'
 }
-# Track processed box IDs for paragraph indentation
-processed_box_ids = set()
+
 
 def estimate_text_to_fit(text, bbox_width_inches, bbox_height_inches, box_id, language, x1, y1, font_size, bboxes, dpi, font_path, image_path):
     """
     Estimates text to fit in a bounding box and generates COCO JSON annotations.
-    Handles multiple calls for the same box_id by appending new text lines.
     
     Args:
         text (str): The input text to fit.
@@ -95,7 +93,7 @@ def estimate_text_to_fit(text, bbox_width_inches, bbox_height_inches, box_id, la
     else:
         current_position = 0
 
-    # When starting a new box, back up one position to ensure continuity
+    # When starting a new box, always back up one position to ensure continuity
     if current_position > 0:
         current_position -= 1
 
@@ -126,9 +124,13 @@ def estimate_text_to_fit(text, bbox_width_inches, bbox_height_inches, box_id, la
     words_used = 0
 
     line_height = point_size * 1.5
-    max_lines = 1  # Process one line per call, as multiple calls handle multiple lines
-
-    # Process available words for one line
+    adjusted_line_height = point_size * 1.5
+    max_lines = int(bbox_height_inches * dpi / line_height)
+    if max_lines > 3:
+        max_lines = int(bbox_height_inches * dpi / adjusted_line_height)
+    max_lines = 1
+    
+    # Process available words without looping back to beginning
     for i, word in enumerate(available_words):
         word_bbox = draw.textbbox((0, 0), word, font=font)
         word_width = word_bbox[2] - word_bbox[0]
@@ -150,7 +152,38 @@ def estimate_text_to_fit(text, bbox_width_inches, bbox_height_inches, box_id, la
             current_line = word
             current_line_width = word_width
             words_used += 1
-            break  # Stop after one line
+            if len(truncated_text_lines) >= max_lines:
+                break
+
+    # If we need more words and used all available, start from beginning
+    if len(truncated_text_lines) < max_lines and words_used == len(available_words) and len(words) > 0:
+        remaining_words = words[:current_position]
+        for word in remaining_words:
+            if len(truncated_text_lines) >= max_lines:
+                break
+                
+            word_bbox = draw.textbbox((0, 0), word, font=font)
+            word_width = word_bbox[2] - word_bbox[0]
+            space_bbox = draw.textbbox((0, 0), ' ', font=font)
+            space_width = space_bbox[2] - space_bbox[0]
+            new_line_width = current_line_width + space_width + word_width if current_line else word_width
+
+            if word_width > bbox_width_inches * dpi:
+                words_used += 1
+                continue
+                
+            if new_line_width <= bbox_width_inches * dpi:
+                current_line = (current_line + ' ' + word) if current_line else word
+                current_line_width = new_line_width
+                words_used += 1
+            else:
+                truncated_text_lines.append(current_line)
+                truncated_text_with_linebreaks.append(current_line + r'\linebreak')
+                current_line = word
+                current_line_width = word_width
+                words_used += 1
+                if len(truncated_text_lines) >= max_lines:
+                    break
 
     if current_line and len(truncated_text_lines) < max_lines:
         truncated_text_lines.append(current_line)
@@ -184,14 +217,17 @@ def estimate_text_to_fit(text, bbox_width_inches, bbox_height_inches, box_id, la
             else:
                 truncated_text_lines.append(current_line)
                 truncated_text_with_linebreaks.append(current_line + r'\linebreak')
-                break
+                current_line = word
+                current_line_width = word_width
+                if len(truncated_text_lines) >= max_lines:
+                    break
 
         if current_line and len(truncated_text_lines) < max_lines:
             truncated_text_lines.append(current_line)
             truncated_text_with_linebreaks.append(current_line + r'\linebreak')
 
     # Update the current position for next call
-    new_position = (current_position + words_used) % total_words if total_words > 0 else 0
+    new_position = (current_position + words_used) % total_words
     
     # Save the updated position
     try:
@@ -200,7 +236,7 @@ def estimate_text_to_fit(text, bbox_width_inches, bbox_height_inches, box_id, la
     except Exception as e:
         print(f"Error saving position file for {language}: {e}")
 
-    # JSON writing logic to append new textlines
+    # JSON writing logic updated to match the latest function's format
     combined_json_path = os.path.join(output_folder_path, f"{language}.json")
     image_json_path = os.path.join(output_folder_path, f"{language}_{image_name}.json")
     
@@ -215,29 +251,8 @@ def estimate_text_to_fit(text, bbox_width_inches, bbox_height_inches, box_id, la
     else:
         box_id_line_number_map = {}
 
-    # Load combined JSON to check existing textlines
-    combined_data = {}
-    if os.path.exists(combined_json_path):
-        with open(combined_json_path, 'r', encoding='utf-8') as json_file:
-            try:
-                combined_data = json.load(json_file)
-            except json.JSONDecodeError:
-                combined_data = {"images": [], "annotations": [], "categories": []}
-    else:
-        combined_data = {"images": [], "annotations": [], "categories": []}
-
-    # Find existing annotation to determine the next line number
-    existing_annotation = next((a for a in combined_data["annotations"] if a["id"] == box_id), None)
-    if existing_annotation and "textlines" in existing_annotation:
-        existing_textlines = existing_annotation["textlines"]
-        # Extract the highest line number from existing textline IDs
-        line_numbers = [int(tl["id"].split('_')[-1]) for tl in existing_textlines if tl["id"].startswith(f"{box_id}_")]
-        current_line_number = max(line_numbers, default=0) + 1
-    else:
-        current_line_number = 1  # Start from 1 if no existing textlines
-
     # Generate COCO JSON annotations
-    unique_labels = set(['textline'])  # Add 'textline' explicitly
+    unique_labels = set()
     for bbox in bboxes:
         label = bbox[4]
         unique_labels.add(label.lower())
@@ -254,60 +269,43 @@ def estimate_text_to_fit(text, bbox_width_inches, bbox_height_inches, box_id, la
         return categories[0]["id"] if categories else 1
 
     current_box = next((bbox for bbox in bboxes if bbox[5] == box_id), None)
-    if current_box and truncated_text_lines:
+    if current_box and max_lines > 0 and '\n'.join(truncated_text_with_linebreaks[:max_lines]):
         box_image_id = current_box[6]
         label = current_box[4]
+        box_id = current_box[5]
 
-        # Create or update main box annotation
-        if existing_annotation:
-            main_annotation = existing_annotation
-            # Update combined text with new line
-            existing_text = main_annotation["attributes"].get("text", "")
-            combined_text = existing_text + ("\n" + "\n".join(truncated_text_lines) if existing_text else "\n".join(truncated_text_lines))
-            main_annotation["attributes"]["text"] = combined_text
-        else:
-            main_annotation = {
-                "id": box_id,
-                "image_id": box_image_id,
-                "category_id": get_category_id(label, categories),
-                "bbox": [x1, y1, bbox_width_inches * dpi, bbox_height_inches * dpi],
-                "area": (bbox_width_inches * dpi) * (bbox_height_inches * dpi),
-                "iscrowd": 0,
-                "segmentation": [],
-                "attributes": {
-                    "text": "\n".join(truncated_text_lines)
-                },
-                "textlines": []
-            }
-
-        # Add paragraph indentation for the first line on first call
-        if current_line_number == 1 and box_id not in processed_box_ids and label.startswith("paragraph") and truncated_text_with_linebreaks:
+        # Add paragraph indentation for the first line
+        if box_id not in processed_box_ids and label.startswith("paragraph"):
             truncated_text_with_linebreaks[0] = r'\hspace{2em}' + truncated_text_with_linebreaks[0]
             words = truncated_text_with_linebreaks[0].split()
             if len(words) > 2:
                 truncated_text_with_linebreaks[0] = " ".join(words[:-2] + words[-1:])
             processed_box_ids.add(box_id)
+        
+        combined_text = "\n".join(truncated_text_lines)
 
-        # Create new textline annotation for this call
-        textline_annotations = []
-        for idx, line in enumerate(truncated_text_lines):
-            textline_id = f"{box_id}_{current_line_number + idx}"
-            textline_annotation = {
-                "id": textline_id,
-                "image_id": box_image_id,
-                "category_id": get_category_id("textline", categories),
-                "bbox": [x1, y1 + (current_line_number + idx - 1) * line_height, bbox_width_inches * dpi, line_height],
-                "area": (bbox_width_inches * dpi) * line_height,
-                "iscrowd": 0,
-                "segmentation": [],
-                "attributes": {
-                    "text": line
-                }
+        # Create COCO annotation
+        current_line_number = box_id_line_number_map.get(box_id, 0) + 1
+        annotation = {
+            "id": box_id,
+            "image_id": box_image_id,
+            "category_id": get_category_id(label, categories),
+            "bbox": [x1, y1, bbox_width_inches * dpi, bbox_height_inches * dpi],
+            "area": (bbox_width_inches * dpi) * (bbox_height_inches * dpi),
+            "iscrowd": 0,
+            "segmentation": [],
+            "attributes": {
+                "text": combined_text,
+                "textlines": [
+                    {
+                        "textline_id": f"{box_id}_{current_line_number + idx}",
+                        "bbox": [x1, y1 + idx * line_height, bbox_width_inches * dpi, line_height],
+                        "text": line
+                    }
+                    for idx, line in enumerate(truncated_text_lines)
+                ]
             }
-            textline_annotations.append(textline_annotation)
-
-        # Append new textlines to the main annotation
-        main_annotation["textlines"].extend(textline_annotations)
+        }
 
         # Update line number tracking
         box_id_line_number_map[box_id] = current_line_number + len(truncated_text_lines) - 1
@@ -330,16 +328,25 @@ def estimate_text_to_fit(text, bbox_width_inches, bbox_height_inches, box_id, la
         }
 
         # Update combined COCO JSON
-        if not combined_data.get("categories"):
-            combined_data["categories"] = categories
+        if os.path.exists(combined_json_path):
+            with open(combined_json_path, 'r', encoding='utf-8') as json_file:
+                try:
+                    combined_data = json.load(json_file)
+                except json.JSONDecodeError:
+                    combined_data = {"images": [], "annotations": [], "categories": categories}
+        else:
+            combined_data = {"images": [], "annotations": [], "categories": categories}
 
         existing_image = next((img for img in combined_data["images"] if img["id"] == box_image_id), None)
         if not existing_image:
             combined_data["images"].append(image_data)
 
-        # Update existing annotation or append new one
-        combined_data["annotations"] = [a for a in combined_data["annotations"] if a["id"] != box_id]
-        combined_data["annotations"].append(main_annotation)
+        existing_annotation = next((a for a in combined_data["annotations"] if a["id"] == box_id), None)
+        if existing_annotation:
+            existing_annotation["attributes"]["text"] = combined_text  # Overwrite instead of append
+            existing_annotation["attributes"]["textlines"] = annotation["attributes"]["textlines"]
+        else:
+            combined_data["annotations"].append(annotation)
 
         try:
             with open(combined_json_path, 'w', encoding='utf-8') as json_file:
@@ -361,9 +368,12 @@ def estimate_text_to_fit(text, bbox_width_inches, bbox_height_inches, box_id, la
         if not existing_image:
             image_specific_data["images"].append(image_data)
 
-        # Update existing annotation or append new one
-        image_specific_data["annotations"] = [a for a in image_specific_data["annotations"] if a["id"] != box_id]
-        image_specific_data["annotations"].append(copy.deepcopy(main_annotation))
+        existing_annotation = next((a for a in image_specific_data["annotations"] if a["id"] == box_id), None)
+        if existing_annotation:
+            existing_annotation["attributes"]["text"] = combined_text  # Overwrite instead of append
+            existing_annotation["attributes"]["textlines"] = annotation["attributes"]["textlines"]
+        else:
+            image_specific_data["annotations"].append(copy.deepcopy(annotation))
 
         try:
             with open(image_json_path, 'w', encoding='utf-8') as json_file:
