@@ -6,10 +6,10 @@ import argparse
 base_dir = "/home/vivek/Desktop/Pager"
 
 scripts = [
-    # "shoonya_extract.py",
-    "coco_extract.py",
+    "shoonya_extract.py",
+    # "coco_extract.py",
     "inpaint.py",
-    # "overlaap_manage_shoonya.py",
+    "overlaap_manage_shoonya.py",
     "normal__fill_shoonya.py",
     "extract_text_bbox.py",
     "clear_textlines.py",

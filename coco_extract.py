@@ -4,11 +4,6 @@ import requests
 import random
 import argparse
 
-# Base directories
-json_base_folder = r'input_jsons'  # Root folder containing subfolders with JSON files
-output_base_folder = r'BBOX'  # Base folder for BBOX outputs (e.g., BBOX_magazines)
-images_base_folder = r'images_original'  # Base folder for downloaded images
-
 # List of labels to skip (case-insensitive)
 SKIP_LABELS = ["formula", "table"]
 
@@ -25,254 +20,221 @@ def download_image(image_url, output_path):
     except Exception as e:
         print(f"Error downloading {image_url}: {e}")
 
-def extract_annotations_and_image_url(record):
+def extract_annotations_and_image_url(coco_data, image_id):
+    """Extract image_url, dimensions, and annotations for a given image_id from COCO JSON."""
     annotations = []
     image_url = None
+    original_width = None
+    original_height = None
 
-    if "data" in record:
-        image_url = record["data"].get("image_url", "")
-        if "ocr_prediction_json" in record["data"]:
-            annotations.extend(record["data"]["ocr_prediction_json"])
+    # Find the image entry
+    for image in coco_data.get("images", []):
+        if image.get("id") == image_id:
+            image_url = image.get("image_url", "")
+            original_width = image.get("width")
+            original_height = image.get("height")
+            break
 
-    if "annotations" in record and isinstance(record["annotations"], list):
-        for annotation in record["annotations"]:
-            annotations.extend(annotation.get("result", []))
+    # Get annotations for this image
+    for annotation in coco_data.get("annotations", []):
+        if annotation.get("image_id") == image_id:
+            annotations.append(annotation)
 
-    return image_url, annotations
+    # Map category_id to label name
+    category_map = {cat["id"]: cat["name"] for cat in coco_data.get("categories", [])}
+    for ann in annotations:
+        ann["label"] = category_map.get(ann.get("category_id"), "unknown")
 
-def validate_record(record, json_file, image_id=None):
-    """Validate and parse a record, returning a dictionary or None if invalid."""
-    if isinstance(record, str):
-        try:
-            parsed_record = json.loads(record)
-            if not isinstance(parsed_record, dict):
-                with open("skipped_records.log", "a") as log:
-                    log.write(f"[{json_file}] Parsed record is not a dictionary: {record}\n")
-                return None
-            return parsed_record
-        except json.JSONDecodeError:
-            with open("skipped_records.log", "a") as log:
-                log.write(f"[{json_file}] Invalid JSON string: {record}\n")
-            return None
-    elif not isinstance(record, dict):
+    return image_url, original_width, original_height, annotations
+
+def validate_coco_data(coco_data, json_file):
+    """Validate COCO JSON data structure."""
+    if not isinstance(coco_data, dict):
         with open("skipped_records.log", "a") as log:
-            log.write(f"[{json_file}] Record is not a dictionary: {record}\n")
-        return None
-    return record
+            log.write(f"[{json_file}] Invalid JSON: Not a dictionary\n")
+        return False
+    if "images" not in coco_data or "annotations" not in coco_data or "categories" not in coco_data:
+        with open("skipped_records.log", "a") as log:
+            log.write(f"[{json_file}] Missing required COCO fields: images, annotations, or categories\n")
+        return False
+    return True
 
 def check_for_skip_labels(annotations):
     """Check if annotations contain any labels that should be skipped."""
-    for annotation in annotations:
-        try:
-            bbox_value = annotation.get("value", annotation)
-            if "labels" in bbox_value and bbox_value["labels"]:
-                for label in bbox_value["labels"]:
-                    if any(skip_label.lower() in label.lower() for skip_label in SKIP_LABELS):
-                        return True
-        except Exception:
-            continue
+    for ann in annotations:
+        label = ann.get("label", "").lower()
+        if any(skip_label.lower() == label for skip_label in SKIP_LABELS):
+            return True
     return False
 
-def collect_labels(records):
-    """Collect unique labels from all records."""
+def collect_labels(json_folder):
+    """Collect unique labels from all COCO JSON files."""
     unique_labels = set()
-    for item in records:
-        record = item["record"]
-        record = validate_record(record, item["json_file"])
-        if record is None:
-            continue
-        _, annotations = extract_annotations_and_image_url(record)
-        for annotation in annotations:
+    for file_name in os.listdir(json_folder):
+        if file_name.endswith('.json'):
+            json_file_path = os.path.join(json_folder, file_name)
             try:
-                bbox_value = annotation.get("value", annotation)
-                if "labels" in bbox_value and bbox_value["labels"]:
-                    for label in bbox_value["labels"]:
-                        if not any(skip_label.lower() in label.lower() for skip_label in SKIP_LABELS):
-                            unique_labels.add(label.lower())
-            except Exception:
-                continue
-    # Ensure 'unknown' is included for fallback
+                with open(json_file_path, 'r', encoding='utf-8') as file:
+                    data = json.load(file)
+                if not validate_coco_data(data, json_file_path):
+                    continue
+                for cat in data.get("categories", []):
+                    label = cat.get("name", "").lower()
+                    if not any(skip_label.lower() == label.lower() for skip_label in SKIP_LABELS):
+                        unique_labels.add(label.lower())
+            except Exception as e:
+                with open("skipped_records.log", "a") as log:
+                    log.write(f"[{json_file_path}] Error reading file: {e}\n")
     unique_labels.add("unknown")
     return sorted(unique_labels)
 
-def process_record(record, output_folder, images_folder, json_file, doc_count, total_limit, labels):
-    """Process a single record and return whether it was successfully processed."""
+def process_record(coco_data, image_id, output_folder, images_folder, json_file, doc_count, total_images, labels):
+    """Process a single image record from COCO JSON."""
     os.makedirs(output_folder, exist_ok=True)
     os.makedirs(images_folder, exist_ok=True)
 
-    # Validate and parse the record
-    record = validate_record(record, json_file)
-    if record is None:
-        return False
+    image_url, original_width, original_height, annotations = extract_annotations_and_image_url(coco_data, image_id)
 
-    try:
-        image_id = record["id"]
-    except (KeyError, TypeError) as e:
+    if not image_url:
         with open("skipped_records.log", "a") as log:
-            log.write(f"[{json_file}] Missing or invalid 'id' field: {e}\n")
+            log.write(f"[{json_file}] Image ID {image_id}: No image URL\n")
         return False
 
-    try:
-        image_url, annotations = extract_annotations_and_image_url(record)
+    if original_width is None or original_height is None:
+        with open("skipped_records.log", "a") as log:
+            log.write(f"[{json_file}] Image ID {image_id}: Missing dimensions\n")
+        return False
 
-        if not image_url:
-            with open("skipped_records.log", "a") as log:
-                log.write(f"[{json_file}] Image ID {image_id}: No image URL\n")
-            return False
+    if check_for_skip_labels(annotations):
+        with open("skipped_records.log", "a") as log:
+            log.write(f"[{json_file}] Image ID {image_id}: Skipped due to containing table/formula\n")
+        return False
 
-        # Check if annotations contain any labels to skip
-        if check_for_skip_labels(annotations):
-            with open("skipped_records.log", "a") as log:
-                log.write(f"[{json_file}] Image ID {image_id}: Skipped due to containing table/formula\n")
-            return False
+    image_name = os.path.basename(image_url)
+    image_output_path = os.path.join(images_folder, folder, image_name)
+    bbox_file_name = f"{os.path.splitext(image_name)[0]}_{image_id}.txt"
+    bbox_file_path = os.path.join(output_folder, bbox_file_name)
 
-        original_width = annotations[0].get("original_width", None) if annotations else None
-        original_height = annotations[0].get("original_height", None) if annotations else None
+    # Download image
+    download_image(image_url, image_output_path)
 
-        if original_width is None or original_height is None:
-            with open("skipped_records.log", "a") as log:
-                log.write(f"[{json_file}] Image ID {image_id}: Missing dimensions\n")
-            return False
+    unique_bboxes = []
+    valid_bboxes = 0
+    with open(bbox_file_path, 'w', encoding='utf-8') as f:
+        f.write(f"[{original_height}, {original_width}]\n")
+        for ann in annotations:
+            try:
+                label = ann["label"]
+                if label.lower() not in labels:
+                    continue
 
-        image_name = os.path.basename(image_url)
-        image_output_path = os.path.join(images_folder, image_name)
-        bbox_file_name = f"{os.path.splitext(image_name)[0]}_{image_id}.txt"
-        bbox_file_path = os.path.join(output_folder, bbox_file_name)
+                x1, y1, width, height = ann["bbox"]
+                bbox_id = ann["id"]
+                image_id = ann["image_id"]
 
-        # Download image
-        download_image(image_url, image_output_path)
+                # Validate bounding box
+                if any(v < 0 for v in [x1, y1, width, height]):
+                    continue
 
-        unique_bboxes = set()
-        valid_bboxes = 0
-        with open(bbox_file_path, 'w', encoding='utf-8') as bbox_file:
-            bbox_file.write(f"[{original_height}, {original_width}]\n")
-            for annotation in annotations:
-                try:
-                    bbox_value = annotation.get("value", annotation)
-                    x1 = bbox_value["x"]
-                    y1 = bbox_value["y"]
-                    width = bbox_value["width"]
-                    height = bbox_value["height"]
-                    label = bbox_value["labels"][0] if bbox_value.get("labels") else "unknown"
-                    bbox_id = annotation.get("id", "unknown")
-
-                    # Skip annotations with missing or unknown id
-                    if bbox_id == "unknown" or not bbox_id:
-                        continue
-
-                    # Only process labels that are in the collected labels list
-                    if label.lower() not in labels:
-                        continue
-
-                    norm_x1 = int((x1 / 100.0) * original_width)
-                    norm_y1 = int((y1 / 100.0) * original_height)
-                    norm_width = int((width / 100.0) * original_width)
-                    norm_height = int((height / 100.0) * original_height)
-
-                    bbox_tuple = (label, norm_x1, norm_y1, norm_width, norm_height, bbox_id, image_id)
-                    if bbox_tuple not in unique_bboxes:
-                        unique_bboxes.add(bbox_tuple)
-                        bbox_file.write(f"[{label}, [{norm_x1:.6f}, {norm_y1:.6f}, {norm_width:.6f}, {norm_height:.6f}], {bbox_id}, {image_id}]\n")
-                        valid_bboxes += 1
+                bbox_tuple = (label, x1, y1, width, height, bbox_id, image_id)
+                if bbox_tuple not in unique_bboxes:
+                    unique_bboxes.add(bbox_tuple)
+                    f.write(f"[{label}, [{x1:.2f}, {y1:.2f}, {width:.2f}, {height:.2f}], {bbox_id}, {image_id}]\n")
+                    valid_bboxes += 1
                 except Exception as e:
-                    print(f"Error processing bounding box for image ID {image_id}: {e}")
+                    # print(f"Error processing bounding box for image {ID {image_id}: {bbox_id}: {e}")
+                    continue
 
         if valid_bboxes == 0:
             os.remove(bbox_file_path)
             if os.path.exists(image_output_path):
                 os.remove(image_output_path)
             with open("skipped_records.log", "a") as log:
-                log.write(f"[{json_file}] Image ID {image_id}: No valid bounding boxes with IDs\n")
+                log.write(f"[{json_file}] Image ID {image_id}: No valid annotations\n")
             return False
 
-        print(f"Processed image ID {image_id} ({doc_count + 1}/{total_limit})")
+        print(f"Processed image ID {image_id} ({doc_count + 1}/{total_images})")
         return True
-    except Exception as e:
-        with open("skipped_records.log", "a") as log:
-            log.write(f"[{json_file}] Image ID {image_id}: Error - {e}\n")
-        if 'bbox_file_path' in locals() and os.path.exists(bbox_file_path):
-            os.remove(bbox_file_path)
-        if 'image_output_path' in locals() and os.path.exists(image_output_path):
-            os.remove(image_output_path)
-        return False
+    return None
 
-def collect_records(json_base_folder, doc_type):
-    """Collect all records from JSON files in the specified doc_type subfolder."""
-    all_records = []
-    subfolder_path = os.path.join(json_base_folder, doc_type)
-    
-    if not os.path.isdir(subfolder_path):
-        return all_records
+def process_json_folder(json_folder, doc_type, num_images):
+    """Process up to num_images from COCO JSON files."""
+    if num_images < 0:
+        print("Error: num_images must be non-negative")
+        return
 
-    for file_name in os.listdir(subfolder_path):
+    output_folder = os.path.join(output_base_folder, doc_type)
+    images_folder = os.path.join(images_base_folder, doc_type)
+
+    with open("skipped_records.log", "a") as log:
+        log.write(f"[{doc_type}] Starting processing, num_images: {num_images}\n")
+
+    labels = collect_labels(json_folder)
+    print(f"Extracted {len(labels)} unique labels: {labels}")
+
+    image_records = []
+    for file_name in os.listdir(json_folder):
         if file_name.endswith('.json'):
-            json_file_path = os.path.join(subfolder_path, file_name)
+            json_file_path = os.path.join(json_folder, file_name)
             try:
                 with open(json_file_path, 'r', encoding='utf-8') as file:
                     data = json.load(file)
-                for record in data:
-                    all_records.append({
-                        "record": record,
-                        "json_file": json_file_path,
-                        "subfolder": doc_type
+                if not validate_coco_data(data, json_file_path):
+                    continue
+                for image in data.get("images", []):
+                    image_records.append({
+                        "coco_data": data,
+                        "image_id": image["id"],
+                        "json_file": json_file_path
                     })
             except Exception as e:
                 with open("skipped_records.log", "a") as log:
                     log.write(f"[{json_file_path}] Error reading file: {e}\n")
-    
-    return all_records
 
-def process_json_folder(json_base_folder, doc_type, num_docs):
-    """Process up to num_docs images from JSON files in the specified doc_type subfolder."""
-    if num_docs < 1:
+    if not image_records:
+        print(f"No valid image records found in {json_folder}")
         return
 
-    with open("skipped_records.log", "a") as log:
-        log.write(f"Starting processing for doc_type: {doc_type}, num_docs: {num_docs}\n")
+    random.shuffle(image_records)
 
-    all_records = collect_records(json_base_folder, doc_type)
-    if not all_records:
-        return
-
-    # Collect dynamic labels from all records
-    labels = collect_labels(all_records)
-    print(f"Extracted {len(labels)} unique labels: {labels}")
-
-    random.shuffle(all_records)
-
-    doc_count = 0
-    for item in all_records:
-        if doc_count >= num_docs:
+    image_count = 0
+    for item in image_records:
+        if image_count >= num_images:
             break
-        
-        record = item["record"]
-        subfolder_name = item["subfolder"]
-        json_file = item["json_file"]
-        
-        output_folder = os.path.join(output_base_folder)
-        images_folder = os.path.join(images_base_folder)
-        
-        success = process_record(record, output_folder, images_folder, json_file, doc_count, num_docs, labels)
+        success = process_record(
+            item["coco_data"],
+            item["image_id"],
+            output_folder,
+            images_folder,
+            item["json_file"],
+            image_count,
+            num_images,
+            labels
+        )
         if success:
-            doc_count += 1
+            image_count += 1
 
-    if doc_count < num_docs:
-        print(f"Warning: Only {doc_count}/{num_docs} valid records were processed. Check skipped_records.log for details.")
+    if image_count < num_images:
+        print(f"Warning: Only {image_count}/{num_images} images processed. Check skipped_records.log")
 
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser(description="Process JSON files for a specific document type with a total document limit")
+    parser = argparse.ArgumentParser(description="Process COCO JSON files for a document type")
+    parser.add_argument(
+        "--json_folder",
+        required=True,
+        help="Path to folder containing COCO JSON files"
+    )
     parser.add_argument(
         "--doc_type",
         required=True,
-        help="Document type (subfolder name, e.g., magazines, newspapers)"
+        help="Document type (e.g., magazines, newspapers)"
     )
     parser.add_argument(
-        "--num_docs",
+        "--num_images",
         type=int,
         required=True,
-        help="Total number of documents to process"
+        help="Number of images to process"
     )
     
     args = parser.parse_args()
-    
-    process_json_folder(json_base_folder, args.doc_type, args.num_docs)
+    process_json_folder(args.json_folder, args.doc_type, args.num_images)

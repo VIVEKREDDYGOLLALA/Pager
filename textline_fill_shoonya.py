@@ -50,41 +50,41 @@ FONT_MAPPING = {
     'sanskrit': 'NotoSerifDevanagari', 'santali': 'NotoSerif', 'sindhi': 'NotoSerifDevanagari', 'tamil': 'NotoSerifTamil',
     'telugu': 'NotoSerifTelugu', 'urdu': 'Amiri'
 }
-# Track processed box IDs for paragraph indentation
-processed_box_ids = set()
 
-def estimate_text_to_fit(text, bbox_width_inches, bbox_height_inches, box_id, language, x1, y1, font_size, bboxes, dpi, font_path, image_path):
+# Define global variables
+processed_box_ids = set()
+def estimate_text_to_fit(text, bbox_width_inches, bbox_height_inches, box_id, language, x1, y1, font_size, bboxes, dpi, font_path, image_name, image_height, image_width):
     """
-    Estimates text to fit in a bounding box and generates COCO JSON annotations.
-    Handles multiple calls for the same box_id by appending new text lines.
+    Estimates text to fit in a textline box and generates COCO JSON annotations.
+    Each box is a textline box. The main bounding box uses x1, y1 from the first textline,
+    width from the textline, and height as textline height * number of textlines.
+    Textline IDs are suffixed with _1, _2, etc. based on the line number.
+    Uses a font size one level smaller than the specified font_size, based on font_size_mapping.
     
     Args:
         text (str): The input text to fit.
-        bbox_width_inches (float): Width of the bounding box in inches.
-        bbox_height_inches (float): Height of the bounding box in inches.
-        box_id (str): Unique ID of the bounding box.
+        bbox_width_inches (float): Width of the textline box in inches.
+        bbox_height_inches (float): Height of one textline box in inches.
+        box_id (str): Unique ID of the textline box.
         language (str): Language of the text (e.g., 'urdu', 'hindi').
-        x1 (float): X-coordinate of the top-left corner of the bounding box.
-        y1 (float): Y-coordinate of the top-left corner of the bounding box.
-        font_size (str): Font size command (e.g., 'small', 'medium', 'large').
-        bboxes (list): List of all bounding boxes.
+        x1 (float): X-coordinate of the top-left corner of the textline box.
+        y1 (float): Y-coordinate of the top-left corner of the textline box.
+        font_size (str): Font size command (e.g., '\\small', '\\medium', '\\large').
+        bboxes (list): List of all textline boxes.
         dpi (float): Dots per inch for conversion between inches and pixels.
         font_path (str): Path to the font file.
-        image_path (str): Path to the image file.
+        image_name (str): Name of the image file.
+        image_height (int): Height of the image in pixels.
+        image_width (int): Width of the image in pixels.
     
     Returns:
-        str: The fitted text for the bounding box.
+        str: The fitted text for the textline box with LaTeX linebreak.
     """
-    # Extract image name from image_path
-    image_name = os.path.splitext(os.path.basename(image_path))[0]
-    
     output_folder_path = 'output_jsons'
     os.makedirs(output_folder_path, exist_ok=True)
     
-    # Define a path to track the current position in the text for each language
+    # Track current word position for the language
     text_position_file = os.path.join(output_folder_path, f"{language}_position.json")
-    
-    # Load the current word position for this language
     if os.path.exists(text_position_file):
         try:
             with open(text_position_file, 'r', encoding='utf-8') as pos_file:
@@ -95,40 +95,51 @@ def estimate_text_to_fit(text, bbox_width_inches, bbox_height_inches, box_id, la
     else:
         current_position = 0
 
-    # When starting a new box, back up one position to ensure continuity
+    # Back up one position for continuity
     if current_position > 0:
         current_position -= 1
 
-    # Load the font for the given language
-    point_size = font_size_mapping.get(font_size, 12)
+    # Get the ordered list of font sizes from font_size_mapping (already in descending order)
+    font_size_order = list(font_size_mapping.keys())
+    # print(font_size_order)
+    # Determine the font size one level smaller
+    if font_size in font_size_order:
+        current_idx = font_size_order.index(font_size)
+        # Use the next size (smaller) if available; otherwise, default to the smallest
+        smaller_idx = current_idx  # Don't go beyond the smallest
+        smaller_font_size = font_size_order[smaller_idx]
+    else:
+        smaller_font_size = '\\normalsize'  # Fallback to a reasonable default if font_size is invalid
+
+    # Load font with the smaller font size
+    point_size = font_size_mapping.get(smaller_font_size, 10)  # Default to 10 if not found
     try:
         font = ImageFont.truetype(font_path, int(point_size))
     except Exception as e:
         print(f"Error loading font {font_path} for {language}: {e}")
         return ''
 
+    # Create a temporary image for text measurement
     img = Image.new('RGB', (int(bbox_width_inches * dpi), int(bbox_height_inches * dpi)), (255, 255, 255))
     draw = ImageDraw.Draw(img)
     words = text.split()
     
-    # If no words left, reset to beginning
+    # Reset position if no words left
     total_words = len(words)
     if current_position >= total_words:
         current_position = 0
     
-    # Extract the portion of words starting from current position
     available_words = words[current_position:]
-
     truncated_text_lines = []
     truncated_text_with_linebreaks = []
     current_line = ''
     current_line_width = 0
     words_used = 0
 
-    line_height = point_size * 1.5
-    max_lines = 1  # Process one line per call, as multiple calls handle multiple lines
+    line_height = bbox_height_inches * dpi * 1.2  # Single textline height
+    max_lines = 1  # One line per call
 
-    # Process available words for one line
+    # Fit text into one textline
     for i, word in enumerate(available_words):
         word_bbox = draw.textbbox((0, 0), word, font=font)
         word_width = word_bbox[2] - word_bbox[0]
@@ -150,7 +161,7 @@ def estimate_text_to_fit(text, bbox_width_inches, bbox_height_inches, box_id, la
             current_line = word
             current_line_width = word_width
             words_used += 1
-            break  # Stop after one line
+            break
 
     if current_line and len(truncated_text_lines) < max_lines:
         truncated_text_lines.append(current_line)
@@ -190,21 +201,19 @@ def estimate_text_to_fit(text, bbox_width_inches, bbox_height_inches, box_id, la
             truncated_text_lines.append(current_line)
             truncated_text_with_linebreaks.append(current_line + r'\linebreak')
 
-    # Update the current position for next call
+    # Update word position
     new_position = (current_position + words_used) % total_words if total_words > 0 else 0
-    
-    # Save the updated position
     try:
         with open(text_position_file, 'w', encoding='utf-8') as pos_file:
             json.dump({'current_position': new_position}, pos_file)
     except Exception as e:
         print(f"Error saving position file for {language}: {e}")
 
-    # JSON writing logic to append new textlines
+    # JSON writing logic
     combined_json_path = os.path.join(output_folder_path, f"{language}.json")
     image_json_path = os.path.join(output_folder_path, f"{language}_{image_name}.json")
     
-    # Load or initialize line number tracking for textlines
+    # Track textline count
     line_number_file = os.path.join(output_folder_path, f"{language}_line_numbers.json")
     if os.path.exists(line_number_file):
         try:
@@ -215,7 +224,7 @@ def estimate_text_to_fit(text, bbox_width_inches, bbox_height_inches, box_id, la
     else:
         box_id_line_number_map = {}
 
-    # Load combined JSON to check existing textlines
+    # Load combined JSON
     combined_data = {}
     if os.path.exists(combined_json_path):
         with open(combined_json_path, 'r', encoding='utf-8') as json_file:
@@ -226,128 +235,128 @@ def estimate_text_to_fit(text, bbox_width_inches, bbox_height_inches, box_id, la
     else:
         combined_data = {"images": [], "annotations": [], "categories": []}
 
-    # Find existing annotation to determine the next line number
-    existing_annotation = next((a for a in combined_data["annotations"] if a["id"] == box_id), None)
-    if existing_annotation and "textlines" in existing_annotation:
-        existing_textlines = existing_annotation["textlines"]
-        # Extract the highest line number from existing textline IDs
-        line_numbers = [int(tl["id"].split('_')[-1]) for tl in existing_textlines if tl["id"].startswith(f"{box_id}_")]
-        current_line_number = max(line_numbers, default=0) + 1
+    # Store first textline coordinates
+    first_textline_coords_file = os.path.join(output_folder_path, f"{language}_first_coords.json")
+    if os.path.exists(first_textline_coords_file):
+        try:
+            with open(first_textline_coords_file, 'r', encoding='utf-8') as coord_file:
+                first_coords_map = json.load(coord_file)
+        except (json.JSONDecodeError, FileNotFoundError):
+            first_coords_map = {}
     else:
-        current_line_number = 1  # Start from 1 if no existing textlines
+        first_coords_map = {}
 
-    # Generate COCO JSON annotations
-    unique_labels = set(['textline'])  # Add 'textline' explicitly
-    for bbox in bboxes:
-        label = bbox[4]
-        unique_labels.add(label.lower())
-    unique_labels.add("unknown")
-    categories = [{"id": idx + 1, "name": label, "supercategory": "text"} for idx, label in enumerate(sorted(unique_labels))]
-
-    def get_category_id(label, categories):
-        for category in categories:
-            if label.lower() == category["name"].lower():
-                return category["id"]
-        for category in categories:
-            if category["name"].lower() == "unknown":
-                return category["id"]
-        return categories[0]["id"] if categories else 1
-
+    # Get current box
     current_box = next((bbox for bbox in bboxes if bbox[5] == box_id), None)
     if current_box and truncated_text_lines:
         box_image_id = current_box[6]
         label = current_box[4]
 
-        # Create or update main box annotation
+        # Determine textline number
+        current_line_number = box_id_line_number_map.get(box_id, 0) + 1
+        number_of_textlines = current_line_number  # Each call adds one textline
+
+        # Store first textline coordinates
+        if current_line_number == 1:
+            first_coords_map[box_id] = {"x1": x1, "y1": y1}
+            try:
+                with open(first_textline_coords_file, 'w', encoding='utf-8') as coord_file:
+                    json.dump(first_coords_map, coord_file)
+            except Exception as e:
+                print(f"Error saving first coords file for {language}: {e}")
+
+        # Get first textline coordinates
+        first_x1 = first_coords_map.get(box_id, {"x1": x1})["x1"]
+        first_y1 = first_coords_map.get(box_id, {"y1": y1})["y1"]
+
+        # Define categories
+        unique_labels = set(['textline', 'unknown'])
+        for bbox in bboxes:
+            unique_labels.add(bbox[4].lower())
+        categories = [{"id": idx + 1, "name": label, "supercategory": "text"} for idx, label in enumerate(sorted(unique_labels))]
+
+        def get_category_id(label, categories):
+            for category in categories:
+                if label.lower() == category["name"].lower():
+                    return category["id"]
+            return next((c["id"] for c in categories if c["name"].lower() == "unknown"), 1)
+
+        # Create or update main bounding box
+        existing_annotation = next((a for a in combined_data["annotations"] if a["id"] == f"bbox_{box_id}"), None)
         if existing_annotation:
             main_annotation = existing_annotation
-            # Update combined text with new line
             existing_text = main_annotation["attributes"].get("text", "")
             combined_text = existing_text + ("\n" + "\n".join(truncated_text_lines) if existing_text else "\n".join(truncated_text_lines))
             main_annotation["attributes"]["text"] = combined_text
+            main_annotation["bbox"] = [first_x1, first_y1, bbox_width_inches * dpi, bbox_height_inches * dpi * number_of_textlines]
+            main_annotation["area"] = (bbox_width_inches * dpi) * (bbox_height_inches * dpi * number_of_textlines)
         else:
             main_annotation = {
-                "id": box_id,
+                "id": f"bbox_{box_id}",
                 "image_id": box_image_id,
                 "category_id": get_category_id(label, categories),
-                "bbox": [x1, y1, bbox_width_inches * dpi, bbox_height_inches * dpi],
-                "area": (bbox_width_inches * dpi) * (bbox_height_inches * dpi),
+                "bbox": [first_x1, first_y1, bbox_width_inches * dpi, bbox_height_inches * dpi * number_of_textlines],
+                "area": (bbox_width_inches * dpi) * (bbox_height_inches * dpi * number_of_textlines),
                 "iscrowd": 0,
                 "segmentation": [],
-                "attributes": {
-                    "text": "\n".join(truncated_text_lines)
-                },
+                "attributes": {"text": "\n".join(truncated_text_lines)},
                 "textlines": []
             }
 
-        # Add paragraph indentation for the first line on first call
+        # Add paragraph indentation for first line
         if current_line_number == 1 and box_id not in processed_box_ids and label.startswith("paragraph") and truncated_text_with_linebreaks:
             truncated_text_with_linebreaks[0] = r'\hspace{2em}' + truncated_text_with_linebreaks[0]
-            words = truncated_text_with_linebreaks[0].split()
-            if len(words) > 2:
-                truncated_text_with_linebreaks[0] = " ".join(words[:-2] + words[-1:])
             processed_box_ids.add(box_id)
 
-        # Create new textline annotation for this call
-        textline_annotations = []
-        for idx, line in enumerate(truncated_text_lines):
-            textline_id = f"{box_id}_{current_line_number + idx}"
-            textline_annotation = {
-                "id": textline_id,
-                "image_id": box_image_id,
-                "category_id": get_category_id("textline", categories),
-                "bbox": [x1, y1 + (current_line_number + idx - 1) * line_height, bbox_width_inches * dpi, line_height],
-                "area": (bbox_width_inches * dpi) * line_height,
-                "iscrowd": 0,
-                "segmentation": [],
-                "attributes": {
-                    "text": line
-                }
-            }
-            textline_annotations.append(textline_annotation)
+        # Create textline annotation
+        textline_annotation = {
+            "id": f"{box_id}_{current_line_number}",  # Unique ID: box_id_1, box_id_2, etc.
+            "image_id": box_image_id,
+            "category_id": get_category_id("textline", categories),
+            "bbox": [x1, y1, bbox_width_inches * dpi, bbox_height_inches * dpi],
+            "area": (bbox_width_inches * dpi) * (bbox_height_inches * dpi),
+            "iscrowd": 0,
+            "segmentation": [],
+            "attributes": {"text": truncated_text_lines[0]}
+        }
 
-        # Append new textlines to the main annotation
-        main_annotation["textlines"].extend(textline_annotations)
+        # Append textline to main annotation
+        main_annotation["textlines"].append(textline_annotation)
 
         # Update line number tracking
-        box_id_line_number_map[box_id] = current_line_number + len(truncated_text_lines) - 1
+        box_id_line_number_map[box_id] = number_of_textlines
         try:
             with open(line_number_file, 'w', encoding='utf-8') as ln_file:
                 json.dump(box_id_line_number_map, ln_file)
         except Exception as e:
             print(f"Error saving line number file for {language}: {e}")
 
-        # Create COCO image metadata
+        # Create image metadata
         image_data = {
             "id": box_image_id,
             "image_name": image_name,
-            "width": int(bbox_width_inches * dpi),
-            "height": int(bbox_height_inches * dpi),
+            "width": int(image_width),
+            "height": int(image_height),
             "license": 1,
             "flickr_url": "",
             "image_url": "",
             "date_captured": ""
         }
 
-        # Update combined COCO JSON
+        # Update combined JSON
         if not combined_data.get("categories"):
             combined_data["categories"] = categories
-
-        existing_image = next((img for img in combined_data["images"] if img["id"] == box_image_id), None)
-        if not existing_image:
+        if not any(img["id"] == box_image_id for img in combined_data["images"]):
             combined_data["images"].append(image_data)
-
-        # Update existing annotation or append new one
-        combined_data["annotations"] = [a for a in combined_data["annotations"] if a["id"] != box_id]
+        combined_data["annotations"] = [a for a in combined_data["annotations"] if a["id"] != f"bbox_{box_id}"]
         combined_data["annotations"].append(main_annotation)
-
         try:
             with open(combined_json_path, 'w', encoding='utf-8') as json_file:
                 json.dump(combined_data, json_file, indent=4, ensure_ascii=False)
         except Exception as e:
-            print(f"Error creating combined COCO JSON file for {language}: {e}")
+            print(f"Error creating combined JSON for {language}: {e}")
 
-        # Update image-specific COCO JSON
+        # Update image-specific JSON
         if os.path.exists(image_json_path):
             with open(image_json_path, 'r', encoding='utf-8') as json_file:
                 try:
@@ -357,19 +366,15 @@ def estimate_text_to_fit(text, bbox_width_inches, bbox_height_inches, box_id, la
         else:
             image_specific_data = {"images": [], "annotations": [], "categories": categories}
 
-        existing_image = next((img for img in image_specific_data["images"] if img["id"] == box_image_id), None)
-        if not existing_image:
+        if not any(img["id"] == box_image_id for img in image_specific_data["images"]):
             image_specific_data["images"].append(image_data)
-
-        # Update existing annotation or append new one
-        image_specific_data["annotations"] = [a for a in image_specific_data["annotations"] if a["id"] != box_id]
+        image_specific_data["annotations"] = [a for a in image_specific_data["annotations"] if a["id"] != f"bbox_{box_id}"]
         image_specific_data["annotations"].append(copy.deepcopy(main_annotation))
-
         try:
             with open(image_json_path, 'w', encoding='utf-8') as json_file:
                 json.dump(image_specific_data, json_file, indent=4, ensure_ascii=False)
         except Exception as e:
-            print(f"Error creating image-specific COCO JSON file for {language}_{image_name}: {e}")
+            print(f"Error creating image-specific JSON for {language}_{image_name}: {e}")
 
     return '\n'.join(truncated_text_with_linebreaks[:max_lines])
 
@@ -728,7 +733,10 @@ def generate_latex(image_path, image_dimensions, bboxes, texts, label_mapping, d
         if isinstance(label_config, str):
             label_config = {"font_size": "\\Huge", "style": ""}
 
-        font_size_command = label_config.get("font_size", "\\Huge")
+        # Updated to select one index higher (smaller font size)
+        font_size_keys = list(font_size_mapping.keys())
+        index = font_size_keys.index(label_config.get("font_size", "\\Huge")) + 1
+        font_size_command = font_size_keys[index] if index < len(font_size_keys) else font_size_keys[-1]
         style_command = label_config.get("style", "")
 
         headline_labels = [
@@ -755,19 +763,22 @@ def generate_latex(image_path, image_dimensions, bboxes, texts, label_mapping, d
 
                 if dateline_lines:
                     random_line = random.choice(dateline_lines)
+                    # Updated to select one index higher for dateline (smaller font size)
                     font_size_command = font_size_mapping.get('dateline', '\\LARGE')
+                    index = font_size_keys.index(font_size_command) + 1
+                    font_size_command = font_size_keys[index] if index < len(font_size_keys) else font_size_keys[-1]
                     style_command = ""
 
                     hindi_text_to_fit = estimate_text_to_fit(
                         random_line, bbox_width_inches, bbox_height_inches, box_id,
-                        language, x1, y1, font_size_command, bboxes, dpi, paragraph_font_path, image_name
+                        language, x1, y1, font_size_command, bboxes, dpi, paragraph_font_path, image_name,image_height, image_width
                     )
 
                     if not hindi_text_to_fit:
                         for font_size in font_sizes[font_sizes.index(font_size_command) + 1:]:
                             hindi_text_to_fit = estimate_text_to_fit(
                                 random_line, bbox_width_inches, bbox_height_inches, box_id,
-                                language, x1, y1, font_size, bboxes, dpi, paragraph_font_path, image_name
+                                language, x1, y1, font_size, bboxes, dpi, paragraph_font_path, image_name,image_height, image_width
                             )
                             if hindi_text_to_fit:
                                 font_size_command = font_size
@@ -799,13 +810,14 @@ def generate_latex(image_path, image_dimensions, bboxes, texts, label_mapping, d
                     label_config = {"font_size": "\\Huge", "style": ""}
 
                 font_size_keys = list(font_size_mapping.keys())
-                index = font_size_keys.index(label_config.get("font_size", "\\Large"))
+                # Updated to select one index higher (smaller font size)
+                index = font_size_keys.index(label_config.get("font_size", "\\Large")) + 4
                 font_size_command = font_size_keys[index] if index < len(font_size_keys) else font_size_keys[-1]
                 style_command = label_config.get("style", "")
 
                 estimated_text = estimate_text_to_fit(
                     ' '.join(texts), bbox_width_inches, bbox_height_inches, box_id,
-                    language, x1, y1, font_size_command, bboxes, dpi, paragraph_font_path, image_name
+                    language, x1, y1, font_size_command, bboxes, dpi, paragraph_font_path, image_name,image_height, image_width
                 )
                 estimated_lines = estimated_text.split('\\linebreak')
 
@@ -854,20 +866,21 @@ def generate_latex(image_path, image_dimensions, bboxes, texts, label_mapping, d
                     label_config = {"font_size": "\\Large", "style": ""}
 
                 font_size_keys = list(font_size_mapping.keys())
-                index = font_size_keys.index(label_config.get("font_size", "\\Large"))
+                # Updated to select one index higher (smaller font size)
+                index = font_size_keys.index(label_config.get("font_size", "\\Large")) + 4
                 font_size_command = font_size_keys[index] if index < len(font_size_keys) else font_size_keys[-1]
                 style_command = label_config.get("style", "")
 
                 hindi_text_to_fit = estimate_text_to_fit(
                     ' '.join(texts), bbox_width_inches, bbox_height_inches, box_id,
-                    language, x1, y1, font_size_command, bboxes, dpi, paragraph_font_path, image_name
+                    language, x1, y1, font_size_command, bboxes, dpi, paragraph_font_path, image_name,image_height, image_width
                 )
 
                 if not hindi_text_to_fit:
                     for font_size in font_sizes[font_sizes.index(font_size_command) + 1:]:
                         hindi_text_to_fit = estimate_text_to_fit(
                             ' '.join(texts), bbox_width_inches, bbox_height_inches, box_id,
-                            language, x1, y1, font_size, bboxes, dpi, paragraph_font_path, image_name
+                            language, x1, y1, font_size, bboxes, dpi, paragraph_font_path, image_name,image_height, image_width
                         )
                         if hindi_text_to_fit:
                             font_size_command = font_size
@@ -896,30 +909,33 @@ def generate_latex(image_path, image_dimensions, bboxes, texts, label_mapping, d
                     label_config = {"font_size": "", "style": ""}
 
                 font_size_keys = list(font_size_mapping.keys())
-                index = font_size_keys.index(label_config.get("font_size", "\\Large"))
+                # Updated to select one index higher (smaller font size)
+                index = font_size_keys.index(label_config.get("font_size", "\\Large")) + 4
                 font_size_command = font_size_keys[index] if index < len(font_size_keys) else font_size_keys[-1]
                 style_command = label_config.get("style", "")
 
                 hindi_text_to_fit = estimate_text_to_fit(
                     ' '.join(texts), bbox_width_inches, bbox_height_inches, box_id,
-                    language, x1, y1, font_size_command, bboxes, dpi, header_font_path, image_name
+                    language, x1, y1, font_size_command, bboxes, dpi, header_font_path, image_name,image_height, image_width
                 )
 
                 if not hindi_text_to_fit:
                     for font_size in font_sizes[font_sizes.index(font_size_command) + 1:]:
                         hindi_text_to_fit = estimate_text_to_fit(
                             ' '.join(texts), bbox_width_inches, bbox_height_inches, box_id,
-                            language, x1, y1, font_size, bboxes, dpi, header_font_path, image_name
+                            language, x1, y1, font_size, bboxes, dpi, header_font_path, image_name,image_height, image_width
                         )
                         if hindi_text_to_fit:
                             font_size_command = font_size
                             break
 
                 if not hindi_text_to_fit:
-                    font_size_command = "\\large"
+                    # Updated to select one index higher for fallback (smaller font size)
+                    index = font_size_keys.index("\\large") + 1
+                    font_size_command = font_size_keys[index] if index < len(font_size_keys) else font_size_keys[-1]
                     hindi_text_to_fit = estimate_text_to_fit(
                         ' '.join(texts), bbox_width_inches, bbox_height_inches, box_id,
-                        language, x1, y1, font_size_command, bboxes, dpi, header_font_path, image_name
+                        language, x1, y1, font_size_command, bboxes, dpi, header_font_path, image_name,image_height, image_width
                     )
                     if not hindi_text_to_fit:
                         hindi_text_to_fit = " "

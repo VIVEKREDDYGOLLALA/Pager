@@ -1,10 +1,12 @@
-
 import os
 import cv2
 import numpy as np
 import re
 from tqdm import tqdm
 import glob
+from multiprocessing import Pool
+from functools import partial
+import argparse
 
 def read_bbox_file(bbox_path):
     bbox_data = []
@@ -121,7 +123,19 @@ def inpaint_from_bboxes(image_path, bbox_data, output_dir, shrink_pixels=2):
         print(f"Error inpainting {image_filename}: {e}")
         return False
 
-def process_all_images(images_dir, bboxes_dir, output_dir, shrink_pixels=2):
+def process_image(image_path, bboxes_dir, output_dir, shrink_pixels=2):
+    image_basename = os.path.splitext(os.path.basename(image_path))[0]
+    bbox_path = find_matching_bbox_file(image_basename, bboxes_dir)
+    if bbox_path is None:
+        print(f"Skipping {image_basename}: No matching bbox file found")
+        return False
+    bbox_data = read_bbox_file(bbox_path)
+    if not bbox_data:
+        print(f"Skipping {image_basename}: No valid bbox data")
+        return False
+    return inpaint_from_bboxes(image_path, bbox_data, output_dir, shrink_pixels)
+
+def process_all_images(images_dir, bboxes_dir, output_dir, shrink_pixels=2, num_cpus=None):
     os.makedirs(output_dir, exist_ok=True)
     os.makedirs(os.path.join(output_dir, "masks"), exist_ok=True)
     image_extensions = ['.png', '.jpg', '.jpeg', '.tif', '.tiff', '.bmp']
@@ -131,69 +145,38 @@ def process_all_images(images_dir, bboxes_dir, output_dir, shrink_pixels=2):
         all_image_files.extend(glob.glob(os.path.join(images_dir, f"*{ext.upper()}")))
     all_image_files = list(set(all_image_files))
     print(f"Found {len(all_image_files)} images to process")
+    
+    # Use multiprocessing Pool for parallel processing
     successful = 0
     failed = 0
-    for image_path in tqdm(all_image_files, desc="Processing images"):
-        image_basename = os.path.splitext(os.path.basename(image_path))[0]
-        bbox_path = find_matching_bbox_file(image_basename, bboxes_dir)
-        if bbox_path is None:
-            print(f"Skipping {image_basename}: No matching bbox file found")
-            failed += 1
-            continue
-        bbox_data = read_bbox_file(bbox_path)
-        if not bbox_data:
-            print(f"Skipping {image_basename}: No valid bbox data")
-            failed += 1
-            continue
-        if inpaint_from_bboxes(image_path, bbox_data, output_dir, shrink_pixels):
-            successful += 1
-        else:
-            failed += 1
+    with Pool(processes=num_cpus) as pool:
+        # Partial function to pass additional arguments to process_image
+        process_func = partial(process_image, bboxes_dir=bboxes_dir, output_dir=output_dir, shrink_pixels=shrink_pixels)
+        # Map the processing function to all image files with tqdm progress bar
+        results = list(tqdm(pool.imap(process_func, all_image_files), total=len(all_image_files), desc="Processing images"))
+    
+    # Count successful and failed processes
+    successful = sum(1 for result in results if result)
+    failed = len(all_image_files) - successful
     print(f"\nInpainting completed: {successful} images processed successfully, {failed} failed")
 
-def refine_inpainting(output_dir, refinement_method="telea", radius=5):
-    print("\nStarting refinement pass...")
-    inpainted_files = (glob.glob(os.path.join(output_dir, "*.[pPjJ][nNpP][gG]")) +
-                       glob.glob(os.path.join(output_dir, "*.[tT][iI][fF]")) +
-                       glob.glob(os.path.join(output_dir, "*.[tT][iI][fF][fF]")) +
-                       glob.glob(os.path.join(output_dir, "*.[bB][mM][pP]")) +
-                       glob.glob(os.path.join(output_dir, "*.[jJ][pP][eE][gG]")))
-    if not inpainted_files:
-        print("No inpainted files found for refinement")
-        return
-    refined_dir = os.path.join(output_dir, "refined")
-    os.makedirs(refined_dir, exist_ok=True)
-    successful = 0
-    failed = 0
-    for inpainted_path in tqdm(inpainted_files, desc="Refining inpainting"):
-        try:
-            img = cv2.imread(inpainted_path)
-            if img is None:
-                print(f"Error: Could not read image {inpainted_path}")
-                failed += 1
-                continue
-            base_filename = os.path.basename(inpainted_path)
-            mask_path = os.path.join(output_dir, "masks", f"{os.path.splitext(base_filename)[0]}_mask.png")
-            if not os.path.exists(mask_path):
-                print(f"Error: Mask file not found: {mask_path}")
-                failed += 1
-                continue
-            mask = cv2.imread(mask_path, cv2.IMREAD_GRAYSCALE)
-            inpaint_method = cv2.INPAINT_NS if refinement_method.lower() == "ns" else cv2.INPAINT_TELEA
-            refined = cv2.inpaint(img, mask, radius, inpaint_method)
-            refined_path = os.path.join(refined_dir, f"{os.path.splitext(base_filename)[0]}_refined.png")
-            cv2.imwrite(refined_path, refined)
-            successful += 1
-        except Exception as e:
-            print(f"Error refining {inpainted_path}: {e}")
-            failed += 1
-    print(f"Refinement complete: {successful} images refined successfully, {failed} failed")
-    print(f"Refined images saved to {refined_dir}")
-
 if __name__ == "__main__":
+    parser = argparse.ArgumentParser(description="Text removal inpainting with parallel processing")
+    parser.add_argument('--cpus', type=int, default=os.cpu_count() or 4, 
+                        help=f"Number of CPU cores to use (default: all available cores or 4 if undetectable, max: {os.cpu_count() or 'unknown'})")
+    args = parser.parse_args()
+
+    # Validate the number of CPUs
+    max_cpus = os.cpu_count() or 4
+    if args.cpus < 1:
+        print(f"Error: Number of CPUs must be at least 1. Got {args.cpus}")
+        exit(1)
+    if args.cpus > max_cpus:
+        print(f"Warning: Requested {args.cpus} CPUs, but only {max_cpus} available. Using {max_cpus} CPUs.")
+        args.cpus = max_cpus
+    
+    print(f"Starting text removal inpainting process with {args.cpus} CPU cores...")
     IMAGES_FOLDER = "images_original"
     BBOXES_FOLDER = "BBOX"
     OUTPUT_DIR = "images_val"
-    print("Starting text removal inpainting process...")
-    process_all_images(IMAGES_FOLDER, BBOXES_FOLDER, OUTPUT_DIR, shrink_pixels=2)
-    refine_inpainting(OUTPUT_DIR, refinement_method="telea", radius=5)
+    process_all_images(IMAGES_FOLDER, BBOXES_FOLDER, OUTPUT_DIR, shrink_pixels=2, num_cpus=args.cpus)
