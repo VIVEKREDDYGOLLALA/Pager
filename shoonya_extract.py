@@ -3,6 +3,7 @@ import json
 import requests
 import random
 import argparse
+from multiprocessing import Pool, cpu_count
 
 # Base directories
 json_base_folder = r'input_jsons'  # Root folder containing subfolders with JSON files
@@ -20,7 +21,6 @@ def download_image(image_url, output_path):
             with open(output_path, 'wb') as file:
                 for chunk in response.iter_content(1024):
                     file.write(chunk)
-            # print(f"Downloaded image to {output_path}")
         else:
             print(f"Failed to download {image_url}: HTTP {response.status_code}")
     except Exception as e:
@@ -47,19 +47,15 @@ def validate_record(record, json_file, image_id=None):
         try:
             parsed_record = json.loads(record)
             if not isinstance(parsed_record, dict):
-                # print(f"Skipping record in {json_file}: Parsed record is not a dictionary (type: {type(parsed_record)})")
                 with open("skipped_records.log", "a") as log:
                     log.write(f"[{json_file}] Parsed record is not a dictionary: {record}\n")
                 return None
-            # print(f"Parsed string record in {json_file} to dictionary")
             return parsed_record
         except json.JSONDecodeError:
-            # print(f"Skipping record in {json_file}: String record is not valid JSON")
             with open("skipped_records.log", "a") as log:
                 log.write(f"[{json_file}] Invalid JSON string: {record}\n")
             return None
     elif not isinstance(record, dict):
-        # print(f"Skipping record in {json_file}: Record is not a dictionary (type: {type(record)})")
         with open("skipped_records.log", "a") as log:
             log.write(f"[{json_file}] Record is not a dictionary: {record}\n")
         return None
@@ -72,15 +68,15 @@ def check_for_skip_labels(annotations):
             bbox_value = annotation.get("value", annotation)
             if "labels" in bbox_value and bbox_value["labels"]:
                 for label in bbox_value["labels"]:
-                    # Case-insensitive comparison
                     if any(skip_label.lower() in label.lower() for skip_label in SKIP_LABELS):
                         return True
         except Exception:
             continue
     return False
 
-def process_record(record, output_folder, images_folder, json_file, doc_count, total_limit):
+def process_record(args):
     """Process a single record and return whether it was successfully processed."""
+    record, output_folder, images_folder, json_file, doc_count, total_limit = args
     os.makedirs(output_folder, exist_ok=True)
     os.makedirs(images_folder, exist_ok=True)
 
@@ -92,7 +88,6 @@ def process_record(record, output_folder, images_folder, json_file, doc_count, t
     try:
         image_id = record["id"]
     except (KeyError, TypeError) as e:
-        # print(f"Skipping record in {json_file}: Missing or invalid 'id' field ({e})")
         with open("skipped_records.log", "a") as log:
             log.write(f"[{json_file}] Missing or invalid 'id' field: {e}\n")
         return False
@@ -101,12 +96,10 @@ def process_record(record, output_folder, images_folder, json_file, doc_count, t
         image_url, annotations = extract_annotations_and_image_url(record)
 
         if not image_url:
-            # print(f"Skipping image ID {image_id}: No image URL.")
             with open("skipped_records.log", "a") as log:
                 log.write(f"[{json_file}] Image ID {image_id}: No image URL\n")
             return False
 
-        # Check if annotations contain any labels to skip
         if check_for_skip_labels(annotations):
             with open("skipped_records.log", "a") as log:
                 log.write(f"[{json_file}] Image ID {image_id}: Skipped due to containing table/formula\n")
@@ -116,7 +109,6 @@ def process_record(record, output_folder, images_folder, json_file, doc_count, t
         original_height = annotations[0].get("original_height", None) if annotations else None
 
         if original_width is None or original_height is None:
-            # print(f"Image dimensions not found for image ID {image_id}")
             with open("skipped_records.log", "a") as log:
                 log.write(f"[{json_file}] Image ID {image_id}: Missing dimensions\n")
             return False
@@ -143,9 +135,7 @@ def process_record(record, output_folder, images_folder, json_file, doc_count, t
                     label = bbox_value["labels"][0] if bbox_value.get("labels") else "unknown"
                     bbox_id = annotation.get("id", "unknown")
 
-                    # Skip annotations with missing or unknown id
                     if bbox_id == "unknown" or not bbox_id:
-                        # print(f"Skipping bounding box with unknown ID for image ID {image_id}")
                         continue
 
                     norm_x1 = int((x1 / 100.0) * original_width)
@@ -162,22 +152,18 @@ def process_record(record, output_folder, images_folder, json_file, doc_count, t
                     print(f"Error processing bounding box for image ID {image_id}: {e}")
 
         if valid_bboxes == 0:
-            # print(f"No valid bounding boxes with IDs found for image ID {image_id}. Deleting BBOX file.")
             os.remove(bbox_file_path)
-            # Also delete the downloaded image if it exists
             if os.path.exists(image_output_path):
                 os.remove(image_output_path)
             with open("skipped_records.log", "a") as log:
                 log.write(f"[{json_file}] Image ID {image_id}: No valid bounding boxes with IDs\n")
             return False
 
-        print(f"Processed image ID ({doc_count + 1}/{total_limit})")
+        print(f"Processed image ID {image_id} ({doc_count + 1}/{total_limit})")
         return True
     except Exception as e:
-        # print(f"Error processing record for image ID {image_id}: {e}")
         with open("skipped_records.log", "a") as log:
             log.write(f"[{json_file}] Image ID {image_id}: Error - {e}\n")
-        # Clean up any partially created files
         if 'bbox_file_path' in locals() and os.path.exists(bbox_file_path):
             os.remove(bbox_file_path)
         if 'image_output_path' in locals() and os.path.exists(image_output_path):
@@ -190,7 +176,6 @@ def collect_records(json_base_folder, doc_type):
     subfolder_path = os.path.join(json_base_folder, doc_type)
     
     if not os.path.isdir(subfolder_path):
-        # print(f"Subfolder {subfolder_path} does not exist.")
         return all_records
 
     for file_name in os.listdir(subfolder_path):
@@ -199,66 +184,71 @@ def collect_records(json_base_folder, doc_type):
             try:
                 with open(json_file_path, 'r', encoding='utf-8') as file:
                     data = json.load(file)
-                # Store each record with metadata
                 for record in data:
                     all_records.append({
                         "record": record,
                         "json_file": json_file_path,
                         "subfolder": doc_type
                     })
-                # print(f"Collected {len(data)} records from {json_file_path}")
             except Exception as e:
-                # print(f"Error reading JSON file {json_file_path}: {e}")
                 with open("skipped_records.log", "a") as log:
                     log.write(f"[{json_file_path}] Error reading file: {e}\n")
     
     return all_records
 
-def process_json_folder(json_base_folder, doc_type, num_docs):
-    """Process up to num_docs images from JSON files in the specified doc_type subfolder."""
-    # Validate inputs
+def process_json_folder(json_base_folder, doc_type, num_docs, num_cores):
+    """Process up to num_docs images from JSON files in the specified doc_type subfolder using multiple cores."""
     if num_docs < 1:
-        # print(f"Invalid number of documents: {num_docs}. Must be at least 1.")
+        print(f"Invalid number of documents: {num_docs}. Must be at least 1.")
         return
+
+    # Validate number of cores
+    max_cores = cpu_count()
+    num_cores = min(num_cores, max_cores)
+    if num_cores < 1:
+        print(f"Invalid number of cores: {num_cores}. Setting to 1.")
+        num_cores = 1
+    print(f"Using {num_cores} CPU cores for processing.")
 
     # Ensure skipped_records.log exists
     with open("skipped_records.log", "a") as log:
-        log.write(f"Starting processing for doc_type: {doc_type}, num_docs: {num_docs}\n")
+        log.write(f"Starting processing for doc_type: {doc_type}, num_docs: {num_docs}, num_cores: {num_cores}\n")
 
     # Collect all records from the specified subfolder
     all_records = collect_records(json_base_folder, doc_type)
     if not all_records:
-        # print(f"No records found in {doc_type} subfolder.")
+        print(f"No records found in {doc_type} subfolder.")
         return
 
     # Shuffle records for random selection
     random.shuffle(all_records)
 
+    # Prepare arguments for parallel processing
+    tasks = []
+    output_folder = os.path.join(output_base_folder)
+    images_folder = os.path.join(images_base_folder)
+    for i, item in enumerate(all_records[:num_docs]):
+        tasks.append((
+            item["record"],
+            output_folder,
+            images_folder,
+            item["json_file"],
+            i,
+            num_docs
+        ))
+
+    # Process records in parallel
     doc_count = 0
-    for item in all_records:  # Process all records until num_docs is reached
-        if doc_count >= num_docs:
-            break
-        
-        record = item["record"]
-        subfolder_name = item["subfolder"]
-        json_file = item["json_file"]
-        
-        # Determine output folders
-        output_folder = os.path.join(output_base_folder)
-        images_folder = os.path.join(images_base_folder)
-        
-        # Process the record
-        success = process_record(record, output_folder, images_folder, json_file, doc_count, num_docs)
-        if success:
-            doc_count += 1
-            # print(f"Processed record from {json_file} (Total: {doc_count}/{num_docs})")
+    with Pool(processes=num_cores) as pool:
+        results = pool.map(process_record, tasks)
+        doc_count = sum(1 for result in results if result)
 
     if doc_count < num_docs:
         print(f"Warning: Only {doc_count}/{num_docs} valid records were processed. Check skipped_records.log for details.")
 
 if __name__ == "__main__":
     # Set up argument parser
-    parser = argparse.ArgumentParser(description="Process JSON files for a specific document type with a total document limit")
+    parser = argparse.ArgumentParser(description="Process JSON files for a specific document type with a total document limit using multiple CPU cores")
     parser.add_argument(
         "--doc_type",
         required=True,
@@ -270,9 +260,15 @@ if __name__ == "__main__":
         required=True,
         help="Total number of documents to process"
     )
+    parser.add_argument(
+        "--num_cores",
+        type=int,
+        default=cpu_count(),
+        help="Number of CPU cores to use (default: all available cores)"
+    )
     
     # Parse arguments
     args = parser.parse_args()
     
     # Process the specified subfolder
-    process_json_folder(json_base_folder, args.doc_type, args.num_docs)
+    process_json_folder(json_base_folder, args.doc_type, args.num_docs, args.num_cores)

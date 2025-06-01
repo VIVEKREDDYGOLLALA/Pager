@@ -707,7 +707,7 @@ def generate_latex(image_path, image_dimensions, bboxes, texts, label_mapping, d
         ymax = image_height - y1
         xmin = x1
         xmax = x1 + width
-        padding_points = 0
+        padding_points = 15
 
         if height > 26:
             width_with_padding = width - padding_points
