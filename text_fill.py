@@ -69,39 +69,7 @@ def find_closest_font_size(height, font_size_mapping):
     return max(valid_sizes, key=lambda size: font_size_mapping[size])
 
 def estimate_text_to_fit(text, bbox_width_inches, bbox_height_inches, box_id, language, x1, y1, font_size, bboxes, dpi, font_path, image_name, image_height, image_width, input_text_folder):
-    """
-    Estimates text to fit in a textline box and generates COCO JSON annotations for image-specific JSON.
-    Each box is a textline box. The main bounding box uses x1, y1 from the first textline,
-    width from the textline, and height as textline height * number of textlines.
-    Textline IDs are suffixed with _1, _2, etc. based on the line number.
-    Uses a font size one level smaller than the specified font_size, based on font_size_mapping.
-    Skips updating position tracking JSON for 'dateline' label.
-    Only uses single characters if the current box width is less than 20 points (20/72 inches)
-    and the next word cannot fit in the next box (if it exists). Skips the current box if
-    neither words nor single characters can fit.
-    Clears first_coords_map and box_id_line_number_map after processing all boxes for an image.
-    
-    Args:
-        text (str): The input text to fit (used as fallback or initial text).
-        bbox_width_inches (float): Width of the textline box in inches.
-        bbox_height_inches (float): Height of one textline box in inches.
-        box_id (str): Unique ID of the textline box.
-        language (str): Language of the text (e.g., 'urdu', 'hindi').
-        x1 (float): X-coordinate of the top-left corner of the textline box.
-        y1 (float): Y-coordinate of the top-left corner of the textline box.
-        font_size (str): Font size command (e.g., '\\small', '\\large').
-        bboxes (list): List of all textline boxes.
-        dpi (float): Dots per inch for conversion between inches and pixels.
-        font_path (str): Path to the font file.
-        image_name (str): Name of the image file.
-        image_height (int): Height of the image in pixels.
-        image_width (int): Width of the image in pixels.
-        input_text_folder (str): Path to the input text folder.
-        font_size_mapping (dict): Mapping of font size commands to point sizes.
-    
-    Returns:
-        str: The fitted text for the textline box with LaTeX linebreak, or empty string if box is skipped.
-    """
+
     output_folder_path = 'output_jsons'
     os.makedirs(output_folder_path, exist_ok=True)
     
@@ -614,6 +582,9 @@ def load_enough_text(language, max_lines=1000, input_text_folder="input_texts"):
     return texts
 
 def extract_dimensions_and_text_from_file(image_path, file_path, language, label_mapping, input_text_folder):
+    image_path = os.path.abspath(image_path)
+    file_path = os.path.abspath(file_path)
+
     with open(file_path, 'r') as file:
         lines = file.readlines()
 
@@ -687,12 +658,14 @@ def split_into_sentences(text):
     return sentence_endings.split(text.strip())
 
 def get_random_font(fonts_dir):
+    fonts_dir = os.path.abspath(fonts_dir)
     fonts = [f for f in os.listdir(fonts_dir) if f.endswith('.ttf')]
     if not fonts:
         raise FileNotFoundError(f"No .ttf files found in directory: {fonts_dir}")
     return os.path.join(fonts_dir, random.choice(fonts))
 
 def generate_latex(image_path, image_dimensions, bboxes, texts, label_mapping, dpi, language, input_text_folder):
+    image_path = os.path.abspath(image_path)
     image_name = os.path.splitext(os.path.basename(image_path))[0]
     header_fonts_dir = os.path.join("fonts", language, "Header")
     paragraph_fonts_dir = os.path.join("fonts", language, "Paragraph")
@@ -1091,6 +1064,7 @@ def generate_latex(image_path, image_dimensions, bboxes, texts, label_mapping, d
     return doc.dumps()
 
 def read_bboxes_from_file(file_path):
+    file_path = os.path.abspath(file_path)
     bboxes = []
     with open(file_path, 'r') as file:
         for line in file:
@@ -1133,6 +1107,9 @@ def set_font_size_per_category(bboxes, font_size_mapping):
     return category_font_sizes
 
 def process_image_and_bboxes(bbox_file_path, image_path):
+    image_path = os.path.abspath(image_path)
+    bbox_file_path = os.path.abspath(bbox_file_path)
+    
     with Image.open(image_path) as img:
         image_width, image_height = img.size
     if image_height > 3500:
