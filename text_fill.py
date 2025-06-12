@@ -53,379 +53,523 @@ FONT_MAPPING = {
 }
 import os
 import json
-from PIL import Image, ImageDraw, ImageFont
 import copy
 from collections import defaultdict
+from PIL import Image, ImageFont, ImageDraw
 
 # Cache for text measurements
 text_size_cache = defaultdict(dict)
 # Track processed box IDs per image and language
 processed_box_ids = defaultdict(set)
+# Track line indices per box ID - this tracks which textline we're processing for each parent box
+box_id_line_idx_map = defaultdict(int)
 
-def find_closest_font_size(height, font_size_mapping):
-    valid_sizes = {size: value for size, value in font_size_mapping.items() if value <= height}
+# Global tracking to ensure sequential processing and prevent repeats
+global_text_state = defaultdict(lambda: {
+    'current_position': 0,
+    'current_folder': 1,
+    'max_folder_reached': 1,
+    'folders_exhausted': False,
+    'total_words_processed': 0
+})
+
+# Track which languages are exhausted globally
+exhausted_languages = set()
+
+# Track textlines for each parent box ID
+textlines_per_box = defaultdict(list)
+
+def find_closest_font_size_point(bbox_height_inches, font_path, dpi):
+    valid_sizes = {}
+    for size, point_size in font_size_mapping.items():
+        try:
+            font = ImageFont.truetype(font_path, int(point_size))
+            # Create a temporary image for measurement
+            img = Image.new('RGB', (100, 100), (255, 255, 255))
+            draw = ImageDraw.Draw(img)
+            # Measure a sample character (e.g., 'A') to estimate height
+            sample_text = 'A'
+            text_bbox = draw.textbbox((0, 0), sample_text, font=font)
+            text_height_pixels = text_bbox[3] - text_bbox[1]
+            text_height_inches = text_height_pixels / dpi
+            if text_height_inches <= bbox_height_inches:
+                valid_sizes[size] = point_size
+            del img, draw
+        except (Exception, MemoryError) as e:
+            print(f"Error measuring font size {size} for font {font_path}: {e}")
+            try:
+                del img, draw
+            except:
+                pass
     if not valid_sizes:
-        return None
-    return max(valid_sizes, key=lambda size: font_size_mapping[size])
+        return None, None
+    best_size = max(valid_sizes, key=lambda size: valid_sizes[size])
+    return best_size, valid_sizes[best_size]
 
-def estimate_text_to_fit(text, bbox_width_inches, bbox_height_inches, box_id, language, x1, y1, font_size, bboxes, dpi, font_path, image_name, image_height, image_width, input_text_folder):
+def load_text_from_folder(input_text_folder, language, folder_index):
+    """Load text from a specific folder, return words and total count"""
+    text_file = os.path.join(input_text_folder, f"input_{folder_index}", f"{language}.txt")
+    
+    if not os.path.exists(text_file):
+        return None, 0
+    
+    try:
+        with open(text_file, 'r', encoding='utf-8', errors='ignore') as f:
+            text = f.read().strip()
+        
+        if not text:
+            return None, 0
+            
+        words = text.split()
+        return words, len(words)
+        
+    except Exception as e:
+        print(f"Error reading {text_file}: {e}")
+        return None, 0
 
+def get_next_sequential_text(language, input_text_folder, words_needed=50):
+    """
+    Get text sequentially from folders without repeating or going backwards.
+    Returns words and updates global state.
+    """
+    # Check if language is already exhausted
+    if language in exhausted_languages:
+        print(f"Language {language} is already exhausted. Skipping.")
+        return [], 0
+        
+    state = global_text_state[language]
+    
+    # If we've exhausted all folders, return empty
+    if state['folders_exhausted']:
+        print(f"All folders exhausted for {language}. Adding to exhausted languages.")
+        exhausted_languages.add(language)
+        return [], 0
+    
+    collected_words = []
+    words_collected = 0
+    
+    while words_collected < words_needed and not state['folders_exhausted']:
+        # Try to load current folder
+        folder_words, total_words = load_text_from_folder(
+            input_text_folder, language, state['current_folder']
+        )
+        
+        if folder_words is None or total_words == 0:
+            # Current folder doesn't exist or is empty, try next folder
+            state['current_folder'] += 1
+            state['current_position'] = 0
+            
+            # Check if we've gone too far (safety limit)
+            if state['current_folder'] > 1000:  # Your mentioned limit
+                print(f"Reached folder limit (1000) for {language}. Marking as exhausted.")
+                state['folders_exhausted'] = True
+                exhausted_languages.add(language)
+                break
+                
+            continue
+        
+        # Update max folder reached
+        state['max_folder_reached'] = max(state['max_folder_reached'], state['current_folder'])
+        
+        # Get available words from current position
+        available_words = folder_words[state['current_position']:]
+        
+        if not available_words:
+            # No more words in this folder, move to next
+            print(f"Folder {state['current_folder']} exhausted for {language}. Moving to next folder.")
+            state['current_folder'] += 1
+            state['current_position'] = 0
+            continue
+        
+        # Take what we need or what's available
+        words_to_take = min(words_needed - words_collected, len(available_words))
+        taken_words = available_words[:words_to_take]
+        
+        collected_words.extend(taken_words)
+        words_collected += words_to_take
+        state['current_position'] += words_to_take
+        state['total_words_processed'] += words_to_take
+        
+        print(f"Language {language}: Took {words_to_take} words from folder {state['current_folder']}, "
+              f"position {state['current_position'] - words_to_take} to {state['current_position']}")
+        
+        # If we've used all words in this folder, move to next
+        if state['current_position'] >= total_words:
+            print(f"Completed folder {state['current_folder']} for {language}. Moving to next folder.")
+            state['current_folder'] += 1
+            state['current_position'] = 0
+    
+    # If no words collected and we tried, mark as exhausted
+    if words_collected == 0 and not state['folders_exhausted']:
+        print(f"No more words available for {language}. Marking as exhausted.")
+        state['folders_exhausted'] = True
+        exhausted_languages.add(language)
+    
+    return collected_words, len(collected_words)
+
+def save_language_state(language, output_folder_path):
+    """Save the current state for a language"""
+    state = global_text_state[language]
+    state_file = os.path.join(output_folder_path, f"{language}_state.json")
+    
+    try:
+        with open(state_file, 'w', encoding='utf-8') as f:
+            json.dump({
+                'current_position': state['current_position'],
+                'current_folder': state['current_folder'],
+                'max_folder_reached': state['max_folder_reached'],
+                'folders_exhausted': state['folders_exhausted'],
+                'total_words_processed': state['total_words_processed']
+            }, f, indent=2)
+    except Exception as e:
+        print(f"Error saving state for {language}: {e}")
+
+def load_language_state(language, output_folder_path):
+    """Load the saved state for a language"""
+    state_file = os.path.join(output_folder_path, f"{language}_state.json")
+    
+    if not os.path.exists(state_file):
+        return
+    
+    try:
+        with open(state_file, 'r', encoding='utf-8') as f:
+            saved_state = json.load(f)
+        
+        state = global_text_state[language]
+        state.update(saved_state)
+        
+        # Check if this language was marked as exhausted
+        if state['folders_exhausted']:
+            exhausted_languages.add(language)
+        
+        print(f"Loaded state for {language}: folder {state['current_folder']}, "
+              f"position {state['current_position']}, "
+              f"total processed: {state['total_words_processed']}")
+              
+    except Exception as e:
+        print(f"Error loading state for {language}: {e}")
+
+def create_or_update_json_annotation(output_folder_path, language, image_name, parent_box_id, 
+                                    textline_id, image_id, parent_label, textline_x1, textline_y1, 
+                                    textline_width, textline_height, text_content, image_width, 
+                                    image_height, categories, parent_bbox=None):
+    """
+    Create or update JSON annotation by adding textlines to their parent bounding box.
+    This function handles the grouping of multiple textlines under one parent box.
+    """
+    try:
+        image_json_path = os.path.join(output_folder_path, f"{language}_{image_name}.json")
+        
+        # Load existing data or create new
+        if os.path.exists(image_json_path):
+            try:
+                with open(image_json_path, 'r', encoding='utf-8') as f:
+                    image_data = json.load(f)
+            except:
+                image_data = {"images": [], "annotations": [], "categories": categories}
+        else:
+            image_data = {"images": [], "annotations": [], "categories": categories}
+        
+        def get_category_id(label_name, categories):
+            for category in categories:
+                if label_name.lower() == category["name"].lower():
+                    return category["id"]
+            return 1  # Default category
+        
+        # Create image entry if not exists
+        if not any(img["id"] == image_id for img in image_data["images"]):
+            image_entry = {
+                "id": image_id,
+                "image_name": image_name,
+                "width": int(image_width),
+                "height": int(image_height),
+                "license": None,
+                "flickr_url": "",
+                "image_url": "",
+                "date_captured": ""
+            }
+            image_data["images"].append(image_entry)
+        
+        # Find existing parent annotation or create new one
+        parent_annotation = None
+        for annotation in image_data["annotations"]:
+            if annotation["id"] == f"{parent_box_id}":
+                parent_annotation = annotation
+                break
+        
+        if parent_annotation is None:
+            # Create new parent annotation
+            if parent_bbox is None:
+                # If no parent bbox provided, use textline bbox as approximation
+                parent_bbox = [textline_x1, textline_y1, textline_width, textline_height]
+            
+            parent_annotation = {
+                "id": f"{parent_box_id}",
+                "image_id": image_id,
+                "category_id": get_category_id(parent_label, categories),
+                "bbox": parent_bbox,
+                "area": parent_bbox[2] * parent_bbox[3],
+                "iscrowd": 0,
+                "segmentation": [],
+                "attributes": {"text": ""},  # Will be updated with combined text
+                "textlines": []
+            }
+            image_data["annotations"].append(parent_annotation)
+        
+        # Create textline annotation
+        textline_annotation = {
+            "id": textline_id,
+            "image_id": image_id,
+            "category_id": get_category_id("textline", categories),
+            "bbox": [textline_x1, textline_y1, textline_width, textline_height],
+            "area": textline_width * textline_height,
+            "iscrowd": 0,
+            "segmentation": [],
+            "attributes": {"text": text_content}
+        }
+        
+        # Check if this textline already exists (avoid duplicates)
+        existing_textline = None
+        for textline in parent_annotation["textlines"]:
+            if textline["id"] == textline_id:
+                existing_textline = textline
+                break
+        
+        if existing_textline:
+            # Update existing textline
+            existing_textline.update(textline_annotation)
+        else:
+            # Add new textline
+            parent_annotation["textlines"].append(textline_annotation)
+        
+        # Update parent annotation's combined text
+        all_textline_texts = [tl["attributes"]["text"] for tl in parent_annotation["textlines"]]
+        combined_text = " ".join(filter(None, all_textline_texts))  # Filter out empty strings
+        parent_annotation["attributes"]["text"] = combined_text
+        
+        # Save JSON
+        with open(image_json_path, 'w', encoding='utf-8') as f:
+            json.dump(image_data, f, indent=2, ensure_ascii=False)
+        
+        print(f"✓ Updated JSON annotation for {language}_{image_name} - parent box {parent_box_id}, textline {textline_id}")
+        return True
+        
+    except Exception as e:
+        print(f"✗ Error updating JSON for {language}_{image_name} box {parent_box_id}: {e}")
+        return False
+
+def estimate_text_to_fit(text, bbox_width_inches, bbox_height_inches, parent_box_id, language, 
+                        textline_x1, textline_y1, font_size, bboxes, dpi, font_path, image_name, 
+                        image_height, image_width, input_text_folder):
+    
     output_folder_path = 'output_jsons'
     os.makedirs(output_folder_path, exist_ok=True)
     
-    # Track current word position and folder index for the language, unless label is 'dateline'
-    current_position = 0
-    folder_index = 1
-    is_dateline = any(bbox[4].lower() == "dateline" for bbox in bboxes if bbox[5] == box_id)
-    text_position_file = os.path.join(output_folder_path, f"{language}_position.json")
-    if not is_dateline and os.path.exists(text_position_file):
-        try:
-            with open(text_position_file, 'r', encoding='utf-8') as pos_file:
-                position_data = json.load(pos_file)
-                current_position = position_data.get('current_position', 0)
-                folder_index = position_data.get('folder_index', 1)
-        except (json.JSONDecodeError, FileNotFoundError):
-            pass
-
-    # Precompute font size based on bbox height
-    point_size = font_size_mapping.get(font_size, 10)
-    if point_size > bbox_height_inches * dpi:
-        font_size = find_closest_font_size(bbox_height_inches * dpi, font_size_mapping) or '\\normalsize'
-        point_size = font_size_mapping.get(font_size, 10)
-
-    # Load font
     try:
-        font = ImageFont.truetype(font_path, int(point_size))
-    except Exception as e:
-        print(f"Error loading font {font_path} for {language}: {e}")
-        return ''
-
-    # Load text from the current folder
-    text_file = os.path.join(input_text_folder, f"input_{folder_index}", f"{language}.txt")
-    if os.path.exists(text_file):
-        try:
-            with open(text_file, 'r', encoding='utf-8') as f:
-                text = f.read().strip()
-            words = text.split()
-            total_words = len(words)
-        except Exception as e:
-            print(f"Error reading text file {text_file} for {language}: {e}")
-            words = []
-            total_words = 0
-    else:
-        print(f"Text file {text_file} not found for {language}. Using provided text as fallback.")
-        words = text.split() if text else []
-        total_words = len(words)
-
-    # Check if current position is at or beyond the end of the text, unless label is 'dateline'
-    if not is_dateline and current_position >= total_words and total_words > 0:
-        folder_index += 1
-        current_position = 0
-        text_file = os.path.join(input_text_folder, f"input_{folder_index}", f"{language}.txt")
-        if os.path.exists(text_file):
-            try:
-                with open(text_file, 'r', encoding='utf-8') as f:
-                    text = f.read().strip()
-                words = text.split()
-                total_words = len(words)
-            except Exception as e:
-                print(f"Error reading text file {text_file} for {language}: {e}")
-                words = []
-                total_words = 0
-        else:
-            print(f"Text file {text_file} not found for {language}. Returning empty.")
+        # Check if language is exhausted before processing
+        if language in exhausted_languages:
+            print(f"Language {language} is exhausted. Skipping textline for box {parent_box_id}")
             return ''
-    
-    # Create a temporary image for text measurement
-    img = Image.new('RGB', (int(bbox_width_inches * dpi), int(bbox_height_inches * dpi)), (255, 255, 255))
-    draw = ImageDraw.Draw(img)
-    
-    available_words = words[current_position:] if total_words > 0 else []
-    truncated_text_lines = []
-    truncated_text_with_linebreaks = []
-    current_line = ''
-    current_line_width = 0
-    words_used = 0
-    max_lines = 1  # One line per call
-
-    # Fit text into one textline
-    use_single_chars = False
-    next_word = available_words[0] if available_words else None
-
-    # Find the index of the current box in bboxes
-    current_box_idx = next((i for i, bbox in enumerate(bboxes) if bbox[5] == box_id), -1)
-    next_box = None
-    if current_box_idx != -1 and current_box_idx + 1 < len(bboxes):
-        next_box = bboxes[current_box_idx + 1]
-        next_box_width_inches = next_box[2]
-
-    # Check if the next word fits in the next box
-    if next_word and next_box:
-        key = (next_word, point_size)
-        if key not in text_size_cache[language]:
-            word_bbox = draw.textbbox((0, 0), next_word, font=font)
-            text_size_cache[language][key] = word_bbox[2] - word_bbox[0]
-        word_width = text_size_cache[language][key]
-        if word_width > next_box_width_inches * dpi and bbox_width_inches * 72 < 20:
-            use_single_chars = True
-    elif next_word and not next_box and bbox_width_inches * 72 < 20:
-        key = (next_word, point_size)
-        if key not in text_size_cache[language]:
-            word_bbox = draw.textbbox((0, 0), next_word, font=font)
-            text_size_cache[language][key] = word_bbox[2] - word_bbox[0]
-        word_width = text_size_cache[language][key]
-        if word_width > bbox_width_inches * dpi:
-            use_single_chars = True
-
-    # Try to fit words in the current box
-    if not use_single_chars:
-        for word in available_words:
-            key = (word, point_size)
-            if key not in text_size_cache[language]:
-                word_bbox = draw.textbbox((0, 0), word, font=font)
-                text_size_cache[language][key] = word_bbox[2] - word_bbox[0]
-            word_width = text_size_cache[language][key]
-            space_key = (' ', point_size)
-            if space_key not in text_size_cache[language]:
-                space_bbox = draw.textbbox((0, 0), ' ', font=font)
-                text_size_cache[language][space_key] = space_bbox[2] - space_bbox[0]
-            space_width = text_size_cache[language][space_key]
-            new_line_width = current_line_width + space_width + word_width if current_line else word_width
-
-            if new_line_width <= bbox_width_inches * dpi:
-                current_line = (current_line + ' ' + word) if current_line else word
-                current_line_width = new_line_width
-                words_used += 1
-            else:
-                break
-
-    # Append the current line if it exists
-    if current_line and len(truncated_text_lines) < max_lines:
-        truncated_text_lines.append(current_line)
-        truncated_text_with_linebreaks.append(current_line + r'\linebreak')
-
-    # Handle case where no words fit and single characters are needed
-    if not truncated_text_lines and use_single_chars:
-        single_text_path = os.path.join("Characters", f"{language}.txt")
-        try:
-            with open(single_text_path, "r", encoding="utf-8") as f:
-                single_chars = f.read().split()
-        except FileNotFoundError:
-            print(f"Error: {single_text_path} not found for {language}. Skipping box {box_id}.")
-            del img, draw  # Clean up image
+        
+        # Load saved state for this language
+        load_language_state(language, output_folder_path)
+        
+        # Check again after loading state
+        if language in exhausted_languages:
+            print(f"Language {language} is exhausted after loading state. Skipping textline for box {parent_box_id}")
             return ''
-
-        current_line = ''
-        current_line_width = 0
-        char_fits = False
-        for char in single_chars:
-            key = (char, point_size)
-            if key not in text_size_cache[language]:
-                char_bbox = draw.textbbox((0, 0), char, font=font)
-                text_size_cache[language][key] = char_bbox[2] - char_bbox[0]
-            char_width = text_size_cache[language][key]
-            space_key = (' ', point_size)
-            if space_key not in text_size_cache[language]:
-                space_bbox = draw.textbbox((0, 0), ' ', font=font)
-                text_size_cache[language][space_key] = space_bbox[2] - space_bbox[0]
-            space_width = text_size_cache[language][space_key]
-            new_line_width = current_line_width + space_width + char_width if current_line else char_width
-
-            if new_line_width <= bbox_width_inches * dpi:
-                current_line = (current_line + ' ' + char) if current_line else char
-                current_line_width = new_line_width
-                char_fits = True
-            else:
-                break
-
-        if current_line and char_fits:
-            truncated_text_lines.append(current_line)
-            truncated_text_with_linebreaks.append(current_line + r'\linebreak')
-        else:
-            print(f"No single characters fit in box {box_id} for {language}. Skipping box.")
-            del img, draw
+        
+        # Get current textline info - find the specific textline being processed
+        current_textline = None
+        parent_box_info = None
+        
+        # Find parent box and current textline
+        for bbox in bboxes:
+            if len(bbox) > 5 and bbox[5] == parent_box_id:
+                if bbox[4].lower() != "textline":
+                    parent_box_info = bbox
+                else:
+                    # This might be the current textline
+                    if (abs(bbox[0] - textline_x1) < 1 and abs(bbox[1] - textline_y1) < 1):
+                        current_textline = bbox
+        
+        if not parent_box_info:
+            print(f"Parent box {parent_box_id} not found in bboxes")
             return ''
-
-    # If no text fits, skip the box
-    if not truncated_text_lines:
-        print(f"No text fits in box {box_id} for {language}. Skipping box.")
-        del img, draw
-        return ''
-
-    if not is_dateline:
-        new_position = current_position + words_used
-        try:
-            with open(text_position_file, 'w', encoding='utf-8') as pos_file:
-                json.dump({'current_position': new_position, 'folder_index': folder_index}, pos_file)
-        except Exception as e:
-            print(f"Error saving position file for {language}: {e}")
-
-    # JSON writing logic (only image-specific JSON)
-    image_json_path = os.path.join(output_folder_path, f"{language}_{image_name}.json")
-    line_number_file = os.path.join(output_folder_path, f"{language}_line_numbers.json")
-    
-    # Track textline count
-    box_id_line_number_map = {}
-    if os.path.exists(line_number_file):
-        try:
-            with open(line_number_file, 'r', encoding='utf-8') as ln_file:
-                box_id_line_number_map = json.load(ln_file)
-        except (json.JSONDecodeError, FileNotFoundError):
-            pass
-
-    # Store first textline coordinates
-    first_textline_coords_file = os.path.join(output_folder_path, f"{language}_first_coords.json")
-    first_coords_map = {}
-    if os.path.exists(first_textline_coords_file):
-        try:
-            with open(first_textline_coords_file, 'r', encoding='utf-8') as coord_file:
-                first_coords_map = json.load(coord_file)
-        except (json.JSONDecodeError, FileNotFoundError):
-            pass
-
-    # Get current box
-    current_box = next((bbox for bbox in bboxes if bbox[5] == box_id), None)
-    if current_box and truncated_text_lines:
-        box_image_id = current_box[6]
-        label = current_box[4]
-
-        # Determine textline number
-        current_line_number = box_id_line_number_map.get(box_id, 0) + 1
-        number_of_textlines = current_line_number
-
-        # Store first textline coordinates
-        if current_line_number == 1:
-            first_coords_map[box_id] = {"x1": x1, "y1": y1}
-            try:
-                with open(first_textline_coords_file, 'w', encoding='utf-8') as coord_file:
-                    json.dump(first_coords_map, coord_file)
-            except Exception as e:
-                print(f"Error saving first coords file for {language}: {e}")
-
-        # Get first textline coordinates
-        first_x1 = first_coords_map.get(box_id, {"x1": x1})["x1"]
-        first_y1 = first_coords_map.get(box_id, {"y1": y1})["y1"]
-
+        
+        parent_label = parent_box_info[4]
+        image_id = parent_box_info[6] if len(parent_box_info) > 6 else "unknown"
+        
+        # Check if this is a dateline (special handling)
+        is_dateline = parent_label.lower() == "dateline"
+        
         # Define categories
         unique_labels = set(['textline', 'unknown'])
         for bbox in bboxes:
-            unique_labels.add(bbox[4].lower())
-        categories = [{"id": idx + 1, "name": label, "supercategory": "text"} for idx, label in enumerate(sorted(unique_labels))]
+            if len(bbox) > 4:
+                unique_labels.add(bbox[4].lower())
+        categories = [{"id": idx + 1, "name": label_name, "supercategory": "text"} 
+                     for idx, label_name in enumerate(sorted(unique_labels))]
+        
+        # Get the next line index for this parent box
+        box_line_key = f"{language}_{image_name}_{parent_box_id}"
+        box_id_line_idx_map[box_line_key] += 1
+        current_line_idx = box_id_line_idx_map[box_line_key]
+        
+        # Create textline ID
+        textline_id = f"{parent_box_id}_{current_line_idx}"
+        
+        # Precompute font size
+        point_size = font_size_mapping.get(font_size, 10)
+        try:
+            font = ImageFont.truetype(font_path, int(point_size))
+        except Exception as e:
+            print(f"Error loading font {font_path}: {e}")
+            return ''
 
-        def get_category_id(label, categories):
-            for category in categories:
-                if label.lower() == category["name"].lower():
-                    return category["id"]
-            return next((c["id"] for c in categories if c["name"].lower() == "unknown"), 1)
-
-        # Create or update main bounding box
-        image_specific_data = {"images": [], "annotations": [], "categories": categories}
-        if os.path.exists(image_json_path):
-            try:
-                with open(image_json_path, 'r', encoding='utf-8') as json_file:
-                    image_specific_data = json.load(json_file)
-            except json.JSONDecodeError:
-                pass
-
-        existing_annotation = next((a for a in image_specific_data["annotations"] if a["id"] == f"{box_id}"), None)
-        # If there's an error, it should be corrected to use the right variable name
-        if existing_annotation:
-            main_annotation = existing_annotation
-            existing_text = main_annotation["attributes"].get("text", "")
-            combined_text = existing_text + ("\n" + "\n".join(truncated_text_lines) if existing_text else "\n".join(truncated_text_lines))
-            main_annotation["attributes"]["text"] = combined_text
-            main_annotation["bbox"] = [first_x1, first_y1, bbox_width_inches * dpi, bbox_height_inches * number_of_textlines]
-            main_annotation["area"] = (bbox_width_inches * dpi) * (bbox_height_inches * dpi * number_of_textlines)
+        line_height = point_size * 1.5
+        
+        # Get text sequentially if not dateline
+        if is_dateline:
+            # For dateline, use provided text or fallback
+            words = text.split() if text else ["Date:", "Location"]
+            fitted_text_content = " ".join(words)
         else:
-            main_annotation = {
-                "id": f"{box_id}",
-                "image_id": box_image_id,
-                "category_id": get_category_id(label, categories),
-                "bbox": [first_x1, first_y1, bbox_width_inches * dpi, bbox_height_inches * dpi * number_of_textlines],
-                "area": (bbox_width_inches * dpi) * (bbox_height_inches * dpi * number_of_textlines),
-                "iscrowd": 0,
-                "segmentation": [],
-                "attributes": {"text": "\n".join(truncated_text_lines)},
-                "textlines": []
-            }
-
-        # Add paragraph indentation for first line
-        if current_line_number == 1 and label.startswith("paragraph") and truncated_text_with_linebreaks:
-            truncated_text_with_linebreaks[0] = r'\hspace{2em}' + truncated_text_with_linebreaks[0]
-
-        # Create textline annotation
-        textline_annotation = {
-            "id": f"{box_id}_{current_line_number}",
-            "image_id": box_image_id,
-            "category_id": get_category_id("textline", categories),
-            "bbox": [x1, y1, bbox_width_inches * dpi, bbox_height_inches * dpi],
-            "area": (bbox_width_inches * dpi) * (bbox_height_inches * dpi),
-            "iscrowd": 0,
-            "segmentation": [],
-            "attributes": {"text": truncated_text_lines[0]}
-        }
-
-        # Append textline to main annotation
-        main_annotation["textlines"].append(textline_annotation)
-
-        # Update line number tracking
-        box_id_line_number_map[box_id] = number_of_textlines
-        try:
-            with open(line_number_file, 'w', encoding='utf-8') as ln_file:
-                json.dump(box_id_line_number_map, ln_file)
-        except Exception as e:
-            print(f"Error saving line number file for {language}: {e}")
-
-        # Create image metadata
-        image_data = {
-            "id": box_image_id,
-            "image_name": image_name,
-            "width": int(image_width),
-            "height": int(image_height),
-            "license": None,
-            "flickr_url": "",
-            "image_url": "",
-            "date_captured": ""
-        }
-
-        # Update image-specific JSON
-        if not any(img["id"] == box_image_id for img in image_specific_data["images"]):
-            image_specific_data["images"].append(image_data)
-        image_specific_data["annotations"] = [a for a in image_specific_data["annotations"] if a["id"] != f"{box_id}"]
-        image_specific_data["annotations"].append(copy.deepcopy(main_annotation))
-        try:
-            with open(image_json_path, 'w', encoding='utf-8') as json_file:
-                json.dump(image_specific_data, json_file, indent=4, ensure_ascii=False)
-        except Exception as e:
-            print(f"Error creating image-specific JSON for {language}_{image_name}: {e}")
-
-        # Track processed box ID
-        processed_box_ids[(language, box_image_id)].add(box_id)
-
-        # Check if all boxes for this image are processed
-        image_box_ids = {bbox[5] for bbox in bboxes if bbox[6] == box_image_id}
-        if processed_box_ids[(language, box_image_id)] == image_box_ids:
-            # Clear maps for this image
-            first_coords_map.clear()
-            box_id_line_number_map.clear()
+            # Calculate words needed for this textline
+            estimated_words_needed = max(5, int(bbox_width_inches * 5))
+            
+            # Get sequential text without repetition
+            words, word_count = get_next_sequential_text(language, input_text_folder, words_needed=estimated_words_needed)
+            
+            if word_count == 0:
+                print(f"No more unique text available for {language} - language exhausted, skipping textline")
+                return ''
+            
+            # Create temporary image for text measurement
             try:
-                with open(first_textline_coords_file, 'w', encoding='utf-8') as f:
-                    json.dump({}, f)  # Clear file
-                with open(line_number_file, 'w', encoding='utf-8') as ln_file:
-                    json.dump({}, ln_file)  # Clear file
-            except Exception as e:
-                print(f"Error clearing map files for {language}: {e}")
-            # Clear processed box IDs for this image
-            processed_box_ids[(language, box_image_id)].clear()
+                img_width = min(int(bbox_width_inches * dpi), 2000)
+                img_height = 100  # Small height for single line
+                img = Image.new('RGB', (img_width, img_height), (255, 255, 255))
+                draw = ImageDraw.Draw(img)
+            except MemoryError:
+                print(f"MemoryError creating image for textline {textline_id}")
+                return ''
+            
+            # Fit text to single line
+            current_line = ''
+            current_line_width = 0
+            bbox_width_pixels = bbox_width_inches * dpi
+            
+            for word in words:
+                try:
+                    # Use cache for text measurements
+                    cache_key = (word, point_size, font_path)
+                    if cache_key not in text_size_cache[language]:
+                        word_bbox = draw.textbbox((0, 0), word, font=font)
+                        text_size_cache[language][cache_key] = word_bbox[2] - word_bbox[0]
+                    word_width = text_size_cache[language][cache_key]
+                    
+                    space_cache_key = (' ', point_size, font_path)
+                    if space_cache_key not in text_size_cache[language]:
+                        space_bbox = draw.textbbox((0, 0), ' ', font=font)
+                        text_size_cache[language][space_cache_key] = space_bbox[2] - space_bbox[0]
+                    space_width = text_size_cache[language][space_cache_key]
+                    
+                    new_width = current_line_width + space_width + word_width if current_line else word_width
+                    
+                    if new_width <= bbox_width_pixels:
+                        current_line = (current_line + ' ' + word) if current_line else word
+                        current_line_width = new_width
+                    else:
+                        break  # Stop fitting more text
+                        
+                except Exception as e:
+                    print(f"Error processing word '{word}': {e}")
+                    break
+            
+            fitted_text_content = current_line
+            
+            # Clean up image
+            del img, draw
+        
+        # Only create/update JSON if we have text content
+        if fitted_text_content:
+            success = create_or_update_json_annotation(
+                output_folder_path, language, image_name, parent_box_id, textline_id,
+                image_id, parent_label, textline_x1, textline_y1, bbox_width_inches, 
+                bbox_height_inches, fitted_text_content, image_width, image_height, 
+                categories, parent_bbox=parent_box_info[:4] if len(parent_box_info) >= 4 else None
+            )
+            
+            # Save state after successful processing
+            save_language_state(language, output_folder_path)
+            
+            print(f"✓ Processed textline {textline_id} for parent box {parent_box_id}: '{fitted_text_content[:50]}...'")
+        else:
+            print(f"No text fitted for textline {textline_id}, skipping JSON creation")
+        
+        # Clean cache periodically
+        if len(text_size_cache[language]) > 2000:
+            # Keep only recent entries
+            cache_items = list(text_size_cache[language].items())
+            text_size_cache[language].clear()
+            for key, value in cache_items[-1000:]:
+                text_size_cache[language][key] = value
+        
+        return fitted_text_content + r'\linebreak' if fitted_text_content else ''
+        
+    except Exception as e:
+        print(f"Critical error in estimate_text_to_fit for textline of box {parent_box_id}: {e}")
+        return ''
 
-    # Clean up image
-    del img, draw
+def get_processing_stats(language):
+    """Get current processing statistics for a language"""
+    state = global_text_state[language]
+    return {
+        'current_folder': state['current_folder'],
+        'current_position': state['current_position'],
+        'max_folder_reached': state['max_folder_reached'],
+        'total_words_processed': state['total_words_processed'],
+        'folders_exhausted': state['folders_exhausted'],
+        'is_exhausted': language in exhausted_languages
+    }
 
-    # Clear text size cache periodically to manage memory
-    if len(text_size_cache[language]) > 10000:  # Adjust threshold as needed
-        text_size_cache[language].clear()
+def reset_language_processing(language):
+    """Reset processing for a language (use with caution)"""
+    global_text_state[language] = {
+        'current_position': 0,
+        'current_folder': 1,
+        'max_folder_reached': 1,
+        'folders_exhausted': False,
+        'total_words_processed': 0
+    }
+    # Remove from exhausted languages
+    exhausted_languages.discard(language)
+    # Clear line indices for this language
+    keys_to_remove = [key for key in box_id_line_idx_map.keys() if key.startswith(f"{language}_")]
+    for key in keys_to_remove:
+        del box_id_line_idx_map[key]
+    print(f"Reset processing state for language: {language}")
 
-    return '\n'.join(truncated_text_with_linebreaks[:max_lines])
+def is_language_exhausted(language):
+    """Check if a language is exhausted"""
+    return language in exhausted_languages
+
+def get_exhausted_languages():
+    """Get list of exhausted languages"""
+    return list(exhausted_languages)
+
+def skip_exhausted_languages(languages_list):
+    """Filter out exhausted languages from a list"""
+    return [lang for lang in languages_list if lang not in exhausted_languages]
+
+def should_continue_processing(language):
+    """Check if we should continue processing this language"""
+    return language not in exhausted_languages
+
+def reset_box_line_indices():
+    """Reset all box line indices - useful when starting a new image"""
+    box_id_line_idx_map.clear()    
 def get_patch_color_with_gradient(image, bbox):
     x1, y1, width, height = bbox[:4]
     corners = [(x1, y1), (x1 + width, y1), (x1, y1 + height), (x1 + width, y1 + height)]
@@ -544,15 +688,16 @@ def load_enough_text(language, max_lines=1000, input_text_folder="input_texts"):
     # Load current folder index
     if os.path.exists(text_position_file):
         try:
-            with open(text_position_file, 'r', encoding='utf-8') as pos_file:
+            with open(text_position_file, 'r', encoding='utf-8', errors='ignore') as pos_file:
                 position_data = json.load(pos_file)
                 folder_index = position_data.get('folder_index', 1)
-        except (json.JSONDecodeError, FileNotFoundError):
+        except (json.JSONDecodeError, FileNotFoundError) as e:
+            print(f"Error reading position file {text_position_file} for {language}: {e}")
             folder_index = 1
 
     text_file = os.path.join(input_text_folder, f"input_{folder_index}", f"{language}.txt")
     try:
-        with open(text_file, 'r', encoding='utf-8') as file:
+        with open(text_file, 'r', encoding='utf-8', errors='ignore') as file:
             for i, line in enumerate(file):
                 if i >= max_lines:
                     break
@@ -560,7 +705,7 @@ def load_enough_text(language, max_lines=1000, input_text_folder="input_texts"):
         if not texts:  # If file is empty, try the next folder
             folder_index = 2
             text_file = os.path.join(input_text_folder, f"input_{folder_index}", f"{language}.txt")
-            with open(text_file, 'r', encoding='utf-8') as file:
+            with open(text_file, 'r', encoding='utf-8', errors='ignore') as file:
                 for i, line in enumerate(file):
                     if i >= max_lines:
                         break
@@ -570,7 +715,7 @@ def load_enough_text(language, max_lines=1000, input_text_folder="input_texts"):
         folder_index = 2 if folder_index == 1 else 1
         text_file = os.path.join(input_text_folder, f"input_{folder_index}", f"{language}.txt")
         try:
-            with open(text_file, 'r', encoding='utf-8') as file:
+            with open(text_file, 'r', encoding='utf-8', errors='ignore') as file:
                 for i, line in enumerate(file):
                     if i >= max_lines:
                         break
@@ -632,8 +777,8 @@ def extract_dimensions_and_text_from_file(image_path, file_path, language, label
         output_file.write(latex_code)
 
 def get_bboxes_and_image_path():
-    bbox_dir = 'BBOX'
-    image_dir = 'images_val'
+    bbox_dir = 'BBOX_0'
+    image_dir = 'images_val_0'
     if not os.path.exists(bbox_dir):
         raise FileNotFoundError(f"Directory not found: {bbox_dir}")
 
@@ -683,7 +828,7 @@ def generate_latex(image_path, image_dimensions, bboxes, texts, label_mapping, d
         paragraph_font_path = os.path.join("fonts", language, "Paragraph", f"{paragraph_font}-Regular.ttf")
 
     doc = Document(documentclass='article', document_options=['11pt'])
-    is_arabic_script = language.lower() in ['urdu', 'kashmiri', 'sindhi']
+    is_arabic_script = language.lower() in ['urdu', 'kashmiri']
 
     doc.packages.append(Package('fontenc', options='T1'))
     doc.packages.append(Package('inputenc', options='utf8'))
@@ -713,7 +858,7 @@ def generate_latex(image_path, image_dimensions, bboxes, texts, label_mapping, d
         'gujarati': 'Gujarati', 'hindi': 'Devanagari', 'kannada': 'Kannada', 'kashmiri': 'Arabic',
         'konkani': 'Devanagari', 'maithili': 'Devanagari', 'malayalam': 'Malayalam', 'manipuri': 'Bengali',
         'marathi': 'Devanagari', 'nepali': 'Devanagari', 'odia': 'Oriya', 'punjabi': 'Gurmukhi',
-        'sanskrit': 'Devanagari', 'santali': 'Devanagari', 'sindhi': 'Arabic', 'tamil': 'Tamil',
+        'sanskrit': 'Devanagari', 'santali': 'Devanagari', 'sindhi': 'Devanagari', 'tamil': 'Tamil',
         'telugu': 'Telugu', 'urdu': 'Arabic'
     }
     
@@ -722,15 +867,13 @@ def generate_latex(image_path, image_dimensions, bboxes, texts, label_mapping, d
     
     if is_arabic_script:
         if language.lower() == 'urdu':
-            doc.preamble.append(NoEscape(f'\\setmainlanguage{{urdu}}'))
+            doc.preamble.append(NoEscape(r'\setmainlanguage{urdu}'))
         elif language.lower() == 'kashmiri':
-            doc.preamble.append(NoEscape(f'\\setmainlanguage{{urdu}}'))
-        elif language.lower() == 'sindhi':
-            doc.preamble.append(NoEscape(f'\\setmainlanguage{{sindhi}}'))
+            doc.preamble.append(NoEscape(r'\setmainlanguage{urdu}'))
         else:
-            doc.preamble.append(NoEscape(f'\\setmainlanguage{{arabic}}'))
+            doc.preamble.append(NoEscape(r'\setmainlanguage{arabic}'))
         doc.preamble.append(NoEscape(r'\setRTL'))
-    else:
+    elif language.lower() not in ['odia', 'punjabi', 'sindhi', 'nepali', 'gujarati','manipuri']:
         doc.preamble.append(NoEscape(f'\\setmainlanguage{{{polyglossia_language}}}'))
     
     doc.preamble.append(NoEscape(f'\\setotherlanguage{{english}}'))
@@ -814,7 +957,7 @@ def generate_latex(image_path, image_dimensions, bboxes, texts, label_mapping, d
         ymax = image_height - y1
         xmin = x1
         xmax = x1 + width
-        padding_points = 15
+        padding_points = 25
 
         if height > 26:
             width_with_padding = width - padding_points
@@ -826,8 +969,8 @@ def generate_latex(image_path, image_dimensions, bboxes, texts, label_mapping, d
         else:
             width_with_padding = width - padding_points
             height_with_padding = height
-            ymin_with_padding = ymin
-            ymax_with_padding = ymax
+            ymin_with_padding = ymin + padding_points
+            ymax_with_padding = ymax - padding_points
             xmin_with_padding = xmin
             xmax_with_padding = xmax
 
@@ -1131,9 +1274,8 @@ import argparse
 import time
 import os
 import sys
-
 def parse_arguments():
-    """Parse command line arguments for language selection, text file, and input text folder."""
+    """Parse command line arguments for language selection, text file, input text folder, and file count."""
     parser = argparse.ArgumentParser(
         description='Generate LaTeX documents with support for multiple languages, including Arabic script languages.'
     )
@@ -1158,21 +1300,39 @@ def parse_arguments():
         help='Path to the folder containing input text subfolders (input_1, input_2). Default: input_texts'
     )
     
+    parser.add_argument(
+        '--file-count',
+        type=int,
+        default=None,
+        help='Number of files to generate for each language. If not provided, processes all available files.'
+    )
+    
     return parser.parse_args()
 
 def main():
     args = parse_arguments()
     languages = args.languages
     input_text_folder = args.input_text_folder
+    file_count = args.file_count
     
     print(f"Processing the following languages: {', '.join(languages)}")
     print(f"Using input text folder: {input_text_folder}")
+    if file_count is not None:
+        print(f"Generating up to {file_count} files per language")
+    else:
+        print("Generating all available files per language")
     
     start_time = time.time()
 
     bbox_files_and_paths = get_bboxes_and_image_path()
+    total_files = len(bbox_files_and_paths)
     
-    for language in languages:
+    if not bbox_files_and_paths:
+        print("No bounding box or image files found. Exiting.")
+        return
+
+    # Distribute files across languages
+    for lang_idx, language in enumerate(languages):
         print(f"Processing language: {language}")
         text_file = args.text_file if args.text_file else os.path.join(input_text_folder, "input_1", f"{language}.txt")
         
@@ -1180,7 +1340,20 @@ def main():
             print(f"Text file {text_file} not found for {language}. Skipping.")
             continue
 
-        for bbox_file_path, image_path in bbox_files_and_paths:
+        # Calculate start index for this language to ensure different files
+        files_to_process = []
+        if file_count is None:
+            # If no file-count specified, use all files for each language
+            files_to_process = bbox_files_and_paths
+        else:
+            # Assign files in a round-robin fashion
+            for i in range(file_count):
+                file_idx = (lang_idx + i * len(languages)) % total_files
+                files_to_process.append(bbox_files_and_paths[file_idx])
+        
+        print(f"Processing {len(files_to_process)} files for {language}")
+        
+        for bbox_file_path, image_path in files_to_process:
             bboxes, label_mapping = process_image_and_bboxes(bbox_file_path, image_path)
             font_size_by_label = set_font_size_per_category(bboxes, font_size_mapping)
 
@@ -1193,6 +1366,5 @@ def main():
     end_time = time.time()
     execution_time = end_time - start_time
     print(f"Total Execution Time: {execution_time} seconds")
-
 if __name__ == "__main__":
     main()

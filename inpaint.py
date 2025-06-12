@@ -17,24 +17,30 @@ def read_bbox_file(bbox_path):
             line = line.strip()
             if not line:
                 continue
-            if line.startswith('[') and line.endswith(']') and ',' in line and 'paragraph' not in line and 'figure' not in line:
+            
+            # Check if this is a dimensions line (first line with width, height)
+            if line.startswith('[') and line.endswith(']') and ',' in line:
                 try:
+                    # Try to parse as dimensions first
                     values = line.strip('[]').split(',')
-                    width = int(values[0])
-                    height = int(values[1])
-                    bbox_data.append(['dimensions', [width, height]])
-                    continue
+                    if len(values) == 2:  # Only width and height
+                        width = int(values[0])
+                        height = int(values[1])
+                        bbox_data.append(['dimensions', [width, height]])
+                        continue
                 except:
-                    pass
+                    pass  # If it fails, treat as regular bbox line
+            
+            # Parse regular bbox lines
             match = re.match(r'\[(.*?), \[(.*?)\], (.*?), (.*?)\]', line)
             if match:
-                bbox_type = match.group(1)
+                bbox_type = match.group(1).strip().strip('"')  # Remove quotes if present
                 coords_str = match.group(2)
-                id1 = match.group(3)
-                id2 = match.group(4)
-                coords = [float(x) for x in coords_str.split(',')]
+                id1 = match.group(3).strip()
+                id2 = match.group(4).strip()
+                coords = [float(x.strip()) for x in coords_str.split(',')]
                 if len(coords) >= 4:
-                    x, y, width, height = coords
+                    x, y, width, height = coords[:4]
                     bbox_data.append([bbox_type, [x, y, width, height], id1, id2])
     except Exception as e:
         print(f"Error reading file {bbox_path}: {e}")
@@ -75,44 +81,67 @@ def inpaint_from_bboxes(image_path, bbox_data, output_dir, shrink_pixels=2):
     result = image.copy()
     processed_boxes = 0
     skipped_boxes = 0
+    
     for box in bbox_data:
         if box[0] == 'dimensions':
             continue
-        box_type = box[0]
-        skip_types = ['header', 'footer', 'figure', 'figure_1', 'formula', 'formula_1', 'table']
-        if any(skip_type in box_type.lower() for skip_type in skip_types):
+        box_type = box[0].lower()
+        
+        # Updated skip_types - removed 'figure' and made more specific
+        # Now only skips specific types, not anything containing 'figure'
+        skip_types = ['header', 'footer', 'figure_1', 'formula', 'formula_1', 'table']
+        
+        # Check for exact matches in skip_types, not partial matches
+        if box_type in skip_types:
             skipped_boxes += 1
+            print(f"Skipping box type: {box_type}")
             continue
+        
+        # Additional check for 'figure' but allow 'figure-caption', 'caption', etc.
+        if box_type == 'figure':  # Only skip exact 'figure', not 'figure-caption'
+            skipped_boxes += 1
+            print(f"Skipping box type: {box_type}")
+            continue
+            
         x, y, width, height = [int(float(coord)) for coord in box[1]]
         x = max(0, min(x, img_width - 1))
         y = max(0, min(y, img_height - 1))
         w = min(width, img_width - x)
         h = min(height, img_height - y)
+        
         if w <= 0 or h <= 0:
             skipped_boxes += 1
             continue
+        
         # Shrink the bounding box by shrink_pixels on all sides
         x_shrunk = x + shrink_pixels
         y_shrunk = y + shrink_pixels
         w_shrunk = w - (2 * shrink_pixels)
         h_shrunk = h - (2 * shrink_pixels)
+        
         # Ensure the shrunk box is valid
         if w_shrunk <= 0 or h_shrunk <= 0:
             skipped_boxes += 1
             continue
+        
         # Adjust coordinates to stay within image bounds
         x_shrunk = max(0, min(x_shrunk, img_width - 1))
         y_shrunk = max(0, min(y_shrunk, img_height - 1))
         w_shrunk = min(w_shrunk, img_width - x_shrunk)
         h_shrunk = min(h_shrunk, img_height - y_shrunk)
+        
         if w_shrunk <= 0 or h_shrunk <= 0:
             skipped_boxes += 1
             continue
+        
         cv2.rectangle(combined_mask, (x_shrunk, y_shrunk), (x_shrunk + w_shrunk, y_shrunk + h_shrunk), 255, -1)
         processed_boxes += 1
+        print(f"Processing box type: {box[0]} at ({x_shrunk}, {y_shrunk}, {w_shrunk}, {h_shrunk})")
+    
     if processed_boxes == 0:
         print(f"No valid boxes to inpaint for {image_filename}")
         return False
+    
     try:
         inpainted = cv2.inpaint(result, combined_mask, inpaintRadius=7, flags=cv2.INPAINT_TELEA)
         cv2.imwrite(combined_mask_path, combined_mask)
@@ -176,7 +205,7 @@ if __name__ == "__main__":
         args.cpus = max_cpus
     
     print(f"Starting text removal inpainting process with {args.cpus} CPU cores...")
-    IMAGES_FOLDER = "images_original"
-    BBOXES_FOLDER = "BBOX"
-    OUTPUT_DIR = "images_val"
+    IMAGES_FOLDER = "images_original_1"
+    BBOXES_FOLDER = "BBOX_1"
+    OUTPUT_DIR = "images_val_1"
     process_all_images(IMAGES_FOLDER, BBOXES_FOLDER, OUTPUT_DIR, shrink_pixels=2, num_cpus=args.cpus)

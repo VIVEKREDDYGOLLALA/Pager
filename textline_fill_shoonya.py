@@ -589,8 +589,8 @@ def extract_dimensions_and_text_from_file(image_path, file_path, text_file, labe
         output_file.write(latex_code)
 
 def get_bboxes_and_image_path():
-    bbox_dir = 'BBOX'
-    image_dir = 'images_val'
+    bbox_dir = 'BBOX_1'
+    image_dir = 'images_val_1'
     if not os.path.exists(bbox_dir):
         raise FileNotFoundError(f"Directory not found: {bbox_dir}")
 
@@ -769,7 +769,7 @@ def generate_latex(image_path, image_dimensions, bboxes, texts, label_mapping, d
         ymax = image_height - y1
         xmin = x1
         xmax = x1 + width
-        padding_points = 15
+        padding_points = 20
 
         if height > 26:
             width_with_padding = width - padding_points

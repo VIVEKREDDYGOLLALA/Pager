@@ -2,48 +2,60 @@ import os
 from pathlib import Path
 from multiprocessing import Pool
 import argparse
+from collections import defaultdict
 
-def read_lines_generator(file_path, max_lines):
-    """Generator to read lines from a file up to max_lines, yielding one line at a time."""
+def read_lines_generator(file_path, max_lines=None):
+    """Generator to read lines from a file, yielding one line at a time."""
     lines_read = 0
     with open(file_path, 'r', encoding='utf-8') as f:
-        while lines_read < max_lines:
+        while True:
+            if max_lines and lines_read >= max_lines:
+                break
             line = f.readline()
             if not line:  # End of file
                 break
             yield line.rstrip('\n')
             lines_read += 1
 
-def process_single_text_file(args):
+def get_next_folder_number(base_path, language):
+    """Find the next available folder number for a given language."""
+    folder_num = 1
+    while True:
+        folder_path = Path(base_path) / f"input_{folder_num}"
+        file_path = folder_path / f"{language}.txt"
+        if not file_path.exists():
+            return folder_num
+        folder_num += 1
+
+def process_single_file(args):
     """
-    Process a single text file, splitting it into 10 files with up to max_lines_per_file lines each.
-    Args: (file_path, output_base_folder, max_lines_per_file, total_max_lines)
+    Process a single text file, splitting it into 1000-line chunks.
+    Args: (file_path, base_output_path, lines_per_file)
     """
-    file_path, output_base_folder, max_lines_per_file, total_max_lines = args
+    file_path, base_output_path, lines_per_file = args
     language = Path(file_path).stem
     
-    # Create base output folder
-    Path(output_base_folder).mkdir(parents=True, exist_ok=True)
+    # Get the next available folder number for this language
+    current_folder_num = get_next_folder_number(base_output_path, language)
     
-    # Initialize variables
-    folder_count = 100  # Fixed number of output folders
-    lines_per_folder = max_lines_per_file  # 15,000 lines per file
     current_lines = []
     line_count = 0
-    folder_index = 1
     total_lines_processed = 0
     
-    # Read lines using generator to minimize memory usage
-    for line in read_lines_generator(file_path, total_max_lines):
-        if total_lines_processed >= total_max_lines:
-            break
+    # Read lines using generator
+    for line in read_lines_generator(file_path):
+        current_lines.append(line)
+        line_count += 1
+        total_lines_processed += 1
+        
+        # When we reach the target lines per file, save the current batch
+        if line_count >= lines_per_file:
+            # Create output folder
+            output_folder = Path(base_output_path) / f"input_{current_folder_num}"
+            output_folder.mkdir(parents=True, exist_ok=True)
             
-        if line_count >= lines_per_folder:
-            # Save current batch
-            output_subfolder = Path(output_base_folder) / f"input_{folder_index}"
-            output_subfolder.mkdir(parents=True, exist_ok=True)
-            output_file = output_subfolder / f"{language}.txt"
-            
+            # Write file
+            output_file = output_folder / f"{language}.txt"
             with open(output_file, 'w', encoding='utf-8') as f:
                 f.write('\n'.join(current_lines) + '\n')
             
@@ -52,106 +64,169 @@ def process_single_text_file(args):
             # Reset for next batch
             current_lines = []
             line_count = 0
-            folder_index += 1
-            
-            # Stop if we've created 10 folders
-            if folder_index > folder_count:
-                break
-        
-        current_lines.append(line)
-        line_count += 1
-        total_lines_processed += 1
+            current_folder_num += 1
     
-    # Write any remaining lines to the final folder (up to folder 10)
-    if current_lines and folder_index <= folder_count:
-        output_subfolder = Path(output_base_folder) / f"input_{folder_index}"
-        output_subfolder.mkdir(parents=True, exist_ok=True)
-        output_file = output_subfolder / f"{language}.txt"
+    # Write any remaining lines to the final file
+    if current_lines:
+        output_folder = Path(base_output_path) / f"input_{current_folder_num}"
+        output_folder.mkdir(parents=True, exist_ok=True)
         
+        output_file = output_folder / f"{language}.txt"
         with open(output_file, 'w', encoding='utf-8') as f:
             f.write('\n'.join(current_lines) + '\n')
         
-        print(f"Created {output_file} with {line_count} lines")
+        print(f"Created {output_file} with {line_count} lines (final chunk)")
     
-    # Fill remaining folders with empty files if needed
-    while folder_index <= folder_count:
-        output_subfolder = Path(output_base_folder) / f"input_{folder_index}"
-        output_subfolder.mkdir(parents=True, exist_ok=True)
-        output_file = output_subfolder / f"{language}.txt"
-        
-        with open(output_file, 'w', encoding='utf-8') as f:
-            f.write('')  # Create empty file
-        
-        print(f"Created empty {output_file}")
-        folder_index += 1
-    
-    return total_lines_processed, language, folder_count
+    return total_lines_processed, language
 
-def process_text_files(input_folder, output_base_folder, max_lines_per_file=1_000, total_max_lines=100_000, cores=None):
-    """
-    Process all text files in input_folder using multiple CPU cores,
-    splitting each into 10 files with up to max_lines_per_file lines.
-    """
-    input_path = Path(input_folder)
+def collect_all_text_files(input_base_path):
+    """Collect all text files from all input_* folders."""
+    input_path = Path(input_base_path)
+    all_files = []
     
-    # Get list of text files
-    text_files = list(input_path.glob('*.txt'))
-    if not text_files:
-        print(f"No text files found in {input_folder}")
+    # Look for input_* folders
+    for folder in sorted(input_path.glob('input_*')):
+        if folder.is_dir():
+            # Get all .txt files in this folder
+            txt_files = list(folder.glob('*.txt'))
+            all_files.extend(txt_files)
+            print(f"Found {len(txt_files)} text files in {folder}")
+    
+    return all_files
+
+def group_files_by_language(file_list):
+    """Group files by language to maintain order."""
+    language_files = defaultdict(list)
+    
+    for file_path in file_list:
+        language = file_path.stem
+        language_files[language].append(file_path)
+    
+    # Sort files within each language group by their parent folder number
+    for language in language_files:
+        language_files[language].sort(key=lambda x: int(x.parent.name.split('_')[1]))
+    
+    return language_files
+
+def process_language_files_sequentially(language, file_list, base_output_path, lines_per_file):
+    """Process all files for a single language sequentially to maintain order."""
+    print(f"Processing {len(file_list)} files for language: {language}")
+    
+    # Get the next available folder number for this language
+    current_folder_num = get_next_folder_number(base_output_path, language)
+    
+    current_lines = []
+    line_count = 0
+    total_lines_processed = 0
+    
+    # Process each file in order
+    for file_path in file_list:
+        print(f"  Reading from {file_path}")
+        
+        # Read all lines from current file
+        for line in read_lines_generator(file_path):
+            current_lines.append(line)
+            line_count += 1
+            total_lines_processed += 1
+            
+            # When we reach the target lines per file, save the current batch
+            if line_count >= lines_per_file:
+                # Create output folder
+                output_folder = Path(base_output_path) / f"input_{current_folder_num}"
+                output_folder.mkdir(parents=True, exist_ok=True)
+                
+                # Write file
+                output_file = output_folder / f"{language}.txt"
+                with open(output_file, 'w', encoding='utf-8') as f:
+                    f.write('\n'.join(current_lines) + '\n')
+                
+                print(f"    Created {output_file} with {line_count} lines")
+                
+                # Reset for next batch
+                current_lines = []
+                line_count = 0
+                current_folder_num += 1
+    
+    # Write any remaining lines to the final file
+    if current_lines:
+        output_folder = Path(base_output_path) / f"input_{current_folder_num}"
+        output_folder.mkdir(parents=True, exist_ok=True)
+        
+        output_file = output_folder / f"{language}.txt"
+        with open(output_file, 'w', encoding='utf-8') as f:
+            f.write('\n'.join(current_lines) + '\n')
+        
+        print(f"    Created {output_file} with {line_count} lines (final chunk)")
+    
+    return total_lines_processed
+
+def process_text_files(input_base_path, output_base_path=None, lines_per_file=1000, cores=None):
+    """
+    Process all text files from input_* folders, splitting each language's files
+    into 1000-line chunks while preserving order.
+    """
+    if output_base_path is None:
+        output_base_path = input_base_path
+    
+    # Collect all text files
+    all_files = collect_all_text_files(input_base_path)
+    if not all_files:
+        print(f"No text files found in {input_base_path}/input_* folders")
         return
     
-    # Determine number of CPU cores to use
-    if cores is None:
-        cores = os.cpu_count()
-    cores = min(cores, len(text_files))  # Don't use more cores than files
+    print(f"Found {len(all_files)} total text files")
     
-    print(f"Using {cores} CPU cores to process {len(text_files)} files")
+    # Group files by language
+    language_files = group_files_by_language(all_files)
     
-    # Prepare arguments for each file
-    tasks = [(file_path, output_base_folder, max_lines_per_file, total_max_lines) for file_path in text_files]
+    print(f"Found {len(language_files)} languages: {list(language_files.keys())}")
     
-    # Process files in parallel
-    with Pool(processes=cores) as pool:
-        results = pool.map(process_single_text_file, tasks)
+    # Process each language separately to maintain order
+    total_lines_all = 0
+    for language, file_list in language_files.items():
+        total_lines = process_language_files_sequentially(
+            language, file_list, output_base_path, lines_per_file
+        )
+        total_lines_all += total_lines
+        print(f"Processed {total_lines} lines for {language}")
     
-    # Summarize results
-    total_lines_processed = 0
-    for total_lines, language, folder_count in results:
-        total_lines_processed += total_lines
-        print(f"Processed {total_lines} lines from {language}.txt into {folder_count} subfolders")
-    
-    print(f"Total lines processed: {total_lines_processed} into {output_base_folder}")
+    print(f"Total lines processed across all languages: {total_lines_all}")
 
 def main():
     parser = argparse.ArgumentParser(
-        description='Split large text files into 10 subfolders with up to 15,000 lines per file using multiple CPU cores.'
+        description='Split text files from input_* folders into 1000-line chunks while preserving order and folder structure.'
     )
     parser.add_argument(
-        '--input-folder',
+        '--input-path',
         type=str,
-        default='input_texts',
-        help='Folder containing input text files (e.g., hindi.txt, urdu.txt). Default: input_texts'
+        default='1M_texts',
+        help='Base path containing input_* folders with text files. Default: 1M_texts'
     )
     parser.add_argument(
-        '--output-folder',
+        '--output-path',
         type=str,
-        default='input_folder',
-        help='Base folder for output subfolders (input_1 to input_10). Default: input_folder'
+        default=None,
+        help='Base path for output. If not specified, uses same as input-path'
+    )
+    parser.add_argument(
+        '--lines-per-file',
+        type=int,
+        default=1000,
+        help='Number of lines per output file. Default: 1000'
     )
     parser.add_argument(
         '--cores',
         type=int,
         default=None,
-        help='Number of CPU cores to use. Defaults to number of available cores.'
+        help='Number of CPU cores to use (currently not used due to order preservation requirement)'
     )
     
     args = parser.parse_args()
     
     process_text_files(
-        input_folder=args.input_folder,
-        output_base_folder=args.output_folder,
-        max_lines_per_file=1_000,
-        total_max_lines=100_000,
+        input_base_path=args.input_path,
+        output_base_path=args.output_path,
+        lines_per_file=args.lines_per_file,
         cores=args.cores
     )
 

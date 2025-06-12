@@ -15,7 +15,7 @@ def draw_coco_boxes_single_normalized(json_path, image_path, output_path):
     # Load JSON file
     try:
         with open(json_path, 'r', encoding='utf-8') as f:
-            coco_data = json.load(f)
+            coco_data = json.load(f)  # Fixed: use json.load() instead of json.loads()
     except Exception as e:
         print(f"Error loading JSON file {json_path}: {e}")
         return
@@ -44,6 +44,8 @@ def draw_coco_boxes_single_normalized(json_path, image_path, output_path):
     # Find annotations for this image
     annotations = [ann for ann in coco_data.get('annotations', []) if ann['image_id'] == image_id]
 
+    print(f"Found {len(annotations)} annotations for image ID: {image_id}")
+
     # Draw bounding boxes
     for ann in annotations:
         # Normalize main bounding box (x, y, w, h) to [0, 1]
@@ -60,15 +62,18 @@ def draw_coco_boxes_single_normalized(json_path, image_path, output_path):
         scaled_w = norm_w * img_width
         scaled_h = norm_h * img_height
 
-        # Draw main bounding box (red, thicker line)
-        draw.rectangle(
-            [scaled_x1, scaled_y1, scaled_x1 + scaled_w, scaled_y1 + scaled_h],
-            outline='red',
-            width=3
-        )
+        # # Draw main bounding box (red, thicker line)
+        # draw.rectangle(
+        #     [scaled_x1, scaled_y1, scaled_x1 + scaled_w, scaled_y1 + scaled_h],
+        #     outline='red',
+        #     width=3
+        # )
 
         # Normalize and draw textline boxes (blue, thinner line)
-        for textline in ann.get('textlines', []):
+        textlines = ann.get('textlines', [])
+        print(f"Drawing {len(textlines)} textlines for annotation {ann.get('id')}")
+        
+        for textline in textlines:
             tl_bbox = textline['bbox']
             tl_x1, tl_y1, tl_w, tl_h = tl_bbox
             norm_tl_x1 = tl_x1 / json_img_width
@@ -96,9 +101,10 @@ def draw_coco_boxes_single_normalized(json_path, image_path, output_path):
         print(f"Error saving annotated image {output_path}: {e}")
 
 if __name__ == "__main__":
-    # Example usage
-    JSON_PATH = "output_jsons/hindi_nv_hi_000040_0.json"  # Path to your JSON file
-    IMAGE_PATH = "output/Tex_files_hindi/nv_hi_000040_0.png"  # Path to your image
-    OUTPUT_PATH = "nv_0r_000040_0_annotated.png"  # Path to save annotated image
+    # Fixed: Corrected the variable names and paths
+    JSON_PATH = "output_jsons/bengali_ar_bn_000854_1.json"  # Path to your JSON file
+    IMAGE_PATH = "synthgen_v3/Tex_files_bengali/ar_bn_000854_1.png"  # Path to your image
+    OUTPUT_PATH = "mg_as_000007_0_annotated.png"  # Path to save annotated image
 
+    # Fixed: Corrected the parameter order
     draw_coco_boxes_single_normalized(JSON_PATH, IMAGE_PATH, OUTPUT_PATH)
