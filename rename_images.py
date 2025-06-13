@@ -50,5 +50,5 @@ def rename_png_files(root_folder):
                     print(f"Renamed: {file} → {new_name}")
 
 # Example usage
-folder_path = "your_main_folder_path_here"
+folder_path = "synthgen_v5"
 rename_png_files(folder_path)
