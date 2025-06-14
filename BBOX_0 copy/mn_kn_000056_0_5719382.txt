@@ -1,0 +1,7 @@
+[1654, 1241]
+[paragraph, [106.0, 489.0, 634.0, 36.0], shoonya_2sMDM4135ZTKFL, 5719382]
+[ordered-list, [117.0, 555.0, 1019.0, 36.0], USn6iT8Eke, 5719382]
+[ordered-list, [117.0, 591.0, 1019.0, 36.0], USn6iT8Eke, 5719382]
+[ordered-list, [117.0, 627.0, 1019.0, 36.0], USn6iT8Eke, 5719382]
+[ordered-list, [117.0, 663.0, 1019.0, 36.0], USn6iT8Eke, 5719382]
+[ordered-list, [117.0, 699.0, 1019.0, 36.0], USn6iT8Eke, 5719382]

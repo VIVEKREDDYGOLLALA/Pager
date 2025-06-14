@@ -1,0 +1,5 @@
+[595, 842]
+[section-title, [150.0, 100.0, 211.0, 30.0], SfUM3kZum4, 5779784]
+[figure-caption, [26.0, 227.0, 164.0, 18.0], shoonya_3s9K00MSCWAMC8, 5779784]
+[figure-caption, [222.0, 229.0, 189.0, 18.0], HfaOWDiQTe, 5779784]
+[figure-caption, [683.0, 397.0, 127.0, 18.0], shoonya_0sVMQHQD96G494, 5779784]

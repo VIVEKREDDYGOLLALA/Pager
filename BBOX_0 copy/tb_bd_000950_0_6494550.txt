@@ -1,0 +1,3 @@
+[840, 544]
+[contact-info, [88.0, 764.0, 385.0, 18.0], shoonya_0sRAMRBTN6VROS, 6494550]
+[contact-info, [88.0, 782.0, 385.0, 18.0], shoonya_0sRAMRBTN6VROS, 6494550]

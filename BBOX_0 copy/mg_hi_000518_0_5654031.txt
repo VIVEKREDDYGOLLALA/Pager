@@ -1,0 +1,5 @@
+[2009, 1386]
+[chapter-title, [0.0, 35.0, 263.0, 70.5], shoonya_3sJAH0PH70VDAI, 5654031]
+[figure-caption, [1216.0, 529.0, 81.0, 36.0], DtOltQ8a_n, 5654031]
+[figure-caption, [1216.0, 565.0, 81.0, 36.0], DtOltQ8a_n, 5654031]
+[footnote, [347.0, 1953.0, 690.0, 36.0], pVW_QgI32b, 5654031]

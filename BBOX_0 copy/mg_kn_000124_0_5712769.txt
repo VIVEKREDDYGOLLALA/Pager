@@ -1,0 +1,7 @@
+[1565, 1152]
+[figure-caption, [393.0, 69.0, 495.0, 36.0], _uHT1JhhPB, 5712769]
+[figure-caption, [393.0, 105.0, 495.0, 36.0], _uHT1JhhPB, 5712769]
+[figure-caption, [393.0, 141.0, 495.0, 36.0], _uHT1JhhPB, 5712769]
+[figure-caption, [393.0, 177.0, 495.0, 36.0], _uHT1JhhPB, 5712769]
+[figure-caption, [393.0, 213.0, 495.0, 36.0], _uHT1JhhPB, 5712769]
+[folio, [905.0, 1447.0, 129.0, 36.0], m9P-6cMzcn, 5712769]

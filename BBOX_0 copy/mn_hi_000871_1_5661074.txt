@@ -1,0 +1,7 @@
+[792, 612]
+[chapter-title, [191.0, 44.0, 232.0, 30.0], abhL09ec5R, 5661074]
+[paragraph, [37.0, 125.0, 530.0, 18.0], shoonya_4sIEM3Y7MUTENN, 5661074]
+[unordered-list, [215.0, 454.0, 196.0, 18.0], shoonya_2sKUK9YRGBXO9M, 5661074]
+[paragraph, [40.0, 620.0, 531.0, 18.0], shoonya_6s2SHUKURGIXH7, 5661074]
+[paragraph, [40.0, 638.0, 531.0, 18.0], shoonya_6s2SHUKURGIXH7, 5661074]
+[paragraph, [41.0, 659.0, 512.0, 18.0], wBhb2iOzL6, 5661074]

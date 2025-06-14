@@ -1,0 +1,8 @@
+[1565, 1152]
+[headline, [450.0, 158.0, 251.0, 37.5], fkY4fDgvy0, 5722145]
+[figure-caption, [225.0, 1157.0, 702.0, 36.0], TchBvC49kz, 5722145]
+[figure-caption, [225.0, 1193.0, 702.0, 36.0], TchBvC49kz, 5722145]
+[figure-caption, [225.0, 1229.0, 702.0, 36.0], TchBvC49kz, 5722145]
+[figure-caption, [225.0, 1265.0, 702.0, 36.0], TchBvC49kz, 5722145]
+[figure-caption, [225.0, 1301.0, 702.0, 36.0], TchBvC49kz, 5722145]
+[footnote, [256.0, 1386.0, 647.0, 36.0], ugD-wGEokM, 5722145]

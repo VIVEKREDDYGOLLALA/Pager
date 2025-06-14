@@ -1,0 +1,7 @@
+[1755, 1240]
+[folio, [637.0, 69.0, 485.0, 36.0], vHzSNBQ90s, 5743851]
+[chapter-title, [453.0, 663.0, 414.0, 58.5], shoonya_2s6ZKL7LMTAQRK, 5743851]
+[chapter-title, [453.0, 721.5, 414.0, 58.5], shoonya_2s6ZKL7LMTAQRK, 5743851]
+[section-title, [208.0, 784.0, 933.0, 49.5], shoonya_3s6LY1S56V9TRR, 5743851]
+[section-title, [208.0, 833.5, 933.0, 49.5], shoonya_3s6LY1S56V9TRR, 5743851]
+[section-title, [208.0, 883.0, 933.0, 49.5], shoonya_3s6LY1S56V9TRR, 5743851]

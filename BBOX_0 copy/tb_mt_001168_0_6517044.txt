@@ -1,0 +1,8 @@
+[576, 360]
+[folio, [154.0, 30.0, 154.0, 18.0], m9iBRWxGVU, 6517044]
+[paragraph, [26.0, 82.0, 301.0, 18.0], shoonya_0sXA0VB6Q6AYCQ, 6517044]
+[paragraph, [26.0, 100.0, 301.0, 18.0], shoonya_0sXA0VB6Q6AYCQ, 6517044]
+[paragraph, [28.0, 148.0, 306.0, 18.0], TB1EhjN9f6, 6517044]
+[paragraph, [28.0, 166.0, 306.0, 18.0], TB1EhjN9f6, 6517044]
+[paragraph, [28.0, 184.0, 306.0, 18.0], TB1EhjN9f6, 6517044]
+[paragraph, [28.0, 202.0, 306.0, 18.0], TB1EhjN9f6, 6517044]

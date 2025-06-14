@@ -1,0 +1,8 @@
+[611, 425]
+[headline, [123.0, 111.0, 182.0, 25.5], shoonya_0sPYTF1MX210GZ, 6496655]
+[headline, [123.0, 136.5, 182.0, 25.5], shoonya_0sPYTF1MX210GZ, 6496655]
+[sub-headline, [173.0, 195.0, 79.0, 25.5], v9tmmeUzoc, 6496655]
+[sub-headline, [173.0, 220.5, 79.0, 25.5], v9tmmeUzoc, 6496655]
+[subsub-headline, [47.0, 284.0, 313.0, 22.5], shoonya_1sF7UG4F4SCBU6, 6496655]
+[subsub-headline, [47.0, 306.5, 313.0, 22.5], shoonya_1sF7UG4F4SCBU6, 6496655]
+[author, [125.0, 509.0, 150.0, 18.0], E_c6tVwYPf, 6496655]

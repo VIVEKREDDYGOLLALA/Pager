@@ -1,0 +1,8 @@
+[576, 360]
+[folio, [46.0, 32.0, 87.0, 18.0], gexxvY6flJ, 6516880]
+[paragraph, [32.0, 56.0, 297.0, 18.0], shoonya_1sQPJCZL4S5SMS, 6516880]
+[paragraph, [32.0, 74.0, 297.0, 18.0], shoonya_1sQPJCZL4S5SMS, 6516880]
+[reference, [31.0, 121.0, 272.0, 18.0], TcMEx144HB, 6516880]
+[paragraph, [31.0, 166.0, 297.0, 18.0], y7_Kg20KmL, 6516880]
+[paragraph, [31.0, 184.0, 297.0, 18.0], y7_Kg20KmL, 6516880]
+[paragraph, [31.0, 202.0, 297.0, 18.0], y7_Kg20KmL, 6516880]

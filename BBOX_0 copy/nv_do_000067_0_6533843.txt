@@ -1,0 +1,8 @@
+[612, 792]
+[figure-caption, [64.0, 371.0, 639.0, 18.0], shoonya_1sAFO61R0H6LJQ, 6533843]
+[figure-caption, [64.0, 389.0, 639.0, 18.0], shoonya_1sAFO61R0H6LJQ, 6533843]
+[figure-caption, [64.0, 407.0, 639.0, 18.0], shoonya_1sAFO61R0H6LJQ, 6533843]
+[author, [603.0, 434.0, 107.0, 18.0], yaag4fNd_N, 6533843]
+[author, [603.0, 452.0, 107.0, 18.0], yaag4fNd_N, 6533843]
+[author, [603.0, 470.0, 107.0, 18.0], yaag4fNd_N, 6533843]
+[folio, [355.0, 537.0, 98.0, 18.0], FWa-_byj3Z, 6533843]

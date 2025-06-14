@@ -1,0 +1,5 @@
+[668, 446]
+[figure-caption, [57.0, 85.0, 160.0, 18.0], shoonya_3s5CJ5554BBHDZ, 6496686]
+[unordered-list, [74.0, 458.0, 141.0, 18.0], shoonya_1sWZ0BGG483FQ6, 6496686]
+[unordered-list, [74.0, 476.0, 141.0, 18.0], shoonya_1sWZ0BGG483FQ6, 6496686]
+[unordered-list, [74.0, 494.0, 141.0, 18.0], shoonya_1sWZ0BGG483FQ6, 6496686]

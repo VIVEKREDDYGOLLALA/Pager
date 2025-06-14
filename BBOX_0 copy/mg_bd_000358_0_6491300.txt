@@ -1,0 +1,8 @@
+[690, 512]
+[folio, [191.0, 40.0, 105.0, 18.0], 6eR4hOM9yh, 6491300]
+[ordered-list, [20.0, 77.0, 328.0, 18.0], shoonya_0sJ09JE7EYVWOE, 6491300]
+[ordered-list, [20.0, 95.0, 328.0, 18.0], shoonya_0sJ09JE7EYVWOE, 6491300]
+[ordered-list, [20.0, 113.0, 328.0, 18.0], shoonya_0sJ09JE7EYVWOE, 6491300]
+[ordered-list, [20.0, 131.0, 328.0, 18.0], shoonya_0sJ09JE7EYVWOE, 6491300]
+[paragraph, [191.0, 160.0, 103.0, 18.0], xG0OSWesIG, 6491300]
+[author, [310.0, 190.0, 140.0, 18.0], z53xTGYRbW, 6491300]

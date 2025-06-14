@@ -1,0 +1,7 @@
+[842, 595]
+[reference, [94.0, 52.0, 243.0, 18.0], N-bbozGyWi, 5688818]
+[reference, [94.0, 70.0, 243.0, 18.0], N-bbozGyWi, 5688818]
+[reference, [94.0, 88.0, 243.0, 18.0], N-bbozGyWi, 5688818]
+[reference, [94.0, 106.0, 243.0, 18.0], N-bbozGyWi, 5688818]
+[reference, [94.0, 124.0, 243.0, 18.0], N-bbozGyWi, 5688818]
+[reference, [94.0, 142.0, 243.0, 18.0], N-bbozGyWi, 5688818]

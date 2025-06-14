@@ -1,0 +1,3 @@
+[1565, 1152]
+[contact-info, [197.0, 102.0, 777.0, 36.0], shoonya_2sSD714YIRTLHR, 5713368]
+[contact-info, [111.0, 1468.0, 930.0, 36.0], shoonya_1sPXG2W1VPC57M, 5713368]

@@ -1,0 +1,8 @@
+[794, 596]
+[figure-caption, [454.0, 179.0, 52.0, 18.0], kuHs0yOazi, 5731207]
+[figure-caption, [106.0, 184.0, 53.0, 18.0], 4cAsMitRTa, 5731207]
+[figure-caption, [227.0, 186.0, 44.0, 18.0], shoonya_5sKOOB94EQXBP5, 5731207]
+[figure-caption, [227.0, 186.0, 45.0, 18.0], shoonya_9sN18SQG1N8IOJ, 5731207]
+[section-title, [65.0, 247.0, 353.0, 30.0], sEUlxnpTYH, 5731207]
+[placeholder-text, [173.0, 595.0, 387.0, 18.0], 1KeovzZqNV, 5731207]
+[placeholder-text, [173.0, 613.0, 387.0, 18.0], 1KeovzZqNV, 5731207]

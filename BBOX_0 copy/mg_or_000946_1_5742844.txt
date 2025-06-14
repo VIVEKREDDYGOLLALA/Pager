@@ -1,0 +1,8 @@
+[842, 595]
+[paragraph, [389.0, 78.0, 145.0, 18.0], iWGHDbvQ3Q, 5742844]
+[contact-info, [255.0, 364.0, 100.0, 18.0], qyKkIB-lV0, 5742844]
+[figure-caption, [56.0, 402.0, 131.0, 18.0], ympXsPF8kA, 5742844]
+[figure-caption, [87.0, 495.0, 91.0, 18.0], rbnKoMYUic, 5742844]
+[contact-info, [185.0, 642.0, 350.0, 18.0], rG89UAGC-m, 5742844]
+[contact-info, [185.0, 660.0, 350.0, 18.0], rG89UAGC-m, 5742844]
+[contact-info, [36.0, 726.0, 513.0, 18.0], biqa5DAYfc, 5742844]

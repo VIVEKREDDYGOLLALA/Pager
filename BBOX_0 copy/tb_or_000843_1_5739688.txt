@@ -1,0 +1,7 @@
+[766, 567]
+[paragraph, [38.0, 40.0, 446.0, 18.0], qrFhX9_wMt, 5739688]
+[paragraph, [38.0, 58.0, 446.0, 18.0], qrFhX9_wMt, 5739688]
+[paragraph, [38.0, 76.0, 446.0, 18.0], qrFhX9_wMt, 5739688]
+[figure-caption, [200.0, 552.0, 157.0, 18.0], shoonya_1sXPM9BYXSZ8WB, 5739688]
+[sidebar, [48.0, 657.0, 432.0, 18.0], qQKJK-SydX, 5739688]
+[sidebar, [48.0, 675.0, 432.0, 18.0], qQKJK-SydX, 5739688]

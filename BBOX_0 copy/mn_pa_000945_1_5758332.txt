@@ -1,0 +1,7 @@
+[792, 612]
+[folio, [239.0, 50.0, 308.0, 18.0], j1auybYqaF, 5758332]
+[unordered-list, [118.0, 95.0, 272.0, 18.0], zYz0ZGDt3m, 5758332]
+[unordered-list, [118.0, 113.0, 272.0, 18.0], zYz0ZGDt3m, 5758332]
+[unordered-list, [118.0, 131.0, 272.0, 18.0], zYz0ZGDt3m, 5758332]
+[unordered-list, [118.0, 149.0, 272.0, 18.0], zYz0ZGDt3m, 5758332]
+[figure-caption, [277.0, 428.0, 61.0, 18.0], pF12HiEbfk, 5758332]

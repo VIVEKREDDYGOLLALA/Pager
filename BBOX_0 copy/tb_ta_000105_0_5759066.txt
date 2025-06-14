@@ -1,0 +1,7 @@
+[1650, 1275]
+[section-title, [259.0, 229.0, 210.0, 49.5], skRAFBNjZZ, 5759066]
+[ordered-list, [245.0, 309.0, 831.0, 36.0], y3BjslCwAj, 5759066]
+[ordered-list, [245.0, 345.0, 831.0, 36.0], y3BjslCwAj, 5759066]
+[ordered-list, [245.0, 381.0, 831.0, 36.0], y3BjslCwAj, 5759066]
+[ordered-list, [245.0, 417.0, 831.0, 36.0], y3BjslCwAj, 5759066]
+[paragraph, [341.0, 634.0, 591.0, 36.0], p_KIBbHK9t, 5759066]

@@ -1,0 +1,8 @@
+[733, 553]
+[second-level-question, [81.0, 498.0, 409.0, 18.0], shoonya_4sQ2ERNFLJFZQ9, 5689826]
+[second-level-question, [81.0, 516.0, 409.0, 18.0], shoonya_4sQ2ERNFLJFZQ9, 5689826]
+[second-level-question, [81.0, 534.0, 409.0, 18.0], shoonya_4sQ2ERNFLJFZQ9, 5689826]
+[second-level-question, [81.0, 552.0, 409.0, 18.0], shoonya_4sQ2ERNFLJFZQ9, 5689826]
+[second-level-question, [81.0, 570.0, 409.0, 18.0], shoonya_4sQ2ERNFLJFZQ9, 5689826]
+[second-level-question, [81.0, 588.0, 409.0, 18.0], shoonya_4sQ2ERNFLJFZQ9, 5689826]
+[second-level-question, [81.0, 606.0, 409.0, 18.0], shoonya_4sQ2ERNFLJFZQ9, 5689826]

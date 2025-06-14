@@ -1,0 +1,6 @@
+[842, 596]
+[section-title, [235.0, 96.0, 135.0, 30.0], shoonya_3s3QIP39VCMYQG, 5716030]
+[contact-info, [176.0, 653.0, 237.0, 18.0], iMC8YJVkdl, 5716030]
+[folio, [192.0, 690.0, 177.0, 18.0], bRUO-mvT0K, 5716030]
+[footnote, [73.0, 740.0, 441.0, 18.0], e5GvgrPw5O, 5716030]
+[footnote, [73.0, 758.0, 441.0, 18.0], e5GvgrPw5O, 5716030]

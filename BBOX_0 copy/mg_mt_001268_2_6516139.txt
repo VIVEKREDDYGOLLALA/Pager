@@ -1,0 +1,4 @@
+[2000, 1414]
+[section-title, [531.0, 231.0, 397.0, 52.5], dGTKUQ0TsH, 6516139]
+[section-title, [531.0, 283.5, 397.0, 52.5], dGTKUQ0TsH, 6516139]
+[section-title, [531.0, 336.0, 397.0, 52.5], dGTKUQ0TsH, 6516139]

@@ -1,0 +1,7 @@
+[792, 612]
+[ordered-list, [105.0, 52.0, 149.0, 18.0], cpnonrHVXI, 5700499]
+[ordered-list, [105.0, 70.0, 149.0, 18.0], cpnonrHVXI, 5700499]
+[options, [108.0, 113.0, 353.0, 18.0], shoonya_0s92MXSKOP4T8S, 5700499]
+[options, [108.0, 131.0, 353.0, 18.0], shoonya_0s92MXSKOP4T8S, 5700499]
+[options, [108.0, 149.0, 353.0, 18.0], shoonya_0s92MXSKOP4T8S, 5700499]
+[options, [108.0, 167.0, 353.0, 18.0], shoonya_0s92MXSKOP4T8S, 5700499]

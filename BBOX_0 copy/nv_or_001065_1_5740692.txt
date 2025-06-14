@@ -1,0 +1,7 @@
+[468, 312]
+[paragraph, [18.0, 38.0, 274.0, 52.5], shoonya_1s1ZVYHJNYILVY, 5740692]
+[paragraph, [18.0, 90.5, 274.0, 52.5], shoonya_1s1ZVYHJNYILVY, 5740692]
+[paragraph, [17.0, 170.0, 271.0, 52.5], shoonya_0s8WD3OFPLKZG4, 5740692]
+[paragraph, [18.0, 245.0, 275.0, 52.5], shoonya_2sY2F6RLILV4Y6, 5740692]
+[paragraph, [12.0, 299.0, 288.0, 52.5], a7YffGoDtY, 5740692]
+[paragraph, [12.0, 351.5, 288.0, 52.5], a7YffGoDtY, 5740692]

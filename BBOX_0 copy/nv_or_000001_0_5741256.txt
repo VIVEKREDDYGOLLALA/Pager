@@ -1,0 +1,7 @@
+[827, 532]
+[chapter-title, [180.0, 41.0, 321.0, 30.0], shoonya_0sSEXT9YKAXFWH, 5741256]
+[chapter-title, [180.0, 71.0, 321.0, 30.0], shoonya_0sSEXT9YKAXFWH, 5741256]
+[chapter-title, [180.0, 101.0, 321.0, 30.0], shoonya_0sSEXT9YKAXFWH, 5741256]
+[author, [181.0, 742.0, 313.0, 18.0], ApmeLpuNxZ, 5741256]
+[author, [181.0, 760.0, 313.0, 18.0], ApmeLpuNxZ, 5741256]
+[footnote, [217.0, 787.0, 262.0, 18.0], RTCRn8cXls, 5741256]

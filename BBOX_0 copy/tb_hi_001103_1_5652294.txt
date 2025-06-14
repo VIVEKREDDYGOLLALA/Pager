@@ -1,0 +1,3 @@
+[720, 504]
+[figure-caption, [140.0, 613.0, 228.0, 18.0], shoonya_3sHK82CVU0TE3H, 5652294]
+[footnote, [202.0, 681.0, 94.0, 18.0], shoonya_6sVTQG0O8RGWBZ, 5652294]

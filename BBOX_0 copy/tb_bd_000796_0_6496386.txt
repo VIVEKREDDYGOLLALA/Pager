@@ -1,0 +1,6 @@
+[577, 422]
+[headline, [105.0, 56.0, 212.0, 25.5], shoonya_0s4BMO5QFGN6RX, 6496386]
+[headline, [105.0, 81.5, 212.0, 25.5], shoonya_0s4BMO5QFGN6RX, 6496386]
+[headline, [105.0, 107.0, 212.0, 25.5], shoonya_0s4BMO5QFGN6RX, 6496386]
+[author, [145.0, 411.0, 112.0, 18.0], jTyqvP9mIS, 6496386]
+[contact-info, [100.0, 516.0, 212.0, 18.0], CjRS_8M2Ho, 6496386]

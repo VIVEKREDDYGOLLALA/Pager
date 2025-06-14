@@ -1,0 +1,5 @@
+[635, 1724]
+[headline, [1176.0, 43.0, 297.0, 25.5], shoonya_2sLNLSOXZVYCMO, 5780018]
+[paragraph, [1174.0, 79.0, 297.0, 18.0], 4Fw8xwepj4, 5780018]
+[paragraph, [1174.0, 97.0, 297.0, 18.0], 4Fw8xwepj4, 5780018]
+[figure-caption, [1513.0, 334.0, 127.0, 18.0], uRzaDdyYUH, 5780018]

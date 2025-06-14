@@ -1,0 +1,7 @@
+[842, 596]
+[chapter-title, [299.0, 93.0, 237.0, 30.0], Rz0SiVmdT-, 6490899]
+[paragraph, [320.0, 140.0, 215.0, 18.0], egEeku5etV, 6490899]
+[paragraph, [40.0, 450.0, 228.0, 18.0], ov5iOYEBox, 6490899]
+[paragraph, [46.0, 477.0, 182.0, 18.0], yBFcoZLLVP, 6490899]
+[paragraph, [39.0, 748.0, 518.0, 18.0], fcBkVlA6Xe, 6490899]
+[paragraph, [39.0, 766.0, 518.0, 18.0], fcBkVlA6Xe, 6490899]

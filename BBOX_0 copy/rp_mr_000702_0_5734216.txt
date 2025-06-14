@@ -1,0 +1,3 @@
+[2200, 1700]
+[section-title, [821.0, 919.0, 244.0, 52.5], E100kUDsa5, 5734216]
+[chapter-title, [544.0, 1030.0, 786.0, 70.5], shoonya_0sT0ZRUQRD0SPR, 5734216]

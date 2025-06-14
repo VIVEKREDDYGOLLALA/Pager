@@ -1,0 +1,7 @@
+[842, 595]
+[folio, [74.0, 3.0, 447.0, 18.0], shoonya_5s1ARBJLUU3HGL, 5659916]
+[folio, [74.0, 21.0, 447.0, 18.0], shoonya_5s1ARBJLUU3HGL, 5659916]
+[second-level-question, [78.0, 392.0, 411.0, 18.0], PC5uI54VDI, 5659916]
+[second-level-question, [87.0, 429.0, 279.0, 18.0], RnwJMgCYZR, 5659916]
+[folio, [2.0, 789.0, 576.0, 18.0], dsuREXwcn4, 5659916]
+[website-link, [100.0, 792.0, 129.0, 18.0], Uxq3RAoItr, 5659916]

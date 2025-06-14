@@ -1,0 +1,4 @@
+[792, 612]
+[chapter-title, [306.0, 46.0, 99.0, 30.0], shoonya_1s2T7O7O7LBV82, 5653956]
+[figure-caption, [113.0, 382.0, 441.0, 18.0], shoonya_6sG05AWYLB31DT, 5653956]
+[folio, [473.0, 746.0, 69.0, 18.0], -ClhXdCO1O, 5653956]

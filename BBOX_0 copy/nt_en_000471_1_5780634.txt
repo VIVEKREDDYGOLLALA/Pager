@@ -1,0 +1,8 @@
+[842, 596]
+[flag, [46.0, 0.0, 192.0, 18.0], shoonya_0sXO8N7KP9A20W, 5780634]
+[flag, [46.0, 18.0, 192.0, 18.0], shoonya_0sXO8N7KP9A20W, 5780634]
+[flag, [46.0, 36.0, 192.0, 18.0], shoonya_0sXO8N7KP9A20W, 5780634]
+[section-title, [60.0, 152.0, 468.0, 30.0], w18lRam6eI, 5780634]
+[section-title, [60.0, 182.0, 468.0, 30.0], w18lRam6eI, 5780634]
+[sub-section-title, [84.0, 219.0, 428.0, 25.5], iIM959l2EU, 5780634]
+[sub-section-title, [84.0, 244.5, 428.0, 25.5], iIM959l2EU, 5780634]

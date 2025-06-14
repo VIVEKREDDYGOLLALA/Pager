@@ -1,0 +1,7 @@
+[450, 800]
+[unordered-list, [62.0, 114.0, 696.0, 52.5], shoonya_1sVWQFHVWURQGX, 6473652]
+[unordered-list, [62.0, 166.5, 696.0, 52.5], shoonya_1sVWQFHVWURQGX, 6473652]
+[paragraph, [61.0, 308.0, 697.0, 52.5], ALu1eHaasL, 6473652]
+[website-link, [241.0, 315.0, 159.0, 18.0], ib_4LLBKPx, 6473652]
+[website-link, [214.0, 339.0, 189.0, 18.0], vfhkcbbFWZ, 6473652]
+[paragraph, [59.0, 376.0, 698.0, 52.5], shoonya_0sQ4GYUZDMVNNH, 6473652]

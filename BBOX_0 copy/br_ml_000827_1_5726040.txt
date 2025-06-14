@@ -1,0 +1,7 @@
+[504, 285]
+[unordered-list, [7.0, 134.0, 258.0, 18.0], dlWMrsO351, 5726040]
+[unordered-list, [7.0, 152.0, 258.0, 18.0], dlWMrsO351, 5726040]
+[unordered-list, [7.0, 170.0, 258.0, 18.0], dlWMrsO351, 5726040]
+[unordered-list, [7.0, 188.0, 258.0, 18.0], dlWMrsO351, 5726040]
+[unordered-list, [7.0, 206.0, 258.0, 18.0], dlWMrsO351, 5726040]
+[unordered-list, [7.0, 224.0, 258.0, 18.0], dlWMrsO351, 5726040]

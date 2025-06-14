@@ -1,0 +1,8 @@
+[576, 756]
+[folio, [605.0, 24.0, 128.0, 18.0], shoonya_1s20SVGG41JEDK, 5762432]
+[folio, [605.0, 42.0, 128.0, 18.0], shoonya_1s20SVGG41JEDK, 5762432]
+[section-title, [302.0, 67.0, 270.0, 30.0], N_5x0Y1hkt, 5762432]
+[sub-section-title, [307.0, 128.0, 282.0, 25.5], vxuAFcHbqQ, 5762432]
+[paragraph, [305.0, 180.0, 148.0, 18.0], shoonya_4s8VTYAGY9D2BW, 5762432]
+[paragraph, [305.0, 203.0, 235.0, 18.0], 8EzAckgg4U, 5762432]
+[paragraph, [306.0, 220.0, 404.0, 18.0], F1n7BveQ2m, 5762432]

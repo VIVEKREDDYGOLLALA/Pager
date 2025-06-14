@@ -1,0 +1,6 @@
+[606, 385]
+[headline, [41.0, 91.0, 298.0, 25.5], shoonya_3sBWZP6FK1UBFL, 5725887]
+[sub-headline, [84.0, 140.0, 210.0, 25.5], shoonya_2s22KNVM5I23MA, 5725887]
+[contact-info, [29.0, 479.0, 334.0, 18.0], av-sooQg9d, 5725887]
+[contact-info, [29.0, 497.0, 334.0, 18.0], av-sooQg9d, 5725887]
+[contact-info, [29.0, 515.0, 334.0, 18.0], av-sooQg9d, 5725887]

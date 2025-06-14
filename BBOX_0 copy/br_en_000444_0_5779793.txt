@@ -1,0 +1,4 @@
+[1309, 863]
+[contact-info, [222.0, 1023.0, 492.0, 18.0], shoonya_1sH89HVOR6W3ZA, 5779793]
+[author, [329.0, 1077.0, 244.0, 18.0], shoonya_2s79TK1JVVMYNY, 5779793]
+[author, [329.0, 1095.0, 244.0, 18.0], shoonya_2s79TK1JVVMYNY, 5779793]

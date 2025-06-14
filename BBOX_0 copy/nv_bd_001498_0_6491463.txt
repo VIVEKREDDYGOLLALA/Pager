@@ -1,0 +1,5 @@
+[792, 612]
+[section-title, [229.0, 83.0, 146.0, 30.0], shoonya_0s0U24SMN0OYTJ, 6491463]
+[sub-section-title, [150.0, 145.0, 298.0, 25.5], N6al2GbV_i, 6491463]
+[author, [220.0, 678.0, 117.0, 18.0], shoonya_1sIPYWYDKTSPLO, 6491463]
+[author, [220.0, 696.0, 117.0, 18.0], shoonya_1sIPYWYDKTSPLO, 6491463]

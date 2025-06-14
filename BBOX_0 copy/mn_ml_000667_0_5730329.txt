@@ -1,0 +1,8 @@
+[1650, 1275]
+[paragraph, [180.0, 154.0, 930.0, 36.0], NPoEDF1Vgn, 5730329]
+[paragraph, [180.0, 190.0, 930.0, 36.0], NPoEDF1Vgn, 5730329]
+[paragraph, [180.0, 226.0, 930.0, 36.0], NPoEDF1Vgn, 5730329]
+[paragraph, [180.0, 262.0, 930.0, 36.0], NPoEDF1Vgn, 5730329]
+[paragraph, [180.0, 298.0, 930.0, 36.0], NPoEDF1Vgn, 5730329]
+[paragraph, [180.0, 334.0, 930.0, 36.0], NPoEDF1Vgn, 5730329]
+[paragraph, [180.0, 370.0, 930.0, 36.0], NPoEDF1Vgn, 5730329]

@@ -1,0 +1,6 @@
+[1650, 1275]
+[unordered-list, [87.0, 554.0, 1047.0, 36.0], aJeAC02-Kx, 5729960]
+[unordered-list, [87.0, 590.0, 1047.0, 36.0], aJeAC02-Kx, 5729960]
+[unordered-list, [87.0, 626.0, 1047.0, 36.0], aJeAC02-Kx, 5729960]
+[unordered-list, [102.0, 1151.0, 750.0, 36.0], hkz-L6VAkv, 5729960]
+[folio, [497.0, 1537.0, 280.0, 36.0], shoonya_2sDOXSQGVQCUIO, 5729960]

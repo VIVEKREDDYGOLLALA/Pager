@@ -1,0 +1,6 @@
+[595, 397]
+[figure-caption, [95.0, 63.0, 209.0, 18.0], shoonya_3sX6ZTELKWE0LN, 6517611]
+[chapter-title, [93.0, 385.0, 212.0, 30.0], shoonya_2sDHRWDXZLFE96, 6517611]
+[chapter-title, [93.0, 415.0, 212.0, 30.0], shoonya_2sDHRWDXZLFE96, 6517611]
+[author, [147.0, 502.0, 102.0, 18.0], shoonya_0sX6E1OQ86O3OH, 6517611]
+[author, [146.0, 522.0, 105.0, 18.0], shoonya_4sG92W75GGLBSY, 6517611]

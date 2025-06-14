@@ -1,0 +1,6 @@
+[792, 612]
+[paragraph, [69.0, 112.0, 479.0, 18.0], shoonya_0sE64U479HX859, 5779379]
+[paragraph, [69.0, 130.0, 479.0, 18.0], shoonya_0sE64U479HX859, 5779379]
+[paragraph, [69.0, 148.0, 479.0, 18.0], shoonya_0sE64U479HX859, 5779379]
+[folio, [368.0, 227.0, 132.0, 18.0], shoonya_5sIDCX7LB5FSH5, 5779379]
+[section-title, [101.0, 239.0, 257.0, 30.0], shoonya_3sZQQ3HAAQEGMO, 5779379]

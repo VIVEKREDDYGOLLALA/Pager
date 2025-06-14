@@ -1,0 +1,7 @@
+[792, 612]
+[reference, [48.0, 104.0, 517.0, 18.0], shoonya_0sQ2T11V5TWHB5, 6461920]
+[reference, [48.0, 122.0, 517.0, 18.0], shoonya_0sQ2T11V5TWHB5, 6461920]
+[reference, [48.0, 140.0, 517.0, 18.0], shoonya_0sQ2T11V5TWHB5, 6461920]
+[reference, [48.0, 158.0, 517.0, 18.0], shoonya_0sQ2T11V5TWHB5, 6461920]
+[reference, [48.0, 176.0, 517.0, 18.0], shoonya_0sQ2T11V5TWHB5, 6461920]
+[reference, [48.0, 194.0, 517.0, 18.0], shoonya_0sQ2T11V5TWHB5, 6461920]

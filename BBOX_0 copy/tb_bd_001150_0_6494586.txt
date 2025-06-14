@@ -1,0 +1,4 @@
+[842, 534]
+[contact-info, [189.0, 722.0, 182.0, 18.0], shoonya_0sTUDCB7VEZNKH, 6494586]
+[contact-info, [189.0, 740.0, 182.0, 18.0], shoonya_0sTUDCB7VEZNKH, 6494586]
+[contact-info, [189.0, 758.0, 182.0, 18.0], shoonya_0sTUDCB7VEZNKH, 6494586]

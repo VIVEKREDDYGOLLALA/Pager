@@ -1,0 +1,8 @@
+[3509, 2482]
+[headline, [910.0, 450.0, 622.0, 52.5], shoonya_0sUABYS3ITXUTI, 5691990]
+[headline, [910.0, 502.5, 622.0, 52.5], shoonya_0sUABYS3ITXUTI, 5691990]
+[section-title, [999.0, 1768.0, 384.0, 93.0], VOQdETr2Yo, 5691990]
+[author, [990.0, 2951.0, 410.0, 52.5], shoonya_1sSJ4XUW21UPAE, 5691990]
+[author, [990.0, 3003.5, 410.0, 52.5], shoonya_1sSJ4XUW21UPAE, 5691990]
+[author, [990.0, 3056.0, 410.0, 52.5], shoonya_1sSJ4XUW21UPAE, 5691990]
+[folio, [412.0, 3152.0, 471.0, 52.5], 1tOzk778Xr, 5691990]

@@ -1,0 +1,7 @@
+[595, 420]
+[second-level-question, [51.0, 48.0, 320.0, 18.0], 4gqI8AuRWB, 6466177]
+[second-level-question, [51.0, 66.0, 320.0, 18.0], 4gqI8AuRWB, 6466177]
+[second-level-question, [51.0, 88.0, 329.0, 18.0], I4mT26X1lv, 6466177]
+[second-level-question, [51.0, 106.0, 329.0, 18.0], I4mT26X1lv, 6466177]
+[second-level-question, [50.0, 131.0, 336.0, 18.0], zKiJLTbbbN, 6466177]
+[second-level-question, [50.0, 149.0, 336.0, 18.0], zKiJLTbbbN, 6466177]

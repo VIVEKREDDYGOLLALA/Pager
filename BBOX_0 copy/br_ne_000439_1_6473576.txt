@@ -1,0 +1,6 @@
+[450, 800]
+[unordered-list, [86.0, 114.0, 672.0, 52.5], shoonya_1sKPPEOMVI2G33, 6473576]
+[unordered-list, [86.0, 166.5, 672.0, 52.5], shoonya_1sKPPEOMVI2G33, 6473576]
+[paragraph, [61.0, 307.0, 699.0, 52.5], 0UJOwd-XxJ, 6473576]
+[website-link, [243.0, 314.0, 159.0, 18.0], pEwS4TNGPS, 6473576]
+[paragraph, [56.0, 379.0, 701.0, 52.5], cq3W87LGZm, 6473576]

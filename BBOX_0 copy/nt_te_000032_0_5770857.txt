@@ -1,0 +1,6 @@
+[792, 612]
+[placeholder-text, [297.0, 104.0, 226.0, 18.0], shoonya_1sCJ8VIE6VOMZE, 5770857]
+[placeholder-text, [297.0, 122.0, 226.0, 18.0], shoonya_1sCJ8VIE6VOMZE, 5770857]
+[placeholder-text, [297.0, 140.0, 226.0, 18.0], shoonya_1sCJ8VIE6VOMZE, 5770857]
+[placeholder-text, [294.0, 197.0, 210.0, 18.0], Rwg4Yrx9cd, 5770857]
+[placeholder-text, [294.0, 215.0, 210.0, 18.0], Rwg4Yrx9cd, 5770857]

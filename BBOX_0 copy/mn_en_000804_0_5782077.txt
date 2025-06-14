@@ -1,0 +1,5 @@
+[1261, 793]
+[folio, [630.0, 37.0, 118.0, 18.0], shoonya_2sB5U136RMDCPE, 5782077]
+[folio, [630.0, 55.0, 118.0, 18.0], shoonya_2sB5U136RMDCPE, 5782077]
+[section-title, [320.0, 59.0, 189.0, 30.0], Ss1d4GyoZc, 5782077]
+[footnote, [124.0, 1183.0, 166.0, 18.0], ElVYXDJYyY, 5782077]

@@ -1,0 +1,8 @@
+[842, 595]
+[folio, [212.0, 6.0, 258.0, 18.0], mizbsalGOz, 5716038]
+[figure-caption, [141.0, 627.0, 314.0, 18.0], shoonya_5s6ANRWMI8P3H1, 5716038]
+[figure-caption, [141.0, 645.0, 314.0, 18.0], shoonya_5s6ANRWMI8P3H1, 5716038]
+[figure-caption, [141.0, 663.0, 314.0, 18.0], shoonya_5s6ANRWMI8P3H1, 5716038]
+[website-link, [335.0, 707.0, 189.0, 18.0], lR2OljaAKt, 5716038]
+[contact-info, [79.0, 710.0, 181.0, 18.0], SeA6ejXOaL, 5716038]
+[website-link, [18.0, 817.0, 139.0, 18.0], fXTEzj9rSS, 5716038]

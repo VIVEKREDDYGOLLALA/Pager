@@ -1,0 +1,6 @@
+[1654, 1615]
+[contact-info, [228.0, 1418.0, 1297.0, 36.0], shoonya_2sGT58TCHBSO4P, 5739300]
+[contact-info, [228.0, 1454.0, 1297.0, 36.0], shoonya_2sGT58TCHBSO4P, 5739300]
+[contact-info, [228.0, 1490.0, 1297.0, 36.0], shoonya_2sGT58TCHBSO4P, 5739300]
+[contact-info, [228.0, 1526.0, 1297.0, 36.0], shoonya_2sGT58TCHBSO4P, 5739300]
+[website-link, [1269.0, 1546.0, 231.0, 18.0], shoonya_1s8DN965XHXOUB, 5739300]

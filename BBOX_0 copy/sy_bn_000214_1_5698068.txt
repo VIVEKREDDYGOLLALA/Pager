@@ -1,0 +1,6 @@
+[2806, 1984]
+[contact-info, [660.0, 489.0, 662.0, 46.5], iQgFANIiA5, 5698068]
+[contact-info, [660.0, 535.5, 662.0, 46.5], iQgFANIiA5, 5698068]
+[contact-info, [660.0, 582.0, 662.0, 46.5], iQgFANIiA5, 5698068]
+[contact-info, [660.0, 628.5, 662.0, 46.5], iQgFANIiA5, 5698068]
+[headline, [413.0, 766.0, 1159.0, 52.5], shoonya_1sR2XGMJ6NTL0T, 5698068]

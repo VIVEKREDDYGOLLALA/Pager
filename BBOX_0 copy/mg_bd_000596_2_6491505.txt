@@ -1,0 +1,4 @@
+[2000, 1414]
+[headline, [355.0, 202.0, 706.0, 67.5], shoonya_1sU09JS36WZZF2, 6491505]
+[headline, [355.0, 269.5, 706.0, 67.5], shoonya_1sU09JS36WZZF2, 6491505]
+[paragraph, [558.0, 424.0, 305.0, 36.0], FKYNrrxYfm, 6491505]

@@ -1,0 +1,8 @@
+[720, 504]
+[paragraph, [61.0, 87.0, 392.0, 18.0], shoonya_1s818FTI8NTFPF, 5652031]
+[paragraph, [64.0, 123.0, 387.0, 18.0], Bwx4tXtRvT, 5652031]
+[paragraph, [64.0, 141.0, 387.0, 18.0], Bwx4tXtRvT, 5652031]
+[paragraph, [64.0, 159.0, 387.0, 18.0], Bwx4tXtRvT, 5652031]
+[paragraph, [64.0, 177.0, 387.0, 18.0], Bwx4tXtRvT, 5652031]
+[paragraph, [64.0, 195.0, 387.0, 18.0], Bwx4tXtRvT, 5652031]
+[footnote, [194.0, 676.0, 109.0, 18.0], 9IR2sSoTqR, 5652031]

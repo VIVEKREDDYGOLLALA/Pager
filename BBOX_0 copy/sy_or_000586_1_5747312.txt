@@ -1,0 +1,8 @@
+[843, 596]
+[contact-info, [130.0, 115.0, 389.0, 18.0], shoonya_0sKZVB7O7AD8Y0, 5747312]
+[contact-info, [130.0, 133.0, 389.0, 18.0], shoonya_0sKZVB7O7AD8Y0, 5747312]
+[contact-info, [130.0, 151.0, 389.0, 18.0], shoonya_0sKZVB7O7AD8Y0, 5747312]
+[contact-info, [130.0, 169.0, 389.0, 18.0], shoonya_0sKZVB7O7AD8Y0, 5747312]
+[headline, [105.0, 375.0, 389.0, 25.5], hSbtXF1-0n, 5747312]
+[headline, [105.0, 400.5, 389.0, 25.5], hSbtXF1-0n, 5747312]
+[sub-headline, [119.0, 438.0, 369.0, 25.5], uvG3CSpeAH, 5747312]

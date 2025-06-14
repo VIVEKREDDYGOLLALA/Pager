@@ -1,0 +1,7 @@
+[1008, 612]
+[section-title, [71.0, 59.0, 462.0, 30.0], IZ5apXhsoO, 5717836]
+[folio, [95.0, 98.0, 418.0, 18.0], 8llyYEPAa0, 5717836]
+[subsub-section-title, [69.0, 144.0, 55.0, 15.0], shoonya_1sLP6JSHNJKJJZ, 5717836]
+[ordered-list, [62.0, 163.0, 135.0, 18.0], vJllPQbXl9, 5717836]
+[ordered-list, [62.0, 181.0, 135.0, 18.0], vJllPQbXl9, 5717836]
+[ordered-list, [62.0, 199.0, 135.0, 18.0], vJllPQbXl9, 5717836]

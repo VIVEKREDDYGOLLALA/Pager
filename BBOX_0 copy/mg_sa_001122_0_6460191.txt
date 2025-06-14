@@ -1,0 +1,8 @@
+[842, 595]
+[section-title, [117.0, 83.0, 328.0, 30.0], shoonya_0sY3AQ81IBAXPZ, 6460191]
+[paragraph, [100.0, 136.0, 361.0, 18.0], VbyqamBRMR, 6460191]
+[paragraph, [100.0, 154.0, 361.0, 18.0], VbyqamBRMR, 6460191]
+[paragraph, [100.0, 172.0, 361.0, 18.0], VbyqamBRMR, 6460191]
+[paragraph, [100.0, 190.0, 361.0, 18.0], VbyqamBRMR, 6460191]
+[contact-info, [252.0, 228.0, 204.0, 18.0], ghi0Nci46y, 6460191]
+[contact-info, [252.0, 246.0, 204.0, 18.0], ghi0Nci46y, 6460191]

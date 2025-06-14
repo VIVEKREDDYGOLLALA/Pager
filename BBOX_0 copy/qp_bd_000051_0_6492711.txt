@@ -1,0 +1,7 @@
+[565, 360]
+[second-level-question, [62.0, 122.0, 245.0, 18.0], K4Dxr0smr6, 6492711]
+[second-level-question, [57.0, 154.0, 258.0, 18.0], H1gNdi4uRk, 6492711]
+[second-level-question, [56.0, 215.0, 251.0, 18.0], Vp7JwmT_to, 6492711]
+[second-level-question, [64.0, 248.0, 247.0, 18.0], OkGOXVoyJY, 6492711]
+[folio, [36.0, 514.0, 51.0, 18.0], a4BBOgFfbv, 6492711]
+[jumpline, [252.0, 517.0, 73.0, 18.0], bl3d7BqcO0, 6492711]

@@ -1,0 +1,8 @@
+[2270, 1602]
+[figure-caption, [1054.0, 246.0, 478.0, 36.0], 9ro3EWdsum, 5656516]
+[chapter-title, [559.0, 347.0, 753.0, 70.5], 4PdPFkfEtl, 5656516]
+[chapter-title, [559.0, 417.5, 753.0, 70.5], 4PdPFkfEtl, 5656516]
+[chapter-title, [559.0, 488.0, 753.0, 70.5], 4PdPFkfEtl, 5656516]
+[figure-caption, [183.0, 563.0, 284.0, 36.0], jN8vtG1BHr, 5656516]
+[figure-caption, [183.0, 599.0, 284.0, 36.0], jN8vtG1BHr, 5656516]
+[section-title, [565.0, 584.0, 529.0, 52.5], NHNFSqX96k, 5656516]

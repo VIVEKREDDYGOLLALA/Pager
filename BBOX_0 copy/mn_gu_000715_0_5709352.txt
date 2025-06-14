@@ -1,0 +1,8 @@
+[1754, 1241]
+[headline, [212.0, 557.0, 800.0, 37.5], shoonya_1sGR265TNAU1YJ, 5709352]
+[headline, [212.0, 594.5, 800.0, 37.5], shoonya_1sGR265TNAU1YJ, 5709352]
+[chapter-title, [449.0, 956.0, 328.0, 58.5], IKVtDFbwHt, 5709352]
+[chapter-title, [449.0, 1014.5, 328.0, 58.5], IKVtDFbwHt, 5709352]
+[contact-info, [465.0, 1408.0, 300.0, 36.0], 5LZ9PbDb2K, 5709352]
+[contact-info, [465.0, 1444.0, 300.0, 36.0], 5LZ9PbDb2K, 5709352]
+[contact-info, [465.0, 1480.0, 300.0, 36.0], 5LZ9PbDb2K, 5709352]

@@ -1,0 +1,8 @@
+[540, 960]
+[folio, [841.0, 2.0, 118.0, 18.0], WLyuUmX3FU, 5715873]
+[folio, [841.0, 20.0, 118.0, 18.0], WLyuUmX3FU, 5715873]
+[headline, [167.0, 220.0, 649.0, 25.5], shoonya_1s9J2IZ6W3B1UC, 5715873]
+[headline, [167.0, 245.5, 649.0, 25.5], shoonya_1s9J2IZ6W3B1UC, 5715873]
+[headline, [167.0, 271.0, 649.0, 25.5], shoonya_1s9J2IZ6W3B1UC, 5715873]
+[headline, [167.0, 296.5, 649.0, 25.5], shoonya_1s9J2IZ6W3B1UC, 5715873]
+[headline, [167.0, 322.0, 649.0, 25.5], shoonya_1s9J2IZ6W3B1UC, 5715873]

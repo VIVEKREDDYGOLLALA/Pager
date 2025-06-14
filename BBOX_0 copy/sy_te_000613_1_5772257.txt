@@ -1,0 +1,7 @@
+[792, 612]
+[section-title, [72.0, 107.0, 310.0, 30.0], shoonya_4sLP9WS6J86JXF, 5772257]
+[paragraph, [62.0, 139.0, 316.0, 18.0], KXK95QCTkZ, 5772257]
+[ordered-list, [67.0, 159.0, 461.0, 18.0], shoonya_1s0NKVZJS0YUDY, 5772257]
+[ordered-list, [67.0, 177.0, 461.0, 18.0], shoonya_1s0NKVZJS0YUDY, 5772257]
+[ordered-list, [67.0, 195.0, 461.0, 18.0], shoonya_1s0NKVZJS0YUDY, 5772257]
+[ordered-list, [67.0, 213.0, 461.0, 18.0], shoonya_1s0NKVZJS0YUDY, 5772257]

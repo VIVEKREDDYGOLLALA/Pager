@@ -1,0 +1,8 @@
+[540, 960]
+[section-title, [219.0, 54.0, 547.0, 30.0], cQbsSmFDs9, 5715857]
+[section-title, [219.0, 84.0, 547.0, 30.0], cQbsSmFDs9, 5715857]
+[folio, [864.0, 467.0, 93.0, 18.0], shoonya_1s9N3MFOIYFXDJ, 5715857]
+[folio, [864.0, 485.0, 93.0, 18.0], shoonya_1s9N3MFOIYFXDJ, 5715857]
+[folio, [864.0, 503.0, 93.0, 18.0], shoonya_1s9N3MFOIYFXDJ, 5715857]
+[folio, [6.0, 495.0, 107.0, 18.0], shoonya_2s9BEV0HWUD3WP, 5715857]
+[folio, [6.0, 513.0, 107.0, 18.0], shoonya_2s9BEV0HWUD3WP, 5715857]

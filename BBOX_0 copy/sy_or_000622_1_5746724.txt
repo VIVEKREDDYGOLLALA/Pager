@@ -1,0 +1,7 @@
+[792, 612]
+[ordered-list, [62.0, 70.0, 279.0, 18.0], HvivlcIIl0, 5746724]
+[ordered-list, [62.0, 88.0, 279.0, 18.0], HvivlcIIl0, 5746724]
+[ordered-list, [62.0, 106.0, 279.0, 18.0], HvivlcIIl0, 5746724]
+[paragraph, [64.0, 141.0, 491.0, 18.0], vRDjYVZouY, 5746724]
+[paragraph, [64.0, 159.0, 491.0, 18.0], vRDjYVZouY, 5746724]
+[paragraph, [64.0, 177.0, 491.0, 18.0], vRDjYVZouY, 5746724]

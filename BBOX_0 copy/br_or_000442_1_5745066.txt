@@ -1,0 +1,6 @@
+[792, 612]
+[sub-section-title, [119.0, 187.0, 359.0, 25.5], _vqwj0dO9E, 5745066]
+[ordered-list, [116.0, 222.0, 340.0, 18.0], kPe-qxs6os, 5745066]
+[ordered-list, [116.0, 240.0, 340.0, 18.0], kPe-qxs6os, 5745066]
+[ordered-list, [116.0, 258.0, 340.0, 18.0], kPe-qxs6os, 5745066]
+[sub-section-title, [124.0, 476.0, 361.0, 25.5], 9Go5zlVI8f, 5745066]

@@ -1,0 +1,4 @@
+[2000, 1414]
+[headline, [584.0, 707.0, 250.0, 67.5], shoonya_0sNN0STB96GGN8, 6515627]
+[headline, [584.0, 774.5, 250.0, 67.5], shoonya_0sNN0STB96GGN8, 6515627]
+[headline, [584.0, 842.0, 250.0, 67.5], shoonya_0sNN0STB96GGN8, 6515627]

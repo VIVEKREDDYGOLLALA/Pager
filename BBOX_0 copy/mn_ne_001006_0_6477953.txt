@@ -1,0 +1,7 @@
+[1754, 1241]
+[section-title, [86.0, 162.0, 318.0, 49.5], Dk_aQhFSfk, 6477953]
+[headline, [96.0, 255.0, 750.0, 37.5], shoonya_0sFGRQ0ADVI0G6, 6477953]
+[headline, [96.0, 292.5, 750.0, 37.5], shoonya_0sFGRQ0ADVI0G6, 6477953]
+[headline, [96.0, 330.0, 750.0, 37.5], shoonya_0sFGRQ0ADVI0G6, 6477953]
+[headline, [96.0, 367.5, 750.0, 37.5], shoonya_0sFGRQ0ADVI0G6, 6477953]
+[headline, [96.0, 405.0, 750.0, 37.5], shoonya_0sFGRQ0ADVI0G6, 6477953]

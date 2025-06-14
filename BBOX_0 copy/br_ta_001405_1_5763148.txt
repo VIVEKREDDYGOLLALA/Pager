@@ -1,0 +1,7 @@
+[576, 756]
+[figure-caption, [352.0, 145.0, 382.0, 18.0], shoonya_1sJPUCX8GWMC43, 5763148]
+[figure-caption, [352.0, 163.0, 382.0, 18.0], shoonya_1sJPUCX8GWMC43, 5763148]
+[figure-caption, [352.0, 181.0, 382.0, 18.0], shoonya_1sJPUCX8GWMC43, 5763148]
+[figure-caption, [352.0, 199.0, 382.0, 18.0], shoonya_1sJPUCX8GWMC43, 5763148]
+[footnote, [27.0, 506.0, 691.0, 18.0], OJrtsHL52K, 5763148]
+[footnote, [27.0, 524.0, 691.0, 18.0], OJrtsHL52K, 5763148]

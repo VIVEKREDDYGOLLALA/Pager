@@ -1,0 +1,6 @@
+[2143, 1435]
+[folio, [456.0, 138.0, 533.0, 36.0], SALctp1jw-, 5683736]
+[section-title, [533.0, 230.0, 382.0, 52.5], shoonya_6sMHV90Q9AU2Z2, 5683736]
+[figure-caption, [560.0, 1067.0, 338.0, 36.0], shoonya_2s1POUKB6S263O, 5683736]
+[figure-caption, [607.0, 1883.0, 222.0, 36.0], shoonya_3s9HEEBSCH02U7, 5683736]
+[folio, [898.0, 2055.0, 448.0, 36.0], shoonya_5sLBUXG6IA5EFV, 5683736]

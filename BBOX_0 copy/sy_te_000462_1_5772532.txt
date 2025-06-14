@@ -1,0 +1,4 @@
+[792, 612]
+[folio, [171.0, 298.0, 278.0, 18.0], shoonya_0sAIPQZ8RLOYCS, 5772532]
+[folio, [171.0, 316.0, 278.0, 18.0], shoonya_0sAIPQZ8RLOYCS, 5772532]
+[folio, [171.0, 334.0, 278.0, 18.0], shoonya_0sAIPQZ8RLOYCS, 5772532]

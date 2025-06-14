@@ -1,0 +1,4 @@
+[794, 596]
+[figure-caption, [219.0, 311.0, 50.0, 18.0], IhLigjSYrX, 5731350]
+[figure-caption, [339.0, 311.0, 58.0, 18.0], KDjDvm9pjT, 5731350]
+[section-title, [332.0, 376.0, 179.0, 30.0], 0CMHfFf1yp, 5731350]

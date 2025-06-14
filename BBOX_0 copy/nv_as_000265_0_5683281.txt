@@ -1,0 +1,3 @@
+[1818, 1374]
+[section-title, [607.0, 836.0, 218.0, 49.5], shoonya_0sUKXDHHJ1MUT5, 5683281]
+[section-title, [607.0, 885.5, 218.0, 49.5], shoonya_0sUKXDHHJ1MUT5, 5683281]

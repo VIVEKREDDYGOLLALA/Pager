@@ -1,0 +1,3 @@
+[594, 436]
+[section-title, [91.0, 77.0, 319.0, 30.0], shoonya_0s7J4SMCCTMRFS, 6495905]
+[author, [170.0, 493.0, 143.0, 18.0], shoonya_1sVJ0VJCQ91LAJ, 6495905]

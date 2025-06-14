@@ -1,0 +1,4 @@
+[727, 563]
+[folio, [238.0, 64.0, 70.0, 18.0], huy0Nzq4my, 5689638]
+[second-level-question, [81.0, 596.0, 372.0, 18.0], shoonya_6sCRXY24UFRHCO, 5689638]
+[second-level-question, [81.0, 614.0, 372.0, 18.0], shoonya_6sCRXY24UFRHCO, 5689638]

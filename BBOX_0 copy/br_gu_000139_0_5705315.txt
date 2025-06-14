@@ -1,0 +1,7 @@
+[1755, 1241]
+[folio, [125.0, 170.0, 458.0, 36.0], _9W3XayskG, 5705315]
+[figure-caption, [198.0, 889.0, 146.0, 36.0], shoonya_4sSRQURO7EGNUO, 5705315]
+[figure-caption, [512.0, 1012.0, 153.0, 36.0], shoonya_8s9BTBQP26OKRT, 5705315]
+[folio, [511.0, 1494.0, 163.0, 36.0], VjyGR7CCZ5, 5705315]
+[website-link, [144.0, 1550.0, 295.0, 18.0], shoonya_2sISC2VK5LJ7D7, 5705315]
+[website-link, [144.0, 1568.0, 295.0, 18.0], shoonya_2sISC2VK5LJ7D7, 5705315]

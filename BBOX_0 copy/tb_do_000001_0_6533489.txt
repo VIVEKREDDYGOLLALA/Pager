@@ -1,0 +1,8 @@
+[505, 421]
+[headline, [19.0, 14.0, 381.0, 25.5], LtnXaPynf2, 6533489]
+[headline, [19.0, 39.5, 381.0, 25.5], LtnXaPynf2, 6533489]
+[headline, [19.0, 65.0, 381.0, 25.5], LtnXaPynf2, 6533489]
+[contact-info, [17.0, 417.0, 392.0, 18.0], wIqzC7u_Dy, 6533489]
+[contact-info, [17.0, 435.0, 392.0, 18.0], wIqzC7u_Dy, 6533489]
+[contact-info, [17.0, 453.0, 392.0, 18.0], wIqzC7u_Dy, 6533489]
+[contact-info, [17.0, 471.0, 392.0, 18.0], wIqzC7u_Dy, 6533489]

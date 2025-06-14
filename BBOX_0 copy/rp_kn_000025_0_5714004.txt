@@ -1,0 +1,7 @@
+[1754, 1241]
+[chapter-title, [414.0, 553.0, 456.0, 58.5], QAy5O15z4W, 5714004]
+[section-title, [238.0, 724.0, 839.0, 49.5], -ASntKhOfQ, 5714004]
+[section-title, [238.0, 773.5, 839.0, 49.5], -ASntKhOfQ, 5714004]
+[section-title, [238.0, 823.0, 839.0, 49.5], -ASntKhOfQ, 5714004]
+[section-title, [238.0, 872.5, 839.0, 49.5], -ASntKhOfQ, 5714004]
+[section-title, [238.0, 922.0, 839.0, 49.5], -ASntKhOfQ, 5714004]

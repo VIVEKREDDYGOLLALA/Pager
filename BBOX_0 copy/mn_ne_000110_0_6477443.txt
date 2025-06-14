@@ -1,0 +1,4 @@
+[1182, 857]
+[folio, [84.0, 1061.0, 93.0, 18.0], cQmw_4cjgj, 6477443]
+[contact-info, [216.0, 1061.0, 171.0, 18.0], shoonya_3sZUKXFC2N6TTF, 6477443]
+[contact-info, [216.0, 1079.0, 171.0, 18.0], shoonya_3sZUKXFC2N6TTF, 6477443]

@@ -1,0 +1,7 @@
+[1684, 1241]
+[folio, [472.0, 246.0, 296.0, 36.0], shoonya_0sBL57JYGFFAN4, 6468099]
+[folio, [404.0, 308.0, 435.0, 36.0], 6VnhaFuQs7, 6468099]
+[section-title, [519.0, 350.0, 199.0, 49.5], 5xmApzrYhL, 6468099]
+[contact-info, [337.0, 1223.0, 557.0, 36.0], wRzrMRMc8B, 6468099]
+[contact-info, [337.0, 1259.0, 557.0, 36.0], wRzrMRMc8B, 6468099]
+[contact-info, [337.0, 1295.0, 557.0, 36.0], wRzrMRMc8B, 6468099]

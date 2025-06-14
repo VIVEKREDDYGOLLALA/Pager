@@ -1,0 +1,5 @@
+[1242, 913]
+[chapter-title, [151.0, 122.0, 492.0, 30.0], w2biA2XFDC, 5775906]
+[chapter-title, [151.0, 152.0, 492.0, 30.0], w2biA2XFDC, 5775906]
+[paragraph, [274.0, 996.0, 263.0, 18.0], shoonya_0sFQDOORYW71L4, 5775906]
+[paragraph, [274.0, 1014.0, 263.0, 18.0], shoonya_0sFQDOORYW71L4, 5775906]

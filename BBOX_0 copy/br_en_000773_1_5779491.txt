@@ -1,0 +1,6 @@
+[596, 842]
+[figure-caption, [31.0, 34.0, 769.0, 18.0], cHxbUg7Xpy, 5779491]
+[figure-caption, [31.0, 52.0, 769.0, 18.0], cHxbUg7Xpy, 5779491]
+[figure-caption, [31.0, 70.0, 769.0, 18.0], cHxbUg7Xpy, 5779491]
+[figure-caption, [31.0, 88.0, 769.0, 18.0], cHxbUg7Xpy, 5779491]
+[figure-caption, [31.0, 106.0, 769.0, 18.0], cHxbUg7Xpy, 5779491]

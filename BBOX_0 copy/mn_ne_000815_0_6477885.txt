@@ -1,0 +1,4 @@
+[1755, 1241]
+[section-title, [214.0, 132.0, 824.0, 49.5], shoonya_0sHCQMOCVSS9S7, 6477885]
+[section-title, [214.0, 181.5, 824.0, 49.5], shoonya_0sHCQMOCVSS9S7, 6477885]
+[figure-caption, [202.0, 247.0, 786.0, 36.0], e0BLLiki8G, 6477885]

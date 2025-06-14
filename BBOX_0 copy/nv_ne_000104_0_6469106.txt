@@ -1,0 +1,8 @@
+[1650, 1275]
+[folio, [408.0, 332.0, 234.0, 36.0], shoonya_1sXKXFIU4U1C2T, 6469106]
+[section-title, [239.0, 690.0, 578.0, 49.5], 5AjtAHpRDs, 6469106]
+[section-title, [239.0, 739.5, 578.0, 49.5], 5AjtAHpRDs, 6469106]
+[website-link, [359.0, 945.0, 330.0, 18.0], shoonya_0s2T51WS6T3RY0, 6469106]
+[website-link, [359.0, 963.0, 330.0, 18.0], shoonya_0s2T51WS6T3RY0, 6469106]
+[website-link, [382.0, 1004.0, 286.0, 18.0], qZVgU7C1g6, 6469106]
+[website-link, [382.0, 1022.0, 286.0, 18.0], qZVgU7C1g6, 6469106]

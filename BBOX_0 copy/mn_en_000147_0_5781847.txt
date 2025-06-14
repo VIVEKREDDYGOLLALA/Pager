@@ -1,0 +1,7 @@
+[1296, 713]
+[folio, [37.0, 34.0, 108.0, 18.0], shoonya_7sYMRO8TPENZAR, 5781847]
+[folio, [37.0, 52.0, 108.0, 18.0], shoonya_7sYMRO8TPENZAR, 5781847]
+[headline, [68.0, 87.0, 578.0, 25.5], shoonya_5s6ARJX28W79KD, 5781847]
+[figure-caption, [505.0, 572.0, 160.0, 18.0], shoonya_4sNHS2NG8F5F91, 5781847]
+[figure-caption, [81.0, 627.0, 550.0, 18.0], eAPTsG98fj, 5781847]
+[figure-caption, [135.0, 1183.0, 430.0, 18.0], shoonya_3sKTCC0H0T2YRC, 5781847]

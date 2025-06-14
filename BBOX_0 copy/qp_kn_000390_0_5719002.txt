@@ -1,0 +1,6 @@
+[1568, 1189]
+[sidebar, [1040.0, 117.0, 106.0, 36.0], shoonya_3sPRE2YA6KCTFI, 5719002]
+[sidebar, [1040.0, 153.0, 106.0, 36.0], shoonya_3sPRE2YA6KCTFI, 5719002]
+[sidebar, [1040.0, 225.0, 106.0, 36.0], shoonya_3sPRE2YA6KCTFI, 5719002]
+[sidebar, [1040.0, 261.0, 106.0, 36.0], shoonya_3sPRE2YA6KCTFI, 5719002]
+[folio, [805.0, 1496.0, 332.0, 36.0], E9nju3zkur, 5719002]

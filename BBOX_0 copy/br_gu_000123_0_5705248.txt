@@ -1,0 +1,7 @@
+[1755, 1241]
+[folio, [128.0, 172.0, 456.0, 36.0], i6hmI6DToB, 5705248]
+[section-title, [695.0, 296.0, 345.0, 49.5], RqfelHGphy, 5705248]
+[section-title, [695.0, 345.5, 345.0, 49.5], RqfelHGphy, 5705248]
+[section-title, [695.0, 395.0, 345.0, 49.5], RqfelHGphy, 5705248]
+[website-link, [144.0, 1551.0, 295.0, 18.0], shoonya_0sY3P7Q1L989O8, 5705248]
+[website-link, [144.0, 1569.0, 295.0, 18.0], shoonya_0sY3P7Q1L989O8, 5705248]

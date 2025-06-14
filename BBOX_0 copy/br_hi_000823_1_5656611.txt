@@ -1,0 +1,6 @@
+[792, 612]
+[section-title, [176.0, 77.0, 280.0, 30.0], shoonya_2sKGHQXUOFPRB0, 5656611]
+[section-title, [176.0, 107.0, 280.0, 30.0], shoonya_2sKGHQXUOFPRB0, 5656611]
+[section-title, [176.0, 137.0, 280.0, 30.0], shoonya_2sKGHQXUOFPRB0, 5656611]
+[section-title, [176.0, 167.0, 280.0, 30.0], shoonya_2sKGHQXUOFPRB0, 5656611]
+[section-title, [176.0, 197.0, 280.0, 30.0], shoonya_2sKGHQXUOFPRB0, 5656611]

@@ -1,0 +1,8 @@
+[2000, 1414]
+[headline, [40.0, 1367.0, 1348.0, 67.5], shoonya_1sQBLRXHCH3YA6, 6491640]
+[headline, [40.0, 1434.5, 1348.0, 67.5], shoonya_1sQBLRXHCH3YA6, 6491640]
+[headline, [40.0, 1502.0, 1348.0, 67.5], shoonya_1sQBLRXHCH3YA6, 6491640]
+[headline, [40.0, 1569.5, 1348.0, 67.5], shoonya_1sQBLRXHCH3YA6, 6491640]
+[headline, [40.0, 1637.0, 1348.0, 67.5], shoonya_1sQBLRXHCH3YA6, 6491640]
+[author, [74.0, 1755.0, 261.0, 36.0], shoonya_3s3YZET2TEZR4P, 6491640]
+[author, [74.0, 1791.0, 261.0, 36.0], shoonya_3s3YZET2TEZR4P, 6491640]

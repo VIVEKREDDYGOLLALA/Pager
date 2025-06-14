@@ -1,0 +1,7 @@
+[787, 525]
+[folio, [110.0, 62.0, 301.0, 18.0], shoonya_1s2600IB4L9VGC, 6494174]
+[folio, [110.0, 80.0, 301.0, 18.0], shoonya_1s2600IB4L9VGC, 6494174]
+[folio, [110.0, 98.0, 301.0, 18.0], shoonya_1s2600IB4L9VGC, 6494174]
+[author, [162.0, 143.0, 240.0, 18.0], shoonya_3s1AE23ZV1L9RS, 6494174]
+[contact-info, [172.0, 688.0, 219.0, 18.0], xkhPNFAVEh, 6494174]
+[contact-info, [172.0, 706.0, 219.0, 18.0], xkhPNFAVEh, 6494174]

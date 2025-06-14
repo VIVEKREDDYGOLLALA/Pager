@@ -1,0 +1,6 @@
+[596, 420]
+[chapter-title, [247.0, 284.0, 149.0, 30.0], shoonya_5sL63G2G6E6OD1, 5656640]
+[chapter-title, [247.0, 314.0, 149.0, 30.0], shoonya_5sL63G2G6E6OD1, 5656640]
+[chapter-title, [247.0, 344.0, 149.0, 30.0], shoonya_5sL63G2G6E6OD1, 5656640]
+[contact-info, [114.0, 528.0, 196.0, 18.0], shoonya_4sBOITB9XF4TSX, 5656640]
+[contact-info, [114.0, 546.0, 196.0, 18.0], shoonya_4sBOITB9XF4TSX, 5656640]

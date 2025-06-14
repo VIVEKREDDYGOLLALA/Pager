@@ -1,0 +1,7 @@
+[1650, 1275]
+[section-title, [191.0, 121.0, 207.0, 49.5], ztr1Au1shR, 5714507]
+[reference, [206.0, 184.0, 820.0, 36.0], KVFyQRDY0D, 5714507]
+[reference, [206.0, 220.0, 820.0, 36.0], KVFyQRDY0D, 5714507]
+[reference, [206.0, 256.0, 820.0, 36.0], KVFyQRDY0D, 5714507]
+[website-link, [361.0, 223.0, 468.0, 18.0], 5fYddO_nPb, 5714507]
+[website-link, [223.0, 250.0, 414.0, 18.0], KyvhgxYLw3, 5714507]

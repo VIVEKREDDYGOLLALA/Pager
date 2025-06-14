@@ -1,0 +1,6 @@
+[792, 524]
+[folio, [202.0, 37.0, 148.0, 18.0], 4ylB4LszUd, 6513673]
+[figure-caption, [323.0, 402.0, 100.0, 18.0], shoonya_5sGSBJOUYXG9GD, 6513673]
+[figure-caption, [116.0, 412.0, 83.0, 18.0], shoonya_8sL4NOX906T3ZG, 6513673]
+[figure-caption, [330.0, 715.0, 89.0, 18.0], shoonya_4sF05HXH6UBD4J, 6513673]
+[figure-caption, [57.0, 721.0, 204.0, 18.0], shoonya_6s6C50RGJNT3A3, 6513673]

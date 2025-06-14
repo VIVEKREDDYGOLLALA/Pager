@@ -751,8 +751,8 @@ def extract_dimensions_and_text_from_file(image_path, file_path, language, label
         output_file.write(latex_code)
 
 def get_bboxes_and_image_path():
-    bbox_dir = 'BBOX_0'
-    image_dir = 'images_val_0'
+    bbox_dir = 'BBOX'
+    image_dir = 'images_val'
     if not os.path.exists(bbox_dir):
         raise FileNotFoundError(f"Directory not found: {bbox_dir}")
 
@@ -974,7 +974,7 @@ def generate_latex(image_path, image_dimensions, bboxes, texts, label_mapping, d
         bbox_width_inches = width_with_padding / dpi
         bbox_height_inches = height_with_padding / dpi
 
-        if label not in ["header", "footer", "formula", "QR code", "table", "page-number", "figure", "page_number", "mugshot", "code", "correlation", "bracket", "examinee info", "sealing line", "weather forecast", "barcode", "bill", "advertisement", "underscore", "blank", "other question number", "second-level-question number", "third-level question number", "first-level-question"]:
+        if label not in ["header", "footer", "formula", "QR code", "table", "page-number", "figure", "page_number", "mugshot", "code", "correlation", "bracket", "examinee info", "sealing line", "weather forecast", "barcode", "bill", "advertisement", "underscore", "blank", "other question number", "second-level-question number", "third-level question number", "first-level-question","sub-ordered-list", "subsub-ordered-list", "sub-unordered-list", "subsub-unordered-list"]:
             if label.lower() == "dateline":
                 dateline_path = os.path.join("Datelines", f"{language}.txt")
                 try:
@@ -1270,7 +1270,7 @@ def parse_arguments():
     parser.add_argument(
         '--input-text-folder',
         type=str,
-        default='input_texts',
+        default='1M_texts',
         help='Path to the folder containing input text subfolders (input_1, input_2). Default: input_texts'
     )
     

@@ -1,0 +1,8 @@
+[709, 510]
+[sub-section-title, [163.0, 84.0, 184.0, 25.5], NZQL_XLTAy, 5656103]
+[unordered-list, [355.0, 291.0, 97.0, 18.0], shoonya_3sWH7M8Z6OGNT2, 5656103]
+[unordered-list, [355.0, 309.0, 97.0, 18.0], shoonya_3sWH7M8Z6OGNT2, 5656103]
+[unordered-list, [355.0, 327.0, 97.0, 18.0], shoonya_3sWH7M8Z6OGNT2, 5656103]
+[unordered-list, [355.0, 345.0, 97.0, 18.0], shoonya_3sWH7M8Z6OGNT2, 5656103]
+[unordered-list, [355.0, 363.0, 97.0, 18.0], shoonya_3sWH7M8Z6OGNT2, 5656103]
+[folio, [49.0, 657.0, 129.0, 18.0], Lg3s-UA8Gy, 5656103]

@@ -1,0 +1,6 @@
+[794, 596]
+[figure-caption, [219.0, 201.0, 55.0, 18.0], unOEskwgVk, 5731414]
+[figure-caption, [460.0, 204.0, 45.0, 18.0], J75_w-dEAU, 5731414]
+[section-title, [65.0, 255.0, 341.0, 30.0], QGx4WTIk-J, 5731414]
+[placeholder-text, [173.0, 627.0, 381.0, 18.0], R6I_SyOA9K, 5731414]
+[placeholder-text, [173.0, 645.0, 381.0, 18.0], R6I_SyOA9K, 5731414]

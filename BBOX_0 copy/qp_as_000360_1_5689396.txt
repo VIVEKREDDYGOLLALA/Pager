@@ -1,0 +1,6 @@
+[725, 556]
+[folio, [254.0, 64.0, 71.0, 18.0], 2W8edGeMWZ, 5689396]
+[second-level-question, [102.0, 508.0, 153.0, 18.0], D6nBtIb4qv, 5689396]
+[second-level-question, [102.0, 526.0, 153.0, 18.0], D6nBtIb4qv, 5689396]
+[second-level-question, [107.0, 585.0, 158.0, 18.0], UG9t8S291h, 5689396]
+[second-level-question, [107.0, 603.0, 158.0, 18.0], UG9t8S291h, 5689396]

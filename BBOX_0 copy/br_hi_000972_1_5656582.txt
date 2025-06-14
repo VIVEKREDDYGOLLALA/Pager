@@ -1,0 +1,7 @@
+[720, 1728]
+[figure-caption, [40.0, 45.0, 753.0, 18.0], shoonya_0sK1SP6VDMT2MW, 5656582]
+[figure-caption, [40.0, 63.0, 753.0, 18.0], shoonya_0sK1SP6VDMT2MW, 5656582]
+[figure-caption, [40.0, 81.0, 753.0, 18.0], shoonya_0sK1SP6VDMT2MW, 5656582]
+[figure-caption, [40.0, 99.0, 753.0, 18.0], shoonya_0sK1SP6VDMT2MW, 5656582]
+[figure-caption, [40.0, 117.0, 753.0, 18.0], shoonya_0sK1SP6VDMT2MW, 5656582]
+[figure-caption, [40.0, 135.0, 753.0, 18.0], shoonya_0sK1SP6VDMT2MW, 5656582]

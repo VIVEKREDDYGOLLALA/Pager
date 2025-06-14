@@ -1,0 +1,6 @@
+[2339, 1653]
+[reference, [262.0, 171.0, 971.0, 36.0], nzbZRCBjdW, 5688971]
+[reference, [262.0, 207.0, 971.0, 36.0], nzbZRCBjdW, 5688971]
+[reference, [262.0, 243.0, 971.0, 36.0], nzbZRCBjdW, 5688971]
+[reference, [262.0, 279.0, 971.0, 36.0], nzbZRCBjdW, 5688971]
+[reference, [262.0, 315.0, 971.0, 36.0], nzbZRCBjdW, 5688971]

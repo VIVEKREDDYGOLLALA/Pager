@@ -1,0 +1,8 @@
+[842, 596]
+[headline, [75.0, 149.0, 455.0, 25.5], shoonya_0sHUOX2YOHUH99, 6461516]
+[sub-headline, [74.0, 216.0, 470.0, 25.5], xjJS2Gp5Ri, 6461516]
+[sub-headline, [74.0, 241.5, 470.0, 25.5], xjJS2Gp5Ri, 6461516]
+[contact-info, [123.0, 569.0, 354.0, 18.0], 58oeoPMhqO, 6461516]
+[contact-info, [123.0, 587.0, 354.0, 18.0], 58oeoPMhqO, 6461516]
+[contact-info, [123.0, 605.0, 354.0, 18.0], 58oeoPMhqO, 6461516]
+[contact-info, [123.0, 623.0, 354.0, 18.0], 58oeoPMhqO, 6461516]

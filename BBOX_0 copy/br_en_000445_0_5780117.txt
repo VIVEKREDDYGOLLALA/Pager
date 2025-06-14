@@ -1,0 +1,3 @@
+[1309, 863]
+[figure-caption, [313.0, 1081.0, 202.0, 18.0], shoonya_1sUDN4NYMQU8E5, 5780117]
+[figure-caption, [313.0, 1099.0, 202.0, 18.0], shoonya_1sUDN4NYMQU8E5, 5780117]

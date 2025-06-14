@@ -1,0 +1,8 @@
+[1755, 1240]
+[flag, [375.0, 266.0, 548.0, 36.0], wYf_RnOkd0, 5728575]
+[section-title, [243.0, 451.0, 809.0, 49.5], R9tFdQ7HA8, 5728575]
+[section-title, [243.0, 500.5, 809.0, 49.5], R9tFdQ7HA8, 5728575]
+[sub-section-title, [547.0, 639.0, 200.0, 36.0], shoonya_0sRKEJKS1LJMJC, 5728575]
+[folio, [348.0, 899.0, 609.0, 36.0], shoonya_1sGCH6N1I4BVOE, 5728575]
+[folio, [348.0, 935.0, 609.0, 36.0], shoonya_1sGCH6N1I4BVOE, 5728575]
+[sub-section-title, [411.0, 1377.0, 476.0, 36.0], shoonya_2sLGV9F7K57V72, 5728575]

@@ -1,0 +1,5 @@
+[900, 630]
+[folio, [306.0, 686.0, 129.0, 18.0], pWKR5amEWk, 5744708]
+[contact-info, [188.0, 746.0, 275.0, 18.0], shoonya_0sACJF8XSN4IBF, 5744708]
+[contact-info, [188.0, 764.0, 275.0, 18.0], shoonya_0sACJF8XSN4IBF, 5744708]
+[contact-info, [188.0, 782.0, 275.0, 18.0], shoonya_0sACJF8XSN4IBF, 5744708]

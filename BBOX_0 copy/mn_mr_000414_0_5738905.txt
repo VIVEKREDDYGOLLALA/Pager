@@ -1,0 +1,4 @@
+[2200, 1700]
+[folio, [618.0, 89.0, 470.0, 36.0], shoonya_5s9GEAWXE71BPC, 5738905]
+[figure-caption, [505.0, 885.0, 701.0, 36.0], shoonya_4s5FOEQ4G7SJAQ, 5738905]
+[figure-caption, [522.0, 1761.0, 620.0, 36.0], shoonya_2s34V6U2ML1L5S, 5738905]

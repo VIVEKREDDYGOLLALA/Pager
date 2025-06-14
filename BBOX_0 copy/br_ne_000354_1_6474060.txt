@@ -1,0 +1,7 @@
+[800, 363]
+[headline, [29.0, 435.0, 299.0, 25.5], shoonya_1s0PKR10ZD8B78, 6474060]
+[headline, [29.0, 460.5, 299.0, 25.5], shoonya_1s0PKR10ZD8B78, 6474060]
+[headline, [29.0, 486.0, 299.0, 25.5], shoonya_1s0PKR10ZD8B78, 6474060]
+[headline, [29.0, 511.5, 299.0, 25.5], shoonya_1s0PKR10ZD8B78, 6474060]
+[sub-headline, [21.0, 715.0, 315.0, 25.5], shoonya_3sD78I50L18GUY, 6474060]
+[sub-headline, [21.0, 740.5, 315.0, 25.5], shoonya_3sD78I50L18GUY, 6474060]

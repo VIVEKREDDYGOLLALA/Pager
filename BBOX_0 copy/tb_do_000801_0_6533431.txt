@@ -1,0 +1,5 @@
+[515, 727]
+[headline, [419.0, 55.0, 277.0, 25.5], shoonya_1s5DXCFQS43GEL, 6533431]
+[headline, [419.0, 80.5, 277.0, 25.5], shoonya_1s5DXCFQS43GEL, 6533431]
+[headline, [419.0, 106.0, 277.0, 25.5], shoonya_1s5DXCFQS43GEL, 6533431]
+[author, [492.0, 137.0, 119.0, 18.0], pfgIcmJln8, 6533431]

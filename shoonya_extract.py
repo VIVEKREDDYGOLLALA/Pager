@@ -7,7 +7,7 @@ import re
 from multiprocessing import Pool, cpu_count
 
 # Base directories
-json_base_folder = r'Ai_jsons'  # Root folder containing subfolders with JSON files
+json_base_folder = r'jsons'  # Root folder containing subfolders with JSON files
 output_base_folder = r'BBOX'  # Base folder for BBOX outputs
 images_base_folder = r'images_original2'  # Base folder for downloaded images
 

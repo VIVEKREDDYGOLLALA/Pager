@@ -1,0 +1,8 @@
+[792, 612]
+[paragraph, [142.0, 183.0, 308.0, 18.0], NUc_ekZqro, 5744687]
+[paragraph, [142.0, 201.0, 308.0, 18.0], NUc_ekZqro, 5744687]
+[paragraph, [142.0, 219.0, 308.0, 18.0], NUc_ekZqro, 5744687]
+[paragraph, [142.0, 237.0, 308.0, 18.0], NUc_ekZqro, 5744687]
+[paragraph, [142.0, 255.0, 308.0, 18.0], NUc_ekZqro, 5744687]
+[paragraph, [142.0, 273.0, 308.0, 18.0], NUc_ekZqro, 5744687]
+[ordered-list, [143.0, 317.0, 108.0, 18.0], t9kZZFWD9p, 5744687]

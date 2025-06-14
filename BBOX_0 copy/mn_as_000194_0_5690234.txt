@@ -1,0 +1,6 @@
+[2339, 1654]
+[folio, [169.0, 357.0, 411.0, 36.0], kYPKO5vaqM, 5690234]
+[unordered-list, [179.0, 1836.0, 1242.0, 36.0], dGO1cUUYbp, 5690234]
+[unordered-list, [179.0, 1872.0, 1242.0, 36.0], dGO1cUUYbp, 5690234]
+[unordered-list, [179.0, 1908.0, 1242.0, 36.0], dGO1cUUYbp, 5690234]
+[unordered-list, [179.0, 1944.0, 1242.0, 36.0], dGO1cUUYbp, 5690234]

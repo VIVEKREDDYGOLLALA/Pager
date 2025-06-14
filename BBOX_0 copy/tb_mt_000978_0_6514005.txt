@@ -1,0 +1,4 @@
+[576, 360]
+[reference, [34.0, 90.0, 325.0, 18.0], shoonya_1sTSKPZLKZEG8D, 6514005]
+[reference, [34.0, 108.0, 325.0, 18.0], shoonya_1sTSKPZLKZEG8D, 6514005]
+[reference, [34.0, 126.0, 325.0, 18.0], shoonya_1sTSKPZLKZEG8D, 6514005]

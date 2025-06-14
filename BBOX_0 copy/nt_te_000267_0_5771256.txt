@@ -1,0 +1,7 @@
+[792, 612]
+[author, [271.0, 122.0, 217.0, 18.0], shoonya_1sXJAAGGBOXDIY, 5771256]
+[author, [271.0, 140.0, 217.0, 18.0], shoonya_1sXJAAGGBOXDIY, 5771256]
+[author, [271.0, 158.0, 217.0, 18.0], shoonya_1sXJAAGGBOXDIY, 5771256]
+[author, [271.0, 176.0, 217.0, 18.0], shoonya_1sXJAAGGBOXDIY, 5771256]
+[author, [271.0, 194.0, 217.0, 18.0], shoonya_1sXJAAGGBOXDIY, 5771256]
+[author, [271.0, 212.0, 217.0, 18.0], shoonya_1sXJAAGGBOXDIY, 5771256]

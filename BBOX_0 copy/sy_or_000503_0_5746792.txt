@@ -1,0 +1,5 @@
+[1755, 1240]
+[contact-info, [207.0, 1430.0, 839.0, 36.0], shoonya_0sPO4RFHO7XJBG, 5746792]
+[contact-info, [207.0, 1466.0, 839.0, 36.0], shoonya_0sPO4RFHO7XJBG, 5746792]
+[contact-info, [207.0, 1502.0, 839.0, 36.0], shoonya_0sPO4RFHO7XJBG, 5746792]
+[contact-info, [207.0, 1538.0, 839.0, 36.0], shoonya_0sPO4RFHO7XJBG, 5746792]

@@ -1,0 +1,8 @@
+[842, 596]
+[contact-info, [0.0, 640.0, 265.0, 18.0], PFMx6RdLCx, 5771655]
+[contact-info, [0.0, 658.0, 265.0, 18.0], PFMx6RdLCx, 5771655]
+[contact-info, [0.0, 676.0, 265.0, 18.0], PFMx6RdLCx, 5771655]
+[contact-info, [0.0, 694.0, 265.0, 18.0], PFMx6RdLCx, 5771655]
+[contact-info, [0.0, 712.0, 265.0, 18.0], PFMx6RdLCx, 5771655]
+[contact-info, [0.0, 730.0, 265.0, 18.0], PFMx6RdLCx, 5771655]
+[folio, [316.0, 810.0, 263.0, 18.0], shoonya_0sWN5CNE2XD0B6, 5771655]

@@ -1,0 +1,8 @@
+[792, 612]
+[second-level-question, [106.0, 28.0, 342.0, 18.0], X9-FgdsUak, 5772835]
+[second-level-question, [106.0, 46.0, 342.0, 18.0], X9-FgdsUak, 5772835]
+[second-level-question, [106.0, 64.0, 342.0, 18.0], X9-FgdsUak, 5772835]
+[second-level-question, [106.0, 91.0, 432.0, 18.0], AaWi7iNbdq, 5772835]
+[second-level-question, [106.0, 109.0, 432.0, 18.0], AaWi7iNbdq, 5772835]
+[second-level-question, [106.0, 127.0, 432.0, 18.0], AaWi7iNbdq, 5772835]
+[second-level-question, [106.0, 145.0, 432.0, 18.0], AaWi7iNbdq, 5772835]

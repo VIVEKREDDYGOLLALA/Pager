@@ -1,0 +1,7 @@
+[655, 479]
+[paragraph, [68.0, 48.0, 202.0, 18.0], shoonya_3sEMH7Y1IE2WFJ, 5705133]
+[section-title, [61.0, 474.0, 127.0, 30.0], j0DrJf_Uke, 5705133]
+[paragraph, [67.0, 503.0, 337.0, 18.0], shoonya_4s73QD79GSKYDS, 5705133]
+[paragraph, [67.0, 521.0, 337.0, 18.0], shoonya_4s73QD79GSKYDS, 5705133]
+[paragraph, [67.0, 539.0, 337.0, 18.0], shoonya_4s73QD79GSKYDS, 5705133]
+[website-link, [89.0, 580.0, 142.0, 18.0], ixDef3-kG4, 5705133]

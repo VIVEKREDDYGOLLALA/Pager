@@ -1,0 +1,8 @@
+[842, 596]
+[paragraph, [78.0, 67.0, 208.0, 18.0], shoonya_0s0VKV5OA0JN28, 5770984]
+[placeholder-text, [260.0, 120.0, 249.0, 18.0], xHSwAkv6VL, 5770984]
+[placeholder-text, [260.0, 138.0, 249.0, 18.0], xHSwAkv6VL, 5770984]
+[placeholder-text, [260.0, 156.0, 249.0, 18.0], xHSwAkv6VL, 5770984]
+[placeholder-text, [260.0, 174.0, 249.0, 18.0], xHSwAkv6VL, 5770984]
+[placeholder-text, [260.0, 192.0, 249.0, 18.0], xHSwAkv6VL, 5770984]
+[footnote, [95.0, 273.0, 202.0, 18.0], shoonya_2sDMF5W4G69ONE, 5770984]

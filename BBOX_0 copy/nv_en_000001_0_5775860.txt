@@ -1,0 +1,6 @@
+[1000, 619]
+[section-title, [66.0, 167.0, 330.0, 30.0], shoonya_0s7B2ZJXL514G8, 5775860]
+[sub-section-title, [170.0, 275.0, 115.0, 25.5], shoonya_1sWEMGN6EEJXR3, 5775860]
+[paragraph, [19.0, 791.0, 418.0, 18.0], shoonya_2sWYONJL5YBBIQ, 5775860]
+[paragraph, [19.0, 809.0, 418.0, 18.0], shoonya_2sWYONJL5YBBIQ, 5775860]
+[paragraph, [19.0, 827.0, 418.0, 18.0], shoonya_2sWYONJL5YBBIQ, 5775860]

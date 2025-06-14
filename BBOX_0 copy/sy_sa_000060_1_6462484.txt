@@ -1,0 +1,5 @@
+[842, 596]
+[folio, [496.0, 68.0, 71.0, 18.0], shoonya_1s6CVSSZ24WJLW, 6462484]
+[ordered-list, [67.0, 125.0, 302.0, 18.0], 6X4sPLyweh, 6462484]
+[ordered-list, [67.0, 143.0, 302.0, 18.0], 6X4sPLyweh, 6462484]
+[ordered-list, [67.0, 161.0, 302.0, 18.0], 6X4sPLyweh, 6462484]

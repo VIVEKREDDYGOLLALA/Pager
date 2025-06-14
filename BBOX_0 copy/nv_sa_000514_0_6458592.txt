@@ -1,0 +1,7 @@
+[451, 283]
+[paragraph, [23.0, 51.0, 235.0, 52.5], cCRMjoi6K7, 6458592]
+[ordered-list, [25.0, 152.0, 235.0, 52.5], pkEJKriXUV, 6458592]
+[ordered-list, [25.0, 204.5, 235.0, 52.5], pkEJKriXUV, 6458592]
+[ordered-list, [25.0, 257.0, 235.0, 52.5], pkEJKriXUV, 6458592]
+[ordered-list, [25.0, 309.5, 235.0, 52.5], pkEJKriXUV, 6458592]
+[ordered-list, [25.0, 362.0, 235.0, 52.5], pkEJKriXUV, 6458592]

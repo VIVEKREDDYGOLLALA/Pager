@@ -1,0 +1,4 @@
+[1755, 1240]
+[section-title, [305.0, 55.0, 611.0, 49.5], shoonya_0s61H540QN08XK, 5778574]
+[figure-caption, [52.0, 1463.0, 384.0, 36.0], mykq4OtgCF, 5778574]
+[footnote, [920.0, 1598.0, 131.0, 36.0], Fq9gcTXCEX, 5778574]

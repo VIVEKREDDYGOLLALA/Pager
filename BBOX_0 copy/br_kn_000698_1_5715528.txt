@@ -1,0 +1,5 @@
+[792, 612]
+[headline, [27.0, 18.0, 562.0, 25.5], shoonya_1sHUOEDO7VM2UB, 5715528]
+[headline, [27.0, 43.5, 562.0, 25.5], shoonya_1sHUOEDO7VM2UB, 5715528]
+[section-title, [65.0, 148.0, 482.0, 30.0], AjYwSmwMVp, 5715528]
+[footnote, [189.0, 762.0, 414.0, 18.0], 1h0SGRbu7N, 5715528]

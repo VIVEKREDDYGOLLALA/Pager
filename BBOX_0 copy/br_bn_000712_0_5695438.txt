@@ -1,0 +1,7 @@
+[1601, 1158]
+[folio, [54.0, 82.0, 72.0, 36.0], wphT4BUhk8, 5695438]
+[headline, [144.0, 113.0, 884.0, 37.5], shoonya_2sH16VNYQA9TL4, 5695438]
+[headline, [144.0, 150.5, 884.0, 37.5], shoonya_2sH16VNYQA9TL4, 5695438]
+[sub-headline, [268.0, 191.0, 659.0, 36.0], EddPv-YqVX, 5695438]
+[sub-headline, [268.0, 227.0, 659.0, 36.0], EddPv-YqVX, 5695438]
+[folio, [58.0, 588.0, 68.0, 36.0], EGyXx1q2Qk, 5695438]

@@ -1,0 +1,6 @@
+[565, 360]
+[second-level-question, [61.0, 324.0, 238.0, 18.0], n_i1ZcU-VA, 6492737]
+[second-level-question, [62.0, 360.0, 239.0, 18.0], wqbqYsQGMZ, 6492737]
+[second-level-question, [62.0, 395.0, 237.0, 18.0], 6pUtlX4RMC, 6492737]
+[second-level-question, [60.0, 433.0, 240.0, 18.0], _ShRMFJ872, 6492737]
+[second-level-question, [62.0, 470.0, 170.0, 18.0], NoT5mOecq2, 6492737]

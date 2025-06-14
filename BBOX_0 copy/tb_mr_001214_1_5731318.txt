@@ -1,0 +1,6 @@
+[794, 596]
+[paragraph, [86.0, 46.0, 447.0, 18.0], Wk_lUhA5u-, 5731318]
+[contact-info, [179.0, 608.0, 322.0, 18.0], shoonya_2sD74QWWX30KFD, 5731318]
+[paragraph, [193.0, 651.0, 308.0, 18.0], cTQph5yRcF, 5731318]
+[paragraph, [193.0, 669.0, 308.0, 18.0], cTQph5yRcF, 5731318]
+[paragraph, [193.0, 687.0, 308.0, 18.0], cTQph5yRcF, 5731318]

@@ -1,0 +1,6 @@
+[842, 596]
+[placeholder-text, [44.0, 76.0, 486.0, 18.0], shoonya_0s3345P2MZDDUA, 5774205]
+[placeholder-text, [44.0, 94.0, 486.0, 18.0], shoonya_0s3345P2MZDDUA, 5774205]
+[placeholder-text, [300.0, 142.0, 213.0, 18.0], shoonya_7s59X2Q0NGK8VR, 5774205]
+[placeholder-text, [49.0, 143.0, 228.0, 18.0], shoonya_1sMPZMX18KPSKS, 5774205]
+[footnote, [145.0, 791.0, 296.0, 18.0], 3_UcjTmpXv, 5774205]

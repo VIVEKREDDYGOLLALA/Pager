@@ -1,0 +1,6 @@
+[843, 597]
+[options, [88.0, 87.0, 419.0, 18.0], shoonya_11sE4YYEVR0MTB, 5738688]
+[options, [90.0, 318.0, 395.0, 18.0], shoonya_16sL1RQ3DO6WQ7, 5738688]
+[options, [92.0, 488.0, 443.0, 18.0], shoonya_8s8XGHNR4PXV1G, 5738688]
+[options, [96.0, 622.0, 466.0, 18.0], shoonya_10sFKO8S40S815, 5738688]
+[folio, [66.0, 679.0, 225.0, 18.0], shoonya_13sJLXSMVK5HU7, 5738688]

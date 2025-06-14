@@ -1,0 +1,3 @@
+[811, 612]
+[placeholder-text, [173.0, 732.0, 264.0, 18.0], shoonya_1sPLKR1AGYM4JU, 5701062]
+[placeholder-text, [173.0, 750.0, 264.0, 18.0], shoonya_1sPLKR1AGYM4JU, 5701062]

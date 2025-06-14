@@ -1,0 +1,5 @@
+[842, 596]
+[sidebar, [67.0, 103.0, 111.0, 18.0], C5pQNmhV9n, 5780505]
+[sidebar, [389.0, 104.0, 90.0, 18.0], _e1aJR-Bkv, 5780505]
+[paragraph, [66.0, 135.0, 463.0, 18.0], shoonya_0sEDFNNEB9V6J7, 5780505]
+[paragraph, [66.0, 153.0, 463.0, 18.0], shoonya_0sEDFNNEB9V6J7, 5780505]

@@ -1,0 +1,4 @@
+[1754, 1241]
+[figure-caption, [131.0, 1146.0, 983.0, 36.0], jvspNTcPSE, 5778572]
+[figure-caption, [131.0, 1182.0, 983.0, 36.0], jvspNTcPSE, 5778572]
+[figure-caption, [131.0, 1218.0, 983.0, 36.0], jvspNTcPSE, 5778572]

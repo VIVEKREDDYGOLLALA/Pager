@@ -1,0 +1,5 @@
+[842, 596]
+[section-title, [127.0, 27.0, 400.0, 30.0], UkV6Uy6OKN, 5706770]
+[paragraph, [74.0, 84.0, 428.0, 18.0], sL93ugMkaM, 5706770]
+[second-level-question, [53.0, 447.0, 223.0, 18.0], msvVCiYBjV, 5706770]
+[second-level-question, [54.0, 464.0, 267.0, 18.0], qFrfluAwGf, 5706770]

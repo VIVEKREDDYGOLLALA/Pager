@@ -1,0 +1,5 @@
+[596, 393]
+[figure-caption, [56.0, 248.0, 283.0, 18.0], WXmMO2AM6f, 6534352]
+[figure-caption, [56.0, 266.0, 283.0, 18.0], WXmMO2AM6f, 6534352]
+[figure-caption, [60.0, 511.0, 271.0, 18.0], EnotJgTyhB, 6534352]
+[figure-caption, [60.0, 529.0, 271.0, 18.0], EnotJgTyhB, 6534352]

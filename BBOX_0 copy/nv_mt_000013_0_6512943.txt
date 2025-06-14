@@ -1,0 +1,7 @@
+[590, 396]
+[folio, [1.0, 36.0, 49.0, 18.0], wNsR8BzLCt, 6512943]
+[author, [82.0, 98.0, 255.0, 18.0], shoonya_4sIFWHWZJ7VL41, 6512943]
+[author, [82.0, 116.0, 255.0, 18.0], shoonya_4sIFWHWZJ7VL41, 6512943]
+[chapter-title, [50.0, 254.0, 314.0, 30.0], shoonya_2sO9HVC0T30NWR, 6512943]
+[chapter-title, [50.0, 284.0, 314.0, 30.0], shoonya_2sO9HVC0T30NWR, 6512943]
+[figure-caption, [175.0, 512.0, 62.0, 18.0], zWsEuod_gY, 6512943]

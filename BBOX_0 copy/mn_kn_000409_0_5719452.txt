@@ -1,0 +1,7 @@
+[886, 1282]
+[section-title, [232.0, 375.0, 848.0, 30.0], TiNaS3nY1I, 5719452]
+[section-title, [232.0, 405.0, 848.0, 30.0], TiNaS3nY1I, 5719452]
+[section-title, [232.0, 435.0, 848.0, 30.0], TiNaS3nY1I, 5719452]
+[section-title, [232.0, 465.0, 848.0, 30.0], TiNaS3nY1I, 5719452]
+[section-title, [232.0, 495.0, 848.0, 30.0], TiNaS3nY1I, 5719452]
+[section-title, [232.0, 525.0, 848.0, 30.0], TiNaS3nY1I, 5719452]

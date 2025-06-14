@@ -1,0 +1,7 @@
+[1755, 1241]
+[figure-caption, [389.0, 291.0, 533.0, 36.0], shoonya_0sLKXCIY7YOWS3, 5705135]
+[contact-info, [324.0, 1301.0, 631.0, 36.0], yGaAzwwEZ9, 5705135]
+[contact-info, [324.0, 1337.0, 631.0, 36.0], yGaAzwwEZ9, 5705135]
+[contact-info, [324.0, 1373.0, 631.0, 36.0], yGaAzwwEZ9, 5705135]
+[folio, [516.0, 1498.0, 162.0, 36.0], 6KiMpDHpSG, 5705135]
+[website-link, [145.0, 1550.0, 295.0, 18.0], shoonya_7sIZBCZZUTWMFH, 5705135]

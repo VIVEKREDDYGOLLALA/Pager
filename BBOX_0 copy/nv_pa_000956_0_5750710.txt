@@ -1,0 +1,8 @@
+[2339, 1653]
+[chapter-title, [188.0, 187.0, 1254.0, 70.5], shoonya_0sS44QT41Q3IFS, 5750710]
+[chapter-title, [188.0, 257.5, 1254.0, 70.5], shoonya_0sS44QT41Q3IFS, 5750710]
+[chapter-title, [188.0, 328.0, 1254.0, 70.5], shoonya_0sS44QT41Q3IFS, 5750710]
+[author, [944.0, 429.0, 480.0, 36.0], vtVkydvWJF, 5750710]
+[author, [944.0, 465.0, 480.0, 36.0], vtVkydvWJF, 5750710]
+[author, [944.0, 501.0, 480.0, 36.0], vtVkydvWJF, 5750710]
+[author, [944.0, 537.0, 480.0, 36.0], vtVkydvWJF, 5750710]

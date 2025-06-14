@@ -1,0 +1,4 @@
+[1948, 1214]
+[chapter-title, [461.0, 619.0, 374.0, 58.5], shoonya_0s1Y25AQGIZ8H8, 5732721]
+[chapter-title, [461.0, 677.5, 374.0, 58.5], shoonya_0s1Y25AQGIZ8H8, 5732721]
+[folio, [510.0, 1841.0, 189.0, 36.0], oMfMZb-_Xs, 5732721]

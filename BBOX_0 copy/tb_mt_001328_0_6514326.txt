@@ -1,0 +1,7 @@
+[612, 396]
+[section-title, [74.0, 118.0, 255.0, 30.0], shoonya_0s6OAVY7DV4827, 6514326]
+[paragraph, [58.0, 189.0, 283.0, 18.0], f6TikPrCx7, 6514326]
+[paragraph, [58.0, 207.0, 283.0, 18.0], f6TikPrCx7, 6514326]
+[author, [138.0, 270.0, 118.0, 18.0], KZYZRnJfvq, 6514326]
+[contact-info, [133.0, 501.0, 128.0, 18.0], TvCmCtFml1, 6514326]
+[contact-info, [133.0, 519.0, 128.0, 18.0], TvCmCtFml1, 6514326]

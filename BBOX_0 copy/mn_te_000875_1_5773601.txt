@@ -1,0 +1,8 @@
+[818, 504]
+[headline, [47.0, 22.0, 222.0, 25.5], 4w_VqixfCw, 5773601]
+[paragraph, [174.0, 161.0, 147.0, 18.0], 8fEmo4GKZA, 5773601]
+[paragraph, [73.0, 193.0, 350.0, 18.0], hLqXsFwdnp, 5773601]
+[paragraph, [73.0, 211.0, 350.0, 18.0], hLqXsFwdnp, 5773601]
+[paragraph, [64.0, 239.0, 363.0, 18.0], peEpZKFODO, 5773601]
+[paragraph, [64.0, 257.0, 363.0, 18.0], peEpZKFODO, 5773601]
+[paragraph, [186.0, 320.0, 125.0, 18.0], f6pweYtRtn, 5773601]

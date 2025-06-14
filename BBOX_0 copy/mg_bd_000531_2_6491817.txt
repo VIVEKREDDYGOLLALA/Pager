@@ -1,0 +1,6 @@
+[2000, 1414]
+[paragraph, [67.0, 978.0, 585.0, 36.0], MBudKFpJIX, 6491817]
+[paragraph, [67.0, 1014.0, 585.0, 36.0], MBudKFpJIX, 6491817]
+[paragraph, [67.0, 1050.0, 585.0, 36.0], MBudKFpJIX, 6491817]
+[paragraph, [67.0, 1086.0, 585.0, 36.0], MBudKFpJIX, 6491817]
+[paragraph, [67.0, 1122.0, 585.0, 36.0], MBudKFpJIX, 6491817]

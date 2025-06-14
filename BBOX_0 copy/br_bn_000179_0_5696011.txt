@@ -1,0 +1,6 @@
+[1601, 1158]
+[paragraph, [113.0, 1251.0, 938.0, 36.0], shoonya_4sAKR4WGSZDOT6, 5696011]
+[paragraph, [113.0, 1287.0, 938.0, 36.0], shoonya_4sAKR4WGSZDOT6, 5696011]
+[contact-info, [127.0, 1343.0, 287.0, 36.0], shoonya_1s77FEQLDSVJP5, 5696011]
+[contact-info, [127.0, 1379.0, 287.0, 36.0], shoonya_1s77FEQLDSVJP5, 5696011]
+[contact-info, [127.0, 1415.0, 287.0, 36.0], shoonya_1s77FEQLDSVJP5, 5696011]

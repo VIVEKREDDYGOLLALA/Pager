@@ -1,0 +1,4 @@
+[1755, 1241]
+[figure-caption, [381.0, 830.0, 595.0, 36.0], OVkD1kqZZK, 5780675]
+[figure-caption, [381.0, 866.0, 595.0, 36.0], OVkD1kqZZK, 5780675]
+[figure-caption, [366.0, 1440.0, 599.0, 36.0], Z_9kAJ_ECo, 5780675]

@@ -1,0 +1,4 @@
+[752, 553]
+[folio, [100.0, 22.0, 369.0, 18.0], shoonya_2sANHPFZCYAMXS, 5713334]
+[folio, [100.0, 40.0, 369.0, 18.0], shoonya_2sANHPFZCYAMXS, 5713334]
+[figure-caption, [86.0, 708.0, 373.0, 18.0], shoonya_1sGSGHA0JTOTTA, 5713334]

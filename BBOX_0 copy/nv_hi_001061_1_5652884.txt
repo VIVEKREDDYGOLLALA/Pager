@@ -1,0 +1,7 @@
+[484, 315]
+[paragraph, [0.0, 113.0, 309.0, 52.5], shoonya_2sJTLMSUCIAN9I, 5652884]
+[paragraph, [0.0, 173.0, 315.0, 52.5], shoonya_0sCKS446RIPXQ3, 5652884]
+[paragraph, [0.0, 225.5, 315.0, 52.5], shoonya_0sCKS446RIPXQ3, 5652884]
+[paragraph, [0.0, 278.0, 315.0, 52.5], shoonya_0sCKS446RIPXQ3, 5652884]
+[paragraph, [0.0, 330.5, 315.0, 52.5], shoonya_0sCKS446RIPXQ3, 5652884]
+[paragraph, [6.0, 412.0, 307.0, 52.5], KSA-_-FN0H, 5652884]

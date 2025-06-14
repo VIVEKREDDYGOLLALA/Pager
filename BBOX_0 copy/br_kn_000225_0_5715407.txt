@@ -1,0 +1,8 @@
+[2599, 1754]
+[section-title, [285.0, 72.0, 1304.0, 79.5], uJlHfQuRuq, 5715407]
+[section-title, [285.0, 151.5, 1304.0, 79.5], uJlHfQuRuq, 5715407]
+[section-title, [285.0, 231.0, 1304.0, 79.5], uJlHfQuRuq, 5715407]
+[sub-section-title, [252.0, 353.0, 1203.0, 76.5], CLN_c5p0lE, 5715407]
+[contact-info, [606.0, 2490.0, 409.0, 46.5], EzmnQyOtoS, 5715407]
+[contact-info, [130.0, 2501.0, 431.0, 46.5], 4d-GHyFx-e, 5715407]
+[folio, [1152.0, 2510.0, 384.0, 46.5], XUaq4XfFng, 5715407]

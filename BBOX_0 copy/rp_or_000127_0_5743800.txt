@@ -1,0 +1,7 @@
+[1839, 1268]
+[chapter-title, [358.0, 604.0, 666.0, 58.5], shoonya_0sMX61TU3MEEEN, 5743800]
+[chapter-title, [358.0, 662.5, 666.0, 58.5], shoonya_0sMX61TU3MEEEN, 5743800]
+[chapter-title, [358.0, 721.0, 666.0, 58.5], shoonya_0sMX61TU3MEEEN, 5743800]
+[section-title, [228.0, 819.0, 866.0, 49.5], s-MWXnHk72, 5743800]
+[section-title, [228.0, 868.5, 866.0, 49.5], s-MWXnHk72, 5743800]
+[section-title, [228.0, 918.0, 866.0, 49.5], s-MWXnHk72, 5743800]

@@ -1,0 +1,8 @@
+[596, 420]
+[section-title, [84.0, 63.0, 79.0, 30.0], JkFBCOqQ1H, 6534168]
+[paragraph, [29.0, 110.0, 172.0, 18.0], DYbrqGahX1, 6534168]
+[paragraph, [29.0, 128.0, 172.0, 18.0], DYbrqGahX1, 6534168]
+[paragraph, [39.0, 162.0, 162.0, 18.0], -dUBKJSVqF, 6534168]
+[paragraph, [39.0, 180.0, 162.0, 18.0], -dUBKJSVqF, 6534168]
+[paragraph, [40.0, 212.0, 158.0, 18.0], 6W31FbDEvU, 6534168]
+[paragraph, [40.0, 230.0, 158.0, 18.0], 6W31FbDEvU, 6534168]

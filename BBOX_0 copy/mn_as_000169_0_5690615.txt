@@ -1,0 +1,7 @@
+[2339, 1654]
+[folio, [186.0, 343.0, 372.0, 36.0], usVa9GoKqx, 5690615]
+[unordered-list, [177.0, 1786.0, 1339.0, 36.0], Wc2SCdSQTq, 5690615]
+[unordered-list, [177.0, 1822.0, 1339.0, 36.0], Wc2SCdSQTq, 5690615]
+[unordered-list, [177.0, 1858.0, 1339.0, 36.0], Wc2SCdSQTq, 5690615]
+[unordered-list, [177.0, 1894.0, 1339.0, 36.0], Wc2SCdSQTq, 5690615]
+[unordered-list, [177.0, 1930.0, 1339.0, 36.0], Wc2SCdSQTq, 5690615]

@@ -1,0 +1,7 @@
+[882, 655]
+[website-link, [270.0, 23.0, 121.0, 18.0], APNNnrxXEO, 5758974]
+[chapter-title, [136.0, 357.0, 380.0, 30.0], shoonya_0sQL567E34GGUC, 5758974]
+[chapter-title, [136.0, 387.0, 380.0, 30.0], shoonya_0sQL567E34GGUC, 5758974]
+[chapter-title, [136.0, 417.0, 380.0, 30.0], shoonya_0sQL567E34GGUC, 5758974]
+[folio, [307.0, 793.0, 38.0, 18.0], mkOKQNqK_4, 5758974]
+[folio, [31.0, 854.0, 115.0, 18.0], shoonya_1sNPVKL5YTU1VT, 5758974]

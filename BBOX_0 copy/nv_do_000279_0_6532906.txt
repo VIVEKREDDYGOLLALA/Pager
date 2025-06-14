@@ -1,0 +1,7 @@
+[515, 727]
+[folio, [412.0, 54.0, 149.0, 18.0], Zc4tfmYKxl, 6532906]
+[headline, [450.0, 161.0, 162.0, 25.5], shoonya_0sATXM4CD0CLZT, 6532906]
+[headline, [450.0, 186.5, 162.0, 25.5], shoonya_0sATXM4CD0CLZT, 6532906]
+[section-title, [434.0, 287.0, 185.0, 30.0], shoonya_1s6N66F4IE4WE0, 6532906]
+[section-title, [434.0, 317.0, 185.0, 30.0], shoonya_1s6N66F4IE4WE0, 6532906]
+[contact-info, [467.0, 390.0, 124.0, 18.0], r7_sViVtwp, 6532906]

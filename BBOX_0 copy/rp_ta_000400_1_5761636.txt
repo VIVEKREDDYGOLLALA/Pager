@@ -1,0 +1,4 @@
+[680, 510]
+[folio, [318.0, 25.0, 130.0, 18.0], qFcpeNbFz7, 5761636]
+[reference, [28.0, 56.0, 357.0, 18.0], shoonya_0sKZ0NCLC1LRHD, 5761636]
+[reference, [28.0, 74.0, 357.0, 18.0], shoonya_0sKZ0NCLC1LRHD, 5761636]

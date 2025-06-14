@@ -1,0 +1,8 @@
+[595, 420]
+[paragraph, [57.0, 32.0, 279.0, 18.0], qcA6azqHuJ, 6466490]
+[paragraph, [57.0, 50.0, 279.0, 18.0], qcA6azqHuJ, 6466490]
+[second-level-question, [42.0, 164.0, 339.0, 18.0], iU_Z1LiIxM, 6466490]
+[second-level-question, [42.0, 182.0, 339.0, 18.0], iU_Z1LiIxM, 6466490]
+[second-level-question, [42.0, 200.0, 339.0, 18.0], iU_Z1LiIxM, 6466490]
+[second-level-question, [45.0, 245.0, 340.0, 18.0], fGKogwCECY, 6466490]
+[second-level-question, [46.0, 270.0, 319.0, 18.0], A1oSgDAG2z, 6466490]

@@ -1,0 +1,5 @@
+[786, 644]
+[headline, [73.0, 64.0, 268.0, 25.5], shoonya_4s2N262VEJDXSJ, 5779764]
+[figure-caption, [73.0, 283.0, 166.0, 18.0], shoonya_6s3FQIFLKWVLV9, 5779764]
+[figure-caption, [75.0, 482.0, 207.0, 18.0], shoonya_5sID42FRCQGWG8, 5779764]
+[figure-caption, [74.0, 682.0, 151.0, 18.0], shoonya_3sRGST3EDMJNDK, 5779764]

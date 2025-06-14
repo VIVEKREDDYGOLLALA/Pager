@@ -1,0 +1,5 @@
+[842, 596]
+[figure-caption, [62.0, 100.0, 236.0, 18.0], shoonya_7s37YV5H5QV9SD, 5700593]
+[figure-caption, [60.0, 289.0, 452.0, 18.0], shoonya_3sG0XMNZ3EL1GQ, 5700593]
+[figure-caption, [60.0, 307.0, 452.0, 18.0], shoonya_3sG0XMNZ3EL1GQ, 5700593]
+[figure-caption, [61.0, 490.0, 127.0, 18.0], shoonya_4sWYUCZOR23IRV, 5700593]

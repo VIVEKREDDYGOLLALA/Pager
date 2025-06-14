@@ -1,0 +1,6 @@
+[2339, 1653]
+[section-title, [821.0, 1030.0, 210.0, 52.5], OHTPeJdcYH, 5734189]
+[ordered-list, [526.0, 1100.0, 790.0, 36.0], 7PYWHFAagm, 5734189]
+[ordered-list, [526.0, 1136.0, 790.0, 36.0], 7PYWHFAagm, 5734189]
+[ordered-list, [526.0, 1172.0, 790.0, 36.0], 7PYWHFAagm, 5734189]
+[ordered-list, [526.0, 1208.0, 790.0, 36.0], 7PYWHFAagm, 5734189]

@@ -1,0 +1,5 @@
+[596, 393]
+[figure-caption, [65.0, 263.0, 276.0, 18.0], OC2GY97pa1, 6532960]
+[figure-caption, [65.0, 281.0, 276.0, 18.0], OC2GY97pa1, 6532960]
+[figure-caption, [67.0, 507.0, 271.0, 18.0], zn6eKy5Xhr, 6532960]
+[figure-caption, [67.0, 525.0, 271.0, 18.0], zn6eKy5Xhr, 6532960]

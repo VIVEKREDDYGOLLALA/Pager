@@ -1,0 +1,5 @@
+[2026, 1439]
+[figure-caption, [1246.0, 746.0, 70.0, 36.0], XNTk3ZhcSc, 5651740]
+[figure-caption, [1246.0, 782.0, 70.0, 36.0], XNTk3ZhcSc, 5651740]
+[figure-caption, [1246.0, 818.0, 70.0, 36.0], XNTk3ZhcSc, 5651740]
+[figure-caption, [1246.0, 854.0, 70.0, 36.0], XNTk3ZhcSc, 5651740]

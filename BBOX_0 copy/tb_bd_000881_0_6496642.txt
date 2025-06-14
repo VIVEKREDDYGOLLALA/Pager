@@ -1,0 +1,4 @@
+[838, 558]
+[headline, [73.0, 45.0, 387.0, 25.5], shoonya_2sWM6LSZUH18L6, 6496642]
+[headline, [73.0, 70.5, 387.0, 25.5], shoonya_2sWM6LSZUH18L6, 6496642]
+[author, [264.0, 786.0, 230.0, 18.0], shoonya_1s4BLX44G9FV3L, 6496642]

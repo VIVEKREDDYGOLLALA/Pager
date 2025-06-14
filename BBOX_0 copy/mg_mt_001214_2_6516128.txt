@@ -1,0 +1,7 @@
+[2000, 1414]
+[section-title, [75.0, 1222.0, 439.0, 52.5], rtJROCTynB, 6516128]
+[sub-section-title, [60.0, 1488.0, 886.0, 55.5], 2HgXpPJKxp, 6516128]
+[sub-section-title, [60.0, 1543.5, 886.0, 55.5], 2HgXpPJKxp, 6516128]
+[sub-section-title, [60.0, 1599.0, 886.0, 55.5], 2HgXpPJKxp, 6516128]
+[folio, [68.0, 1747.0, 785.0, 36.0], 40r9NwYX6T, 6516128]
+[folio, [68.0, 1783.0, 785.0, 36.0], 40r9NwYX6T, 6516128]

@@ -1,0 +1,7 @@
+[515, 727]
+[paragraph, [515.0, 36.0, 175.0, 18.0], S1Bf0mvZIy, 6532795]
+[section-title, [490.0, 102.0, 126.0, 30.0], shoonya_0sEPLRS354V60Z, 6532795]
+[section-title, [490.0, 132.0, 126.0, 30.0], shoonya_0sEPLRS354V60Z, 6532795]
+[paragraph, [470.0, 287.0, 186.0, 18.0], pnzagQUeOa, 6532795]
+[paragraph, [470.0, 305.0, 186.0, 18.0], pnzagQUeOa, 6532795]
+[contact-info, [482.0, 440.0, 146.0, 18.0], AjfG8LbrWj, 6532795]

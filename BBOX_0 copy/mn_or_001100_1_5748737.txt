@@ -1,0 +1,8 @@
+[792, 612]
+[paragraph, [181.0, 69.0, 351.0, 18.0], shoonya_0s856LFBUISXAS, 5748737]
+[paragraph, [181.0, 87.0, 351.0, 18.0], shoonya_0s856LFBUISXAS, 5748737]
+[paragraph, [181.0, 105.0, 351.0, 18.0], shoonya_0s856LFBUISXAS, 5748737]
+[unordered-list, [171.0, 137.0, 365.0, 18.0], stOPtvwe2S, 5748737]
+[unordered-list, [171.0, 155.0, 365.0, 18.0], stOPtvwe2S, 5748737]
+[unordered-list, [171.0, 173.0, 365.0, 18.0], stOPtvwe2S, 5748737]
+[unordered-list, [171.0, 191.0, 365.0, 18.0], stOPtvwe2S, 5748737]

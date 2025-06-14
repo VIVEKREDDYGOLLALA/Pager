@@ -1,0 +1,8 @@
+[590, 396]
+[author, [80.0, 98.0, 250.0, 18.0], shoonya_3sVMT01UVE30NR, 6512991]
+[author, [80.0, 116.0, 250.0, 18.0], shoonya_3sVMT01UVE30NR, 6512991]
+[folio, [98.0, 240.0, 219.0, 18.0], shoonya_1s0YDT9K7E6Y3G, 6512991]
+[folio, [98.0, 258.0, 219.0, 18.0], shoonya_1s0YDT9K7E6Y3G, 6512991]
+[folio, [98.0, 276.0, 219.0, 18.0], shoonya_1s0YDT9K7E6Y3G, 6512991]
+[folio, [98.0, 294.0, 219.0, 18.0], shoonya_1s0YDT9K7E6Y3G, 6512991]
+[figure-caption, [178.0, 507.0, 62.0, 18.0], iNZ2sXfJl1, 6512991]

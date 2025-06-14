@@ -1,0 +1,7 @@
+[1755, 1241]
+[figure-caption, [221.0, 181.0, 824.0, 36.0], jTWkAEBpAY, 6478420]
+[paragraph, [246.0, 296.0, 828.0, 36.0], hUFHa9RCSQ, 6478420]
+[unordered-list, [260.0, 358.0, 708.0, 36.0], MQjHOIdfje, 6478420]
+[unordered-list, [260.0, 394.0, 708.0, 36.0], MQjHOIdfje, 6478420]
+[unordered-list, [260.0, 430.0, 708.0, 36.0], MQjHOIdfje, 6478420]
+[figure-caption, [238.0, 1224.0, 800.0, 36.0], vohj2q1v-P, 6478420]

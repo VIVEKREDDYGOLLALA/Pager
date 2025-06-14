@@ -1,0 +1,8 @@
+[1220, 768]
+[folio, [255.0, 489.0, 199.0, 18.0], shoonya_0sI9VW8Q3D2WTK, 5770348]
+[folio, [255.0, 507.0, 199.0, 18.0], shoonya_0sI9VW8Q3D2WTK, 5770348]
+[folio, [255.0, 525.0, 199.0, 18.0], shoonya_0sI9VW8Q3D2WTK, 5770348]
+[folio, [255.0, 543.0, 199.0, 18.0], shoonya_0sI9VW8Q3D2WTK, 5770348]
+[folio, [255.0, 561.0, 199.0, 18.0], shoonya_0sI9VW8Q3D2WTK, 5770348]
+[folio, [255.0, 579.0, 199.0, 18.0], shoonya_0sI9VW8Q3D2WTK, 5770348]
+[folio, [255.0, 597.0, 199.0, 18.0], shoonya_0sI9VW8Q3D2WTK, 5770348]

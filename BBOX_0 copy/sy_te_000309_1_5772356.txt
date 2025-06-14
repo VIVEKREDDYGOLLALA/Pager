@@ -1,0 +1,4 @@
+[792, 612]
+[second-level-question, [104.0, 88.0, 279.0, 18.0], 6739kpWBls, 5772356]
+[second-level-question, [104.0, 106.0, 279.0, 18.0], 6739kpWBls, 5772356]
+[second-level-question, [104.0, 124.0, 279.0, 18.0], 6739kpWBls, 5772356]

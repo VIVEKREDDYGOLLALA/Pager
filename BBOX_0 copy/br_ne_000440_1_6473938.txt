@@ -1,0 +1,7 @@
+[420, 615]
+[headline, [210.0, 26.0, 175.0, 52.5], Qk996HWkkh, 6473938]
+[paragraph, [14.0, 100.0, 566.0, 52.5], shoonya_0s5N3LYRA0DDHW, 6473938]
+[paragraph, [14.0, 152.5, 566.0, 52.5], shoonya_0s5N3LYRA0DDHW, 6473938]
+[dateline, [20.0, 244.0, 310.0, 52.5], jvAi2ZWPl1, 6473938]
+[dateline, [20.0, 296.5, 310.0, 52.5], jvAi2ZWPl1, 6473938]
+[contact-info, [350.0, 254.0, 226.0, 52.5], ALSkKFpbj3, 6473938]

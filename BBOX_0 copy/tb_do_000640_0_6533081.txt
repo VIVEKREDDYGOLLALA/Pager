@@ -1,0 +1,7 @@
+[515, 727]
+[headline, [476.0, 31.0, 117.0, 25.5], FF2n36jE-1, 6533081]
+[sub-headline, [493.0, 134.0, 86.0, 25.5], gVv6-prBkw, 6533081]
+[author, [490.0, 254.0, 91.0, 18.0], shoonya_3sCUPVMVEFOHQO, 6533081]
+[contact-info, [460.0, 395.0, 151.0, 18.0], shoonya_0s36JCQSLIQVOK, 6533081]
+[contact-info, [460.0, 413.0, 151.0, 18.0], shoonya_0s36JCQSLIQVOK, 6533081]
+[contact-info, [460.0, 431.0, 151.0, 18.0], shoonya_0s36JCQSLIQVOK, 6533081]

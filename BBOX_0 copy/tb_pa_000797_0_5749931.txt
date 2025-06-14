@@ -1,0 +1,5 @@
+[1945, 1492]
+[section-title, [196.0, 713.0, 1067.0, 49.5], shoonya_0sYEOSUW9CF24O, 5749931]
+[section-title, [196.0, 762.5, 1067.0, 49.5], shoonya_0sYEOSUW9CF24O, 5749931]
+[section-title, [196.0, 812.0, 1067.0, 49.5], shoonya_0sYEOSUW9CF24O, 5749931]
+[section-title, [196.0, 861.5, 1067.0, 49.5], shoonya_0sYEOSUW9CF24O, 5749931]

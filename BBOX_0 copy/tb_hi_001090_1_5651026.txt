@@ -1,0 +1,7 @@
+[720, 504]
+[section-title, [142.0, 144.0, 221.0, 30.0], shoonya_0sIBTF9ARTLUGT, 5651026]
+[contact-info, [213.0, 419.0, 77.0, 18.0], shoonya_1sOWBWZ61EXMGK, 5651026]
+[contact-info, [213.0, 437.0, 77.0, 18.0], shoonya_1sOWBWZ61EXMGK, 5651026]
+[contact-info, [213.0, 455.0, 77.0, 18.0], shoonya_1sOWBWZ61EXMGK, 5651026]
+[contact-info, [213.0, 473.0, 77.0, 18.0], shoonya_1sOWBWZ61EXMGK, 5651026]
+[contact-info, [119.0, 602.0, 261.0, 18.0], t0IZtmoN0q, 5651026]

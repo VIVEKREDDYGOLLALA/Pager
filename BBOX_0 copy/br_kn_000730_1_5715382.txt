@@ -1,0 +1,7 @@
+[369, 241]
+[unordered-list, [120.0, 8.0, 111.0, 52.5], vBp9Oy4JIc, 5715382]
+[unordered-list, [120.0, 60.5, 111.0, 52.5], vBp9Oy4JIc, 5715382]
+[paragraph, [8.0, 24.0, 116.0, 52.5], 8nU4QRFmFp, 5715382]
+[paragraph, [8.0, 76.5, 116.0, 52.5], 8nU4QRFmFp, 5715382]
+[subsub-unordered-list, [122.0, 249.0, 103.0, 18.0], sMvAIuZ-85, 5715382]
+[subsub-unordered-list, [122.0, 267.0, 103.0, 18.0], sMvAIuZ-85, 5715382]

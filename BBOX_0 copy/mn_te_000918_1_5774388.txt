@@ -1,0 +1,8 @@
+[842, 596]
+[paragraph, [49.0, 51.0, 448.0, 18.0], M1eM1sfCf4, 5774388]
+[paragraph, [49.0, 69.0, 448.0, 18.0], M1eM1sfCf4, 5774388]
+[paragraph, [49.0, 87.0, 448.0, 18.0], M1eM1sfCf4, 5774388]
+[placeholder-text, [54.0, 132.0, 476.0, 18.0], shoonya_0s5YUH9VTX2NHB, 5774388]
+[placeholder-text, [54.0, 152.0, 400.0, 18.0], nLjnwcjQxP, 5774388]
+[placeholder-text, [301.0, 202.0, 133.0, 18.0], YJgsjUAkEP, 5774388]
+[placeholder-text, [50.0, 203.0, 234.0, 18.0], xgxaunzbsw, 5774388]

@@ -1,0 +1,7 @@
+[2339, 1654]
+[section-title, [177.0, 330.0, 624.0, 52.5], HpBhoOk3Z7, 5690142]
+[unordered-list, [170.0, 1792.0, 758.0, 36.0], WuABjQJ6cd, 5690142]
+[unordered-list, [170.0, 1828.0, 758.0, 36.0], WuABjQJ6cd, 5690142]
+[unordered-list, [170.0, 1864.0, 758.0, 36.0], WuABjQJ6cd, 5690142]
+[unordered-list, [170.0, 1900.0, 758.0, 36.0], WuABjQJ6cd, 5690142]
+[unordered-list, [170.0, 1936.0, 758.0, 36.0], WuABjQJ6cd, 5690142]

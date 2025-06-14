@@ -1,0 +1,6 @@
+[1754, 1241]
+[reference, [220.0, 89.0, 919.0, 36.0], shoonya_0s8RQIK4BWROXW, 5781122]
+[reference, [220.0, 125.0, 919.0, 36.0], shoonya_0s8RQIK4BWROXW, 5781122]
+[reference, [220.0, 161.0, 919.0, 36.0], shoonya_0s8RQIK4BWROXW, 5781122]
+[reference, [220.0, 197.0, 919.0, 36.0], shoonya_0s8RQIK4BWROXW, 5781122]
+[reference, [220.0, 233.0, 919.0, 36.0], shoonya_0s8RQIK4BWROXW, 5781122]

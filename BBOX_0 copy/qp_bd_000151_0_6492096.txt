@@ -1,0 +1,8 @@
+[579, 387]
+[second-level-question, [61.0, 263.0, 257.0, 18.0], aZVdhSNNqH, 6492096]
+[second-level-question, [60.0, 298.0, 259.0, 18.0], bZ_Wbre87f, 6492096]
+[second-level-question, [59.0, 334.0, 259.0, 18.0], 7Df0LmEKdG, 6492096]
+[second-level-question, [64.0, 371.0, 176.0, 18.0], H8zo3zr2U1, 6492096]
+[second-level-question, [61.0, 391.0, 266.0, 18.0], wZS-lit2oO, 6492096]
+[second-level-question, [59.0, 469.0, 202.0, 18.0], pmJDqo97rC, 6492096]
+[second-level-question, [59.0, 490.0, 266.0, 18.0], fldV1Qg_52, 6492096]

@@ -1,0 +1,5 @@
+[1650, 1275]
+[section-title, [177.0, 34.0, 157.0, 49.5], shoonya_0sDIWITLXK7VHP, 5775647]
+[paragraph, [124.0, 1562.0, 282.0, 36.0], gjJQDtCVId, 5775647]
+[website-link, [287.0, 1563.0, 114.0, 18.0], oDIf8mTlOp, 5775647]
+[website-link, [287.0, 1581.0, 114.0, 18.0], oDIf8mTlOp, 5775647]

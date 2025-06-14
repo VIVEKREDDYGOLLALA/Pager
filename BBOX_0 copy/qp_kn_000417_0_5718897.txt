@@ -1,0 +1,3 @@
+[1574, 1219]
+[section-title, [394.0, 127.0, 429.0, 49.5], zqslEPer7x, 5718897]
+[folio, [50.0, 1520.0, 338.0, 36.0], shoonya_1sQRDHCRA8KETG, 5718897]

@@ -1,0 +1,5 @@
+[655, 479]
+[paragraph, [57.0, 69.0, 360.0, 18.0], GrwCSxSbzA, 5705403]
+[paragraph, [57.0, 87.0, 360.0, 18.0], GrwCSxSbzA, 5705403]
+[paragraph, [57.0, 105.0, 360.0, 18.0], GrwCSxSbzA, 5705403]
+[paragraph, [57.0, 123.0, 360.0, 18.0], GrwCSxSbzA, 5705403]

@@ -1,0 +1,4 @@
+[1755, 1240]
+[chapter-title, [490.0, 198.0, 261.0, 58.5], hNaM_r1zYJ, 5704200]
+[chapter-title, [418.0, 298.0, 402.0, 58.5], shoonya_2sWODL5ENAURPS, 5704200]
+[author, [243.0, 391.0, 251.0, 36.0], shoonya_1sBC2FXMZD10YM, 5704200]

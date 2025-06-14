@@ -1,0 +1,6 @@
+[2339, 1654]
+[paragraph, [176.0, 324.0, 471.0, 36.0], shoonya_12sCNAP96V7O6O, 5690331]
+[unordered-list, [191.0, 1802.0, 1306.0, 36.0], shoonya_16sTEFJJR61TAU, 5690331]
+[unordered-list, [191.0, 1838.0, 1306.0, 36.0], shoonya_16sTEFJJR61TAU, 5690331]
+[unordered-list, [191.0, 1874.0, 1306.0, 36.0], shoonya_16sTEFJJR61TAU, 5690331]
+[unordered-list, [191.0, 1910.0, 1306.0, 36.0], shoonya_16sTEFJJR61TAU, 5690331]

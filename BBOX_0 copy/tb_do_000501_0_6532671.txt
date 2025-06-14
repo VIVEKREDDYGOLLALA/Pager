@@ -1,0 +1,8 @@
+[726, 433]
+[paragraph, [158.0, 154.0, 148.0, 18.0], erIEJtLVN6, 6532671]
+[headline, [203.0, 203.0, 62.0, 25.5], shoonya_0sSF6U1R1RLWF0, 6532671]
+[sub-headline, [177.0, 251.0, 116.0, 25.5], pT0V83IL8q, 6532671]
+[author, [187.0, 433.0, 95.0, 18.0], 2cZv1-34JR, 6532671]
+[contact-info, [128.0, 534.0, 214.0, 18.0], BGrXmCUWOb, 6532671]
+[contact-info, [128.0, 552.0, 214.0, 18.0], BGrXmCUWOb, 6532671]
+[contact-info, [128.0, 570.0, 214.0, 18.0], BGrXmCUWOb, 6532671]

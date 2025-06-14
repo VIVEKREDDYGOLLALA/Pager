@@ -1,0 +1,8 @@
+[576, 756]
+[section-title, [271.0, 145.0, 362.0, 30.0], 8KGmBgFOuL, 5762723]
+[unordered-list, [272.0, 233.0, 355.0, 18.0], shoonya_3sMGAVXGWRR6M0, 5762723]
+[unordered-list, [272.0, 251.0, 355.0, 18.0], shoonya_3sMGAVXGWRR6M0, 5762723]
+[unordered-list, [272.0, 269.0, 355.0, 18.0], shoonya_3sMGAVXGWRR6M0, 5762723]
+[unordered-list, [272.0, 287.0, 355.0, 18.0], shoonya_3sMGAVXGWRR6M0, 5762723]
+[unordered-list, [272.0, 305.0, 355.0, 18.0], shoonya_3sMGAVXGWRR6M0, 5762723]
+[unordered-list, [272.0, 323.0, 355.0, 18.0], shoonya_3sMGAVXGWRR6M0, 5762723]

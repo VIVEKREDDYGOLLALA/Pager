@@ -1,0 +1,4 @@
+[818, 577]
+[figure-caption, [378.0, 85.0, 194.0, 18.0], 8UKV4OT4_K, 5656396]
+[chapter-title, [199.0, 124.0, 277.0, 30.0], nvMuXnvtEI, 5656396]
+[chapter-title, [199.0, 154.0, 277.0, 30.0], nvMuXnvtEI, 5656396]

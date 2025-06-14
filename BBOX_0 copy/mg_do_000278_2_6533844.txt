@@ -1,0 +1,8 @@
+[2000, 1414]
+[flag, [72.0, 128.0, 296.0, 36.0], 8HWuxl7okv, 6533844]
+[author, [77.0, 1340.0, 480.0, 36.0], shoonya_3sENFBUXAZPWP6, 6533844]
+[author, [77.0, 1376.0, 480.0, 36.0], shoonya_3sENFBUXAZPWP6, 6533844]
+[author, [77.0, 1412.0, 480.0, 36.0], shoonya_3sENFBUXAZPWP6, 6533844]
+[paragraph, [71.0, 1582.0, 735.0, 36.0], shoonya_2sNIOGZMSGYWG9, 6533844]
+[paragraph, [71.0, 1618.0, 735.0, 36.0], shoonya_2sNIOGZMSGYWG9, 6533844]
+[author, [78.0, 1795.0, 108.0, 36.0], shoonya_4sEE0NWRPGIZOC, 6533844]

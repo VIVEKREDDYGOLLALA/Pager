@@ -1,0 +1,8 @@
+[1754, 1241]
+[paragraph, [188.0, 112.0, 498.0, 36.0], shoonya_1sD16Q8XJ0Y6DO, 5709036]
+[placeholder-text, [773.0, 155.0, 282.0, 18.0], eKBrSMqG_x, 5709036]
+[placeholder-text, [773.0, 173.0, 282.0, 18.0], eKBrSMqG_x, 5709036]
+[placeholder-text, [773.0, 191.0, 282.0, 18.0], eKBrSMqG_x, 5709036]
+[author, [791.0, 215.0, 236.0, 36.0], wK6kCWJBhO, 5709036]
+[author, [791.0, 251.0, 236.0, 36.0], wK6kCWJBhO, 5709036]
+[author, [791.0, 287.0, 236.0, 36.0], wK6kCWJBhO, 5709036]

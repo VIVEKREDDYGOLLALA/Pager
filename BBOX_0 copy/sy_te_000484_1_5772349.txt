@@ -1,0 +1,8 @@
+[792, 612]
+[folio, [214.0, 26.0, 47.0, 18.0], shoonya_0sR8FI757TXYWY, 5772349]
+[folio, [216.0, 98.0, 43.0, 18.0], YtDYHlN_6E, 5772349]
+[paragraph, [74.0, 199.0, 308.0, 18.0], gigBHSAoL0, 5772349]
+[ordered-list, [68.0, 221.0, 485.0, 18.0], OUwCvM5Xsd, 5772349]
+[ordered-list, [68.0, 239.0, 485.0, 18.0], OUwCvM5Xsd, 5772349]
+[ordered-list, [68.0, 257.0, 485.0, 18.0], OUwCvM5Xsd, 5772349]
+[ordered-list, [68.0, 275.0, 485.0, 18.0], OUwCvM5Xsd, 5772349]

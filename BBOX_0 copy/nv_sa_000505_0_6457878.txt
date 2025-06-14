@@ -1,0 +1,7 @@
+[451, 283]
+[paragraph, [26.0, 55.0, 227.0, 52.5], vdKHzkGU6X, 6457878]
+[ordered-list, [23.0, 120.0, 234.0, 52.5], K42AAYqsid, 6457878]
+[ordered-list, [23.0, 172.5, 234.0, 52.5], K42AAYqsid, 6457878]
+[ordered-list, [23.0, 225.0, 234.0, 52.5], K42AAYqsid, 6457878]
+[ordered-list, [23.0, 277.5, 234.0, 52.5], K42AAYqsid, 6457878]
+[ordered-list, [23.0, 330.0, 234.0, 52.5], K42AAYqsid, 6457878]

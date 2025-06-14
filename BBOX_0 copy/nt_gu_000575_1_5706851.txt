@@ -1,0 +1,5 @@
+[842, 596]
+[folio, [122.0, 30.0, 413.0, 18.0], qHldnpbV7f, 5706851]
+[second-level-question, [82.0, 97.0, 204.0, 18.0], Vpm_CZhzig, 5706851]
+[second-level-question, [78.0, 114.0, 309.0, 18.0], 70X37aOHJ2, 5706851]
+[paragraph, [261.0, 302.0, 31.0, 18.0], 8-IoMX-c7Z, 5706851]

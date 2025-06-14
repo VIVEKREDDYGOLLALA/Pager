@@ -1,0 +1,6 @@
+[1601, 1158]
+[headline, [118.0, 326.0, 959.0, 37.5], shoonya_3sG1SW4KZC71WF, 5695863]
+[headline, [118.0, 363.5, 959.0, 37.5], shoonya_3sG1SW4KZC71WF, 5695863]
+[headline, [118.0, 401.0, 959.0, 37.5], shoonya_3sG1SW4KZC71WF, 5695863]
+[headline, [118.0, 438.5, 959.0, 37.5], shoonya_3sG1SW4KZC71WF, 5695863]
+[author, [463.0, 518.0, 225.0, 36.0], nI_1VbMR-6, 5695863]

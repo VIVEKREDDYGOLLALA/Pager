@@ -1,0 +1,4 @@
+[1650, 1275]
+[headline, [548.0, 512.0, 172.0, 37.5], _m7YHbetR_, 5730516]
+[contact-info, [843.0, 1173.0, 238.0, 36.0], shoonya_0sW3EJ1STYXEQ7, 5730516]
+[contact-info, [843.0, 1209.0, 238.0, 36.0], shoonya_0sW3EJ1STYXEQ7, 5730516]

@@ -1,0 +1,7 @@
+[786, 644]
+[figure-caption, [63.0, 71.0, 186.0, 18.0], Kruz-hq0vL, 5779623]
+[figure-caption, [63.0, 89.0, 186.0, 18.0], Kruz-hq0vL, 5779623]
+[figure-caption, [63.0, 107.0, 186.0, 18.0], Kruz-hq0vL, 5779623]
+[figure-caption, [63.0, 125.0, 186.0, 18.0], Kruz-hq0vL, 5779623]
+[figure-caption, [63.0, 143.0, 186.0, 18.0], Kruz-hq0vL, 5779623]
+[figure-caption, [63.0, 161.0, 186.0, 18.0], Kruz-hq0vL, 5779623]

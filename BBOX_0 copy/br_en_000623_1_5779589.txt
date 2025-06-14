@@ -1,0 +1,7 @@
+[595, 842]
+[headline, [149.0, 104.0, 253.0, 25.5], shoonya_1sOC5VHNBRKMJA, 5779589]
+[figure-caption, [337.0, 275.0, 231.0, 18.0], QT4ZGrZGgk, 5779589]
+[figure-caption, [599.0, 275.0, 225.0, 18.0], EYqQ5NCHjD, 5779589]
+[figure-caption, [252.0, 382.0, 58.0, 18.0], shoonya_6sQSXQRG7PCR9O, 5779589]
+[figure-caption, [341.0, 417.0, 223.0, 18.0], SQz_-lD6Qc, 5779589]
+[figure-caption, [600.0, 420.0, 232.0, 18.0], shoonya_5sZUM35FWT9UQF, 5779589]

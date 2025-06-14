@@ -1,0 +1,8 @@
+[2806, 1984]
+[paragraph, [279.0, 719.0, 722.0, 46.5], shoonya_4s67P2BTFD8438, 5699990]
+[unordered-list, [343.0, 925.0, 768.0, 46.5], shoonya_0sZ4GYQ66CNWNR, 5699990]
+[unordered-list, [343.0, 971.5, 768.0, 46.5], shoonya_0sZ4GYQ66CNWNR, 5699990]
+[unordered-list, [343.0, 1018.0, 768.0, 46.5], shoonya_0sZ4GYQ66CNWNR, 5699990]
+[placeholder-text, [287.0, 1744.0, 644.0, 18.0], sWAbmX-WoO, 5699990]
+[placeholder-text, [287.0, 1762.0, 644.0, 18.0], sWAbmX-WoO, 5699990]
+[placeholder-text, [287.0, 1780.0, 644.0, 18.0], sWAbmX-WoO, 5699990]

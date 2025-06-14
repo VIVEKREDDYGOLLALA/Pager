@@ -1,0 +1,5 @@
+[1650, 1275]
+[figure-caption, [666.0, 180.0, 462.0, 36.0], ieqlWpZHDp, 5714573]
+[figure-caption, [666.0, 216.0, 462.0, 36.0], ieqlWpZHDp, 5714573]
+[figure-caption, [666.0, 252.0, 462.0, 36.0], ieqlWpZHDp, 5714573]
+[figure-caption, [666.0, 288.0, 462.0, 36.0], ieqlWpZHDp, 5714573]

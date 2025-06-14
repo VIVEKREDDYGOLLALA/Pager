@@ -1,0 +1,6 @@
+[842, 596]
+[placeholder-text, [490.0, 90.0, 37.0, 18.0], H1zmSKzw0C, 5701362]
+[placeholder-text, [279.0, 127.0, 37.0, 18.0], s4mlNto4hd, 5701362]
+[placeholder-text, [241.0, 281.0, 37.0, 18.0], WeKKNEJAC4, 5701362]
+[placeholder-text, [335.0, 295.0, 37.0, 18.0], FlUtJR2YvZ, 5701362]
+[placeholder-text, [263.0, 455.0, 37.0, 18.0], M-axoRGlws, 5701362]

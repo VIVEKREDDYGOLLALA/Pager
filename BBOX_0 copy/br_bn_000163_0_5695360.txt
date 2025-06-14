@@ -1,0 +1,5 @@
+[1601, 1158]
+[contact-info, [113.0, 375.0, 410.0, 36.0], shoonya_2sANSCWR48PAMU, 5695360]
+[contact-info, [113.0, 411.0, 410.0, 36.0], shoonya_2sANSCWR48PAMU, 5695360]
+[contact-info, [113.0, 447.0, 410.0, 36.0], shoonya_2sANSCWR48PAMU, 5695360]
+[contact-info, [113.0, 483.0, 410.0, 36.0], shoonya_2sANSCWR48PAMU, 5695360]

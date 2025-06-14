@@ -1,0 +1,8 @@
+[2428, 1814]
+[folio, [546.0, 41.0, 745.0, 36.0], -hOQGOKN0O, 5694560]
+[folio, [546.0, 77.0, 745.0, 36.0], -hOQGOKN0O, 5694560]
+[section-title, [110.0, 129.0, 1672.0, 52.5], shoonya_1s31U2Y6STK6HU, 5694560]
+[section-title, [110.0, 181.5, 1672.0, 52.5], shoonya_1s31U2Y6STK6HU, 5694560]
+[section-title, [110.0, 234.0, 1672.0, 52.5], shoonya_1s31U2Y6STK6HU, 5694560]
+[section-title, [110.0, 286.5, 1672.0, 52.5], shoonya_1s31U2Y6STK6HU, 5694560]
+[section-title, [110.0, 339.0, 1672.0, 52.5], shoonya_1s31U2Y6STK6HU, 5694560]

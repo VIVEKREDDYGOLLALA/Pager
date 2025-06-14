@@ -1,0 +1,6 @@
+[1601, 1158]
+[headline, [344.0, 150.0, 482.0, 37.5], shoonya_0s504EWHD7V4LG, 5695404]
+[headline, [344.0, 187.5, 482.0, 37.5], shoonya_0s504EWHD7V4LG, 5695404]
+[headline, [344.0, 225.0, 482.0, 37.5], shoonya_0s504EWHD7V4LG, 5695404]
+[headline, [344.0, 262.5, 482.0, 37.5], shoonya_0s504EWHD7V4LG, 5695404]
+[headline, [344.0, 300.0, 482.0, 37.5], shoonya_0s504EWHD7V4LG, 5695404]

@@ -1,0 +1,7 @@
+[794, 624]
+[headline, [101.0, 99.0, 418.0, 25.5], shoonya_0sMEHLHU0ZOS59, 5746793]
+[sub-headline, [193.0, 200.0, 240.0, 25.5], shoonya_3sG444F12JE20U, 5746793]
+[contact-info, [144.0, 617.0, 340.0, 18.0], shoonya_2sVIITR5IAUNNA, 5746793]
+[contact-info, [144.0, 635.0, 340.0, 18.0], shoonya_2sVIITR5IAUNNA, 5746793]
+[contact-info, [144.0, 653.0, 340.0, 18.0], shoonya_2sVIITR5IAUNNA, 5746793]
+[contact-info, [144.0, 671.0, 340.0, 18.0], shoonya_2sVIITR5IAUNNA, 5746793]

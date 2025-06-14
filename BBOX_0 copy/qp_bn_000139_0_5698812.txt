@@ -1,0 +1,4 @@
+[1419, 1005]
+[section-title, [343.0, 0.0, 328.0, 30.0], HtLcTjzhiY, 5698812]
+[folio, [0.0, 1383.0, 207.0, 18.0], M1WQNnm_xs, 5698812]
+[jumpline, [917.0, 1398.0, 83.0, 18.0], shoonya_1sVVFXFFOIB2PI, 5698812]

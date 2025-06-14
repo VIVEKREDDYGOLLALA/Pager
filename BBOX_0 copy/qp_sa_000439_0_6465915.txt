@@ -1,0 +1,5 @@
+[595, 420]
+[sidebar, [339.0, 88.0, 56.0, 18.0], VP60ALR6NU, 6465915]
+[second-level-question, [34.0, 111.0, 182.0, 18.0], Pqne-ZCuJ9, 6465915]
+[second-level-question, [28.0, 131.0, 362.0, 18.0], uPjGnC_f9y, 6465915]
+[second-level-question, [28.0, 149.0, 362.0, 18.0], uPjGnC_f9y, 6465915]

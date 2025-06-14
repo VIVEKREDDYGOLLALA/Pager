@@ -1,0 +1,5 @@
+[1339, 1852]
+[figure-caption, [960.0, 961.0, 180.0, 18.0], GoUrJo1Uod, 5725818]
+[figure-caption, [960.0, 979.0, 180.0, 18.0], GoUrJo1Uod, 5725818]
+[figure-caption, [713.0, 963.0, 152.0, 18.0], g0-xVbfhBV, 5725818]
+[figure-caption, [713.0, 981.0, 152.0, 18.0], g0-xVbfhBV, 5725818]

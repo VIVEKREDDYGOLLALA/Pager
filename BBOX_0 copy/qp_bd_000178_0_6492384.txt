@@ -1,0 +1,5 @@
+[575, 339]
+[second-level-question, [55.0, 101.0, 154.0, 18.0], MK-5PG0gSS, 6492384]
+[second-level-question, [55.0, 124.0, 228.0, 18.0], b4KSgGPEBr, 6492384]
+[folio, [32.0, 501.0, 99.0, 18.0], 5lcFfmszQh, 6492384]
+[folio, [143.0, 501.0, 181.0, 18.0], wyYuKlWQg4, 6492384]

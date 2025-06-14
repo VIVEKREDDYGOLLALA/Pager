@@ -1,0 +1,7 @@
+[591, 409]
+[folio, [176.0, 32.0, 65.0, 18.0], dOJbqtbE_e, 6494600]
+[paragraph, [52.0, 80.0, 320.0, 18.0], FBAQhBybOx, 6494600]
+[paragraph, [52.0, 98.0, 320.0, 18.0], FBAQhBybOx, 6494600]
+[paragraph, [52.0, 116.0, 320.0, 18.0], FBAQhBybOx, 6494600]
+[paragraph, [56.0, 198.0, 311.0, 18.0], DVS47z_0R9, 6494600]
+[paragraph, [171.0, 264.0, 80.0, 18.0], PziNwRrMiB, 6494600]

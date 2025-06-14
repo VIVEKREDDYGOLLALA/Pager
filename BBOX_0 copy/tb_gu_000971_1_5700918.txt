@@ -1,0 +1,6 @@
+[842, 596]
+[second-level-question, [93.0, 337.0, 280.0, 18.0], BEtU-l4rrm, 5700918]
+[placeholder-text, [281.0, 341.0, 86.0, 18.0], shoonya_4s0YXZOJWBXH27, 5700918]
+[second-level-question, [97.0, 368.0, 302.0, 18.0], Cd0PQWBNVc, 5700918]
+[second-level-question, [94.0, 400.0, 257.0, 18.0], N4I4ZI0P2h, 5700918]
+[second-level-question, [94.0, 427.0, 297.0, 18.0], Kn9V78QyjC, 5700918]

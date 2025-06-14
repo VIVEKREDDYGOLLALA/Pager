@@ -1,0 +1,5 @@
+[3060, 3960]
+[headline, [0.0, 553.0, 1847.0, 52.5], shoonya_2sK3GHHEQQBEPG, 5695570]
+[headline, [0.0, 605.5, 1847.0, 52.5], shoonya_2sK3GHHEQQBEPG, 5695570]
+[headline, [0.0, 658.0, 1847.0, 52.5], shoonya_2sK3GHHEQQBEPG, 5695570]
+[headline, [0.0, 710.5, 1847.0, 52.5], shoonya_2sK3GHHEQQBEPG, 5695570]

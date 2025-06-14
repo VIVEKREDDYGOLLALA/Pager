@@ -1,0 +1,5 @@
+[1241, 827]
+[section-title, [197.0, 1020.0, 428.0, 30.0], shoonya_4sRX6Y2AIZNH67, 5715521]
+[contact-info, [177.0, 1066.0, 468.0, 18.0], shoonya_3s6G1X0DQ0DQP4, 5715521]
+[contact-info, [177.0, 1084.0, 468.0, 18.0], shoonya_3s6G1X0DQ0DQP4, 5715521]
+[contact-info, [177.0, 1102.0, 468.0, 18.0], shoonya_3s6G1X0DQ0DQP4, 5715521]

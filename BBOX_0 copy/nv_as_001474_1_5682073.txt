@@ -1,0 +1,6 @@
+[2806, 1983]
+[paragraph, [221.0, 236.0, 1552.0, 46.5], shoonya_0sPZAZ3QO0S6N8, 5682073]
+[paragraph, [221.0, 282.5, 1552.0, 46.5], shoonya_0sPZAZ3QO0S6N8, 5682073]
+[paragraph, [221.0, 329.0, 1552.0, 46.5], shoonya_0sPZAZ3QO0S6N8, 5682073]
+[paragraph, [221.0, 375.5, 1552.0, 46.5], shoonya_0sPZAZ3QO0S6N8, 5682073]
+[paragraph, [221.0, 422.0, 1552.0, 46.5], shoonya_0sPZAZ3QO0S6N8, 5682073]

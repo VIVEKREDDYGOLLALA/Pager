@@ -1,0 +1,5 @@
+[842, 596]
+[contact-info, [146.0, 733.0, 308.0, 18.0], shoonya_1sJU9111CTLASK, 5780430]
+[contact-info, [146.0, 751.0, 308.0, 18.0], shoonya_1sJU9111CTLASK, 5780430]
+[contact-info, [146.0, 769.0, 308.0, 18.0], shoonya_1sJU9111CTLASK, 5780430]
+[contact-info, [146.0, 787.0, 308.0, 18.0], shoonya_1sJU9111CTLASK, 5780430]

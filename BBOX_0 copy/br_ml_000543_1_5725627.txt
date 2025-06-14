@@ -1,0 +1,6 @@
+[608, 384]
+[contact-info, [130.0, 458.0, 149.0, 18.0], GdwQlghIwO, 5725627]
+[contact-info, [130.0, 495.0, 209.0, 18.0], RFkPeNZmoO, 5725627]
+[contact-info, [130.0, 513.0, 209.0, 18.0], RFkPeNZmoO, 5725627]
+[contact-info, [130.0, 531.0, 209.0, 18.0], RFkPeNZmoO, 5725627]
+[contact-info, [130.0, 549.0, 209.0, 18.0], RFkPeNZmoO, 5725627]

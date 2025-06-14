@@ -1,0 +1,4 @@
+[792, 612]
+[reference, [90.0, 34.0, 447.0, 18.0], shoonya_1sKCIPIFOQYYGW, 5689053]
+[reference, [90.0, 52.0, 447.0, 18.0], shoonya_1sKCIPIFOQYYGW, 5689053]
+[reference, [90.0, 70.0, 447.0, 18.0], shoonya_1sKCIPIFOQYYGW, 5689053]

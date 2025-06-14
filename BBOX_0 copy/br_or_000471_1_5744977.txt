@@ -1,0 +1,5 @@
+[612, 396]
+[contact-info, [68.0, 457.0, 245.0, 18.0], shoonya_0s57FLTS2WR25P, 5744977]
+[contact-info, [68.0, 475.0, 245.0, 18.0], shoonya_0s57FLTS2WR25P, 5744977]
+[contact-info, [116.0, 519.0, 208.0, 18.0], Dc3wzSApRV, 5744977]
+[contact-info, [116.0, 537.0, 208.0, 18.0], Dc3wzSApRV, 5744977]

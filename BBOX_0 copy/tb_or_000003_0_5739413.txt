@@ -1,0 +1,8 @@
+[945, 650]
+[contact-info, [67.0, 409.0, 464.0, 18.0], rrcxRmbBto, 5739413]
+[contact-info, [67.0, 427.0, 464.0, 18.0], rrcxRmbBto, 5739413]
+[contact-info, [67.0, 445.0, 464.0, 18.0], rrcxRmbBto, 5739413]
+[contact-info, [67.0, 463.0, 464.0, 18.0], rrcxRmbBto, 5739413]
+[contact-info, [67.0, 481.0, 464.0, 18.0], rrcxRmbBto, 5739413]
+[contact-info, [67.0, 499.0, 464.0, 18.0], rrcxRmbBto, 5739413]
+[footnote, [323.0, 912.0, 239.0, 18.0], 2j1MV7eIge, 5739413]

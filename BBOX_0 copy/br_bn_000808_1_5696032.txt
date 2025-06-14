@@ -1,0 +1,6 @@
+[3060, 3960]
+[folio, [209.0, 164.0, 254.0, 52.5], ilyuE7Qx3k, 5696032]
+[folio, [209.0, 216.5, 254.0, 52.5], ilyuE7Qx3k, 5696032]
+[ordered-list, [227.0, 304.0, 2476.0, 52.5], shoonya_0s3HVY9BUP7O4W, 5696032]
+[ordered-list, [227.0, 356.5, 2476.0, 52.5], shoonya_0s3HVY9BUP7O4W, 5696032]
+[ordered-list, [227.0, 409.0, 2476.0, 52.5], shoonya_0s3HVY9BUP7O4W, 5696032]

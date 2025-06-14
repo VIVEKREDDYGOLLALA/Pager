@@ -1,0 +1,6 @@
+[1650, 1275]
+[figure-caption, [138.0, 92.0, 591.0, 36.0], XpuRD7gdB9, 5730026]
+[unordered-list, [175.0, 665.0, 779.0, 36.0], 5VCkjgxP5w, 5730026]
+[unordered-list, [175.0, 701.0, 779.0, 36.0], 5VCkjgxP5w, 5730026]
+[unordered-list, [184.0, 1301.0, 425.0, 36.0], jJed7jmbdJ, 5730026]
+[folio, [498.0, 1538.0, 278.0, 36.0], 1cjXHvatTC, 5730026]

@@ -1,0 +1,5 @@
+[1650, 1275]
+[section-title, [242.0, 117.0, 898.0, 49.5], xr0AjKWLAY, 6468932]
+[section-title, [242.0, 166.5, 898.0, 49.5], xr0AjKWLAY, 6468932]
+[section-title, [236.0, 568.0, 917.0, 49.5], DxBO3asS3b, 6468932]
+[section-title, [236.0, 617.5, 917.0, 49.5], DxBO3asS3b, 6468932]

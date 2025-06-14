@@ -1,0 +1,7 @@
+[655, 479]
+[paragraph, [63.0, 43.0, 209.0, 18.0], 9o9qxgQy6c, 5705142]
+[figure-caption, [237.0, 296.0, 79.0, 18.0], yU2D0ebF5N, 5705142]
+[paragraph, [68.0, 505.0, 333.0, 18.0], shoonya_2sAULDSETXPADQ, 5705142]
+[paragraph, [68.0, 523.0, 333.0, 18.0], shoonya_2sAULDSETXPADQ, 5705142]
+[paragraph, [68.0, 541.0, 333.0, 18.0], shoonya_2sAULDSETXPADQ, 5705142]
+[website-link, [85.0, 588.0, 133.0, 18.0], KhaqVXGXVK, 5705142]

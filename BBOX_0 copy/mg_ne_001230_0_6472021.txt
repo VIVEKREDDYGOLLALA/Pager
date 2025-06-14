@@ -1,0 +1,4 @@
+[1754, 1241]
+[folio, [177.0, 0.0, 217.0, 36.0], shoonya_0sXRBKFQIJXCTF, 6472021]
+[folio, [177.0, 36.0, 217.0, 36.0], shoonya_0sXRBKFQIJXCTF, 6472021]
+[folio, [177.0, 72.0, 217.0, 36.0], shoonya_0sXRBKFQIJXCTF, 6472021]

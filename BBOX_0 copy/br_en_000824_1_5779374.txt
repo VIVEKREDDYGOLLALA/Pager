@@ -1,0 +1,5 @@
+[635, 1724]
+[headline, [1173.0, 42.0, 259.0, 25.5], shoonya_3s6GTN4PQGGSIZ, 5779374]
+[paragraph, [1167.0, 75.0, 384.0, 18.0], EEpYOkCfeI, 5779374]
+[paragraph, [1167.0, 93.0, 384.0, 18.0], EEpYOkCfeI, 5779374]
+[folio, [1166.0, 575.0, 468.0, 18.0], g5ecGrlsXG, 5779374]

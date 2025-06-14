@@ -1,0 +1,5 @@
+[2640, 2040]
+[folio, [508.0, 66.0, 1030.0, 46.5], shoonya_18sZ87ST4QBIPW, 5699935]
+[paragraph, [232.0, 1077.0, 1525.0, 46.5], shoonya_0sSTWH89IGT0D6, 5699935]
+[paragraph, [232.0, 1123.5, 1525.0, 46.5], shoonya_0sSTWH89IGT0D6, 5699935]
+[folio, [360.0, 2512.0, 1319.0, 46.5], lig0NUMxOA, 5699935]

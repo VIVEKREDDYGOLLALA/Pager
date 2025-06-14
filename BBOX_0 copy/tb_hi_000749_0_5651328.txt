@@ -1,0 +1,7 @@
+[2037, 1454]
+[section-title, [96.0, 163.0, 105.0, 52.5], lRHKVOVpza, 5651328]
+[section-title, [96.0, 215.5, 105.0, 52.5], lRHKVOVpza, 5651328]
+[section-title, [96.0, 268.0, 105.0, 52.5], lRHKVOVpza, 5651328]
+[section-title, [96.0, 320.5, 105.0, 52.5], lRHKVOVpza, 5651328]
+[section-title, [96.0, 373.0, 105.0, 52.5], lRHKVOVpza, 5651328]
+[figure-caption, [1276.0, 648.0, 61.0, 36.0], PDbuCDOMnq, 5651328]

@@ -1,0 +1,8 @@
+[596, 421]
+[section-title, [46.0, 29.0, 147.0, 30.0], z5cpJML4-Q, 6534338]
+[paragraph, [23.0, 78.0, 168.0, 18.0], tOGcaYbUNt, 6534338]
+[paragraph, [23.0, 96.0, 168.0, 18.0], tOGcaYbUNt, 6534338]
+[paragraph, [23.0, 114.0, 168.0, 18.0], tOGcaYbUNt, 6534338]
+[paragraph, [23.0, 132.0, 168.0, 18.0], tOGcaYbUNt, 6534338]
+[paragraph, [23.0, 150.0, 168.0, 18.0], tOGcaYbUNt, 6534338]
+[paragraph, [23.0, 168.0, 168.0, 18.0], tOGcaYbUNt, 6534338]

@@ -1,0 +1,7 @@
+[405, 720]
+[headline, [7.0, 16.0, 559.0, 52.5], nuHmFWJUM7, 5779965]
+[ordered-list, [35.0, 101.0, 639.0, 52.5], FkXN9Yq5ae, 5779965]
+[ordered-list, [35.0, 153.5, 639.0, 52.5], FkXN9Yq5ae, 5779965]
+[ordered-list, [35.0, 206.0, 639.0, 52.5], FkXN9Yq5ae, 5779965]
+[ordered-list, [35.0, 258.5, 639.0, 52.5], FkXN9Yq5ae, 5779965]
+[ordered-list, [35.0, 311.0, 639.0, 52.5], FkXN9Yq5ae, 5779965]

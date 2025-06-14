@@ -1,0 +1,6 @@
+[1650, 1275]
+[second-level-question, [196.0, 299.0, 932.0, 36.0], aUe6kUMjo4, 6475842]
+[second-level-question, [195.0, 389.0, 876.0, 36.0], f2v5zmPG5d, 6475842]
+[second-level-question, [194.0, 447.0, 908.0, 36.0], 2DwBMrGjqb, 6475842]
+[options, [192.0, 538.0, 378.0, 36.0], cGHC6IQoyJ, 6475842]
+[options, [192.0, 574.0, 378.0, 36.0], cGHC6IQoyJ, 6475842]

@@ -1,0 +1,6 @@
+[1755, 1240]
+[website-link, [869.0, 418.0, 257.0, 18.0], sVzLOFIsPU, 6471612]
+[website-link, [869.0, 436.0, 257.0, 18.0], sVzLOFIsPU, 6471612]
+[contact-info, [556.0, 1460.0, 543.0, 36.0], dJLz3Plwh8, 6471612]
+[contact-info, [556.0, 1496.0, 543.0, 36.0], dJLz3Plwh8, 6471612]
+[contact-info, [556.0, 1532.0, 543.0, 36.0], dJLz3Plwh8, 6471612]

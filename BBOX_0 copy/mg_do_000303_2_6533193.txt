@@ -1,0 +1,5 @@
+[2000, 1414]
+[headline, [473.0, 125.0, 502.0, 67.5], shoonya_0s6KMGR6KI9P20, 6533193]
+[headline, [473.0, 192.5, 502.0, 67.5], shoonya_0s6KMGR6KI9P20, 6533193]
+[headline, [473.0, 260.0, 502.0, 67.5], shoonya_0s6KMGR6KI9P20, 6533193]
+[author, [608.0, 355.0, 206.0, 36.0], SoodbG2ZVQ, 6533193]

@@ -372,8 +372,7 @@ Examples:
         type=str,
         required=True,
         help='Directory containing BBOX text files (searches recursively)'
-    )
-    
+    ) 
     parser.add_argument(
         '--image-dir',
         type=str,
@@ -384,7 +383,7 @@ Examples:
     parser.add_argument(
         '--hindi-text-file',
         type=str,
-        default=r"output_texts/assamese.txt",
+        default=r"1M_seed/input_1/assamese.txt",
         help='Path to the Hindi/Assamese text file'
     )
     

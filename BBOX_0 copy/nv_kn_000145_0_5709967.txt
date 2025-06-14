@@ -1,0 +1,5 @@
+[1372, 849]
+[figure-caption, [235.0, 1004.0, 304.0, 18.0], AaZ-EgrdFv, 5709967]
+[figure-caption, [235.0, 1022.0, 304.0, 18.0], AaZ-EgrdFv, 5709967]
+[author, [418.0, 1125.0, 286.0, 18.0], shoonya_1sVW5LMGN61RXH, 5709967]
+[author, [418.0, 1143.0, 286.0, 18.0], shoonya_1sVW5LMGN61RXH, 5709967]

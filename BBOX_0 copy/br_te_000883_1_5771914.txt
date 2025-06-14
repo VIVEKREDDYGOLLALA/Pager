@@ -1,0 +1,5 @@
+[539, 683]
+[headline, [75.0, 57.0, 302.0, 25.5], shoonya_1sNJJMZF1Y9BTN, 5771914]
+[headline, [75.0, 82.5, 302.0, 25.5], shoonya_1sNJJMZF1Y9BTN, 5771914]
+[folio, [67.0, 130.0, 202.0, 18.0], QP0d7Gr4Dj, 5771914]
+[folio, [22.0, 495.0, 75.0, 18.0], shoonya_0sVMPC0Y2XCLLI, 5771914]

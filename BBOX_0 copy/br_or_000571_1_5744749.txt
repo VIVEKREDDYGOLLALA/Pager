@@ -1,0 +1,6 @@
+[792, 612]
+[ordered-list, [121.0, 228.0, 253.0, 18.0], shoonya_1sPAU2SCNO5ENX, 5744749]
+[ordered-list, [121.0, 246.0, 253.0, 18.0], shoonya_1sPAU2SCNO5ENX, 5744749]
+[ordered-list, [121.0, 264.0, 253.0, 18.0], shoonya_1sPAU2SCNO5ENX, 5744749]
+[paragraph, [119.0, 475.0, 194.0, 18.0], shoonya_3s775S3F32F9YJ, 5744749]
+[figure-caption, [361.0, 613.0, 52.0, 18.0], A2gu6gpiF3, 5744749]

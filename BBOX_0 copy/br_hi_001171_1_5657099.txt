@@ -1,0 +1,8 @@
+[662, 483]
+[paragraph, [67.0, 397.0, 117.0, 18.0], shoonya_0sWJ327UCH3EUH, 5657099]
+[paragraph, [67.0, 415.0, 117.0, 18.0], shoonya_0sWJ327UCH3EUH, 5657099]
+[contact-info, [59.0, 471.0, 182.0, 18.0], OnBOSGG2KW, 5657099]
+[contact-info, [59.0, 489.0, 182.0, 18.0], OnBOSGG2KW, 5657099]
+[contact-info, [59.0, 507.0, 182.0, 18.0], OnBOSGG2KW, 5657099]
+[contact-info, [66.0, 567.0, 323.0, 18.0], TCV7LSwCq_, 5657099]
+[contact-info, [66.0, 585.0, 323.0, 18.0], TCV7LSwCq_, 5657099]

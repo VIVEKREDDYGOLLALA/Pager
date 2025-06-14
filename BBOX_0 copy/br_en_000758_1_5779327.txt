@@ -1,0 +1,6 @@
+[596, 842]
+[figure-caption, [56.0, 460.0, 728.0, 18.0], UzKrj_Yaf4, 5779327]
+[figure-caption, [56.0, 478.0, 728.0, 18.0], UzKrj_Yaf4, 5779327]
+[figure-caption, [56.0, 496.0, 728.0, 18.0], UzKrj_Yaf4, 5779327]
+[figure-caption, [56.0, 514.0, 728.0, 18.0], UzKrj_Yaf4, 5779327]
+[figure-caption, [56.0, 532.0, 728.0, 18.0], UzKrj_Yaf4, 5779327]

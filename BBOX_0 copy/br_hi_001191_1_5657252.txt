@@ -1,0 +1,8 @@
+[612, 1008]
+[chapter-title, [645.0, 58.0, 328.0, 30.0], shoonya_1sJCS87TWCBGIO, 5657252]
+[folio, [653.0, 118.0, 319.0, 18.0], RzoSCsD2yL, 5657252]
+[contact-info, [672.0, 193.0, 220.0, 18.0], fPAtXVia0O, 5657252]
+[contact-info, [672.0, 211.0, 220.0, 18.0], fPAtXVia0O, 5657252]
+[contact-info, [672.0, 229.0, 220.0, 18.0], fPAtXVia0O, 5657252]
+[contact-info, [672.0, 247.0, 220.0, 18.0], fPAtXVia0O, 5657252]
+[contact-info, [672.0, 265.0, 220.0, 18.0], fPAtXVia0O, 5657252]

@@ -1,0 +1,7 @@
+[688, 400]
+[folio, [170.0, 33.0, 94.0, 18.0], 5W20z4aywl, 5748859]
+[figure-caption, [100.0, 318.0, 61.0, 18.0], Vr8OVHZzHe, 5748859]
+[figure-caption, [61.0, 343.0, 164.0, 18.0], VulUDaqY_4, 5748859]
+[figure-caption, [61.0, 361.0, 164.0, 18.0], VulUDaqY_4, 5748859]
+[figure-caption, [289.0, 646.0, 77.0, 18.0], Yhf7YDusAw, 5748859]
+[footnote, [87.0, 648.0, 200.0, 18.0], zjhc8Sqijs, 5748859]

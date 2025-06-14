@@ -1,0 +1,4 @@
+[595, 420]
+[sidebar, [338.0, 101.0, 63.0, 18.0], FtvVhJ9SvP, 6465068]
+[second-level-question, [44.0, 118.0, 179.0, 18.0], YjPbH2jwLY, 6465068]
+[second-level-question, [28.0, 141.0, 240.0, 18.0], xwk235l6xu, 6465068]

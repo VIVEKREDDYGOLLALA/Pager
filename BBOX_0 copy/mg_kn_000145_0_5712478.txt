@@ -1,0 +1,7 @@
+[1565, 1152]
+[flag, [97.0, 63.0, 975.0, 36.0], shoonya_2sVPMEJJSL312D, 5712478]
+[flag, [97.0, 99.0, 975.0, 36.0], shoonya_2sVPMEJJSL312D, 5712478]
+[flag, [97.0, 135.0, 975.0, 36.0], shoonya_2sVPMEJJSL312D, 5712478]
+[flag, [97.0, 171.0, 975.0, 36.0], shoonya_2sVPMEJJSL312D, 5712478]
+[flag, [97.0, 207.0, 975.0, 36.0], shoonya_2sVPMEJJSL312D, 5712478]
+[folio, [674.0, 221.0, 224.0, 36.0], NLZDRi0Zyg, 5712478]

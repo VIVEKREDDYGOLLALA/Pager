@@ -1,0 +1,6 @@
+[2339, 1654]
+[figure-caption, [167.0, 328.0, 337.0, 36.0], GIrv-cfiti, 5690564]
+[unordered-list, [175.0, 1830.0, 1192.0, 36.0], WCe6VFP8y8, 5690564]
+[unordered-list, [175.0, 1866.0, 1192.0, 36.0], WCe6VFP8y8, 5690564]
+[unordered-list, [175.0, 1902.0, 1192.0, 36.0], WCe6VFP8y8, 5690564]
+[unordered-list, [175.0, 1938.0, 1192.0, 36.0], WCe6VFP8y8, 5690564]

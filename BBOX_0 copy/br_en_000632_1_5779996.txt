@@ -1,0 +1,5 @@
+[792, 612]
+[paragraph, [66.0, 105.0, 473.0, 18.0], shoonya_0sYB69V646AKNT, 5779996]
+[paragraph, [66.0, 123.0, 473.0, 18.0], shoonya_0sYB69V646AKNT, 5779996]
+[paragraph, [66.0, 141.0, 473.0, 18.0], shoonya_0sYB69V646AKNT, 5779996]
+[sub-section-title, [102.0, 225.0, 261.0, 25.5], shoonya_2sXR90IT8LEMG2, 5779996]

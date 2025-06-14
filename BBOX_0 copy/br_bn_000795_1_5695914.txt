@@ -1,0 +1,7 @@
+[3060, 3960]
+[folio, [0.0, 415.0, 177.0, 52.5], 0_cWslR1D7, 5695914]
+[section-title, [2551.0, 1290.0, 562.0, 93.0], PeoVIIeUHh, 5695914]
+[section-title, [2551.0, 1383.0, 562.0, 93.0], PeoVIIeUHh, 5695914]
+[section-title, [2551.0, 1476.0, 562.0, 93.0], PeoVIIeUHh, 5695914]
+[section-title, [2551.0, 1569.0, 562.0, 93.0], PeoVIIeUHh, 5695914]
+[section-title, [2551.0, 1662.0, 562.0, 93.0], PeoVIIeUHh, 5695914]

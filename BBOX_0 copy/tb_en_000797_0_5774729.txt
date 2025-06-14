@@ -1,0 +1,6 @@
+[1650, 1275]
+[folio, [941.0, 39.0, 153.0, 36.0], DzW-SDmy6F, 5774729]
+[paragraph, [179.0, 123.0, 944.0, 36.0], shoonya_1sP8RTWNRPQSOX, 5774729]
+[ordered-list, [141.0, 180.0, 967.0, 36.0], ukjC0jto0w, 5774729]
+[ordered-list, [141.0, 216.0, 967.0, 36.0], ukjC0jto0w, 5774729]
+[ordered-list, [141.0, 252.0, 967.0, 36.0], ukjC0jto0w, 5774729]

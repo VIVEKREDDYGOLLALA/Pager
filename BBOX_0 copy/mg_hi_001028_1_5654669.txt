@@ -1,0 +1,5 @@
+[792, 612]
+[section-title, [356.0, 74.0, 142.0, 30.0], shoonya_6s4MQBLNAPCKU6, 5654669]
+[section-title, [356.0, 104.0, 142.0, 30.0], shoonya_6s4MQBLNAPCKU6, 5654669]
+[answer, [352.0, 549.0, 33.0, 18.0], YNXS72mqqx, 5654669]
+[folio, [473.0, 744.0, 64.0, 18.0], cQAlKoyI5F, 5654669]

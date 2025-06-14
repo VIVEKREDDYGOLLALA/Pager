@@ -1,0 +1,7 @@
+[792, 612]
+[section-title, [69.0, 576.0, 167.0, 30.0], sxzy5gjT3X, 5653716]
+[sub-section-title, [204.0, 625.0, 292.0, 25.5], shoonya_2s3N8WKJJVQA80, 5653716]
+[sub-section-title, [204.0, 650.5, 292.0, 25.5], shoonya_2s3N8WKJJVQA80, 5653716]
+[sub-section-title, [204.0, 676.0, 292.0, 25.5], shoonya_2s3N8WKJJVQA80, 5653716]
+[author, [97.0, 664.0, 58.0, 18.0], tiRb-fyquH, 5653716]
+[folio, [73.0, 737.0, 62.0, 18.0], c3BgQ_rS0O, 5653716]

@@ -1,0 +1,4 @@
+[1601, 1158]
+[contact-info, [103.0, 721.0, 952.0, 36.0], shoonya_2sA90CCGAM7QJQ, 5695592]
+[contact-info, [103.0, 757.0, 952.0, 36.0], shoonya_2sA90CCGAM7QJQ, 5695592]
+[contact-info, [103.0, 793.0, 952.0, 36.0], shoonya_2sA90CCGAM7QJQ, 5695592]

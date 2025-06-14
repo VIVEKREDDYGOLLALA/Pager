@@ -1,0 +1,7 @@
+[2200, 1700]
+[figure-caption, [421.0, 1777.0, 797.0, 36.0], shoonya_0sS0YCJSH8A24T, 5732613]
+[figure-caption, [421.0, 1813.0, 797.0, 36.0], shoonya_0sS0YCJSH8A24T, 5732613]
+[figure-caption, [421.0, 1849.0, 797.0, 36.0], shoonya_0sS0YCJSH8A24T, 5732613]
+[footnote, [1305.0, 2028.0, 218.0, 36.0], eXz5mXdzLj, 5732613]
+[footnote, [1305.0, 2064.0, 218.0, 36.0], eXz5mXdzLj, 5732613]
+[folio, [787.0, 2111.0, 202.0, 36.0], shoonya_2sWLGSBK2MTNW9, 5732613]

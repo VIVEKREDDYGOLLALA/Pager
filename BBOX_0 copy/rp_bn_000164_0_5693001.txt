@@ -1,0 +1,5 @@
+[1755, 1240]
+[headline, [231.0, 746.0, 849.0, 37.5], shoonya_0sJNBON0PLKE0H, 5693001]
+[headline, [231.0, 783.5, 849.0, 37.5], shoonya_0sJNBON0PLKE0H, 5693001]
+[headline, [231.0, 821.0, 849.0, 37.5], shoonya_0sJNBON0PLKE0H, 5693001]
+[headline, [231.0, 858.5, 849.0, 37.5], shoonya_0sJNBON0PLKE0H, 5693001]

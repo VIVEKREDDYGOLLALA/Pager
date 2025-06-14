@@ -1,0 +1,6 @@
+[643, 359]
+[paragraph, [88.0, 160.0, 143.0, 18.0], 9iJBlKimNS, 6533338]
+[headline, [132.0, 203.0, 65.0, 25.5], 44pF3Tpce2, 6533338]
+[author, [125.0, 411.0, 86.0, 18.0], oPWHtvVmGW, 6533338]
+[contact-info, [72.0, 508.0, 202.0, 18.0], shoonya_0s6HB7KWTWB2ZJ, 6533338]
+[contact-info, [72.0, 526.0, 202.0, 18.0], shoonya_0s6HB7KWTWB2ZJ, 6533338]

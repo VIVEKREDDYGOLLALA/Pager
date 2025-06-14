@@ -1,0 +1,4 @@
+[1754, 1241]
+[reference, [142.0, 62.0, 1002.0, 36.0], shoonya_2sNDXVMNOWRE97, 5718253]
+[reference, [142.0, 98.0, 1002.0, 36.0], shoonya_2sNDXVMNOWRE97, 5718253]
+[reference, [142.0, 134.0, 1002.0, 36.0], shoonya_2sNDXVMNOWRE97, 5718253]

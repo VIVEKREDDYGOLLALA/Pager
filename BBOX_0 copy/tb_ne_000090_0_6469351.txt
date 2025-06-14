@@ -1,0 +1,8 @@
+[1754, 1241]
+[chapter-title, [511.0, 169.0, 191.0, 58.5], shoonya_8sIKX3PGUATDVK, 6469351]
+[chapter-title, [511.0, 227.5, 191.0, 58.5], shoonya_8sIKX3PGUATDVK, 6469351]
+[chapter-title, [511.0, 286.0, 191.0, 58.5], shoonya_8sIKX3PGUATDVK, 6469351]
+[paragraph, [204.0, 1071.0, 606.0, 36.0], Wof64VruJT, 6469351]
+[paragraph, [207.0, 1206.0, 435.0, 36.0], cF-93ITSz9, 6469351]
+[unordered-list, [186.0, 1459.0, 842.0, 36.0], 9nMe5qp1Rb, 6469351]
+[unordered-list, [186.0, 1495.0, 842.0, 36.0], 9nMe5qp1Rb, 6469351]

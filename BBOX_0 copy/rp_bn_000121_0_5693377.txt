@@ -1,0 +1,5 @@
+[1755, 1240]
+[figure-caption, [254.0, 1111.0, 832.0, 36.0], YKkdoQ2PPC, 5693377]
+[figure-caption, [254.0, 1147.0, 832.0, 36.0], YKkdoQ2PPC, 5693377]
+[figure-caption, [254.0, 1183.0, 832.0, 36.0], YKkdoQ2PPC, 5693377]
+[figure-caption, [254.0, 1219.0, 832.0, 36.0], YKkdoQ2PPC, 5693377]

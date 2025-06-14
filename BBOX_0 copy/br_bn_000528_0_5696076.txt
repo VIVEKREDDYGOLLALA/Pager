@@ -1,0 +1,4 @@
+[1601, 1158]
+[figure-caption, [38.0, 1429.0, 1038.0, 36.0], shoonya_1sWI0RK07BZBGF, 5696076]
+[figure-caption, [38.0, 1465.0, 1038.0, 36.0], shoonya_1sWI0RK07BZBGF, 5696076]
+[figure-caption, [38.0, 1501.0, 1038.0, 36.0], shoonya_1sWI0RK07BZBGF, 5696076]

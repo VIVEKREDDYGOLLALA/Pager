@@ -1,0 +1,5 @@
+[837, 538]
+[contact-info, [130.0, 716.0, 266.0, 18.0], shoonya_0sLK8L1UXD2OY3, 6493473]
+[contact-info, [130.0, 734.0, 266.0, 18.0], shoonya_0sLK8L1UXD2OY3, 6493473]
+[contact-info, [130.0, 752.0, 266.0, 18.0], shoonya_0sLK8L1UXD2OY3, 6493473]
+[contact-info, [130.0, 770.0, 266.0, 18.0], shoonya_0sLK8L1UXD2OY3, 6493473]

@@ -1,0 +1,3 @@
+[1240, 936]
+[contact-info, [215.0, 596.0, 429.0, 18.0], shoonya_0sZAIXXG8OLQ5B, 5711282]
+[contact-info, [215.0, 614.0, 429.0, 18.0], shoonya_0sZAIXXG8OLQ5B, 5711282]

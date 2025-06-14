@@ -1,0 +1,7 @@
+[3793, 2326]
+[headline, [524.0, 1450.0, 1461.0, 52.5], shoonya_0sW80559SMB3WL, 5720794]
+[headline, [524.0, 1502.5, 1461.0, 52.5], shoonya_0sW80559SMB3WL, 5720794]
+[headline, [524.0, 1555.0, 1461.0, 52.5], shoonya_0sW80559SMB3WL, 5720794]
+[folio, [904.0, 1950.0, 626.0, 52.5], shoonya_3sVHW3XFN3BM0D, 5720794]
+[folio, [904.0, 2002.5, 626.0, 52.5], shoonya_3sVHW3XFN3BM0D, 5720794]
+[folio, [904.0, 2055.0, 626.0, 52.5], shoonya_3sVHW3XFN3BM0D, 5720794]

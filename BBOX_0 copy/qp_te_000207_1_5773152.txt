@@ -1,0 +1,7 @@
+[842, 595]
+[folio, [245.0, 300.0, 104.0, 18.0], shoonya_0sOSM2PKDR3F0M, 5773152]
+[folio, [245.0, 318.0, 104.0, 18.0], shoonya_0sOSM2PKDR3F0M, 5773152]
+[folio, [245.0, 336.0, 104.0, 18.0], shoonya_0sOSM2PKDR3F0M, 5773152]
+[folio, [245.0, 354.0, 104.0, 18.0], shoonya_0sOSM2PKDR3F0M, 5773152]
+[folio, [57.0, 736.0, 76.0, 18.0], shoonya_3sHAABY22IS4IE, 5773152]
+[folio, [57.0, 754.0, 76.0, 18.0], shoonya_3sHAABY22IS4IE, 5773152]

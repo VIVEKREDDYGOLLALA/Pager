@@ -1,0 +1,5 @@
+[842, 596]
+[ordered-list, [73.0, 129.0, 401.0, 18.0], shoonya_0sVPTJAFMXG0D0, 6461145]
+[ordered-list, [73.0, 147.0, 401.0, 18.0], shoonya_0sVPTJAFMXG0D0, 6461145]
+[ordered-list, [73.0, 165.0, 401.0, 18.0], shoonya_0sVPTJAFMXG0D0, 6461145]
+[footnote, [61.0, 739.0, 70.0, 18.0], shoonya_3s0HTLUOBGC16P, 6461145]

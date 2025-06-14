@@ -1,0 +1,5 @@
+[755, 564]
+[headline, [179.0, 58.0, 204.0, 25.5], gSxHHODmws, 5752521]
+[figure-caption, [154.0, 266.0, 126.0, 18.0], OX-zp-bWoU, 5752521]
+[figure-caption, [39.0, 320.0, 176.0, 18.0], zszDLSzbO6, 5752521]
+[figure-caption, [285.0, 550.0, 161.0, 18.0], EamGwoNdII, 5752521]

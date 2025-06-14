@@ -1,0 +1,6 @@
+[792, 612]
+[contact-info, [106.0, 124.0, 396.0, 18.0], shoonya_1sAQHUXD8WLPAI, 5737959]
+[contact-info, [106.0, 142.0, 396.0, 18.0], shoonya_1sAQHUXD8WLPAI, 5737959]
+[headline, [208.0, 495.0, 197.0, 25.5], 38D8ZYRw6f, 5737959]
+[sub-section-title, [119.0, 568.0, 371.0, 25.5], NtAsBWZ2OQ, 5737959]
+[paragraph, [185.0, 644.0, 241.0, 18.0], myEmEEVs5C, 5737959]

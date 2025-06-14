@@ -1,0 +1,5 @@
+[842, 596]
+[sub-headline, [197.0, 90.0, 206.0, 25.5], aRCCVy6HcP, 5744909]
+[headline, [140.0, 128.0, 319.0, 25.5], iQAvIBCQPi, 5744909]
+[headline, [140.0, 153.5, 319.0, 25.5], iQAvIBCQPi, 5744909]
+[headline, [140.0, 179.0, 319.0, 25.5], iQAvIBCQPi, 5744909]

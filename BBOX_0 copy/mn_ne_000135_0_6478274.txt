@@ -1,0 +1,4 @@
+[1388, 1004]
+[folio, [824.0, 107.0, 104.0, 18.0], 8bpTCMstpx, 6478274]
+[figure-caption, [102.0, 193.0, 235.0, 18.0], shoonya_0sAGCDG3G2Z90X, 6478274]
+[figure-caption, [102.0, 211.0, 235.0, 18.0], shoonya_0sAGCDG3G2Z90X, 6478274]

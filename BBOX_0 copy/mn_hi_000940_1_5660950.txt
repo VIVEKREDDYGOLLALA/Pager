@@ -1,0 +1,7 @@
+[792, 612]
+[figure-caption, [105.0, 153.0, 82.0, 18.0], pTdxnyMCTV, 5660950]
+[figure-caption, [237.0, 292.0, 85.0, 18.0], GpAEXWKkqm, 5660950]
+[figure-caption, [108.0, 293.0, 74.0, 18.0], lOrMXMIJpS, 5660950]
+[figure-caption, [228.0, 420.0, 107.0, 18.0], eo0wbuDXmp, 5660950]
+[figure-caption, [369.0, 544.0, 97.0, 18.0], cY8csNSEDv, 5660950]
+[figure-caption, [385.0, 669.0, 64.0, 18.0], VehcO6-p1i, 5660950]

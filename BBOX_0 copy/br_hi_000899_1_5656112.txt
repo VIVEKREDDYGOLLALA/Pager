@@ -1,0 +1,8 @@
+[598, 423]
+[paragraph, [49.0, 227.0, 326.0, 18.0], HrAw-6eMrZ, 5656112]
+[contact-info, [135.0, 255.0, 163.0, 18.0], 7VMEDlqDeS, 5656112]
+[contact-info, [135.0, 273.0, 163.0, 18.0], 7VMEDlqDeS, 5656112]
+[contact-info, [135.0, 291.0, 163.0, 18.0], 7VMEDlqDeS, 5656112]
+[contact-info, [135.0, 309.0, 163.0, 18.0], 7VMEDlqDeS, 5656112]
+[contact-info, [135.0, 327.0, 163.0, 18.0], 7VMEDlqDeS, 5656112]
+[website-link, [156.0, 544.0, 108.0, 18.0], shoonya_1s81LEQW6ZQEEC, 5656112]

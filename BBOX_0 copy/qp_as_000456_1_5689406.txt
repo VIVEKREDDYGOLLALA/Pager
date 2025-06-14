@@ -1,0 +1,4 @@
+[733, 565]
+[sidebar, [455.0, 537.0, 52.0, 18.0], iEmDozWfZn, 5689406]
+[second-level-question, [105.0, 590.0, 368.0, 18.0], admNtps7a0, 5689406]
+[second-level-question, [105.0, 608.0, 368.0, 18.0], admNtps7a0, 5689406]

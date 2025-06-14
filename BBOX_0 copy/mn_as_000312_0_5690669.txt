@@ -1,0 +1,5 @@
+[2339, 1654]
+[folio, [704.0, 263.0, 240.0, 36.0], shoonya_5sC4KWTCVFY8ZO, 5690669]
+[folio, [704.0, 299.0, 240.0, 36.0], shoonya_5sC4KWTCVFY8ZO, 5690669]
+[footnote, [169.0, 1980.0, 1373.0, 36.0], shoonya_3s5HZNK7DP34ZX, 5690669]
+[footnote, [169.0, 2016.0, 1373.0, 36.0], shoonya_3s5HZNK7DP34ZX, 5690669]

@@ -1,0 +1,4 @@
+[1565, 1152]
+[headline, [370.0, 53.0, 422.0, 37.5], wZiBa33QeT, 5713128]
+[contact-info, [200.0, 102.0, 772.0, 36.0], shoonya_2s4TAE0IJFWSIN, 5713128]
+[contact-info, [172.0, 1477.0, 785.0, 36.0], shoonya_1s45M1J6AP4S8R, 5713128]

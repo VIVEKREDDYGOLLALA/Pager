@@ -1,0 +1,7 @@
+[1162, 749]
+[contact-info, [245.0, 527.0, 261.0, 18.0], 4oEjSMJjM7, 5699379]
+[contact-info, [245.0, 545.0, 261.0, 18.0], 4oEjSMJjM7, 5699379]
+[contact-info, [245.0, 563.0, 261.0, 18.0], 4oEjSMJjM7, 5699379]
+[contact-info, [245.0, 581.0, 261.0, 18.0], 4oEjSMJjM7, 5699379]
+[contact-info, [245.0, 599.0, 261.0, 18.0], 4oEjSMJjM7, 5699379]
+[contact-info, [245.0, 617.0, 261.0, 18.0], 4oEjSMJjM7, 5699379]

@@ -1,0 +1,6 @@
+[2339, 1653]
+[chapter-title, [512.0, 849.0, 670.0, 70.5], shoonya_1sJZSOX53ITJ0M, 5655039]
+[section-title, [371.0, 1028.0, 930.0, 52.5], Oi8GrwXge8, 5655039]
+[section-title, [371.0, 1080.5, 930.0, 52.5], Oi8GrwXge8, 5655039]
+[section-title, [371.0, 1133.0, 930.0, 52.5], Oi8GrwXge8, 5655039]
+[section-title, [371.0, 1185.5, 930.0, 52.5], Oi8GrwXge8, 5655039]

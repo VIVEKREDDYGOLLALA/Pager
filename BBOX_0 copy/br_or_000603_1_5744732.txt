@@ -1,0 +1,7 @@
+[792, 612]
+[unordered-list, [63.0, 84.0, 494.0, 18.0], shoonya_2sT8UN75QDLDTM, 5744732]
+[unordered-list, [63.0, 102.0, 494.0, 18.0], shoonya_2sT8UN75QDLDTM, 5744732]
+[unordered-list, [63.0, 120.0, 494.0, 18.0], shoonya_2sT8UN75QDLDTM, 5744732]
+[unordered-list, [63.0, 138.0, 494.0, 18.0], shoonya_2sT8UN75QDLDTM, 5744732]
+[unordered-list, [63.0, 156.0, 494.0, 18.0], shoonya_2sT8UN75QDLDTM, 5744732]
+[footnote, [147.0, 711.0, 327.0, 18.0], shoonya_6s0G8KK0FJHU1H, 5744732]

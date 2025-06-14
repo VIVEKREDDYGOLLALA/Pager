@@ -1,0 +1,6 @@
+[1565, 1152]
+[figure-caption, [155.0, 659.0, 822.0, 36.0], shoonya_3s7FI4D3XX7M5P, 5712374]
+[figure-caption, [155.0, 695.0, 822.0, 36.0], shoonya_3s7FI4D3XX7M5P, 5712374]
+[figure-caption, [184.0, 1312.0, 773.0, 36.0], shoonya_4s46L54Z1BY06I, 5712374]
+[figure-caption, [184.0, 1348.0, 773.0, 36.0], shoonya_4s46L54Z1BY06I, 5712374]
+[folio, [889.0, 1450.0, 140.0, 36.0], ImwevQtWSv, 5712374]

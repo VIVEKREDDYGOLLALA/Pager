@@ -1,0 +1,4 @@
+[578, 576]
+[figure-caption, [427.0, 40.0, 101.0, 18.0], shoonya_2s0HFWAMO1NT69, 5725927]
+[headline, [92.0, 422.0, 390.0, 25.5], MrJ4PIUmQb, 5725927]
+[sub-headline, [151.0, 469.0, 270.0, 25.5], 1cVIfUuACw, 5725927]

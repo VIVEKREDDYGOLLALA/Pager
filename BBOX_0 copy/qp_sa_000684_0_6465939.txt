@@ -1,0 +1,5 @@
+[595, 420]
+[folio, [65.0, 32.0, 287.0, 18.0], shoonya_0sK2PYPZYVBDVM, 6465939]
+[sidebar, [312.0, 70.0, 58.0, 18.0], T9iIZtnx0o, 6465939]
+[ordered-list, [41.0, 110.0, 334.0, 18.0], ZVyPx7-JNu, 6465939]
+[ordered-list, [41.0, 128.0, 334.0, 18.0], ZVyPx7-JNu, 6465939]

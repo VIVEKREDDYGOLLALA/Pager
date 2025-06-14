@@ -1,0 +1,5 @@
+[2339, 1656]
+[chapter-title, [614.0, 10.0, 481.0, 70.5], 5UkfcfWTNi, 5656308]
+[figure-caption, [345.0, 730.0, 955.0, 36.0], shoonya_8s1MU6K4FPKZ0R, 5656308]
+[figure-caption, [165.0, 1463.0, 1358.0, 36.0], shoonya_3sP7I0J1H2P0V4, 5656308]
+[figure-caption, [534.0, 2188.0, 570.0, 36.0], shoonya_2sF1SLG5RMC6D5, 5656308]

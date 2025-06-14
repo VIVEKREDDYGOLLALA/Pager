@@ -1,0 +1,7 @@
+[752, 553]
+[figure-caption, [92.0, 578.0, 390.0, 18.0], shoonya_2sRJLK322DG2TS, 5713210]
+[figure-caption, [92.0, 596.0, 390.0, 18.0], shoonya_2sRJLK322DG2TS, 5713210]
+[figure-caption, [92.0, 614.0, 390.0, 18.0], shoonya_2sRJLK322DG2TS, 5713210]
+[figure-caption, [92.0, 632.0, 390.0, 18.0], shoonya_2sRJLK322DG2TS, 5713210]
+[folio, [78.0, 697.0, 64.0, 18.0], ZMQisN4zg5, 5713210]
+[folio, [435.0, 697.0, 77.0, 18.0], ScDAyK8HAC, 5713210]

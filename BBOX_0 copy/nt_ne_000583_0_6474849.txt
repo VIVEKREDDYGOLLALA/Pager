@@ -1,0 +1,6 @@
+[1650, 1275]
+[figure-caption, [106.0, 663.0, 1093.0, 36.0], W6ygRmGUiD, 6474849]
+[figure-caption, [106.0, 699.0, 1093.0, 36.0], W6ygRmGUiD, 6474849]
+[figure-caption, [106.0, 1396.0, 975.0, 36.0], YxP5wZLJnk, 6474849]
+[placeholder-text, [608.0, 1466.0, 62.0, 18.0], 4w2NldImYY, 6474849]
+[placeholder-text, [608.0, 1484.0, 62.0, 18.0], 4w2NldImYY, 6474849]

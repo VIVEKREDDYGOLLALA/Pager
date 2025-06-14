@@ -1,0 +1,8 @@
+[593, 394]
+[folio, [135.0, 111.0, 108.0, 18.0], shoonya_0s3WP4VDNJYXII, 6493894]
+[section-title, [154.0, 142.0, 73.0, 30.0], Y75bEIzyVu, 6493894]
+[author, [143.0, 247.0, 93.0, 18.0], VjfQS7A9N7, 6493894]
+[author, [143.0, 265.0, 93.0, 18.0], VjfQS7A9N7, 6493894]
+[contact-info, [126.0, 493.0, 137.0, 18.0], LRG7AYoCtJ, 6493894]
+[contact-info, [126.0, 511.0, 137.0, 18.0], LRG7AYoCtJ, 6493894]
+[contact-info, [126.0, 529.0, 137.0, 18.0], LRG7AYoCtJ, 6493894]

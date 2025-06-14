@@ -1,0 +1,8 @@
+[1755, 1240]
+[second-level-question, [224.0, 184.0, 424.0, 36.0], vvIMYuGKrl, 5708126]
+[second-level-question, [221.0, 355.0, 550.0, 36.0], IeHd1Kq9Bi, 5708126]
+[second-level-question, [218.0, 485.0, 482.0, 36.0], shoonya_4sC208HP5DL9AG, 5708126]
+[second-level-question, [218.0, 534.0, 240.0, 36.0], shoonya_1s9EXSLRECW4IS, 5708126]
+[second-level-question, [216.0, 582.0, 279.0, 36.0], shoonya_3sLP11RXWLFDB0, 5708126]
+[folio, [1001.0, 1461.0, 113.0, 36.0], JaUDGtGHlq, 5708126]
+[folio, [764.0, 1692.0, 412.0, 36.0], shoonya_0s9UNR8L26XW1B, 5708126]

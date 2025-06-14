@@ -1,0 +1,6 @@
+[1625, 1211]
+[flag, [53.0, 180.0, 1103.0, 36.0], shoonya_0sNGMX7EZQ4CWW, 5742420]
+[flag, [53.0, 216.0, 1103.0, 36.0], shoonya_0sNGMX7EZQ4CWW, 5742420]
+[flag, [53.0, 252.0, 1103.0, 36.0], shoonya_0sNGMX7EZQ4CWW, 5742420]
+[flag, [53.0, 288.0, 1103.0, 36.0], shoonya_0sNGMX7EZQ4CWW, 5742420]
+[flag, [53.0, 324.0, 1103.0, 36.0], shoonya_0sNGMX7EZQ4CWW, 5742420]

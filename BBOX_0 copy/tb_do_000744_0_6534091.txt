@@ -1,0 +1,7 @@
+[515, 727]
+[headline, [453.0, 23.0, 212.0, 25.5], bkmYZ6Bh4Q, 6534091]
+[headline, [453.0, 48.5, 212.0, 25.5], bkmYZ6Bh4Q, 6534091]
+[sub-headline, [489.0, 91.0, 141.0, 25.5], 3Ik32OMr4w, 6534091]
+[author, [511.0, 172.0, 97.0, 18.0], xApmcyrW3F, 6534091]
+[contact-info, [474.0, 437.0, 171.0, 18.0], shoonya_0sAON4EVBLU97O, 6534091]
+[contact-info, [474.0, 455.0, 171.0, 18.0], shoonya_0sAON4EVBLU97O, 6534091]

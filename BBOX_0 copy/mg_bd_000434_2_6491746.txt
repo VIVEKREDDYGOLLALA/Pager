@@ -1,0 +1,7 @@
+[2000, 1414]
+[section-title, [74.0, 124.0, 537.0, 52.5], shoonya_4sRW0SXQR2DNSP, 6491746]
+[headline, [67.0, 1350.0, 433.0, 67.5], shoonya_2s3IT6LZRE8P2I, 6491746]
+[paragraph, [70.0, 1572.0, 661.0, 36.0], HSTAd--ExC, 6491746]
+[paragraph, [70.0, 1608.0, 661.0, 36.0], HSTAd--ExC, 6491746]
+[paragraph, [70.0, 1644.0, 661.0, 36.0], HSTAd--ExC, 6491746]
+[author, [60.0, 1789.0, 139.0, 36.0], FoC4O7rUIz, 6491746]

@@ -1,0 +1,8 @@
+[851, 567]
+[figure-caption, [113.0, 169.0, 394.0, 18.0], BORmEbMqNx, 5779638]
+[figure-caption, [113.0, 187.0, 394.0, 18.0], BORmEbMqNx, 5779638]
+[figure-caption, [113.0, 205.0, 394.0, 18.0], BORmEbMqNx, 5779638]
+[figure-caption, [113.0, 223.0, 394.0, 18.0], BORmEbMqNx, 5779638]
+[figure-caption, [113.0, 241.0, 394.0, 18.0], BORmEbMqNx, 5779638]
+[figure-caption, [113.0, 259.0, 394.0, 18.0], BORmEbMqNx, 5779638]
+[figure-caption, [113.0, 277.0, 394.0, 18.0], BORmEbMqNx, 5779638]

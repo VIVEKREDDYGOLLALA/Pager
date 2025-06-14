@@ -1,0 +1,8 @@
+[1755, 1240]
+[paragraph, [897.0, 85.0, 83.0, 36.0], tyeAKDyBrR, 5729909]
+[paragraph, [897.0, 121.0, 83.0, 36.0], tyeAKDyBrR, 5729909]
+[paragraph, [897.0, 157.0, 83.0, 36.0], tyeAKDyBrR, 5729909]
+[paragraph, [897.0, 193.0, 83.0, 36.0], tyeAKDyBrR, 5729909]
+[paragraph, [897.0, 229.0, 83.0, 36.0], tyeAKDyBrR, 5729909]
+[paragraph, [1027.0, 920.0, 83.0, 36.0], APXaMShKyp, 5729909]
+[paragraph, [1027.0, 956.0, 83.0, 36.0], APXaMShKyp, 5729909]

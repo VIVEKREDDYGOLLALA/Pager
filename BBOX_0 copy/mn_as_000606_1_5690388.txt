@@ -1,0 +1,3 @@
+[814, 624]
+[figure-caption, [80.0, 55.0, 254.0, 18.0], JlgL2peqvz, 5690388]
+[unordered-list, [123.0, 572.0, 363.0, 18.0], shoonya_3sTFAM3WONR9XV, 5690388]

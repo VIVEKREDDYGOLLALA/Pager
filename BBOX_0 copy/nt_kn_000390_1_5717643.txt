@@ -1,0 +1,7 @@
+[864, 612]
+[sub-section-title, [108.0, 94.0, 393.0, 25.5], E88jc8zqsC, 5717643]
+[ordered-list, [61.0, 162.0, 485.0, 18.0], qrJFaGv3iJ, 5717643]
+[ordered-list, [61.0, 180.0, 485.0, 18.0], qrJFaGv3iJ, 5717643]
+[ordered-list, [61.0, 198.0, 485.0, 18.0], qrJFaGv3iJ, 5717643]
+[ordered-list, [61.0, 216.0, 485.0, 18.0], qrJFaGv3iJ, 5717643]
+[ordered-list, [61.0, 234.0, 485.0, 18.0], qrJFaGv3iJ, 5717643]

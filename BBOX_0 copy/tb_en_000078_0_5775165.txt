@@ -1,0 +1,4 @@
+[1650, 1275]
+[section-title, [199.0, 143.0, 243.0, 49.5], shoonya_5sW59TIF1FXS9X, 5775165]
+[footnote, [146.0, 1570.0, 521.0, 36.0], rD0CffOiVI, 5775165]
+[website-link, [425.0, 1576.0, 236.0, 18.0], L8kUe3VunM, 5775165]

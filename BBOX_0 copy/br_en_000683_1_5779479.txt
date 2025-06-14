@@ -1,0 +1,8 @@
+[842, 596]
+[headline, [94.0, 470.0, 405.0, 25.5], soAPBVIeCl, 5779479]
+[headline, [94.0, 495.5, 405.0, 25.5], soAPBVIeCl, 5779479]
+[headline, [94.0, 521.0, 405.0, 25.5], soAPBVIeCl, 5779479]
+[headline, [94.0, 546.5, 405.0, 25.5], soAPBVIeCl, 5779479]
+[headline, [94.0, 572.0, 405.0, 25.5], soAPBVIeCl, 5779479]
+[paragraph, [98.0, 642.0, 395.0, 18.0], BDa13P524X, 5779479]
+[paragraph, [94.0, 680.0, 408.0, 18.0], AWPxopcnTB, 5779479]

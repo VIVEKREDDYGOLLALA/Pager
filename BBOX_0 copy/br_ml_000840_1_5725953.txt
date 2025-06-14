@@ -1,0 +1,7 @@
+[843, 612]
+[folio, [206.0, 23.0, 209.0, 18.0], jDzSIbhbx7, 5725953]
+[paragraph, [84.0, 78.0, 391.0, 18.0], bWVrpA4X8e, 5725953]
+[paragraph, [85.0, 142.0, 401.0, 18.0], s2b3V-T9Nu, 5725953]
+[paragraph, [81.0, 212.0, 185.0, 18.0], gD4bDn0R23, 5725953]
+[paragraph, [93.0, 281.0, 46.0, 18.0], shoonya_2sX5WDDCAFVFQR, 5725953]
+[ordered-list, [146.0, 296.0, 250.0, 18.0], shoonya_1sGJFTA0N7UQJI, 5725953]

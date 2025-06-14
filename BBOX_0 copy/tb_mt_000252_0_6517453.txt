@@ -1,0 +1,3 @@
+[612, 396]
+[reference, [40.0, 90.0, 318.0, 18.0], shoonya_1s5S8BNVSD1VFH, 6517453]
+[reference, [40.0, 108.0, 318.0, 18.0], shoonya_1s5S8BNVSD1VFH, 6517453]

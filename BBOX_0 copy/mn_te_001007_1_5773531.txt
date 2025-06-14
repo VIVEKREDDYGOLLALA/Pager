@@ -1,0 +1,7 @@
+[596, 842]
+[headline, [91.0, 32.0, 674.0, 25.5], jZZgOJQu5A, 5773531]
+[headline, [91.0, 57.5, 674.0, 25.5], jZZgOJQu5A, 5773531]
+[figure-caption, [49.0, 106.0, 383.0, 18.0], shoonya_6sHF734NUXGYMZ, 5773531]
+[figure-caption, [49.0, 124.0, 383.0, 18.0], shoonya_6sHF734NUXGYMZ, 5773531]
+[figure-caption, [298.0, 303.0, 399.0, 18.0], shoonya_10sSZ70KG8ZYQZ, 5773531]
+[figure-caption, [298.0, 321.0, 399.0, 18.0], shoonya_10sSZ70KG8ZYQZ, 5773531]

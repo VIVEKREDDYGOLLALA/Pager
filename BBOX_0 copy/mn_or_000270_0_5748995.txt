@@ -1,0 +1,4 @@
+[688, 400]
+[headline, [118.0, 398.0, 178.0, 25.5], shoonya_0sVV6O4Z9JGTVP, 5748995]
+[headline, [118.0, 423.5, 178.0, 25.5], shoonya_0sVV6O4Z9JGTVP, 5748995]
+[footnote, [85.0, 647.0, 257.0, 18.0], vzmjSrJLtb, 5748995]

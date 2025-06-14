@@ -1,0 +1,5 @@
+[882, 655]
+[website-link, [251.0, 27.0, 147.0, 18.0], shoonya_5sXC6RXBKD0HPD, 5758983]
+[figure-caption, [92.0, 86.0, 230.0, 18.0], GXSrNn-7nq, 5758983]
+[figure-caption, [279.0, 774.0, 89.0, 18.0], shoonya_0sY35IPAV322TK, 5758983]
+[folio, [24.0, 855.0, 83.0, 18.0], shoonya_3sKPQSVWAY5OC9, 5758983]

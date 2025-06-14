@@ -1,0 +1,8 @@
+[842, 596]
+[folio, [125.0, 48.0, 411.0, 18.0], yydoFQ3_0n, 5707433]
+[paragraph, [51.0, 225.0, 290.0, 18.0], CRyFFr_NfV, 5707433]
+[paragraph, [49.0, 308.0, 265.0, 18.0], BWFgF8dAgP, 5707433]
+[paragraph, [51.0, 395.0, 285.0, 18.0], R-i_1nSxjg, 5707433]
+[second-level-question, [99.0, 664.0, 96.0, 18.0], K7zFnRXFSV, 5707433]
+[second-level-question, [97.0, 681.0, 105.0, 18.0], kBkwlDrhWV, 5707433]
+[second-level-question, [93.0, 700.0, 114.0, 18.0], l2BBFyg2fu, 5707433]

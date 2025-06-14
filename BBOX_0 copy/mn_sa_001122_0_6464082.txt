@@ -1,0 +1,6 @@
+[1684, 1191]
+[contact-info, [24.0, 28.0, 210.0, 36.0], shoonya_0sHJPHH18EP5TJ, 6464082]
+[contact-info, [24.0, 64.0, 210.0, 36.0], shoonya_0sHJPHH18EP5TJ, 6464082]
+[contact-info, [24.0, 100.0, 210.0, 36.0], shoonya_0sHJPHH18EP5TJ, 6464082]
+[contact-info, [24.0, 136.0, 210.0, 36.0], shoonya_0sHJPHH18EP5TJ, 6464082]
+[contact-info, [24.0, 172.0, 210.0, 36.0], shoonya_0sHJPHH18EP5TJ, 6464082]

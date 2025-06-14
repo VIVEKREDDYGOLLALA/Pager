@@ -1,0 +1,7 @@
+[1625, 1194]
+[placeholder-text, [375.0, 160.0, 128.0, 18.0], nOpso1QZxr, 5718692]
+[options, [122.0, 203.0, 836.0, 36.0], shoonya_18sYNOHLY48VFF, 5718692]
+[options, [115.0, 358.0, 847.0, 36.0], shoonya_16sXR2VTHVF5RD, 5718692]
+[options, [123.0, 772.0, 850.0, 36.0], shoonya_1sBSC6KM1O0TFV, 5718692]
+[placeholder-text, [251.0, 1233.0, 119.0, 18.0], zSedbLzZUa, 5718692]
+[options, [152.0, 1384.0, 916.0, 36.0], shoonya_2s1ZOBG9W9ZL02, 5718692]

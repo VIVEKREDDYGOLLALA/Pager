@@ -1,0 +1,5 @@
+[576, 360]
+[paragraph, [30.0, 59.0, 305.0, 18.0], shoonya_0sD63WI8X1PBHH, 6517036]
+[paragraph, [30.0, 77.0, 305.0, 18.0], shoonya_0sD63WI8X1PBHH, 6517036]
+[reference, [29.0, 121.0, 299.0, 18.0], Qq-DO12SCr, 6517036]
+[reference, [29.0, 139.0, 299.0, 18.0], Qq-DO12SCr, 6517036]

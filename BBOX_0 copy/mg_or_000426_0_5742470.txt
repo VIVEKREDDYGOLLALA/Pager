@@ -1,0 +1,4 @@
+[1625, 1211]
+[figure-caption, [403.0, 783.0, 367.0, 36.0], shoonya_3s5WQXVCSTC0KO, 5742470]
+[figure-caption, [366.0, 1429.0, 395.0, 36.0], shoonya_2s6P9UO6XGD04V, 5742470]
+[footnote, [756.0, 1574.0, 374.0, 36.0], b7Ffbd2LmX, 5742470]

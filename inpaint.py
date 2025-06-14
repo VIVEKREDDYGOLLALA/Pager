@@ -205,7 +205,7 @@ if __name__ == "__main__":
         args.cpus = max_cpus
     
     print(f"Starting text removal inpainting process with {args.cpus} CPU cores...")
-    IMAGES_FOLDER = "images_original_1"
-    BBOXES_FOLDER = "BBOX_1"
-    OUTPUT_DIR = "images_val_1"
+    IMAGES_FOLDER = "images_original2"
+    BBOXES_FOLDER = "BBOX"
+    OUTPUT_DIR = "images_val"
     process_all_images(IMAGES_FOLDER, BBOXES_FOLDER, OUTPUT_DIR, shrink_pixels=2, num_cpus=args.cpus)

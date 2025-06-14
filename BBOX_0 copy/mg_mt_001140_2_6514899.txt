@@ -1,0 +1,6 @@
+[2000, 1414]
+[folio, [72.0, 139.0, 371.0, 36.0], Ps426L64jy, 6514899]
+[folio, [72.0, 175.0, 371.0, 36.0], Ps426L64jy, 6514899]
+[headline, [66.0, 357.0, 716.0, 67.5], shoonya_1sQEYHQ4EILBAV, 6514899]
+[headline, [66.0, 424.5, 716.0, 67.5], shoonya_1sQEYHQ4EILBAV, 6514899]
+[headline, [66.0, 492.0, 716.0, 67.5], shoonya_1sQEYHQ4EILBAV, 6514899]

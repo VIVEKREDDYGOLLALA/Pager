@@ -1,0 +1,5 @@
+[1755, 1241]
+[contact-info, [518.0, 1395.0, 547.0, 36.0], _uGwnxFsXk, 5705446]
+[contact-info, [518.0, 1431.0, 547.0, 36.0], _uGwnxFsXk, 5705446]
+[website-link, [136.0, 1547.0, 316.0, 18.0], dRntfH2rYv, 5705446]
+[website-link, [136.0, 1565.0, 316.0, 18.0], dRntfH2rYv, 5705446]

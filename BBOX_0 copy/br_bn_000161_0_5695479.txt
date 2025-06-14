@@ -1,0 +1,5 @@
+[1601, 1158]
+[contact-info, [164.0, 561.0, 833.0, 36.0], shoonya_3sTRS676MVPO60, 5695479]
+[contact-info, [164.0, 597.0, 833.0, 36.0], shoonya_3sTRS676MVPO60, 5695479]
+[contact-info, [164.0, 633.0, 833.0, 36.0], shoonya_3sTRS676MVPO60, 5695479]
+[folio, [503.0, 1470.0, 95.0, 36.0], PVajoay994, 5695479]

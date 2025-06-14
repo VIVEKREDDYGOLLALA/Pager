@@ -1,0 +1,7 @@
+[523, 325]
+[folio, [138.0, 9.0, 139.0, 18.0], shoonya_0sPO47PX3BJA6U, 6492622]
+[folio, [110.0, 98.0, 58.0, 18.0], Ha6VFJ_3Xb, 6492622]
+[paragraph, [27.0, 191.0, 233.0, 18.0], xPRLvHk2XQ, 6492622]
+[second-level-question, [32.0, 290.0, 225.0, 18.0], lV1-g5K4MA, 6492622]
+[second-level-question, [32.0, 345.0, 226.0, 18.0], EdxB-jG4lU, 6492622]
+[second-level-question, [35.0, 417.0, 223.0, 18.0], r3ElnWJhmP, 6492622]

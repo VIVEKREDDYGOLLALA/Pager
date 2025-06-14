@@ -1,0 +1,6 @@
+[1763, 1275]
+[author, [191.0, 127.0, 213.0, 36.0], HileesShbS, 5712620]
+[answer, [180.0, 394.0, 897.0, 36.0], shoonya_2sJTXOGSR5OLV2, 5712620]
+[answer, [180.0, 430.0, 897.0, 36.0], shoonya_2sJTXOGSR5OLV2, 5712620]
+[answer, [180.0, 466.0, 897.0, 36.0], shoonya_2sJTXOGSR5OLV2, 5712620]
+[figure-caption, [38.0, 1673.0, 206.0, 36.0], FTB2laCE2B, 5712620]

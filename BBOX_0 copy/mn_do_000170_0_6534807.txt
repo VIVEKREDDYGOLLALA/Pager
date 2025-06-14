@@ -1,0 +1,6 @@
+[612, 792]
+[headline, [271.0, 201.0, 249.0, 25.5], shoonya_1sFXF0ZZWX5M1R, 6534807]
+[headline, [271.0, 226.5, 249.0, 25.5], shoonya_1sFXF0ZZWX5M1R, 6534807]
+[headline, [271.0, 252.0, 249.0, 25.5], shoonya_1sFXF0ZZWX5M1R, 6534807]
+[headline, [271.0, 277.5, 249.0, 25.5], shoonya_1sFXF0ZZWX5M1R, 6534807]
+[headline, [271.0, 303.0, 249.0, 25.5], shoonya_1sFXF0ZZWX5M1R, 6534807]

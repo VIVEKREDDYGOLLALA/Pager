@@ -1,0 +1,4 @@
+[1600, 2134]
+[section-title, [533.0, 99.0, 1071.0, 49.5], shoonya_0sEI0MAM2YQ7W3, 5719813]
+[section-title, [533.0, 148.5, 1071.0, 49.5], shoonya_0sEI0MAM2YQ7W3, 5719813]
+[section-title, [533.0, 198.0, 1071.0, 49.5], shoonya_0sEI0MAM2YQ7W3, 5719813]

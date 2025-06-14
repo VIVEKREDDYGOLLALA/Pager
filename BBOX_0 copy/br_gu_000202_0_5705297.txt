@@ -1,0 +1,7 @@
+[1755, 1241]
+[folio, [138.0, 170.0, 442.0, 36.0], WcPARnJmRn, 5705297]
+[contact-info, [381.0, 719.0, 480.0, 36.0], bq4r0KkIKI, 5705297]
+[contact-info, [381.0, 755.0, 480.0, 36.0], bq4r0KkIKI, 5705297]
+[contact-info, [461.0, 1268.0, 323.0, 36.0], 7dcOu3JWYk, 5705297]
+[website-link, [145.0, 1550.0, 295.0, 18.0], shoonya_0sEFAXC076DXHE, 5705297]
+[website-link, [145.0, 1568.0, 295.0, 18.0], shoonya_0sEFAXC076DXHE, 5705297]

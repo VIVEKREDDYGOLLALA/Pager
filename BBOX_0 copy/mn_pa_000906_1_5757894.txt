@@ -1,0 +1,8 @@
+[792, 612]
+[folio, [175.0, 51.0, 370.0, 18.0], Ujnsik-L3o, 5757894]
+[paragraph, [66.0, 299.0, 422.0, 18.0], lhWp1JZBZx, 5757894]
+[paragraph, [67.0, 533.0, 469.0, 18.0], shoonya_2sN0J3GAAYI9CJ, 5757894]
+[paragraph, [67.0, 551.0, 469.0, 18.0], shoonya_2sN0J3GAAYI9CJ, 5757894]
+[paragraph, [67.0, 569.0, 469.0, 18.0], shoonya_2sN0J3GAAYI9CJ, 5757894]
+[paragraph, [67.0, 587.0, 469.0, 18.0], shoonya_2sN0J3GAAYI9CJ, 5757894]
+[paragraph, [67.0, 605.0, 469.0, 18.0], shoonya_2sN0J3GAAYI9CJ, 5757894]

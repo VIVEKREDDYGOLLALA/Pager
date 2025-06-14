@@ -1,0 +1,6 @@
+[1518, 1075]
+[figure-caption, [345.0, 943.0, 440.0, 36.0], mKDzwYZkMi, 5722282]
+[figure-caption, [345.0, 979.0, 440.0, 36.0], mKDzwYZkMi, 5722282]
+[paragraph, [248.0, 1145.0, 620.0, 36.0], 9TWf9PLLZg, 5722282]
+[paragraph, [248.0, 1181.0, 620.0, 36.0], 9TWf9PLLZg, 5722282]
+[paragraph, [146.0, 1292.0, 834.0, 36.0], Ea3ywLFreU, 5722282]

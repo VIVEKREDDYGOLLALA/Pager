@@ -1,0 +1,4 @@
+[2339, 1654]
+[paragraph, [180.0, 338.0, 537.0, 36.0], shoonya_6sZB02XVVIUDDD, 5690544]
+[paragraph, [180.0, 374.0, 537.0, 36.0], shoonya_6sZB02XVVIUDDD, 5690544]
+[figure-caption, [195.0, 1934.0, 634.0, 36.0], shoonya_1sFYUV5EDN0LYE, 5690544]

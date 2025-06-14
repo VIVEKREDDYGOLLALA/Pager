@@ -1,0 +1,6 @@
+[612, 792]
+[sidebar, [431.0, 367.0, 55.0, 18.0], 0xfwyR_rmn, 6462472]
+[second-level-question, [78.0, 431.0, 188.0, 18.0], TH24BXYE9f, 6462472]
+[second-level-question, [78.0, 449.0, 188.0, 18.0], TH24BXYE9f, 6462472]
+[second-level-question, [75.0, 482.0, 180.0, 18.0], _ShjO4F9Lk, 6462472]
+[second-level-question, [75.0, 500.0, 180.0, 18.0], _ShjO4F9Lk, 6462472]

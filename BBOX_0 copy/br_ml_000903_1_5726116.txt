@@ -1,0 +1,5 @@
+[564, 360]
+[section-title, [68.0, 254.0, 243.0, 30.0], KsVICHLCQz, 5726116]
+[section-title, [68.0, 284.0, 243.0, 30.0], KsVICHLCQz, 5726116]
+[contact-info, [46.0, 483.0, 284.0, 18.0], Hb4kE8Y21W, 5726116]
+[contact-info, [46.0, 501.0, 284.0, 18.0], Hb4kE8Y21W, 5726116]

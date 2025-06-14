@@ -1,0 +1,6 @@
+[792, 612]
+[reference, [56.0, 124.0, 493.0, 18.0], 4sZgNYDHnb, 6461979]
+[reference, [56.0, 142.0, 493.0, 18.0], 4sZgNYDHnb, 6461979]
+[reference, [56.0, 160.0, 493.0, 18.0], 4sZgNYDHnb, 6461979]
+[reference, [56.0, 178.0, 493.0, 18.0], 4sZgNYDHnb, 6461979]
+[reference, [56.0, 196.0, 493.0, 18.0], 4sZgNYDHnb, 6461979]

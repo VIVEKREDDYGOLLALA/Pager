@@ -1,0 +1,7 @@
+[1763, 1275]
+[contact-info, [161.0, 1381.0, 554.0, 36.0], beDDBEpl4X, 5712756]
+[contact-info, [161.0, 1417.0, 554.0, 36.0], beDDBEpl4X, 5712756]
+[contact-info, [161.0, 1453.0, 554.0, 36.0], beDDBEpl4X, 5712756]
+[contact-info, [161.0, 1489.0, 554.0, 36.0], beDDBEpl4X, 5712756]
+[contact-info, [136.0, 1639.0, 557.0, 36.0], e22mPkzSKf, 5712756]
+[contact-info, [136.0, 1675.0, 557.0, 36.0], e22mPkzSKf, 5712756]

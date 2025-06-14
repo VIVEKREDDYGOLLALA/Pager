@@ -1,0 +1,8 @@
+[842, 596]
+[paragraph, [113.0, 291.0, 431.0, 18.0], gjoKhTrTOw, 5701325]
+[paragraph, [113.0, 309.0, 431.0, 18.0], gjoKhTrTOw, 5701325]
+[sub-section-title, [108.0, 340.0, 295.0, 25.5], F0kl4IAhtg, 5701325]
+[paragraph, [109.0, 373.0, 432.0, 18.0], shoonya_3sYDSLP2RLLB10, 5701325]
+[paragraph, [109.0, 391.0, 432.0, 18.0], shoonya_3sYDSLP2RLLB10, 5701325]
+[folio, [123.0, 675.0, 423.0, 18.0], shoonya_8sTI027MFO4SPH, 5701325]
+[folio, [123.0, 693.0, 423.0, 18.0], shoonya_8sTI027MFO4SPH, 5701325]

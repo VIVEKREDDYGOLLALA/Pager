@@ -1,0 +1,5 @@
+[842, 595]
+[contact-info, [80.0, 51.0, 313.0, 18.0], gzG-QU0TJU, 5689041]
+[contact-info, [80.0, 69.0, 313.0, 18.0], gzG-QU0TJU, 5689041]
+[contact-info, [80.0, 87.0, 313.0, 18.0], gzG-QU0TJU, 5689041]
+[contact-info, [80.0, 105.0, 313.0, 18.0], gzG-QU0TJU, 5689041]

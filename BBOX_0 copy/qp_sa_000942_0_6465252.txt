@@ -1,0 +1,4 @@
+[595, 420]
+[sidebar, [325.0, 111.0, 64.0, 18.0], shoonya_0sJCSKPHJS373O, 6465252]
+[second-level-question, [49.0, 131.0, 255.0, 18.0], Pyqi-1DS8o, 6465252]
+[second-level-question, [47.0, 151.0, 202.0, 18.0], mPQo5X4wwl, 6465252]

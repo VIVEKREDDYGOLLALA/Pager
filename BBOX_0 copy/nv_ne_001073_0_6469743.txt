@@ -1,0 +1,5 @@
+[1250, 769]
+[section-title, [72.0, 73.0, 635.0, 30.0], shoonya_4sTG8A1MSDOE73, 6469743]
+[section-title, [72.0, 103.0, 635.0, 30.0], shoonya_4sTG8A1MSDOE73, 6469743]
+[placeholder-text, [108.0, 198.0, 140.0, 18.0], shoonya_0sYE2NK3O248HK, 6469743]
+[folio, [55.0, 1171.0, 167.0, 18.0], tLnYJlkdLp, 6469743]

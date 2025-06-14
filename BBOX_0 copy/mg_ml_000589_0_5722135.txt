@@ -1,0 +1,7 @@
+[1754, 1240]
+[contact-info, [991.0, 125.0, 141.0, 36.0], 2LsCe_kGOZ, 5722135]
+[contact-info, [991.0, 161.0, 141.0, 36.0], 2LsCe_kGOZ, 5722135]
+[contact-info, [991.0, 197.0, 141.0, 36.0], 2LsCe_kGOZ, 5722135]
+[headline, [917.0, 504.0, 113.0, 37.5], shoonya_2sO7B7XKIN91QO, 5722135]
+[website-link, [44.0, 1695.0, 342.0, 18.0], Horfa5a46o, 5722135]
+[website-link, [44.0, 1713.0, 342.0, 18.0], Horfa5a46o, 5722135]

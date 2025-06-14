@@ -1,0 +1,5 @@
+[1755, 1241]
+[contact-info, [310.0, 414.0, 539.0, 36.0], Xur0Pd8uc1, 5705094]
+[figure-caption, [338.0, 453.0, 511.0, 36.0], mv8l_NjGNX, 5705094]
+[website-link, [456.0, 1474.0, 329.0, 18.0], tNMnL3AWwF, 5705094]
+[website-link, [145.0, 1550.0, 295.0, 18.0], shoonya_0s3ZE5SXB57K58, 5705094]

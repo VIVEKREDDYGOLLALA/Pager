@@ -1,0 +1,5 @@
+[792, 612]
+[contact-info, [90.0, 667.0, 437.0, 18.0], 6kgQcFrCXD, 5660269]
+[contact-info, [90.0, 685.0, 437.0, 18.0], 6kgQcFrCXD, 5660269]
+[contact-info, [90.0, 703.0, 437.0, 18.0], 6kgQcFrCXD, 5660269]
+[contact-info, [90.0, 721.0, 437.0, 18.0], 6kgQcFrCXD, 5660269]

@@ -1,0 +1,8 @@
+[590, 389]
+[section-title, [117.0, 53.0, 169.0, 30.0], shoonya_0sLX2JTBI9FCNB, 6494788]
+[sub-section-title, [133.0, 276.0, 122.0, 25.5], shoonya_1sLTEW1WII1BWN, 6494788]
+[flag, [127.0, 423.0, 130.0, 18.0], 9YOusXTOWC, 6494788]
+[flag, [127.0, 441.0, 130.0, 18.0], 9YOusXTOWC, 6494788]
+[flag, [127.0, 459.0, 130.0, 18.0], 9YOusXTOWC, 6494788]
+[flag, [127.0, 477.0, 130.0, 18.0], 9YOusXTOWC, 6494788]
+[flag, [127.0, 495.0, 130.0, 18.0], 9YOusXTOWC, 6494788]

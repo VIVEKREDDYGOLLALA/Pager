@@ -1,0 +1,8 @@
+[596, 421]
+[contact-info, [32.0, 291.0, 332.0, 18.0], N0ottP1VRM, 5745111]
+[contact-info, [32.0, 309.0, 332.0, 18.0], N0ottP1VRM, 5745111]
+[contact-info, [32.0, 327.0, 332.0, 18.0], N0ottP1VRM, 5745111]
+[contact-info, [32.0, 345.0, 332.0, 18.0], N0ottP1VRM, 5745111]
+[contact-info, [32.0, 363.0, 332.0, 18.0], N0ottP1VRM, 5745111]
+[contact-info, [32.0, 381.0, 332.0, 18.0], N0ottP1VRM, 5745111]
+[website-link, [63.0, 346.0, 159.0, 18.0], Vm7mk-KNnk, 5745111]

@@ -1,0 +1,4 @@
+[1755, 1241]
+[figure-caption, [756.0, 761.0, 295.0, 36.0], shoonya_2sFRBZ37UPXF3H, 5705172]
+[figure-caption, [200.0, 1080.0, 193.0, 36.0], ui84XrU-BN, 5705172]
+[website-link, [145.0, 1550.0, 295.0, 18.0], shoonya_1s08Y1U81XYMCW, 5705172]

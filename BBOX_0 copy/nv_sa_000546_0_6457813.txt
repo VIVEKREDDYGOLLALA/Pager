@@ -1,0 +1,6 @@
+[451, 283]
+[paragraph, [27.0, 77.0, 226.0, 52.5], YJN_zaf2yg, 6457813]
+[ordered-list, [23.0, 180.0, 238.0, 52.5], MEHQ9gdvfZ, 6457813]
+[ordered-list, [23.0, 232.5, 238.0, 52.5], MEHQ9gdvfZ, 6457813]
+[ordered-list, [23.0, 285.0, 238.0, 52.5], MEHQ9gdvfZ, 6457813]
+[ordered-list, [23.0, 337.5, 238.0, 52.5], MEHQ9gdvfZ, 6457813]

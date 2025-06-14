@@ -1,0 +1,8 @@
+[1565, 1152]
+[flag, [109.0, 69.0, 936.0, 36.0], shoonya_3sIOV1ISMBHLBU, 5712273]
+[flag, [109.0, 105.0, 936.0, 36.0], shoonya_3sIOV1ISMBHLBU, 5712273]
+[flag, [109.0, 141.0, 936.0, 36.0], shoonya_3sIOV1ISMBHLBU, 5712273]
+[flag, [109.0, 177.0, 936.0, 36.0], shoonya_3sIOV1ISMBHLBU, 5712273]
+[flag, [109.0, 213.0, 936.0, 36.0], shoonya_3sIOV1ISMBHLBU, 5712273]
+[folio, [113.0, 216.0, 257.0, 36.0], Z3l89uKErE, 5712273]
+[folio, [673.0, 221.0, 226.0, 36.0], DM1xh3g_ru, 5712273]

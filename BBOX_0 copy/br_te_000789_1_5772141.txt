@@ -1,0 +1,8 @@
+[755, 420]
+[figure-caption, [187.0, 34.0, 97.0, 18.0], DJz5zi3oqR, 5772141]
+[figure-caption, [187.0, 52.0, 97.0, 18.0], DJz5zi3oqR, 5772141]
+[figure-caption, [187.0, 70.0, 97.0, 18.0], DJz5zi3oqR, 5772141]
+[headline, [46.0, 103.0, 320.0, 25.5], VlE0amcunX, 5772141]
+[headline, [46.0, 128.5, 320.0, 25.5], VlE0amcunX, 5772141]
+[headline, [46.0, 154.0, 320.0, 25.5], VlE0amcunX, 5772141]
+[headline, [46.0, 179.5, 320.0, 25.5], VlE0amcunX, 5772141]

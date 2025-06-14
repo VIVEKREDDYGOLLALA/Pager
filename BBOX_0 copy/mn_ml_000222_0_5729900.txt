@@ -1,0 +1,8 @@
+[1650, 1275]
+[folio, [988.0, 127.0, 117.0, 36.0], shoonya_3sC2UFQQ1MOC48, 5729900]
+[paragraph, [243.0, 184.0, 812.0, 36.0], YA0EfEYf52, 5729900]
+[paragraph, [243.0, 220.0, 812.0, 36.0], YA0EfEYf52, 5729900]
+[paragraph, [243.0, 256.0, 812.0, 36.0], YA0EfEYf52, 5729900]
+[headline, [500.0, 455.0, 302.0, 37.5], JimuuDkyNs, 5729900]
+[headline, [500.0, 492.5, 302.0, 37.5], JimuuDkyNs, 5729900]
+[contact-info, [418.0, 1407.0, 487.0, 36.0], shoonya_1sHGOOQ3KFC16R, 5729900]

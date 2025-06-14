@@ -1,0 +1,7 @@
+[1754, 1241]
+[reference, [413.0, 379.0, 483.0, 36.0], shoonya_1s1W0GP41BAKSN, 5781383]
+[headline, [277.0, 445.0, 752.0, 37.5], gbe99mAyu0, 5781383]
+[section-title, [175.0, 929.0, 954.0, 49.5], vg8uTIeGxp, 5781383]
+[section-title, [175.0, 978.5, 954.0, 49.5], vg8uTIeGxp, 5781383]
+[sub-section-title, [269.0, 1098.0, 767.0, 36.0], 4iL1izUPGJ, 5781383]
+[folio, [507.0, 1171.0, 294.0, 36.0], BXP49_8IfE, 5781383]

@@ -1,0 +1,8 @@
+[627, 825]
+[headline, [50.0, 77.0, 446.0, 25.5], shoonya_2sPTXI75P51HO6, 5725630]
+[headline, [50.0, 102.5, 446.0, 25.5], shoonya_2sPTXI75P51HO6, 5725630]
+[headline, [50.0, 128.0, 446.0, 25.5], shoonya_2sPTXI75P51HO6, 5725630]
+[paragraph, [49.0, 176.0, 614.0, 18.0], vs6JFennpU, 5725630]
+[paragraph, [49.0, 194.0, 614.0, 18.0], vs6JFennpU, 5725630]
+[unordered-list, [57.0, 240.0, 239.0, 18.0], shoonya_1sRYYPI99T1O6T, 5725630]
+[unordered-list, [57.0, 258.0, 239.0, 18.0], shoonya_1sRYYPI99T1O6T, 5725630]

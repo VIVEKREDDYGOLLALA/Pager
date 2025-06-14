@@ -1,0 +1,7 @@
+[1650, 1275]
+[folio, [145.0, 44.0, 417.0, 36.0], inEYm7zU9z, 5775024]
+[paragraph, [147.0, 121.0, 957.0, 36.0], shoonya_0sPWUETJ0OHYOJ, 5775024]
+[paragraph, [147.0, 157.0, 957.0, 36.0], shoonya_0sPWUETJ0OHYOJ, 5775024]
+[paragraph, [147.0, 193.0, 957.0, 36.0], shoonya_0sPWUETJ0OHYOJ, 5775024]
+[footnote, [143.0, 1568.0, 267.0, 36.0], PGyIIe8N2C, 5775024]
+[website-link, [285.0, 1578.0, 114.0, 18.0], IMx0xmlXrp, 5775024]

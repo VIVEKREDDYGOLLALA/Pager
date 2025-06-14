@@ -1,0 +1,5 @@
+[596, 420]
+[figure-caption, [66.0, 96.0, 178.0, 18.0], sJojC1A_Rf, 5746417]
+[figure-caption, [257.0, 160.0, 113.0, 18.0], 1HGzej93B4, 5746417]
+[figure-caption, [257.0, 178.0, 113.0, 18.0], 1HGzej93B4, 5746417]
+[figure-caption, [113.0, 161.0, 67.0, 18.0], gaiWKuxlP3, 5746417]

@@ -1,0 +1,4 @@
+[595, 454]
+[headline, [125.0, 54.0, 200.0, 25.5], shoonya_1s6KT4ESM72GYO, 6460193]
+[figure-caption, [95.0, 513.0, 272.0, 18.0], 2VX5fLSFAC, 6460193]
+[figure-caption, [95.0, 531.0, 272.0, 18.0], 2VX5fLSFAC, 6460193]

@@ -1,0 +1,4 @@
+[842, 595]
+[second-level-question, [79.0, 170.0, 443.0, 18.0], voogZKElND, 5707229]
+[second-level-question, [79.0, 188.0, 443.0, 18.0], voogZKElND, 5707229]
+[sub-section-title, [54.0, 624.0, 421.0, 25.5], sfjh8WGxJn, 5707229]

@@ -1,0 +1,8 @@
+[625, 374]
+[paragraph, [27.0, 57.0, 316.0, 18.0], WzUPynFY4v, 6532900]
+[paragraph, [27.0, 75.0, 316.0, 18.0], WzUPynFY4v, 6532900]
+[paragraph, [27.0, 93.0, 316.0, 18.0], WzUPynFY4v, 6532900]
+[headline, [102.0, 197.0, 188.0, 25.5], shoonya_0sGTXUK97NZCFQ, 6532900]
+[sub-headline, [63.0, 251.0, 269.0, 25.5], flwXtR6dsv, 6532900]
+[sub-headline, [63.0, 276.5, 269.0, 25.5], flwXtR6dsv, 6532900]
+[author, [111.0, 423.0, 182.0, 18.0], GkxmXosNmJ, 6532900]

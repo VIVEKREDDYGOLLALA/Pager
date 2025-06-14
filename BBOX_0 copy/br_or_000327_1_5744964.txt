@@ -1,0 +1,6 @@
+[792, 612]
+[paragraph, [121.0, 186.0, 248.0, 18.0], 8hN8E0jCQj, 5744964]
+[ordered-list, [115.0, 244.0, 269.0, 18.0], shoonya_1sQA2K59KE4DD5, 5744964]
+[ordered-list, [115.0, 262.0, 269.0, 18.0], shoonya_1sQA2K59KE4DD5, 5744964]
+[ordered-list, [115.0, 280.0, 269.0, 18.0], shoonya_1sQA2K59KE4DD5, 5744964]
+[paragraph, [116.0, 473.0, 252.0, 18.0], fjO4oNUVEk, 5744964]

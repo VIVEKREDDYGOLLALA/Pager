@@ -1,0 +1,7 @@
+[720, 540]
+[paragraph, [78.0, 82.0, 397.0, 18.0], 9DHaAPufby, 6495900]
+[paragraph, [78.0, 100.0, 397.0, 18.0], 9DHaAPufby, 6495900]
+[paragraph, [78.0, 118.0, 397.0, 18.0], 9DHaAPufby, 6495900]
+[paragraph, [78.0, 136.0, 397.0, 18.0], 9DHaAPufby, 6495900]
+[paragraph, [78.0, 154.0, 397.0, 18.0], 9DHaAPufby, 6495900]
+[paragraph, [78.0, 172.0, 397.0, 18.0], 9DHaAPufby, 6495900]

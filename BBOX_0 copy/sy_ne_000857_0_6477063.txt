@@ -1,0 +1,7 @@
+[1754, 1241]
+[folio, [165.0, 105.0, 907.0, 36.0], COK-iblstN, 6477063]
+[ordered-list, [141.0, 168.0, 956.0, 36.0], shoonya_1sVOBBOEZUOJ4A, 6477063]
+[ordered-list, [141.0, 204.0, 956.0, 36.0], shoonya_1sVOBBOEZUOJ4A, 6477063]
+[ordered-list, [141.0, 240.0, 956.0, 36.0], shoonya_1sVOBBOEZUOJ4A, 6477063]
+[ordered-list, [141.0, 276.0, 956.0, 36.0], shoonya_1sVOBBOEZUOJ4A, 6477063]
+[ordered-list, [141.0, 312.0, 956.0, 36.0], shoonya_1sVOBBOEZUOJ4A, 6477063]

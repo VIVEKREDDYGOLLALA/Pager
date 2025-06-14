@@ -1,0 +1,7 @@
+[595, 420]
+[folio, [132.0, 53.0, 150.0, 18.0], shoonya_3sK5ZYIW9UJDNW, 6465580]
+[sidebar, [312.0, 81.0, 76.0, 18.0], Zd_mEHjsqf, 6465580]
+[sidebar, [28.0, 82.0, 107.0, 18.0], Pxpfq44rGS, 6465580]
+[second-level-question, [22.0, 338.0, 229.0, 18.0], RzdpeTvnRI, 6465580]
+[sidebar, [344.0, 445.0, 37.0, 18.0], lk46CF8r6S, 6465580]
+[second-level-question, [23.0, 464.0, 193.0, 18.0], saRcm_rdZ6, 6465580]

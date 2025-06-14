@@ -1,0 +1,6 @@
+[755, 420]
+[contact-info, [39.0, 623.0, 340.0, 18.0], aaIobIKl_J, 5744866]
+[contact-info, [63.0, 660.0, 280.0, 18.0], jUgyay_5oN, 5744866]
+[contact-info, [63.0, 678.0, 280.0, 18.0], jUgyay_5oN, 5744866]
+[contact-info, [63.0, 696.0, 280.0, 18.0], jUgyay_5oN, 5744866]
+[footnote, [19.0, 727.0, 379.0, 18.0], hoNTYpEm4g, 5744866]

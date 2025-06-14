@@ -1,0 +1,7 @@
+[2143, 1435]
+[folio, [422.0, 146.0, 584.0, 36.0], OBS3RQdlWN, 5683903]
+[section-title, [517.0, 266.0, 400.0, 52.5], shoonya_5s89B3NGW58EPR, 5683903]
+[figure-caption, [530.0, 1108.0, 377.0, 36.0], shoonya_7s9E05BYWTXS4K, 5683903]
+[figure-caption, [623.0, 1760.0, 198.0, 36.0], shoonya_3sXRP9YXLVEFEN, 5683903]
+[section-title, [530.0, 1874.0, 379.0, 52.5], 9y2CQuJMjW, 5683903]
+[folio, [899.0, 2056.0, 446.0, 36.0], shoonya_6s8K8ULM3FHFDJ, 5683903]

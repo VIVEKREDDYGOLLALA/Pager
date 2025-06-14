@@ -1,0 +1,6 @@
+[1948, 1214]
+[chapter-title, [419.0, 614.0, 413.0, 58.5], shoonya_0sVYLQKB8UDKIO, 5732433]
+[chapter-title, [419.0, 672.5, 413.0, 58.5], shoonya_0sVYLQKB8UDKIO, 5732433]
+[section-title, [523.0, 782.0, 189.0, 49.5], 1lxrQ_IIZ0, 5732433]
+[section-title, [523.0, 831.5, 189.0, 49.5], 1lxrQ_IIZ0, 5732433]
+[folio, [509.0, 1844.0, 195.0, 36.0], zkigns12BC, 5732433]

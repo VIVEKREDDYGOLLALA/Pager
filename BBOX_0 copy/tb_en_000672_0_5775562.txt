@@ -1,0 +1,7 @@
+[1650, 1275]
+[folio, [658.0, 24.0, 542.0, 36.0], shoonya_0sLJ7Q0V1FTLL6, 5775562]
+[second-level-question, [164.0, 341.0, 981.0, 36.0], KiHr_0oEO2, 5775562]
+[second-level-question, [170.0, 412.0, 972.0, 36.0], NL_7wWTITA, 5775562]
+[folio, [124.0, 1558.0, 557.0, 36.0], QeZjxhq7kI, 5775562]
+[website-link, [418.0, 1562.0, 255.0, 18.0], 80VWk1TA5R, 5775562]
+[website-link, [418.0, 1580.0, 255.0, 18.0], 80VWk1TA5R, 5775562]

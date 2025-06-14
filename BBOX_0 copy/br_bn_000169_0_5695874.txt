@@ -1,0 +1,4 @@
+[1601, 1158]
+[contact-info, [462.0, 276.0, 594.0, 36.0], shoonya_4sFVXWLRBHMW90, 5695874]
+[contact-info, [462.0, 312.0, 594.0, 36.0], shoonya_4sFVXWLRBHMW90, 5695874]
+[contact-info, [462.0, 348.0, 594.0, 36.0], shoonya_4sFVXWLRBHMW90, 5695874]

@@ -1,0 +1,4 @@
+[792, 612]
+[headline, [247.0, 72.0, 150.0, 25.5], shoonya_1sI9PPJ74QSIMW, 5770646]
+[section-title, [137.0, 322.0, 395.0, 30.0], efRbg1pSKY, 5770646]
+[section-title, [137.0, 352.0, 395.0, 30.0], efRbg1pSKY, 5770646]

@@ -1,0 +1,4 @@
+[664, 441]
+[paragraph, [93.0, 291.0, 271.0, 18.0], wuZVJO6qWX, 6463894]
+[paragraph, [93.0, 309.0, 271.0, 18.0], wuZVJO6qWX, 6463894]
+[footnote, [99.0, 633.0, 244.0, 18.0], shoonya_0s8UGSUE7C57XB, 6463894]

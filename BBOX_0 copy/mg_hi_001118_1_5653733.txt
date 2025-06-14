@@ -1,0 +1,6 @@
+[792, 612]
+[sub-section-title, [297.0, 347.0, 135.0, 25.5], yU_b3TRYNn, 5653733]
+[sub-section-title, [297.0, 372.5, 135.0, 25.5], yU_b3TRYNn, 5653733]
+[sub-section-title, [297.0, 398.0, 135.0, 25.5], yU_b3TRYNn, 5653733]
+[sub-section-title, [242.0, 418.0, 67.0, 25.5], BdWqJaN3w6, 5653733]
+[folio, [78.0, 735.0, 58.0, 18.0], shoonya_1sYB69KPUL0B1K, 5653733]

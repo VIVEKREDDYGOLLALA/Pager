@@ -1,0 +1,6 @@
+[585, 406]
+[ordered-list, [53.0, 55.0, 347.0, 18.0], shoonya_2sRISC8JOGO37Y, 6493282]
+[ordered-list, [53.0, 73.0, 347.0, 18.0], shoonya_2sRISC8JOGO37Y, 6493282]
+[ordered-list, [53.0, 91.0, 347.0, 18.0], shoonya_2sRISC8JOGO37Y, 6493282]
+[ordered-list, [53.0, 109.0, 347.0, 18.0], shoonya_2sRISC8JOGO37Y, 6493282]
+[folio, [56.0, 165.0, 133.0, 18.0], shoonya_1sLBHYUGMWVNT1, 6493282]

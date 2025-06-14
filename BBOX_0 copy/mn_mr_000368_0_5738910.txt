@@ -1,0 +1,7 @@
+[2200, 1700]
+[folio, [471.0, 93.0, 781.0, 36.0], gHKMznZPTI, 5738910]
+[figure-caption, [692.0, 985.0, 189.0, 36.0], Z6BywiogP-, 5738910]
+[figure-caption, [207.0, 987.0, 193.0, 36.0], gzbfP6w6Uw, 5738910]
+[figure-caption, [436.0, 990.0, 204.0, 36.0], 0um2NJ0Edv, 5738910]
+[figure-caption, [1000.0, 990.0, 214.0, 36.0], fJIZ33OJCr, 5738910]
+[figure-caption, [1265.0, 992.0, 252.0, 36.0], 6Amm7hoVWn, 5738910]

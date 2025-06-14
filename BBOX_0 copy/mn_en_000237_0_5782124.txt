@@ -1,0 +1,5 @@
+[1366, 856]
+[figure-caption, [249.0, 684.0, 147.0, 18.0], shoonya_4sTTZJZHQ15YHW, 5782124]
+[figure-caption, [249.0, 702.0, 147.0, 18.0], shoonya_4sTTZJZHQ15YHW, 5782124]
+[sidebar, [604.0, 1011.0, 130.0, 18.0], shoonya_1sPV1KLMZCOJ2L, 5782124]
+[figure-caption, [250.0, 1051.0, 312.0, 18.0], shoonya_0sF3G269A03YNF, 5782124]

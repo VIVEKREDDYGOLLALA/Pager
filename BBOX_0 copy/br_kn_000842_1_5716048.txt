@@ -1,0 +1,4 @@
+[701, 513]
+[contact-info, [128.0, 609.0, 260.0, 18.0], shoonya_3s8VULAM42M3GC, 5716048]
+[contact-info, [128.0, 627.0, 260.0, 18.0], shoonya_3s8VULAM42M3GC, 5716048]
+[contact-info, [128.0, 645.0, 260.0, 18.0], shoonya_3s8VULAM42M3GC, 5716048]

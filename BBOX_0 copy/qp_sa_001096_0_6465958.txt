@@ -1,0 +1,4 @@
+[595, 420]
+[paragraph, [24.0, 32.0, 367.0, 18.0], shoonya_0sQPHL93RTTIFM, 6465958]
+[sidebar, [353.0, 427.0, 29.0, 18.0], sMStAs2-HT, 6465958]
+[second-level-question, [36.0, 454.0, 335.0, 18.0], KWHA0-vU2w, 6465958]

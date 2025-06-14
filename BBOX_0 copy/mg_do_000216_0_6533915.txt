@@ -1,0 +1,5 @@
+[765, 591]
+[figure-caption, [43.0, 54.0, 488.0, 18.0], b5tNV4HYwF, 6533915]
+[figure-caption, [43.0, 72.0, 488.0, 18.0], b5tNV4HYwF, 6533915]
+[figure-caption, [43.0, 90.0, 488.0, 18.0], b5tNV4HYwF, 6533915]
+[folio, [463.0, 698.0, 90.0, 18.0], m-b-EDHEcZ, 6533915]

@@ -1,0 +1,7 @@
+[576, 720]
+[section-title, [518.0, 107.0, 64.0, 30.0], shoonya_0sAL5JQHM5LH6X, 6534069]
+[unordered-list, [419.0, 149.0, 238.0, 18.0], djuYFTMawu, 6534069]
+[unordered-list, [419.0, 167.0, 238.0, 18.0], djuYFTMawu, 6534069]
+[unordered-list, [419.0, 185.0, 238.0, 18.0], djuYFTMawu, 6534069]
+[unordered-list, [419.0, 203.0, 238.0, 18.0], djuYFTMawu, 6534069]
+[unordered-list, [419.0, 221.0, 238.0, 18.0], djuYFTMawu, 6534069]

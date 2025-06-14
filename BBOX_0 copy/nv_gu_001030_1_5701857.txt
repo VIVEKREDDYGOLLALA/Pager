@@ -1,0 +1,6 @@
+[789, 571]
+[figure-caption, [457.0, 365.0, 33.0, 18.0], oE_lpPlmtk, 5701857]
+[figure-caption, [457.0, 401.0, 33.0, 18.0], oE_lpPlmtk, 5701857]
+[figure-caption, [457.0, 419.0, 33.0, 18.0], oE_lpPlmtk, 5701857]
+[figure-caption, [457.0, 437.0, 33.0, 18.0], oE_lpPlmtk, 5701857]
+[figure-caption, [457.0, 455.0, 33.0, 18.0], oE_lpPlmtk, 5701857]

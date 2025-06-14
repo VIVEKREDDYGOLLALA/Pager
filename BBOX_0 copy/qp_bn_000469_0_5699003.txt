@@ -1,0 +1,8 @@
+[1755, 1241]
+[second-level-question, [111.0, 163.0, 883.0, 36.0], shoonya_3sQXHZLLRARSL2, 5699003]
+[second-level-question, [110.0, 262.0, 919.0, 36.0], Z66bkrfLLz, 5699003]
+[second-level-question, [107.0, 335.0, 878.0, 36.0], Rt_EV9h1Z2, 5699003]
+[paragraph, [168.0, 408.0, 860.0, 36.0], shoonya_1sA0XI02N1XD81, 5699003]
+[paragraph, [168.0, 444.0, 860.0, 36.0], shoonya_1sA0XI02N1XD81, 5699003]
+[paragraph, [168.0, 480.0, 860.0, 36.0], shoonya_1sA0XI02N1XD81, 5699003]
+[paragraph, [168.0, 516.0, 860.0, 36.0], shoonya_1sA0XI02N1XD81, 5699003]

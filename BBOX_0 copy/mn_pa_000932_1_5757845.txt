@@ -1,0 +1,5 @@
+[792, 612]
+[folio, [238.0, 49.0, 307.0, 18.0], b_FMDC-h_A, 5757845]
+[figure-caption, [279.0, 295.0, 53.0, 18.0], shoonya_4sEW7GCLVEHVH7, 5757845]
+[ordered-list, [96.0, 369.0, 429.0, 18.0], k9qrloBbjx, 5757845]
+[ordered-list, [96.0, 387.0, 429.0, 18.0], k9qrloBbjx, 5757845]

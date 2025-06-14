@@ -1,0 +1,6 @@
+[596, 842]
+[headline, [263.0, 230.0, 214.0, 25.5], shoonya_1sJZ8FS5AFD6LP, 5779945]
+[sub-headline, [262.0, 262.0, 253.0, 25.5], I3ZNggGv20, 5779945]
+[paragraph, [262.0, 304.0, 316.0, 18.0], shoonya_0s8H1H0V54QZ9U, 5779945]
+[paragraph, [262.0, 322.0, 316.0, 18.0], shoonya_0s8H1H0V54QZ9U, 5779945]
+[paragraph, [262.0, 340.0, 316.0, 18.0], shoonya_0s8H1H0V54QZ9U, 5779945]

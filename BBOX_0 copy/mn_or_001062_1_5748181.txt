@@ -1,0 +1,7 @@
+[842, 596]
+[headline, [78.0, 305.0, 440.0, 25.5], qRGLFbs3NF, 5748181]
+[section-title, [218.0, 449.0, 163.0, 30.0], 0yMkXkFOwm, 5748181]
+[contact-info, [128.0, 688.0, 347.0, 18.0], QdhYs3yxqs, 5748181]
+[contact-info, [128.0, 706.0, 347.0, 18.0], QdhYs3yxqs, 5748181]
+[contact-info, [128.0, 724.0, 347.0, 18.0], QdhYs3yxqs, 5748181]
+[contact-info, [128.0, 742.0, 347.0, 18.0], QdhYs3yxqs, 5748181]

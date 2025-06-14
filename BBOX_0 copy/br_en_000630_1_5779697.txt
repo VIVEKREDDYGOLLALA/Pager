@@ -1,0 +1,4 @@
+[792, 612]
+[section-title, [110.0, 110.0, 245.0, 30.0], shoonya_0sAOJBO8K7D3KZ, 5779697]
+[paragraph, [68.0, 577.0, 470.0, 18.0], shoonya_1sUAZK58BR0WBK, 5779697]
+[paragraph, [68.0, 595.0, 470.0, 18.0], shoonya_1sUAZK58BR0WBK, 5779697]

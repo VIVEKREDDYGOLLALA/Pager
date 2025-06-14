@@ -1,0 +1,6 @@
+[842, 595]
+[second-level-question, [79.0, 225.0, 430.0, 18.0], HS-98KfS9V, 5707405]
+[second-level-question, [79.0, 243.0, 430.0, 18.0], HS-98KfS9V, 5707405]
+[second-level-question, [78.0, 268.0, 414.0, 18.0], WrPzFu8EZB, 5707405]
+[second-level-question, [78.0, 286.0, 414.0, 18.0], WrPzFu8EZB, 5707405]
+[paragraph, [277.0, 312.0, 30.0, 18.0], c-aPQI0lRT, 5707405]

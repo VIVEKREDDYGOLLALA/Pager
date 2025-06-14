@@ -1,0 +1,8 @@
+[1200, 825]
+[chapter-title, [330.0, 195.0, 165.0, 30.0], shoonya_0sQZ5I0BE3KM8U, 5691306]
+[section-title, [254.0, 262.0, 312.0, 30.0], YHsLbkXUFY, 5691306]
+[ordered-list, [140.0, 843.0, 550.0, 18.0], Vx1J4vVmod, 5691306]
+[ordered-list, [140.0, 861.0, 550.0, 18.0], Vx1J4vVmod, 5691306]
+[ordered-list, [140.0, 879.0, 550.0, 18.0], Vx1J4vVmod, 5691306]
+[ordered-list, [140.0, 897.0, 550.0, 18.0], Vx1J4vVmod, 5691306]
+[ordered-list, [140.0, 915.0, 550.0, 18.0], Vx1J4vVmod, 5691306]

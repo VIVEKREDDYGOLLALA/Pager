@@ -1,0 +1,3 @@
+[1650, 1275]
+[section-title, [241.0, 116.0, 905.0, 49.5], shoonya_4sGPHECH81HGWG, 6468535]
+[section-title, [241.0, 165.5, 905.0, 49.5], shoonya_4sGPHECH81HGWG, 6468535]

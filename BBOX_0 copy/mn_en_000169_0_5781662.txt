@@ -1,0 +1,8 @@
+[1300, 732]
+[folio, [32.0, 42.0, 127.0, 18.0], shoonya_5s4REVHSEGJZN0, 5781662]
+[folio, [32.0, 60.0, 127.0, 18.0], shoonya_5s4REVHSEGJZN0, 5781662]
+[folio, [69.0, 96.0, 599.0, 18.0], wBnUujklgq, 5781662]
+[sidebar, [555.0, 585.0, 102.0, 18.0], X1FMlk63-a, 5781662]
+[figure-caption, [115.0, 635.0, 486.0, 18.0], shoonya_4sLMAUDVP63B0X, 5781662]
+[sidebar, [559.0, 1133.0, 122.0, 18.0], l2m8PQcI5Z, 5781662]
+[figure-caption, [121.0, 1178.0, 470.0, 18.0], shoonya_2sJHVHO2NZ8UMM, 5781662]

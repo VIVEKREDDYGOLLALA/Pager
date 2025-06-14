@@ -1,0 +1,3 @@
+[789, 571]
+[figure-caption, [447.0, 485.0, 157.0, 18.0], a7xMooftkP, 5702782]
+[figure-caption, [447.0, 503.0, 157.0, 18.0], a7xMooftkP, 5702782]

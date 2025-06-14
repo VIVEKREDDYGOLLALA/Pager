@@ -1,0 +1,4 @@
+[2339, 1656]
+[section-title, [642.0, 963.0, 377.0, 52.5], NN17oHRHtg, 5688821]
+[sub-section-title, [579.0, 1061.0, 495.0, 55.5], oGzCC1ndBU, 5688821]
+[sub-section-title, [579.0, 1116.5, 495.0, 55.5], oGzCC1ndBU, 5688821]

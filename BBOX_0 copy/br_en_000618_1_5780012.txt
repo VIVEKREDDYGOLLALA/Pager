@@ -1,0 +1,8 @@
+[595, 842]
+[folio, [139.0, 97.0, 147.0, 18.0], E5T2Ju7Kg6, 5780012]
+[figure-caption, [657.0, 201.0, 118.0, 18.0], JhDfNKZybG, 5780012]
+[figure-caption, [110.0, 207.0, 122.0, 18.0], WiXmyhTsbn, 5780012]
+[figure-caption, [246.0, 226.0, 138.0, 18.0], kX-JxJ7Jl6, 5780012]
+[figure-caption, [716.0, 230.0, 105.0, 18.0], Rka545ju7c, 5780012]
+[figure-caption, [14.0, 284.0, 153.0, 18.0], gEIrWV_ggo, 5780012]
+[figure-caption, [166.0, 448.0, 124.0, 18.0], n4mzmy0GMc, 5780012]

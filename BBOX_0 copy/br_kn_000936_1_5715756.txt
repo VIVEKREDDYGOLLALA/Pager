@@ -1,0 +1,6 @@
+[540, 960]
+[folio, [838.0, 1.0, 116.0, 18.0], Ci_y0svYW2, 5715756]
+[folio, [838.0, 19.0, 116.0, 18.0], Ci_y0svYW2, 5715756]
+[section-title, [163.0, 38.0, 541.0, 30.0], shoonya_1sWLYKCV0YYMQM, 5715756]
+[section-title, [163.0, 68.0, 541.0, 30.0], shoonya_1sWLYKCV0YYMQM, 5715756]
+[section-title, [163.0, 98.0, 541.0, 30.0], shoonya_1sWLYKCV0YYMQM, 5715756]

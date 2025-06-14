@@ -1,0 +1,6 @@
+[842, 596]
+[figure-caption, [36.0, 34.0, 531.0, 18.0], Ty9gOWx2V1, 5700410]
+[figure-caption, [36.0, 52.0, 531.0, 18.0], Ty9gOWx2V1, 5700410]
+[figure-caption, [36.0, 70.0, 531.0, 18.0], Ty9gOWx2V1, 5700410]
+[paragraph, [106.0, 688.0, 435.0, 18.0], shoonya_3s09FCQZVAZCZ7, 5700410]
+[paragraph, [106.0, 706.0, 435.0, 18.0], shoonya_3s09FCQZVAZCZ7, 5700410]

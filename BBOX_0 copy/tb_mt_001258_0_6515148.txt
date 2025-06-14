@@ -1,0 +1,6 @@
+[590, 396]
+[paragraph, [62.0, 51.0, 304.0, 18.0], shoonya_0sDM9XW6P0M33F, 6515148]
+[paragraph, [62.0, 69.0, 304.0, 18.0], shoonya_0sDM9XW6P0M33F, 6515148]
+[paragraph, [62.0, 87.0, 304.0, 18.0], shoonya_0sDM9XW6P0M33F, 6515148]
+[folio, [172.0, 133.0, 93.0, 18.0], GrHIb2tzsQ, 6515148]
+[folio, [85.0, 532.0, 48.0, 18.0], X3C-oAGCzF, 6515148]

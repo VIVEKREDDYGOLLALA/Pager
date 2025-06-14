@@ -1,0 +1,7 @@
+[2339, 1654]
+[folio, [704.0, 264.0, 239.0, 36.0], u-eUV4pK4C, 5690339]
+[folio, [704.0, 300.0, 239.0, 36.0], u-eUV4pK4C, 5690339]
+[unordered-list, [111.0, 1923.0, 739.0, 36.0], shoonya_2sNTXWXK39F16T, 5690339]
+[unordered-list, [111.0, 1959.0, 739.0, 36.0], shoonya_2sNTXWXK39F16T, 5690339]
+[unordered-list, [111.0, 1995.0, 739.0, 36.0], shoonya_2sNTXWXK39F16T, 5690339]
+[unordered-list, [111.0, 2031.0, 739.0, 36.0], shoonya_2sNTXWXK39F16T, 5690339]

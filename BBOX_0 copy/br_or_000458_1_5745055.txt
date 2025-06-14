@@ -1,0 +1,7 @@
+[792, 612]
+[subsub-section-title, [123.0, 209.0, 66.0, 15.0], shoonya_2sAE6ZAPQ4Z4OP, 5745055]
+[ordered-list, [122.0, 229.0, 347.0, 18.0], shoonya_0sY1GP0624LOID, 5745055]
+[ordered-list, [122.0, 247.0, 347.0, 18.0], shoonya_0sY1GP0624LOID, 5745055]
+[ordered-list, [122.0, 265.0, 347.0, 18.0], shoonya_0sY1GP0624LOID, 5745055]
+[ordered-list, [122.0, 283.0, 347.0, 18.0], shoonya_0sY1GP0624LOID, 5745055]
+[figure-caption, [209.0, 611.0, 30.0, 18.0], GjIjQpBetW, 5745055]

@@ -1,0 +1,8 @@
+[792, 612]
+[contact-info, [195.0, 55.0, 222.0, 18.0], 0VKSUKMX3c, 5659852]
+[subsub-section-title, [279.0, 126.0, 54.0, 15.0], AGXeBv6ky0, 5659852]
+[subsub-section-title, [220.0, 167.0, 166.0, 15.0], eMzxLcoqi9, 5659852]
+[folio, [218.0, 204.0, 41.0, 18.0], qTv4Mw1qbe, 5659852]
+[subsub-section-title, [171.0, 267.0, 37.0, 15.0], AUJLc4GiRm, 5659852]
+[subsub-section-title, [166.0, 412.0, 38.0, 15.0], FamYBEl7G6, 5659852]
+[footnote, [41.0, 757.0, 524.0, 18.0], QAuZmUnAI0, 5659852]

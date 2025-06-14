@@ -1,0 +1,7 @@
+[567, 439]
+[headline, [89.0, 22.0, 265.0, 25.5], oJf2GSUKEQ, 6459735]
+[figure-caption, [133.0, 397.0, 197.0, 18.0], YCI_UVETFK, 6459735]
+[figure-caption, [133.0, 415.0, 197.0, 18.0], YCI_UVETFK, 6459735]
+[figure-caption, [133.0, 433.0, 197.0, 18.0], YCI_UVETFK, 6459735]
+[figure-caption, [133.0, 451.0, 197.0, 18.0], YCI_UVETFK, 6459735]
+[paragraph, [129.0, 477.0, 190.0, 18.0], X98T-2ziQ3, 6459735]

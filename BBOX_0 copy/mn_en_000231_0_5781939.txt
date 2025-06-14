@@ -1,0 +1,8 @@
+[1360, 848]
+[figure-caption, [430.0, 739.0, 86.0, 18.0], Zc7njCky27, 5781939]
+[figure-caption, [550.0, 743.0, 117.0, 18.0], tPbZ1Gn_pB, 5781939]
+[figure-caption, [613.0, 786.0, 98.0, 18.0], fVhEoZFnMU, 5781939]
+[figure-caption, [420.0, 952.0, 186.0, 18.0], lzPSdOECE3, 5781939]
+[figure-caption, [420.0, 970.0, 186.0, 18.0], lzPSdOECE3, 5781939]
+[figure-caption, [84.0, 970.0, 120.0, 18.0], BgfFaufMd1, 5781939]
+[figure-caption, [253.0, 1012.0, 310.0, 18.0], shoonya_4sXPFLOT96BCNI, 5781939]

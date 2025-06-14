@@ -1,0 +1,7 @@
+[842, 595]
+[folio, [261.0, 516.0, 114.0, 18.0], 3M77QSnADF, 5742446]
+[paragraph, [248.0, 551.0, 149.0, 18.0], cpDKMct3Oy, 5742446]
+[contact-info, [39.0, 706.0, 512.0, 18.0], AsvMj6Kweg, 5742446]
+[contact-info, [39.0, 724.0, 512.0, 18.0], AsvMj6Kweg, 5742446]
+[contact-info, [39.0, 742.0, 512.0, 18.0], AsvMj6Kweg, 5742446]
+[contact-info, [39.0, 760.0, 512.0, 18.0], AsvMj6Kweg, 5742446]

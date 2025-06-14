@@ -1,0 +1,6 @@
+[1650, 1275]
+[folio, [928.0, 39.0, 156.0, 36.0], shoonya_11s04Y1AYBDW7Q, 5775187]
+[options, [180.0, 1124.0, 159.0, 36.0], shoonya_6sZDFYL6CTVIEU, 5775187]
+[options, [180.0, 1160.0, 159.0, 36.0], shoonya_6sZDFYL6CTVIEU, 5775187]
+[options, [180.0, 1196.0, 159.0, 36.0], shoonya_6sZDFYL6CTVIEU, 5775187]
+[website-link, [331.0, 1366.0, 527.0, 18.0], VjB_ap26_8, 5775187]

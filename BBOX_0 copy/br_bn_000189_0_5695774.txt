@@ -1,0 +1,3 @@
+[1601, 1158]
+[contact-info, [106.0, 755.0, 938.0, 36.0], shoonya_2sFUHYDUIJ0ARO, 5695774]
+[contact-info, [106.0, 791.0, 938.0, 36.0], shoonya_2sFUHYDUIJ0ARO, 5695774]

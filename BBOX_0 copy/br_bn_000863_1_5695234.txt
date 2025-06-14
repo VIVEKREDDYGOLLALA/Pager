@@ -1,0 +1,5 @@
+[480, 640]
+[headline, [57.0, 6.0, 523.0, 52.5], rtCcHazS96, 5695234]
+[paragraph, [354.0, 80.0, 205.0, 52.5], Fia_j7YHvz, 5695234]
+[paragraph, [76.0, 183.0, 229.0, 52.5], shoonya_2sKGI7RNJENS6U, 5695234]
+[contact-info, [99.0, 422.0, 187.0, 52.5], wkj7C7RTjM, 5695234]

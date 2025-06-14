@@ -1,0 +1,7 @@
+[792, 612]
+[unordered-list, [66.0, 162.0, 370.0, 18.0], ko8zOY9IKu, 5689059]
+[unordered-list, [66.0, 180.0, 370.0, 18.0], ko8zOY9IKu, 5689059]
+[unordered-list, [66.0, 198.0, 370.0, 18.0], ko8zOY9IKu, 5689059]
+[unordered-list, [68.0, 254.0, 431.0, 18.0], rw5ZqX8lBI, 5689059]
+[unordered-list, [68.0, 272.0, 431.0, 18.0], rw5ZqX8lBI, 5689059]
+[unordered-list, [68.0, 290.0, 431.0, 18.0], rw5ZqX8lBI, 5689059]

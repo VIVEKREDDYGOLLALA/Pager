@@ -1,0 +1,8 @@
+[842, 596]
+[headline, [156.0, 63.0, 279.0, 25.5], MLRk8pWxjT, 5772253]
+[sub-headline, [165.0, 144.0, 267.0, 25.5], swdgOcZWA_, 5772253]
+[section-title, [163.0, 422.0, 275.0, 30.0], shoonya_2sU9IEOJWBRIUX, 5772253]
+[contact-info, [143.0, 554.0, 307.0, 18.0], shoonya_4sGL5W68WAKBDD, 5772253]
+[contact-info, [143.0, 572.0, 307.0, 18.0], shoonya_4sGL5W68WAKBDD, 5772253]
+[contact-info, [143.0, 590.0, 307.0, 18.0], shoonya_4sGL5W68WAKBDD, 5772253]
+[contact-info, [143.0, 608.0, 307.0, 18.0], shoonya_4sGL5W68WAKBDD, 5772253]

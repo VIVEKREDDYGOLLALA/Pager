@@ -1,0 +1,7 @@
+[853, 552]
+[figure-caption, [94.0, 320.0, 381.0, 18.0], i_GIcCekOB, 5773545]
+[figure-caption, [94.0, 338.0, 381.0, 18.0], i_GIcCekOB, 5773545]
+[figure-caption, [94.0, 356.0, 381.0, 18.0], i_GIcCekOB, 5773545]
+[figure-caption, [89.0, 734.0, 369.0, 18.0], 8aOEyOT8dA, 5773545]
+[figure-caption, [89.0, 752.0, 369.0, 18.0], 8aOEyOT8dA, 5773545]
+[figure-caption, [89.0, 770.0, 369.0, 18.0], 8aOEyOT8dA, 5773545]

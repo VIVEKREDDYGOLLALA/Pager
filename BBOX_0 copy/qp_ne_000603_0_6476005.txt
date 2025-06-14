@@ -1,0 +1,7 @@
+[1445, 1091]
+[folio, [973.0, 39.0, 100.0, 18.0], shoonya_1sSWQH8EG6N8EX, 6476005]
+[folio, [973.0, 57.0, 100.0, 18.0], shoonya_1sSWQH8EG6N8EX, 6476005]
+[folio, [24.0, 41.0, 73.0, 18.0], shoonya_0sTSP6KB6FWNA9, 6476005]
+[folio, [24.0, 59.0, 73.0, 18.0], shoonya_0sTSP6KB6FWNA9, 6476005]
+[contact-info, [837.0, 43.0, 42.0, 18.0], LMOrPypmtF, 6476005]
+[section-title, [315.0, 69.0, 453.0, 30.0], Cczo-TMvg3, 6476005]

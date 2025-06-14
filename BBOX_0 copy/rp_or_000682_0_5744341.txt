@@ -1,0 +1,6 @@
+[1839, 1268]
+[chapter-title, [217.0, 592.0, 848.0, 58.5], shoonya_0sJ8BLPHBQBUGY, 5744341]
+[chapter-title, [217.0, 650.5, 848.0, 58.5], shoonya_0sJ8BLPHBQBUGY, 5744341]
+[chapter-title, [217.0, 709.0, 848.0, 58.5], shoonya_0sJ8BLPHBQBUGY, 5744341]
+[chapter-title, [217.0, 767.5, 848.0, 58.5], shoonya_0sJ8BLPHBQBUGY, 5744341]
+[chapter-title, [217.0, 826.0, 848.0, 58.5], shoonya_0sJ8BLPHBQBUGY, 5744341]

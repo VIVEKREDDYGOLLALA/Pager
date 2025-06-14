@@ -1,0 +1,7 @@
+[2339, 1654]
+[paragraph, [184.0, 334.0, 572.0, 36.0], shoonya_5s2W1I6ENPLIZD, 5690411]
+[paragraph, [184.0, 370.0, 572.0, 36.0], shoonya_5s2W1I6ENPLIZD, 5690411]
+[unordered-list, [188.0, 1819.0, 944.0, 36.0], 9nWuUqHMFq, 5690411]
+[unordered-list, [188.0, 1855.0, 944.0, 36.0], 9nWuUqHMFq, 5690411]
+[unordered-list, [188.0, 1891.0, 944.0, 36.0], 9nWuUqHMFq, 5690411]
+[unordered-list, [188.0, 1927.0, 944.0, 36.0], 9nWuUqHMFq, 5690411]

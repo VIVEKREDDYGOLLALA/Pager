@@ -1,0 +1,5 @@
+[1752, 1240]
+[options, [166.0, 249.0, 716.0, 36.0], shoonya_4sT612UGQN6YSM, 5708402]
+[options, [166.0, 285.0, 716.0, 36.0], shoonya_4sT612UGQN6YSM, 5708402]
+[options, [192.0, 372.0, 685.0, 36.0], shoonya_3sC4G884KUNL1N, 5708402]
+[options, [192.0, 408.0, 685.0, 36.0], shoonya_3sC4G884KUNL1N, 5708402]

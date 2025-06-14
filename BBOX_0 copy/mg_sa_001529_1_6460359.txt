@@ -1,0 +1,5 @@
+[567, 454]
+[flag, [210.0, 2.0, 227.0, 18.0], shoonya_1sUIKUCCEXRMZO, 6460359]
+[flag, [210.0, 20.0, 227.0, 18.0], shoonya_1sUIKUCCEXRMZO, 6460359]
+[flag, [210.0, 38.0, 227.0, 18.0], shoonya_1sUIKUCCEXRMZO, 6460359]
+[flag, [210.0, 56.0, 227.0, 18.0], shoonya_1sUIKUCCEXRMZO, 6460359]

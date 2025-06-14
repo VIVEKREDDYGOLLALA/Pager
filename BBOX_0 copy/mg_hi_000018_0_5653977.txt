@@ -1,0 +1,8 @@
+[2342, 1656]
+[dateline, [1364.0, 35.0, 181.0, 64.5], TFI8OdZ19j, 5653977]
+[folio, [376.0, 39.0, 212.0, 36.0], 7fw9ulRawQ, 5653977]
+[contact-info, [436.0, 2106.0, 740.0, 36.0], pxpFxIjYtW, 5653977]
+[contact-info, [436.0, 2142.0, 740.0, 36.0], pxpFxIjYtW, 5653977]
+[contact-info, [436.0, 2178.0, 740.0, 36.0], pxpFxIjYtW, 5653977]
+[website-link, [516.0, 2224.0, 630.0, 18.0], 5UEFGgtRdK, 5653977]
+[website-link, [516.0, 2242.0, 630.0, 18.0], 5UEFGgtRdK, 5653977]

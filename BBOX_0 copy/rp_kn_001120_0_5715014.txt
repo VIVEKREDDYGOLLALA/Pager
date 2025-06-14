@@ -1,0 +1,8 @@
+[1754, 1241]
+[chapter-title, [450.0, 551.0, 433.0, 58.5], kJzTGGebrL, 5715014]
+[section-title, [232.0, 682.0, 855.0, 49.5], KLCjdhIPCJ, 5715014]
+[section-title, [232.0, 731.5, 855.0, 49.5], KLCjdhIPCJ, 5715014]
+[sub-section-title, [284.0, 856.0, 750.0, 36.0], y7VSntaXzz, 5715014]
+[sub-section-title, [284.0, 892.0, 750.0, 36.0], y7VSntaXzz, 5715014]
+[subsub-section-title, [288.0, 978.0, 748.0, 43.5], 0hqwNhqPfs, 5715014]
+[subsub-section-title, [288.0, 1021.5, 748.0, 43.5], 0hqwNhqPfs, 5715014]

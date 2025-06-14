@@ -1,0 +1,6 @@
+[655, 479]
+[figure-caption, [66.0, 46.0, 209.0, 18.0], CSkhsQHRpX, 5705449]
+[paragraph, [66.0, 499.0, 308.0, 18.0], shoonya_4sLM3KE9VHEQLV, 5705449]
+[paragraph, [66.0, 517.0, 308.0, 18.0], shoonya_4sLM3KE9VHEQLV, 5705449]
+[paragraph, [66.0, 535.0, 308.0, 18.0], shoonya_4sLM3KE9VHEQLV, 5705449]
+[website-link, [93.0, 590.0, 135.0, 18.0], kL-zxkFBxw, 5705449]

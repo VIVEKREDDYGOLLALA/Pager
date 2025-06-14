@@ -1,0 +1,8 @@
+[842, 599]
+[options, [77.0, 198.0, 313.0, 18.0], shoonya_0sH1053KIFM9LA, 5738517]
+[options, [77.0, 216.0, 313.0, 18.0], shoonya_0sH1053KIFM9LA, 5738517]
+[options, [68.0, 383.0, 321.0, 18.0], shoonya_9sE86XBSQ3JWA1, 5738517]
+[options, [50.0, 522.0, 410.0, 18.0], shoonya_6sXK8EIV1IFF1S, 5738517]
+[options, [50.0, 540.0, 410.0, 18.0], shoonya_6sXK8EIV1IFF1S, 5738517]
+[options, [72.0, 643.0, 440.0, 18.0], shoonya_12sMX7T4NPJYI3, 5738517]
+[folio, [48.0, 686.0, 224.0, 18.0], shoonya_15sLFS6VIREOZ4, 5738517]
